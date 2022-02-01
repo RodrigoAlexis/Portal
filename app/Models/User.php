@@ -30,7 +30,10 @@ class User extends Authenticatable
         'telefono',
         'email',
         'password',
-        'isClient'
+        'isClient',
+        'clave_cliente',
+        'rfc',
+        'razon_social'
     ];
 
     /**
