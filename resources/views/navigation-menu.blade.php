@@ -134,8 +134,14 @@
                             </x-slot>
                         </x-jet-dropdown>
                     @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    @if(Route::is('login')) 
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 ">Registrarme</a>
+                    @elseif(Route::is('register'))
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Iniciar Sesión</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Iniciar Sesión</a>
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 ">Registrarme</a>
+                    @endif
                     @endauth
                 </div>
             </div>
@@ -233,16 +239,26 @@
                         @endif
                     </div>
                 </div>
-        </div>
+            </div>
             @else
                 <div class="py-1 border-t border-gray-200">
-                    <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                        Login
-                    </x-jet-responsive-nav-link>
-
-                    <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
-                        Register
-                    </x-jet-responsive-nav-link>
+                    @if(Route::is('login')) 
+                        <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                            Registrarme
+                        </x-jet-responsive-nav-link>
+                    @elseif(Route::is('register'))
+                        <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                            Iniciar Sesión
+                        </x-jet-responsive-nav-link>
+                    @else
+                        <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                            Iniciar Sesión
+                        </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                            Registrarme
+                        </x-jet-responsive-nav-link>
+                    @endif
                 </div>
+                    
             @endauth
 </nav>

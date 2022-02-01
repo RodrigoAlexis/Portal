@@ -3,7 +3,7 @@
         <x-jet-authentication-card> 
             <x-slot name="logo">
                 {{-- <x-jet-authentication-card-logo /> --}}
-                <label for="Registro" class="block font-medium text-4xl text-gray-700">Registro</label>
+                <label for="Registro" class="block font-medium text-2xl text-gray-700">Registro</label>
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />
@@ -31,7 +31,7 @@
                         {{-- telefono --}}
                         <div >
                             <x-jet-label for="telefono" value="{{ __('Teléfono *') }}" />
-                            <x-jet-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" />
+                            <x-jet-input id="telefono" class="block mt-1 w-full" type="number" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" />
                         </div>
                         {{-- correo electronico --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2">
@@ -52,11 +52,11 @@
                         <div class="col-span-1 sm:col-span-2 md:col-span-2">
                             <x-jet-label for="isClient" value="{{ __('¿Usted es cliente de Aram-Luz? *') }}" />
                             <label">
-                                <input id="isClient" type="radio"  name="isClient" value="1">
+                                <input  type="radio"  name="isClient" value="1">
                                 <span class="ml-1 text-sm text-gray-700">Si, soy cliente</span>
                             </label>
                             <label class="ml-20 sm:ml-32 ">
-                                <input id="isClient" type="radio"  name="isClient" value="0">
+                                <input  type="radio"  name="isClient" value="0">
                                 <span class="ml-1 text-sm text-gray-700">No soy cliente</span>
                             </label>
                         </div>
@@ -70,7 +70,7 @@
                             <x-jet-label for="rfc" value="{{ __('RFC (opcional)') }}" />
                             <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')" autofocus autocomplete="rfc" />
                         </div>
-                        {{-- Razon Socia --}}
+                        {{-- Razon Social --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2">
                             <x-jet-label for="razon_social" value="{{ __('Razón Social (opcional)') }}" />
                             <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')" autofocus autocomplete="razon_social" />
@@ -85,9 +85,9 @@
                                 <x-jet-checkbox name="terms" id="terms"/>
 
                                 <div class="ml-2">
-                                    {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                            'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                            'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                    {!! __('Acepto los :terms_of_service y la :privacy_policy', [
+                                            'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Términos de servicio').'</a>',
+                                            'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Política de privacidad').'</a>',
                                     ]) !!}
                                 </div>
                             </div>
@@ -97,11 +97,11 @@
 
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                        {{ __('Already registered?') }}
+                        {{ __('Ya tengo una cuenta') }}
                     </a>
 
                     <x-jet-button class="ml-4">
-                        {{ __('Register') }}
+                        {{ __('Registrarme') }}
                     </x-jet-button>
                 </div>
             </form>

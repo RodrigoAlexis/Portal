@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('paterno');
             $table->string('materno');
-            $table->integer('telefono');
+            $table->bigInteger('telefono');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
