@@ -1,38 +1,62 @@
 <x-app-layout>
-    
     <x-guest-layout>
-        <x-jet-authentication-card>
-            <x-slot name="logo">
-                <x-jet-authentication-card-logo />
-                {{-- <label for="Registro" class="block font-medium text-2xl text-gray-700  mr-8 mt-8">Restablecer Contraseña</label> --}}
-            </x-slot>
+        <!-- Container -->
+		<div class="container mx-auto">
+			<div class="flex justify-center px-6 my-12">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Col -->
+					<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800')"></div>
+					<!-- Col -->
+					<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+						<div class="px-8 mb-4 text-center">
+							<h3 class="pt-4 mb-2 text-2xl">¿Olvidaste tu contraseña?</h3>
+							<p class="mb-4 text-sm text-gray-700">
+								Lo entendemos, suele pasar. ¡Simplemente ingrese su dirección de correo electrónico a continuación y le enviaremos un enlace para restablecer su contraseña!
+							</p>
+						</div>
+        
+                        @if (session('status'))
+                            <div class="mb-4 font-medium text-center text-sm text-green-600">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-            <div class="mb-4 text-sm text-gray-600">
-                {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente háganos saber su dirección de correo electrónico y le enviaremos un enlace de restablecimiento de contraseña que le permitirá elegir una nueva.') }}
+                        <x-jet-validation-errors class="mb-4" />
+
+                        <form method="POST" action="{{ route('password.email') }}" class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                            @csrf
+
+                            <div class="block">
+                                <x-jet-label for="email" value="{{ __('Correo Electrónico') }}" />
+                                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                            </div>
+
+                            <div class="mb-6 text-center mt-4">
+                                <button class="w-full px-4 py-2 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
+                                    {{-- <div class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition"></div> --}}
+                                    {{ __('Envíar Enlace') }}
+                                </button>
+                            </div>
+
+                            <hr class="mb-6 border-t"/>
+
+                            <div class="text-center">
+                                <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="{{ route('register')}}">
+                                    {{ __('Crear una cuenta') }}
+                                </a>
+                            </div>
+
+                            <div class="text-center">
+                                <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="{{ route('login')}}">
+                                    {{ __('¿Ya tienes una cuenta? Inicia Sesión') }}
+                                </a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
-
-            @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            <x-jet-validation-errors class="mb-4" />
-
-            <form method="POST" action="{{ route('password.email') }}">
-                @csrf
-
-                <div class="block">
-                    <x-jet-label for="email" value="{{ __('Correo Electrónico') }}" />
-                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-                </div>
-
-                <div class="flex items-center justify-end mt-4">
-                    <x-jet-button>
-                        {{ __('Envíar Enlace') }}
-                    </x-jet-button>
-                </div>
-            </form>
-        </x-jet-authentication-card>
+        </div>
     </x-guest-layout>
 </x-app-layout>
