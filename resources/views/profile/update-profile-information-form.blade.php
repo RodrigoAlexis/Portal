@@ -52,28 +52,41 @@
             </div>
         @endif
 
-        <!-- Name -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Nombre') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
-        </div>
-
-        <!-- Email -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="email" value="{{ __('Correo Elecrónico') }}" />
-            <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
-            <x-jet-input-error for="email" class="mt-2" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <!-- Name -->
+            <div >
+                <x-jet-label for="name" value="{{ __('Nombre') }}" />
+                <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
+                <x-jet-input-error for="name" class="mt-2" />
+            </div>
+            <!-- Paterno -->
+            <div >
+                <x-jet-label for="paterno" value="{{ __('Apellido Paterno') }}" />
+                <x-jet-input id="paterno" type="text" class="mt-1 block w-full" wire:model.defer="state.paterno" autocomplete="paterno" />
+                <x-jet-input-error for="paterno" class="mt-2" />
+            </div>
+            <!-- Materno -->
+            <div >
+                <x-jet-label for="materno" value="{{ __('Apellido Materno') }}" />
+                <x-jet-input id="materno" type="text" class="mt-1 block w-full" wire:model.defer="state.materno" autocomplete="materno" />
+                <x-jet-input-error for="materno" class="mt-2" />
+            </div>
+            <!-- Email -->
+            <div class="col-span-1 sm:col-span-1 md:col-span-1  lg:col-span-3">
+                <x-jet-label for="email" value="{{ __('Correo Elecrónico') }}" />
+                <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
+                <x-jet-input-error for="email" class="mt-2" />
+            </div>
         </div>
     </x-slot>
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Saved.') }}
+            {{ __('Guardado.') }}
         </x-jet-action-message>
 
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
+            {{ __('Guardar') }}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

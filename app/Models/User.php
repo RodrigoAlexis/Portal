@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-// use App\Notifications\ResetPassword;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -28,13 +27,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'paterno',
         'materno',
-        'telefono',
         'email',
-        'password',
-        'isClient',
-        'clave_cliente',
-        'rfc',
-        'razon_social'
+        'password'
     ];
 
     /**
@@ -67,8 +61,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    } 
+
     // public function sendPasswordResetNotification($token)
-    // {
-    //     $this->notify(new ResetPassword($token));
+    //  {
+    //      $this->notify(new ResetPassword($token));
     // }
 }
