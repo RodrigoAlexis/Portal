@@ -57,26 +57,51 @@
             <div >
                 <x-jet-label for="name" value="{{ __('Nombre') }}" />
                 <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-                <x-jet-input-error for="name" class="mt-2" />
+                <x-jet-input-error for="Nombre" class="mt-2" />
             </div>
             <!-- Paterno -->
             <div >
                 <x-jet-label for="paterno" value="{{ __('Apellido Paterno') }}" />
                 <x-jet-input id="paterno" type="text" class="mt-1 block w-full" wire:model.defer="state.paterno" autocomplete="paterno" />
-                <x-jet-input-error for="paterno" class="mt-2" />
+                <x-jet-input-error for="Apellido Paterno" class="mt-2" />
             </div>
             <!-- Materno -->
             <div >
                 <x-jet-label for="materno" value="{{ __('Apellido Materno') }}" />
                 <x-jet-input id="materno" type="text" class="mt-1 block w-full" wire:model.defer="state.materno" autocomplete="materno" />
-                <x-jet-input-error for="materno" class="mt-2" />
+                <x-jet-input-error for="Apellido Materno" class="mt-2" />
             </div>
             <!-- Email -->
-            <div class="col-span-1 sm:col-span-1 md:col-span-1  lg:col-span-3">
+            <div class="col-span-1 sm:col-span-1 md:col-span-1  lg:col-span-2">
                 <x-jet-label for="email" value="{{ __('Correo Elecrónico') }}" />
                 <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
-                <x-jet-input-error for="email" class="mt-2" />
+                <x-jet-input-error for="Correo Electrónico" class="mt-2" />
             </div>
+            <!-- Telefono -->
+            <div >
+                <x-jet-label for="telefono" value="{{ __('Teléfono') }}" />
+                <x-jet-input id="telefono" type="text" class="mt-1 block w-full" wire:model.defer="state.telefono" autocomplete="telefono" />
+                <x-jet-input-error for="Telefono" class="mt-2" />
+            </div>
+            <!-- Clave Cliente -->
+            <div >
+                <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente (opcional)') }}" />
+                <x-jet-input id="clave_cliente" type="text" class="mt-1 block w-full" wire:model.defer="state.clave_cliente" autocomplete="clave_cliente" />
+                <x-jet-input-error for="Clave de Cliente" class="mt-2" />
+            </div>
+            <!-- RFC -->
+            <div >
+                <x-jet-label for="telefono" value="{{ __('RFC (opcional)') }}" />
+                <x-jet-input id="rfc" type="text" class="mt-1 block w-full" wire:model.defer="state.rfc" autocomplete="rfc" />
+                <x-jet-input-error for="RFC" class="mt-2" />
+            </div>
+            <!-- Razon Social -->
+            <div >
+                <x-jet-label for="razon_social" value="{{ __('Razón Social (opcional)') }}" />
+                <x-jet-input id="razon_social" type="text" class="mt-1 block w-full" wire:model.defer="state.razon_social" autocomplete="razon_social" />
+                <x-jet-input-error for="Razón Social" class="mt-2" />
+            </div>
+            
         </div>
     </x-slot>
 

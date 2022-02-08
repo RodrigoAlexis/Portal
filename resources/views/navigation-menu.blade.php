@@ -1,7 +1,33 @@
 @php
     $nav_links = [
         [
-            'name' => 'Home',
+            'name' => 'Inicio',
+            'route' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        [
+            'name' => 'Nosotros',
+            'route' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        [
+            'name' => 'Productos',
+            'route' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        
+        [
+            'name' => 'Responsabilidad Social',
+            'route' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        [
+            'name' => 'Contacto',
+            'route' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        [
+            'name' => 'Portal de Denuncias',
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],
@@ -135,12 +161,12 @@
                         </x-jet-dropdown>
                     @else
                     @if(Route::is('login')) 
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 ">Registrarme</a>
+                        <a type="button" href="{{ route('register') }}" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:ring-blue-300 font-medium rounded-md text-sm px-3 py-2.5 text-center dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Registrarme</a>
                     @elseif(Route::is('register'))
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Iniciar Sesión</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Iniciar Sesión</a>
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 ">Registrarme</a>
+                        <a type="button" href="{{ route('register') }}" class=" ml-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:ring-blue-300 font-medium rounded-md text-sm px-3 py-2.5 text-center dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Registrarme</a>
                     @endif
                     @endauth
                 </div>
@@ -259,6 +285,5 @@
                         </x-jet-responsive-nav-link>
                     @endif
                 </div>
-                    
             @endauth
 </nav>
