@@ -2,7 +2,7 @@
     <x-guest-layout>
         <!-- Container -->
 		<div class="container">
-			<div class="flex justify-center px-6 my-6">
+			<div class="flex justify-center px-6 my-4">
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex ">
 					<!-- Col -->
@@ -19,7 +19,7 @@
                                 <div class="container">
                                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
                                         {{-- nombre --}}
-                                        <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                        <div>
                                             <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
                                             <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                                         </div>
@@ -32,6 +32,30 @@
                                         <div >
                                             <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
                                             <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')" required autofocus autocomplete="materno" />
+                                        </div>
+                                        {{-- IsClient? --}}
+                                        <div>
+                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente de Aram-Luz? *') }}" />
+                                            <div role="radiogroup" class="mx-auto py-2 flex justify-center">
+                                                <!-- Code block starts -->
+                                                <div class="flex items-center">
+                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                                        <input aria-labelledby="label1" checked type="radio" name="isClient" value="1" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
+                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
+                                                    </div>
+                                                    <label id="label1" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">Soy cliente</label>
+                                                </div>
+                                                <!-- Code block ends -->
+                                                <!-- Code block starts -->
+                                                <div class="flex items-center ml-6">
+                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                                                        <input aria-labelledby="label2" type="radio" name="isClient" value="0" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
+                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
+                                                    </div>
+                                                    <label id="label2" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">No soy cliente</label>
+                                                </div>
+                                                <!-- Code block ends -->                
+                                            </div>
                                         </div>
                                         {{-- correo electronico --}}
                                         <div class="col-span-1 sm:col-span-2 md:col-span-2">
@@ -52,30 +76,6 @@
                                         {{-- <div>
                                             <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña *') }}" />
                                             <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-                                        </div> --}}
-                                        {{-- IsClient? --}}
-                                        {{-- <div>
-                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente de Aram-Luz? *') }}" />
-                                            <div role="radiogroup" class="mx-auto py-3 flex justify-center">
-                                                <!-- Code block starts -->
-                                                <div class="flex items-center">
-                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
-                                                        <input aria-labelledby="label1" checked type="radio" name="isClient" value="1" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
-                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
-                                                    </div>
-                                                    <label id="label1" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">Soy cliente</label>
-                                                </div>
-                                                <!-- Code block ends -->
-                                                <!-- Code block starts -->
-                                                <div class="flex items-center ml-6">
-                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
-                                                        <input aria-labelledby="label2" type="radio" name="isClient" value="0" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
-                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
-                                                    </div>
-                                                    <label id="label2" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">No soy cliente</label>
-                                                </div>
-                                                <!-- Code block ends -->                
-                                            </div>
                                         </div> --}}
                                         {{-- clave del cliente --}}
                                         {{-- <div>
@@ -120,23 +120,7 @@
                                 </div>
                             </form>
 
-
-
-
-                            <a href="{{ route('addregister') }}" type="button"> Continuar</a>
-
-
-                            
-
                             <hr class="mb-6 border-t"/>
-
-                            <div class="text-center">
-                                @if (Route::has('password.request'))
-                                    <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="{{ route('password.request')}}">
-                                    {{ __('¿Olvidaste tu contraseña?') }}
-                                    </a>
-                                @endif
-                            </div>
 
                             <div class="text-center">
                                 <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="{{ route('login')}}">

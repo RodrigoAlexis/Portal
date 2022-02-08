@@ -1,7 +1,54 @@
-// $(document).ready(function(){
-//     if (window.location.pathname == "/login") {
-//         $('#login').hide();
-//       } else {
-//         $('#register').hide();
-//       }
-// });
+let Password = {
+
+ 
+    _pattern : /[a-zA-Z0-9_\-\+\.]/,
+    
+    
+    _getRandomByte : function()
+    {
+    // http://caniuse.com/#feat=getrandomvalues
+    if(window.crypto && window.crypto.getRandomValues) 
+    {
+        var result = new Uint8Array(1);
+        window.crypto.getRandomValues(result);
+        return result[0];
+    }
+    else if(window.msCrypto && window.msCrypto.getRandomValues) 
+    {
+        var result = new Uint8Array(1);
+        window.msCrypto.getRandomValues(result);
+        return result[0];
+    }
+    else
+    {
+        return Math.floor(Math.random() * 256);
+    }
+    },
+    
+    generate : function(length)
+    {
+    return Array.apply(null, {'length': length})
+        .map(function()
+        {
+        var result;
+        while(true) 
+        {
+            result = String.fromCharCode(this._getRandomByte());
+            if(this._pattern.test(result))
+            {
+            return result;
+            }
+        }        
+        }, this)
+        .join('');  
+    }    
+    
+    };
+
+    function closeAlert(event){
+        let element = event.target;
+        while(element.nodeName !== "BUTTON"){
+          element = element.parentNode;
+        }
+        element.parentNode.parentNode.removeChild(element.parentNode);
+      }

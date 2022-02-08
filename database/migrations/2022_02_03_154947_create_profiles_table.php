@@ -17,7 +17,6 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->bigInteger('telefono');
-            $table->boolean('isClient');
             $table->string('clave_cliente')->unique()->nullable();
             $table->string('rfc')->nullable();
             $table->string('razon_social')->nullable();

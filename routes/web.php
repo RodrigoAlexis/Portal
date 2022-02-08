@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +22,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/register/aditional',[ProfileController::class, 'index'])->name('addregister');
-    
+Route::get('auth/facebook', [LoginController::class, 'redirect']);
+
+Route::get('auth/facebook/callback', [LoginController::class, 'signinFacebook']);
+
+Route::get('auth/google', [LoginController::class, 'redirectG']);
+
+Route::get('auth/google/callback', [LoginController::class, 'signinGoogle']);
