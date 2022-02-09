@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Exception;
-use Validator;
-use Socialite;
 use Auth;
+use Exception;
+use Socialite;
 
 class LoginController extends Controller
 {
     //
-    public function redirect()
+    public function faceRedirect()
     {
         return Socialite::driver('facebook')->redirect();
     }
@@ -29,10 +28,9 @@ class LoginController extends Controller
                 return redirect('/dashboard');
             }else{
                 $addUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'id_fb' => $user->id,
-                    'password' => encrypt('helloadmin')
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'id_fb' => $user->getId()
                 ]);
     
                 Auth::login($addUser);
@@ -61,10 +59,9 @@ class LoginController extends Controller
                 return redirect('/dashboard');
             }else{
                 $addUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'id_g' => $user->id,
-                    'password' => encrypt('helloadmin')
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'id_g' => $user->getId()
                 ]);
     
                 Auth::login($addUser);

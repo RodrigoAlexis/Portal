@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('auth/facebook', [LoginController::class, 'redirect']);
+Route::get('auth/facebook', [LoginController::class, 'faceRedirect']);
 
 Route::get('auth/facebook/callback', [LoginController::class, 'signinFacebook']);
 

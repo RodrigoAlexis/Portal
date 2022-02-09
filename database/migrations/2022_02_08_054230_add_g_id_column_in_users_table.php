@@ -15,7 +15,7 @@ class AddGIdColumnInUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('id_g')->nullable();
+            $table->string('id_g')->nullable()->unique();
         });
     }
 

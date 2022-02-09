@@ -16,19 +16,19 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('paterno');
-            $table->string('materno');
-            $table->boolean('isClient');
+            $table->string('paterno')->nullable();
+            $table->string('materno')->nullable();
+            $table->boolean('isClient')->default(0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->bigInteger('telefono')->nullable();
             $table->string('clave_cliente')->unique()->nullable();
             $table->string('rfc')->nullable();
             $table->string('razon_social')->nullable();
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            // $table->foreignId('current_team_id')->nullable();
+            // $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });
     }
