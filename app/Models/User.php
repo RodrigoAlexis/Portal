@@ -35,8 +35,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'clave_cliente',
         'rfc',
         'razon_social',
-        'id_fb',
-        'id_g'
+        'id_socialite',
+        'type_socialite'
     ];
 
     /**

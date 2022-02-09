@@ -25,8 +25,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
             'telefono' => ['sometimes', 'size:10'],
-            'clave_cliente' => ['sometimes','max:12'],
-            'rfc' => ['sometimes','max:13'],
+            'isClient' => ['required'],
+            'clave_cliente' => ['sometimes','min:12','max:12'],
+            'rfc' => ['sometimes','min:12','max:13'],
             'razon_social' => ['sometimes','max:255'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -44,6 +45,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'materno' => $input['materno'],
                 'email' => $input['email'],
                 'telefono' => $input['telefono'],
+                'isClient' => $input['isClient'],
                 'clave_cliente' => $input['clave_cliente'],
                 'rfc' => $input['rfc'],
                 'razon_social' => $input['razon_social'],
@@ -67,6 +69,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => $input['email'],
             'email_verified_at' => null,
             'telefono' => $input['telefono'],
+            'isClient' => $input['isClient'],
             'clave_cliente' => $input['clave_cliente'],
             'rfc' => $input['rfc'],
             'razon_social' => $input['razon_social'],

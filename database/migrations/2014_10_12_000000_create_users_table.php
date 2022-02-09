@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('paterno')->nullable();
             $table->string('materno')->nullable();
-            $table->boolean('isClient')->default(0);
+            $table->enum('isClient', ['Soy cliente', 'No soy cliente'])->default('No soy cliente');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('clave_cliente')->unique()->nullable();
             $table->string('rfc')->nullable();
             $table->string('razon_social')->nullable();
+            $table->string('id_socialite')->nullable();
+            $table->string('type_socialite')->nullable()->default('N/A');
             $table->rememberToken();
             // $table->foreignId('current_team_id')->nullable();
             // $table->string('profile_photo_path', 2048)->nullable();

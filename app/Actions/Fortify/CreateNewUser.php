@@ -25,6 +25,7 @@ class CreateNewUser implements CreatesNewUsers
             'name' => ['required', 'string', 'max:45'],
             'paterno' => ['required', 'string', 'max:45'],
             'materno' => ['required', 'string', 'max:45'],
+            'materno' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
             

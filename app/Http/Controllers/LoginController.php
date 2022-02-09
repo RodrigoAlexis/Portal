@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Socialite;
 
 class LoginController extends Controller
 {
     //
+    public function index(){
+        $user = auth()->id();
+        $socialite = DB::table('users')->where('id',$user)->get();
+
+        return view('dashboard',['socialite' => $socialite]);
+    }
+
     public function faceRedirect()
     {
         return Socialite::driver('facebook')->redirect();
@@ -21,7 +29,7 @@ class LoginController extends Controller
         try {
     
             $user = Socialite::driver('facebook')->user();
-            $userCol = User::where('id_fb', $user->id)->first();
+            $userCol = User::where('id_socialite', $user->id)->first();
      
             if($userCol){
                 Auth::login($userCol);
@@ -30,7 +38,8 @@ class LoginController extends Controller
                 $addUser = User::create([
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
-                    'id_fb' => $user->getId()
+                    'id_socialite' => $user->getId(),
+                    'type_socialite' => 'facebook'
                 ]);
     
                 Auth::login($addUser);
@@ -52,7 +61,7 @@ class LoginController extends Controller
         try {
     
             $user = Socialite::driver('google')->user();
-            $userCol = User::where('id_g', $user->id)->first();
+            $userCol = User::where('id_socialite', $user->id)->first();
      
             if($userCol){
                 Auth::login($userCol);
@@ -61,7 +70,8 @@ class LoginController extends Controller
                 $addUser = User::create([
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
-                    'id_g' => $user->getId()
+                    'id_socialite' => $user->getId(),
+                    'type_socialite' => 'google'
                 ]);
     
                 Auth::login($addUser);

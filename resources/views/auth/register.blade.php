@@ -36,62 +36,19 @@
                                         {{-- IsClient? --}}
                                         <div>
                                             <x-jet-label for="isClient" value="{{ __('¿Es cliente de Aram-Luz? *') }}" />
-                                            <div role="radiogroup" class="mx-auto py-2 flex justify-center">
-                                                <!-- Code block starts -->
-                                                <div class="flex items-center">
-                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
-                                                        <input aria-labelledby="label1" checked type="radio" name="isClient" value="1" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
-                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
-                                                    </div>
-                                                    <label id="label1" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">Soy cliente</label>
-                                                </div>
-                                                <!-- Code block ends -->
-                                                <!-- Code block starts -->
-                                                <div class="flex items-center ml-6">
-                                                    <div class="bg-white dark:bg-gray-100 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
-                                                        <input aria-labelledby="label2" type="radio" name="isClient" value="0" class="checkbox appearance-none focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none border rounded-full border-gray-400 absolute cursor-pointer w-full h-full checked:border-none" />
-                                                        <div class="check-icon hidden border-4 border-indigo-700 rounded-full w-full h-full z-1"></div>
-                                                    </div>
-                                                    <label id="label2" class="ml-2 text-sm leading-4 font-normal text-gray-800 dark:text-gray-700">No soy cliente</label>
-                                                </div>
-                                                <!-- Code block ends -->                
-                                            </div>
+                                            <div >
+                                                <select name="isClient" class="form-select w-full
+                                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                                    <option value="Soy cliente">Si, soy cliente</option>
+                                                    <option value="No soy cliente">No soy cliente</option>
+                                                </select>
+                                              </div>
                                         </div>
                                         {{-- correo electronico --}}
                                         <div class="col-span-1 sm:col-span-2 md:col-span-2">
                                             <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
                                             <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                                         </div>
-                                        {{-- contrasena --}}
-                                        {{-- <div>
-                                            <x-jet-label for="password" value="{{ __('Contraseña *') }}" />
-                                            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-                                        </div> --}}
-                                        {{-- telefono --}}
-                                        {{-- <div >
-                                            <x-jet-label for="telefono" value="{{ __('Teléfono *') }}" />
-                                            <x-jet-input id="telefono" class="block mt-1 w-full" type="number" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" />
-                                        </div> --}}
-                                        {{-- confirmacion de contrasena --}}
-                                        {{-- <div>
-                                            <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña *') }}" />
-                                            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-                                        </div> --}}
-                                        {{-- clave del cliente --}}
-                                        {{-- <div>
-                                            <x-jet-label for="clave_cliente" value="{{ __('Clave de cliente (opcional)') }}" />
-                                            <x-jet-input id="clave_cliente" class="block mt-1 w-full" type="text" name="clave_cliente" :value="old('clave_cliente')"  autofocus autocomplete="clave_cliente" />
-                                        </div> --}}
-                                        {{-- RFC --}}
-                                        {{-- <div>
-                                            <x-jet-label for="rfc" value="{{ __('RFC (opcional)') }}" />
-                                            <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')" autofocus autocomplete="rfc" />
-                                        </div> --}}
-                                        {{-- Razon Social --}}
-                                        {{-- <div>
-                                            <x-jet-label for="razon_social" value="{{ __('Razón Social (opcional)') }}" />
-                                            <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')" autofocus autocomplete="razon_social" />
-                                        </div> --}}
                                     </div>
                                 </div>
 
@@ -113,9 +70,7 @@
                                 @endif
 
                                 <div class="mb-6 text-center mt-4">
-                                    <button class="w-full px-4 py-2 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
-                                        {{-- <div class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition"></div> --}}
-                                        {{ __('Registrarme') }}
+                                    <button class="w-full px-4 py-2 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">                                        {{ __('Registrarme') }}
                                     </button>
                                 </div>
                             </form>

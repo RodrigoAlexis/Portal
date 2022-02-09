@@ -17,17 +17,12 @@
         ],
         
         [
-            'name' => 'Responsabilidad Social',
+            'name' => 'Blog',
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],
         [
             'name' => 'Contacto',
-            'route' => route('home'),
-            'active' => request()->routeIs('home')
-        ],
-        [
-            'name' => 'Portal de Denuncias',
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],

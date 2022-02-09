@@ -18,6 +18,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        
                         <div class="px-1 sm:px-8 md:px-8 lg:px-8 xl:px-8 pt-4 pb-1 mb-1 ">
                         {{-- Login with Google --}}
                         <a type="button" class="bg-gray-700 focus:ring-gray-300 focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-100 border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2" href="{{ url('auth/google') }}">
