@@ -4,7 +4,7 @@
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Asegúrese de que su cuenta esté usando una contraseña larga y con caracteres aleatorios para mantenerse seguro.') }}
+        {{ __('Si inicio sesión registrandose, asegurese de ingresar una nueva contraseña. Si inicio sesión con Google o Facebook, asegurese de ingresar una contraseña para hacer uso de todas las funcionalidades. Asegúrese de que su cuenta esté usando una contraseña de 8 caracteres como máximo y con caracteres aleatorios para mantenerse seguro.') }}
     </x-slot>
 
     <x-slot name="form">
