@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('/dashboard', LoginController::class);
+// Route::resource('/dashboard', LoginController::class);
 
 // Route::get('/user/profile', ProfileController::class, 'index');
 

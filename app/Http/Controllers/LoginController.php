@@ -12,12 +12,12 @@ use Socialite;
 class LoginController extends Controller
 {
     //
-    public function index(){
-        $user = auth()->id();
-        $socialite = DB::table('users')->where('id',$user)->get();
+    // public function index(){
+    //     $user = auth()->id();
+    //     $socialite = DB::table('users')->where('id',$user)->get();
 
-        return view('dashboard',['socialite' => $socialite]);
-    }
+    //     return view('dashboard',['socialite' => $socialite]);
+    // }
 
     public function faceRedirect()
     {
