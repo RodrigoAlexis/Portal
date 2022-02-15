@@ -69,13 +69,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
-    public function profile()
-    {
-        return $this->hasOne(Profile::class);
-    } 
+    // relacion uno a muchos
 
-    // public function sendPasswordResetNotification($token)
-    //  {
-    //      $this->notify(new ResetPassword($token));
-    // }
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    } 
 }

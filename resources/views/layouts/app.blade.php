@@ -25,7 +25,11 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            @if(Route::is('dashboard')) 
+                
+            @else
+                @livewire('navigation')
+            @endif
 
             {{-- <!-- Page Heading -->
             @if (isset($header))
