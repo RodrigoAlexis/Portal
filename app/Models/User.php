@@ -69,10 +69,4 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
-    // relacion uno a muchos
-
-    public function blogs()
-    {
-        return $this->hasMany(Blog::class);
-    } 
 }

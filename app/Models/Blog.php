@@ -9,12 +9,6 @@ class Blog extends Model
 {
     use HasFactory;
 
-    //relacion uno a muchos inversa
-
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
     public function bcategory(){
         return $this->belongsTo(Bcategory::class);
     }
