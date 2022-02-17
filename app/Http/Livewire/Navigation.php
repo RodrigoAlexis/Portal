@@ -27,8 +27,8 @@ class Navigation extends Component
             
             [
                 'name' => 'Blog',
-                'route' => route('home'),
-                'active' => request()->routeIs('#')
+                'route' => route('blogs.index'),
+                'active' => request()->routeIs('blogs.index')
             ],
             [
                 'name' => 'Contacto',

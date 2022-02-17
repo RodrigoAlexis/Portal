@@ -10,7 +10,7 @@ class Blog extends Model
     use HasFactory;
 
     public function bcategory(){
-        return $this->belongsTo(Bcategory::class);
+        return $this->belongsTo(Bcategory::class, 'category_id');
     }
 
     public function image(){

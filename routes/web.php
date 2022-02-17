@@ -2,30 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// Route::resource('/dashboard', LoginController::class);
-
-// Route::get('/user/profile', ProfileController::class, 'index');
-
+// Inicio de sesion con redes
 Route::get('auth/facebook', [LoginController::class, 'faceRedirect']);
 
 Route::get('auth/facebook/callback', [LoginController::class, 'signinFacebook']);

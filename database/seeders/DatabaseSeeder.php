@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('public/blogs');
         Storage::makeDirectory('public/blogs');
         // \App\Models\User::factory(10)->create();
-        Bcategory::factory(4)->create();
+        Bcategory::factory(3)->create();
         $this->call(BlogSeeder::class);
     }
 }
