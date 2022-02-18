@@ -50,4 +50,11 @@
 
         @livewireScripts
     </body>
+    <footer>
+        @if(Route::is('dashboard')) 
+                
+        @else
+            @livewire('footer')
+        @endif
+    </footer>
 </html>

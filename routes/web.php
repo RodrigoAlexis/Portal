@@ -3,14 +3,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductosController;
+
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// Blog
+
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+
+// Productos
+
+Route::get('/productos', [ProductosController::class, 'index'])->name('productos.index');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
