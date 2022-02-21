@@ -40,13 +40,8 @@
           {{-- Menu lg --}}
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> --}}
-                
+              
                 @foreach($nav_links as $nav_link)
-                    {{-- <a href="{{ $nav_link['route'] }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium active:bg-blue-900">
-                        {{ $nav_link['name'] }}
-                    </a> --}}
                     <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                         {{ $nav_link['name'] }}
                     </x-jet-nav-link>

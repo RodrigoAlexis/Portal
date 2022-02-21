@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Bcategory;
 use App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -23,8 +22,7 @@ class BlogFactory extends Factory
             'slug' => Str::slug($name),
             'stract' => $this->faker->text(250),
             'body' => $this->faker->text(2000),
-            'status' => $this->faker->randomElement([1, 2]),
-            'category_id' => Bcategory::all()->random()->id
+            'status' => $this->faker->randomElement([1, 2])
         ];
     }
 }

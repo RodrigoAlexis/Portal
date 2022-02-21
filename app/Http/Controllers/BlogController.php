@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Models\Bcategory;
 
 class BlogController extends Controller
 {
@@ -25,4 +26,5 @@ class BlogController extends Controller
 
         return view('blogs.show', compact('blog', 'similares'));
     }
+
 }

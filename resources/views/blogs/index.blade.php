@@ -7,9 +7,9 @@
                     <div class="w-full h-full px-8 flex flex-col justify-center">
 
                         {{-- Etiqueta de la categoria --}}
-                        <div>
-                           <a href="http://" class=" mb-4 inline-block px-3 h-6 bg-{{$blog->bcategory->color}}-600 text-white rounded-full">{{$blog->bcategory->name}}</a> 
-                        </div>
+                        {{-- <div>
+                           <a href="{{ route('blogs.category', $blog->bcategory)}}" class=" mb-4 inline-block px-3 h-6 bg-{{$blog->bcategory->color}}-600 text-white rounded-full">{{$blog->bcategory->name}}</a> 
+                        </div> --}}
 
                         {{-- Titulo --}}
                         <h1 class="text-4xl text-white leading-8 font-bold">

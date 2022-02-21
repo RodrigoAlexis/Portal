@@ -15,7 +15,7 @@
             </a>
             {{-- Opciones del menu lateral --}}
             <nav class="mt-10">
-                <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="/">
+                <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="{{route('dashboard')}}">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,9 +26,10 @@
     
                     <span class="mx-3">General</span>
                 </a>
+                
     
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                    href="/ui-elements">
+                    href="{{route('posts.index')}}">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,7 +41,7 @@
                 </a>
     
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                    href="/tables">
+                    href="/">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,7 +142,18 @@
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="container mx-auto px-6 py-8">
                     
-                    @livewire('general-user')
+                    @if (Route::is('dashboard'))
+                        @livewire('general-user')
+                    @elseif (Route::is('posts.index'))
+                        @livewire('posts-index')
+                    @elseif (Route::is('posts.create'))
+                        @livewire('posts-create')
+                    @elseif (Route::is('posts.edit'))
+                        <h1>Editar Post</h1>
+                    @elseif (Route::is('posts.show'))
+                        <h1>Detalle del Post</h1>
+                    @endif
+                    
                     
                 </div>
             </main>

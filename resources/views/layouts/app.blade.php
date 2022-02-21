@@ -27,6 +27,10 @@
         <div class="min-h-screen bg-gray-100">
             @if(Route::is('dashboard')) 
                 
+            @elseif(Route::is('posts.index'))
+                
+            @elseif(Route::is('posts.create'))
+
             @else
                 @livewire('navigation')
             @endif

@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductosController;
+
 
 
 Route::get('/', function () {
@@ -33,3 +35,5 @@ Route::get('auth/facebook/callback', [LoginController::class, 'signinFacebook'])
 Route::get('auth/google', [LoginController::class, 'redirectG']);
 
 Route::get('auth/google/callback', [LoginController::class, 'signinGoogle']);
+
+Route::resource('posts', PostController::class)->names('posts');
