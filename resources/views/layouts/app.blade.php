@@ -27,12 +27,10 @@
         <div class="min-h-screen bg-gray-100">
             @if(Route::is('dashboard')) 
                 
-            @elseif(Route::is('posts.index'))
-                
-            @elseif(Route::is('posts.create'))
+                @elseif(Route::is('posts*'))
 
-            @else
-                @livewire('navigation')
+                @else
+                    @livewire('navigation')
             @endif
 
             {{-- <!-- Page Heading -->
@@ -57,8 +55,10 @@
     <footer>
         @if(Route::is('dashboard')) 
                 
-        @else
-            @livewire('footer')
+            @elseif(Route::is('posts*'))
+
+            @else
+                @livewire('footer')
         @endif
     </footer>
 </html>
