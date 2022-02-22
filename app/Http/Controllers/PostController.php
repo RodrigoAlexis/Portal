@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 
@@ -33,9 +34,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogRequest $request)
     {
-        //
+        return "Las validaciones pasaron con exito";
     }
 
     /**

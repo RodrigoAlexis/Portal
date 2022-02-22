@@ -7,38 +7,9 @@
         
     </div>
 
-    <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto relative">
-        {{-- <form action="" method="post">
-            <div class="md:flex items-center mt-2">
-                <div class="w-full md:w-1/2 flex flex-col">
-                    <label class="font-semibold leading-none">Name</label>
-                    <input type="text" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
-                </div>
-                <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
-                    <label class="font-semibold leading-none">Phone</label>
-                    <input type="email" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"/>
-                </div>
-            </div>
-            <div class="md:flex items-center mt-8">
-                <div class="w-full flex flex-col">
-                    <label class="font-semibold leading-none">Subject</label>
-                    <input type="text" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"/>
-                </div>
-                    
-            </div>
-            <div>
-                <div class="w-full flex flex-col mt-8">
-                    <label class="font-semibold leading-none">Message</label>
-                    <textarea type="text" class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"></textarea>
-                </div>
-            </div>
-            <div class="flex items-center justify-center w-full">
-                <button class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none">
-                    Send message
-                </button>
-            </div>
-        </form> --}}
-        <form method="POST" action="{{ route('posts.create') }}" >
+    <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
+        
+        <form method="POST" action="{{ route('posts.store') }}" novalidate>
             @csrf
 
             <div class="container">
@@ -46,23 +17,59 @@
                     {{-- Nombre --}}
                     <div class="col-span-1 sm:col-span-2 md:col-span-2">
                         <x-jet-label for="name" value="{{ __('Nombre del Post') }}" />
-                        <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" onload="crearURL(this.value)" onkeyup="crearURL(this.value)"/>
+                    
+                        @error('name')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
                     </div>
                     {{-- Slug --}}
                     <div>
                         <x-jet-label for="slug" value="{{ __('Slug') }}" />
-                        <x-jet-input id="slug" class="block mt-1 w-full" type="text" name="slug" :value="old('slug')" required autofocus autocomplete="slug" />
+                        <x-jet-input id="slug" class="block mt-1 w-full cursor-not-allowed slug" disabled readonly type="text" name="slug" :value="old('slug')"  autofocus autocomplete="slug" />
+                        
+                        @error('slug')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
                     </div>
                     {{-- Imagen --}}
-                    <div>
+                    {{-- <div>
                         <x-jet-label for="url" value="{{ __('Imagen') }}" />
                         <x-jet-input id="url" class="block mt-1 w-full" type="file" name="url" required />
+                    </div> --}}
+                    <div>
+                        <x-jet-label for="status" value="{{ __('Estado del Post') }}" />
+                        <div >
+                            <select name="status" class="form-select w-full
+                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                <option value="1">Borrador</option>
+                                <option value="2">Publicado</option>
+                            </select>
+                        </div>
+
+                        @error('status')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
                     </div>
                     {{-- Estracto --}}
-                
-                    <x-jet-label for="stract" value="{{ __('Extracto') }}" />
-                    <textarea id="stract" name="stract"  required autofocus autocomplete="stract" class="lg:col-span-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 shadow-smw-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none" rows="4"></textarea>
-                  
+                    <div class="lg:col-span-2">
+                        <x-jet-label for="stract" value="{{ __('Extracto') }}" />
+                        <textarea id="stract" name="stract"  required autofocus autocomplete="stract" class=" border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 shadow-smw-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none" rows="8"></textarea>
+                        
+                        @error('stract')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
+                    </div>
+
+                    {{-- Body --}}
+                    <div class="lg:col-span-2">
+                        <x-jet-label for="body" value="{{ __('Cuerpo del Post') }}" />
+                        <textarea  id="body" name="body"  required autofocus autocomplete="body" class="lg:col-span-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 shadow-smw-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none" rows="4"></textarea>
+                        
+                        @error('body')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
+                    </div>
                     
                 </div>
 
