@@ -26,6 +26,7 @@
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],
+        
     ];
 @endphp
 

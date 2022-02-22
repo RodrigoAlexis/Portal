@@ -16,6 +16,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            variants: {
+                opacity: ({ after }) => after(['disabled'])
+            },
         },
     },
 

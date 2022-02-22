@@ -35,6 +35,11 @@ class Navigation extends Component
                 'route' => route('home'),
                 'active' => request()->routeIs('#')
             ],
+            [
+                'name' => 'Buzón',
+                'route' => route('home'),
+                'active' => request()->routeIs('#')
+            ],
         ];
 
         return view('livewire.navigation', compact('nav_links'));

@@ -54,7 +54,7 @@ let Password = {
       }
 
 
-      function crearURL(str) {
+    function crearURL(str) {
         
         str = str.replace(/^\s+|\s+$/g, ""); // trim
         str = str.toLowerCase();
@@ -77,7 +77,6 @@ let Password = {
         var input = document.getElementById('slug');
             input.value = str;
 
-        // Creo la URL en el campo de texto 'url'
         
         
       }

@@ -26,7 +26,7 @@
                     {{-- Slug --}}
                     <div>
                         <x-jet-label for="slug" value="{{ __('Slug') }}" />
-                        <x-jet-input id="slug" class="block mt-1 w-full cursor-not-allowed slug" disabled readonly type="text" name="slug" :value="old('slug')"  autofocus autocomplete="slug" />
+                        <x-jet-input id="slug" class="block mt-1 w-full cursor-not-allowed disabled:opacity-75" readonly type="text" name="slug" :value="old('slug')"  autofocus autocomplete="slug" />
                         
                         @error('slug')
                             <small class="text-red-600">{{$message}}</small>
