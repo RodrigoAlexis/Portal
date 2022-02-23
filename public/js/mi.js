@@ -45,6 +45,7 @@ let Password = {
     
     };
 
+    //Cerrar alerta al ingresar al dashboard
     function closeAlert(event){
         let element = event.target;
         while(element.nodeName !== "BUTTON"){
@@ -54,6 +55,7 @@ let Password = {
       }
 
 
+    //Crear el slug
     function crearURL(str) {
         
         str = str.replace(/^\s+|\s+$/g, ""); // trim
@@ -75,21 +77,32 @@ let Password = {
             .replace(/-+$/, ""); // trim - from end of text
 
         var input = document.getElementById('slug');
-            input.value = str;
-
-        
-        
+            input.value = str;  
       }
 
-
-      ClassicEditor
+    // CKeditor5 textareas para crear un post
+    ClassicEditor
         .create( document.querySelector( '#stract' ) )
         .catch( error => {
             console.error( error );
-        } );
+    } );
 
-        ClassicEditor
+    ClassicEditor
         .create( document.querySelector( '#body' ) )
         .catch( error => {
             console.error( error );
-        } );
+    } );
+
+    //Cambiar imagen al crear un post
+    document.getElementById("file").addEventListener('change', cambiarImagenPost);
+
+    function cambiarImagenPost(event){
+        var file = event.target.files[0];
+
+        var reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById("picture").setAttribute('src', event.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    }

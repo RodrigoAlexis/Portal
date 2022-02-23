@@ -17,8 +17,7 @@ class BlogController extends Controller
 
     public function show(Blog $blog){
 
-        $similares = Blog::where('category_id', $blog->category_id)
-                            ->where('status', 2)
+        $similares = Blog::where('status', 2)
                             ->where('id', '!=', $blog->id)
                             ->latest('id')
                             ->take(4)

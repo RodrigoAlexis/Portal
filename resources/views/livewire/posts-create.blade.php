@@ -9,7 +9,7 @@
 
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
         
-        <form method="POST" action="{{ route('posts.store') }}" novalidate>
+        <form method="POST" action="{{ route('posts.store') }}" novalidate enctype="multipart/form-data">
             @csrf
 
             <div class="container">
@@ -32,11 +32,7 @@
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
                     </div>
-                    {{-- Imagen --}}
-                    {{-- <div>
-                        <x-jet-label for="url" value="{{ __('Imagen') }}" />
-                        <x-jet-input id="url" class="block mt-1 w-full" type="file" name="url" required />
-                    </div> --}}
+                    {{-- Estado del post --}}
                     <div>
                         <x-jet-label for="status" value="{{ __('Estado del Post') }}" />
                         <div >
@@ -50,6 +46,21 @@
                         @error('status')
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
+                    </div>
+                        {{-- previsualizacion de la imagen --}}
+                    <div>
+                        <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="Imagen por defecto" >
+                    </div>
+                    {{-- Imagen --}}
+                    <div>
+                        <x-jet-label for="file" value="{{ __('Imagen') }}" />
+                        <x-jet-input id="file" class="block mt-1 w-full" type="file" name="file" accept="image/*" />
+                        
+                        @error('file')
+                            <small class="text-red-600">{{$message}}</small>
+                        @enderror
+
+                        <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis suscipit esse asperiores nemo soluta ad harum non. Sed corporis obcaecati quam reiciendis molestias excepturi necessitatibus dicta, esse nisi quasi soluta.</p>
                     </div>
                     {{-- Estracto --}}
                     <div class="lg:col-span-2">

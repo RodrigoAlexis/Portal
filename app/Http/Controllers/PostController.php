@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -36,7 +37,17 @@ class PostController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        return "Las validaciones pasaron con exito";
+        $post = Blog::create($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put( 'blogs',$request->file('file'));
+
+            $post->image()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->route('posts.index', $post);
     }
 
     /**

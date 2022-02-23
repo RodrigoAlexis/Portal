@@ -9,9 +9,7 @@ class Blog extends Model
 {
     use HasFactory;
 
-    public function bcategory(){
-        return $this->belongsTo(Bcategory::class, 'category_id');
-    }
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
