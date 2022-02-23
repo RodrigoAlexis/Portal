@@ -80,9 +80,42 @@ let Password = {
             input.value = str;  
       }
 
+      const tableConfig = {
+        tableCellProperties: {
+            borderColors: [
+                {
+                    color: 'hsl(0, 0%, 90%)',
+                    label: 'Light grey'
+                },
+                // ...
+            ],
+            backgroundColors: [
+                {
+                    color: 'hsl(120, 75%, 60%)',
+                    label: 'Green'
+                },
+                // ...
+            ]
+        }
+    };
+
     // CKeditor5 textareas para crear un post
     ClassicEditor
-        .create( document.querySelector( '#stract' ) )
+    .create( document.querySelector( '#stract' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'inserttable' ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            ]
+        },
+        inserttable: {
+            options: [
+                tableConfig
+            ]
+        }
+    } )
         .catch( error => {
             console.error( error );
     } );
@@ -106,3 +139,6 @@ let Password = {
 
         reader.readAsDataURL(file);
     }
+
+
+    

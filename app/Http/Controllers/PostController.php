@@ -47,7 +47,7 @@ class PostController extends Controller
             ]);
         }
 
-        return redirect()->route('posts.index', $post);
+        return redirect()->route('posts.index', $post)->with('success', 'El post se creo satisfactoriamente');
     }
 
     /**

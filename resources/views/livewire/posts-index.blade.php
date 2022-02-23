@@ -1,10 +1,18 @@
 <div class="flex flex-col">
+    @if (session('success'))
+    {{-- <p> {{session('success')}}</p>  --}}
+    <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
+        <span class="inline-block align-middle mr-8 text-center ">
+            <p> {{session('success')}}</p>        
+        </span>
+    </div>
+    @endif
 
     <div class="mb-4">
-        <div class="float-left text-gray-400 text-3xl font-semibold">
+        <div class="float-left text-gray-500 text-3xl font-semibold">
             Listado de Posts
         </div>
-        <a href="{{route('posts.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-green-700 hover:bg-green-800  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">
+        <a href="{{route('posts.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             Agregar Nuevo Post
         </a>
 
@@ -122,4 +130,11 @@
     </div>
        
     @endif
+
+    <script>
+        $('#alert').fadeIn();     
+  setTimeout(function() {
+       $("#alert").fadeOut();           
+  },4000);
+    </script>
 </div>
