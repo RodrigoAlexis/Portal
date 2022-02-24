@@ -2,13 +2,15 @@
     <div class="mb-4">
 
         <div class="float-left text-gray-500 text-3xl font-semibold">
-                Crear Nuevo Post
+                Editar Post
         </div>
         
     </div>
 
+    
+
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
-        
+        @foreach ($posts as $post)
         <form method="POST" action="{{ route('posts.store') }}" novalidate enctype="multipart/form-data">
             @csrf
 
@@ -42,7 +44,7 @@
                                 <option value="2">Publicado</option>
                             </select>
                         </div>
-
+            
                         @error('status')
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
@@ -59,7 +61,7 @@
                         @error('file')
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
-
+            
                         <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis suscipit esse asperiores nemo soluta ad harum non. Sed corporis obcaecati quam reiciendis molestias excepturi necessitatibus dicta, esse nisi quasi soluta.</p>
                     </div>
                     {{-- Estracto --}}
@@ -71,7 +73,7 @@
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
                     </div>
-
+            
                     {{-- Body --}}
                     <div class="lg:col-span-2">
                         <x-jet-label for="body" value="{{ __('Cuerpo del Post') }}" />
@@ -80,12 +82,11 @@
                         @error('body')
                             <small class="text-red-600">{{$message}}</small>
                         @enderror
-                    </div>
-                    
-                </div>
-
-                
+                    </div> 
+                </div> 
             </div>
+
+            {{-- Botones --}}
             <div class="mb-6 text-center mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
 
                 <button class="w-full px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 active:bg-indigo-900 focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-gray-300">
@@ -98,5 +99,6 @@
             </div>
             
         </form>
+        @endforeach
     </div>
 </div>

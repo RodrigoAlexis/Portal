@@ -146,9 +146,7 @@
                     @elseif (Route::is('posts.index'))
                         @livewire('posts-index')
                     @elseif (Route::is('posts.create'))
-                        @livewire('posts-create')
-                    @elseif (Route::is('posts.edit'))
-                        <h1>Editar Post</h1>
+                        @include('blogs.posts.forms.form-create')
                     @elseif (Route::is('posts.show'))
                         <h1>Detalle del Post</h1>
                     @endif
@@ -159,4 +157,3 @@
            
     </div>
 </div>
-

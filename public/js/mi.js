@@ -55,31 +55,6 @@ let Password = {
       }
 
 
-    //Crear el slug
-    function crearURL(str) {
-        
-        str = str.replace(/^\s+|\s+$/g, ""); // trim
-        str = str.toLowerCase();
-
-        // remove accents, swap ñ for n, etc
-        var from = "åàáãäâèéëêìíïîòóöôùúüûñç·/_,:;";
-        var to = "aaaaaaeeeeiiiioooouuuunc------";
-
-        for (var i = 0, l = from.length; i < l; i++) {
-            str = str.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
-        }
-
-        str = str
-            .replace(/[^a-z0-9 -]/g, "") // remove invalid chars
-            .replace(/\s+/g, "-") // collapse whitespace and replace by -
-            .replace(/-+/g, "-") // collapse dashes
-            .replace(/^-+/, "") // trim - from start of text
-            .replace(/-+$/, ""); // trim - from end of text
-
-        var input = document.getElementById('slug');
-            input.value = str;  
-      }
-
       const tableConfig = {
         tableCellProperties: {
             borderColors: [
@@ -99,32 +74,6 @@ let Password = {
         }
     };
 
-    // CKeditor5 textareas para crear un post
-    ClassicEditor
-    .create( document.querySelector( '#stract' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'inserttable' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-            ]
-        },
-        inserttable: {
-            options: [
-                tableConfig
-            ]
-        }
-    } )
-        .catch( error => {
-            console.error( error );
-    } );
-
-    ClassicEditor
-        .create( document.querySelector( '#body' ) )
-        .catch( error => {
-            console.error( error );
-    } );
 
     //Cambiar imagen al crear un post
     document.getElementById("file").addEventListener('change', cambiarImagenPost);

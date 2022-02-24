@@ -12,6 +12,6 @@ class Blog extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function image(){
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphOne(Image::class, 'imageable');  
     }
 }

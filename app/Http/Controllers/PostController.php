@@ -6,6 +6,7 @@ use App\Http\Requests\StoreBlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -39,13 +40,13 @@ class PostController extends Controller
     {
         $post = Blog::create($request->all());
 
-        if ($request->file('file')) {
-            $url = Storage::put( 'blogs',$request->file('file'));
+        // if ($request->file('file')) {
+        //     $url = Storage::put( 'blogs',$request->file('file'));
 
-            $post->image()->create([
-                'url' => $url
-            ]);
-        }
+        //     $post->image()->create([
+        //         'url' => $url
+        //     ]);
+        // }
 
         return redirect()->route('posts.index', $post)->with('success', 'El post se creo satisfactoriamente');
     }
@@ -69,7 +70,9 @@ class PostController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('blogs.posts.edit', compact('blog'));
+        $posts = Blog::where('id', $blog->id)->get();
+
+        return view('blogs.posts.edit', compact('blog', 'posts'));
     }
 
     /**
