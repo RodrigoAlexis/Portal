@@ -36,6 +36,7 @@
 
                         
 
+                        {!! Form::open(['route'=> 'login', 'autocomplete' => 'off', 'files' => true]) !!}
                         <form method="POST" action="{{ route('login') }}" class="px-1 sm:px-8 md:px-8 lg:px-8 xl:px-8 bg-white rounded">
                             @csrf
 
