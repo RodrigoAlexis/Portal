@@ -31,20 +31,26 @@
         </div>
          
         {{-- previsualizacion de la imagen --}}
-        {{-- <div>
-            <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="Imagen por defecto" >
-        </div> --}}
+        <div>  
+            @isset ($post->image)
+                <img id="picture" src="{{Storage::url($post->image->url)}}" alt="Imagen por defecto" >
+            @else
+                <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="Imagen por defecto" >
+            @endisset 
+        </div>
+
         {{-- Imagen --}}
-        {{-- <div>
-            <x-jet-label for="file" value="{{ __('Imagen') }}" />
-            <x-jet-input id="file" class="block mt-1 w-full" type="file" name="file" accept="image/*" />
-            
+        <div>
+            {!! Form::label('file', 'Imagen Principal', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('file', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
             @error('file')
                 <small class="text-red-600">{{$message}}</small>
             @enderror
 
             <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis suscipit esse asperiores nemo soluta ad harum non. Sed corporis obcaecati quam reiciendis molestias excepturi necessitatibus dicta, esse nisi quasi soluta.</p>
-        </div> --}}
+        </div>
+
         {{-- Estracto --}}
         <div class="col-span-1 sm:col-span-2 md:col-span-2">
             {!! Form::label('stract', 'Extracto', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}

@@ -147,6 +147,8 @@
                         @livewire('posts-index')
                     @elseif (Route::is('posts.create'))
                         @include('blogs.posts.forms.form-create')
+                    @elseif (Route::is('posts.edit'))
+                        @include('blogs.posts.forms.form-edit')
                     @elseif (Route::is('posts.show'))
                         <h1>Detalle del Post</h1>
                     @endif

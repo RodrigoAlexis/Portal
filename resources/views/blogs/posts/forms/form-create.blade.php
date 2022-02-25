@@ -8,7 +8,8 @@
     </div>
 
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
-        {!! Form::open(['route'=> 'posts.store', 'autocomplete' => 'off']) !!}
+
+        {!! Form::open(['route'=> 'posts.store', 'autocomplete' => 'off', 'files' => true]) !!}
 
         
         
@@ -30,11 +31,14 @@
     </div>
 </div>
 
+{{-- Ruta del plugin para creacion de slug --}}
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
-{{-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script> --}}
+
+{{-- CDN CKeditor 4 --}}
 <script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 
 <script>
+    //Creacion de slug
     $(document).ready( function() {
         $("#name").stringToSlug({
             setEvents: 'keyup keydown blur',
@@ -43,19 +47,22 @@
         });
     });
 
-    // ClassicEditor
-    //     .create( document.querySelector( '#stract' ) )
-    //     .catch( error => {
-    //         console.error( error );
-    //     } );
-
-    // ClassicEditor
-    //     .create( document.querySelector( '#body' ) )
-    //     .catch( error => {
-    //         console.error( error );
-    //     } );
-
+    //CKeditor 4 
         CKEDITOR.replace( 'stract' );
 
         CKEDITOR.replace( 'body' );
+
+    //Cambiar imagen al crear un post
+    document.getElementById("file").addEventListener('change', cambiarImagenPost);
+
+    function cambiarImagenPost(event){
+        var file = event.target.files[0];
+
+        var reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById("picture").setAttribute('src', event.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    }
 </script>
