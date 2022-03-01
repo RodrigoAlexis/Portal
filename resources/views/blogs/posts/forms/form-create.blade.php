@@ -35,7 +35,7 @@
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
 {{-- CDN CKeditor 4 --}}
-<script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.17.2/basic/ckeditor.js"></script>
 
 <script>
     //Creacion de slug

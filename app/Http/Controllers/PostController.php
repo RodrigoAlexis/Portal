@@ -38,7 +38,19 @@ class PostController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $post = Blog::create($request->all());
+        $post = Blog::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'stract' => $request->stract,
+            'body' => $request->body,
+            'status' => $request->status,
+            'foto1' => base64_encode(file_get_contents($request['foto1']->path())),
+            'foto2' => base64_encode(file_get_contents($request['foto2']->path())),
+            'foto3' => base64_encode(file_get_contents($request['foto3']->path())),
+            'foto4' => base64_encode(file_get_contents($request['foto4']->path())),
+            
+        ]);
+        
 
         if ($request->file('file')) {
             $url = Storage::put( 'blogs',$request->file('file'));
@@ -82,7 +94,17 @@ class PostController extends Controller
      */
     public function update(BlogRequest $request, Blog $post)
     {
-        $post->update($request->all());
+        $post->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'stract' => $request->stract,
+            'body' => $request->body,
+            'status' => $request->status,
+            'foto1' => base64_encode(file_get_contents($request['foto1']->path())),
+            'foto2' => base64_encode(file_get_contents($request['foto2']->path())),
+            'foto3' => base64_encode(file_get_contents($request['foto3']->path())),
+            'foto4' => base64_encode(file_get_contents($request['foto4']->path())),
+        ]);
 
         if ($request->file('file')) {
             $url = Storage::put('blogs', $request->file('file'));

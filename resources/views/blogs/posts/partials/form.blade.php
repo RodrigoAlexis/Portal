@@ -39,7 +39,7 @@
             @endisset 
         </div>
 
-        {{-- Imagen --}}
+        {{-- Imagen Principal--}}
         <div>
             {!! Form::label('file', 'Imagen Principal', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('file', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
@@ -48,7 +48,8 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
 
-            <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis suscipit esse asperiores nemo soluta ad harum non. Sed corporis obcaecati quam reiciendis molestias excepturi necessitatibus dicta, esse nisi quasi soluta.</p>
+            <p class="mt-6">1.- Acepta formatos JPG / JPEG / PNG.</p>
+            <p class="mt-6">2.- Se recomienda que la imagen tenga una medida de *** x *** para su correcta visualización.</p>
         </div>
 
         {{-- Estracto --}}
@@ -60,14 +61,7 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
         </div>
-        {{-- <div class="lg:col-span-2">
-            <x-jet-label for="stract" value="{{ __('Extracto') }}" />
-            <textarea id="stract" name="stract"  required autofocus autocomplete="stract" class=" border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 shadow-smw-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none" rows="8"></textarea>
-            
-            @error('stract')
-                <small class="text-red-600">{{$message}}</small>
-            @enderror
-        </div> --}}
+       
 
         {{-- Body --}}
         <div class="col-span-1 sm:col-span-2 md:col-span-2">
@@ -77,6 +71,57 @@
             @error('body')
                 <small class="text-red-600">{{$message}}</small>
             @enderror
+        </div>
+
+        <div class="col-span-1 sm:col-span-2 md:col-span-2 font-extrabold">
+            <p class="mt-6">*Todas las imagenes secundarias deben ser en formato JPG/JPEG*</p>
+        </div>
+
+        {{-- Imagen Secundaria 1--}}
+        <div>
+            {!! Form::label('foto1', 'Imagen Secundaria 1', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('foto1', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
+            @error('file')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+
+        </div>
+
+        {{-- Imagen Secundaria 2--}}
+        <div>
+            {!! Form::label('foto2', 'Imagen Secundaria 2', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('foto2', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
+            @error('file')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+
+           
+        </div>
+
+        {{-- Imagen Secundaria 3--}}
+        <div>
+            {!! Form::label('foto3', 'Imagen Secundaria 3', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('foto3', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
+            @error('file')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+
+           
+        </div>
+
+        {{-- Imagen Secundaria 4--}}
+        <div>
+            {!! Form::label('foto4', 'Imagen Secundaria 4', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('foto4', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
+            @error('file')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+
+           
         </div>
         
     </div> 

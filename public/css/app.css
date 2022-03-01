@@ -1241,6 +1241,12 @@ select {
 .h-24 {
   height: 6rem;
 }
+.h-40 {
+  height: 10rem;
+}
+.h-52 {
+  height: 13rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1289,9 +1295,6 @@ select {
 .w-64 {
   width: 16rem;
 }
-.w-32 {
-  width: 8rem;
-}
 .w-36 {
   width: 9rem;
 }
@@ -1315,6 +1318,9 @@ select {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-initial {
+  flex: 0 1 auto;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -1911,6 +1917,9 @@ select {
 }
 .font-bold {
   font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
 }
 .uppercase {
   text-transform: uppercase;

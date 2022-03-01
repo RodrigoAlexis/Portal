@@ -22,6 +22,21 @@
                     {!!$blog->body!!}
                 </div>
 
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+                    <div>
+                        <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto1}}" alt="">
+                    </div>
+                    <div>
+                        <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto2}}" alt="">
+                    </div>
+                    <div>
+                        <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto3}}" alt="">
+                    </div>
+                    <div>
+                        <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto4}}" alt="">
+                    </div>
+                </div>
+
             </div>
 
             {{-- Contenido relacionado --}}
@@ -33,9 +48,9 @@
                         <li class="mb-4">
                             <a class="flex" href="{{ route('blogs.show', $similar)}}">
                                 @if ($similar->image)
-                                    <img class="w-34 h-24 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                    <img class="w-36 h-24 flex-initial object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
                                 @else
-                                    <img class="w-32 h-22 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
+                                    <img class="w-36 h-24 flex-initial  object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
                                 @endif
                                 {{-- <img class="object-cover object-center w-36 h-20 " src="{{Storage::url($similar->image->url)}}" alt=""> --}}
                                 <span class="ml-2 text-gray-600">{{$similar->name}}</span>
@@ -44,6 +59,8 @@
                     @endforeach
                 </ul>
             </aside>
+
+           
 
         </div>
     </div>
