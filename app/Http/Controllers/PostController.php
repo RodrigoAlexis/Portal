@@ -38,7 +38,15 @@ class PostController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $post = Blog::create($request->all());
+        $post = Blog::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'status' => $request->status,
+            'fie' => $request->file,
+            'foto1' => base64_encode(file_get_contents($request['foto1']->path())),
+            'stract' => $request->stract,
+            'body' => $request->body
+        ]);
 
         if ($request->file('file')) {
             $url = Storage::put( 'blogs',$request->file('file'));

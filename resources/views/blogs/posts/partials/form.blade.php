@@ -51,6 +51,17 @@
             <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis suscipit esse asperiores nemo soluta ad harum non. Sed corporis obcaecati quam reiciendis molestias excepturi necessitatibus dicta, esse nisi quasi soluta.</p>
         </div>
 
+        {{-- Imagen --}}
+        <div>
+            {!! Form::label('foto1', 'Foto 1', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::file('foto1', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+        
+            @error('file')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+
+        </div>
+
         {{-- Estracto --}}
         <div class="col-span-1 sm:col-span-2 md:col-span-2">
             {!! Form::label('stract', 'Extracto', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}

@@ -26,8 +26,23 @@ class BlogController extends Controller
                             ->latest('id')
                             ->take(4)
                             ->get();
+        
+        $photo = Blog::where('id', $blog->id)->value('foto1');
 
-        return view('blogs.show', compact('blog', 'similares', 'slug'));
+        $decode = base64_decode($photo);
+
+        $image = "Foto.jpg";
+        file_put_contents($image,$decode);
+            // header('Content-Description: File Transfer');
+            header('Content-Type: image/jpg');
+            // header('Content-Disposition: attachment; filename="'.basename($image).'"');
+            // header('Expires:0');
+            // header('Cache-Control: must-revalidate');
+            // header('Pragma: public');
+            // header('Content-Length: ' .filesize($image));
+            // readfile($image);
+
+        return view('blogs.show', compact('blog', 'similares', 'slug', 'photo'));
     }
 
 }
