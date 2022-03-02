@@ -51,9 +51,12 @@
     const description2 = SUNEDITOR.create((document.getElementById('stract')),{
         buttonList: [
             ['undo', 'redo'],
-            ['bold', 'underline', 'italic'],
+            ['font','fontSize'],
+            ['bold', 'underline', 'italic', 'strike'],
             ['removeFormat'],
             ['outdent', 'indent'],
+            ['fontColor', 'hiliteColor'],
+            ['link'],
         ],
         lang: SUNEDITOR_LANG['en']
     });
@@ -64,17 +67,20 @@
     const description = SUNEDITOR.create((document.getElementById('body')),{
         buttonList: [
             ['undo', 'redo'],
-            ['bold', 'underline', 'italic'],
+            ['font','fontSize'],
+            ['bold', 'underline', 'italic', 'strike'],
             ['removeFormat'],
             ['outdent', 'indent'],
-            ['image'],
-            ['codeView']
+            ['fontColor', 'hiliteColor'],
+            ['link', 'image', 'video'],
+            ['codeView', 'print'],
         ],
         lang: SUNEDITOR_LANG['en']
     });
     $(window).click(function() {
         document.getElementById('body').value = description.getContents();
     });
+    
     //Cambiar imagen al crear un post
     document.getElementById("file").addEventListener('change', cambiarImagenPost);
 
