@@ -53,9 +53,9 @@
         </div>
 
         {{-- Estracto --}}
-        <div class="col-span-1 sm:col-span-2 md:col-span-2">
+        <div  class="col-span-1 sm:col-span-2 md:col-span-2">
             {!! Form::label('stract', 'Extracto', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::textarea('stract', null, ['class'=>'block ']) !!}        
+            {!! Form::textarea('stract', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm']) !!}       
            
             @error('stract')
                 <small class="text-red-600">{{$message}}</small>
@@ -73,12 +73,12 @@
             @enderror
         </div>
 
-        <div class="col-span-1 sm:col-span-2 md:col-span-2 font-extrabold">
+        {{-- <div class="col-span-1 sm:col-span-2 md:col-span-2 font-extrabold">
             <p class="mt-6">*Todas las imagenes secundarias deben ser en formato JPG/JPEG*</p>
-        </div>
+        </div> --}}
 
         {{-- Imagen Secundaria 1--}}
-        <div>
+        {{-- <div>
             {!! Form::label('foto1', 'Imagen Secundaria 1', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('foto1', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
         
@@ -86,10 +86,10 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
 
-        </div>
+        </div> --}}
 
         {{-- Imagen Secundaria 2--}}
-        <div>
+        {{-- <div>
             {!! Form::label('foto2', 'Imagen Secundaria 2', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('foto2', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
         
@@ -98,10 +98,10 @@
             @enderror
 
            
-        </div>
+        </div> --}}
 
         {{-- Imagen Secundaria 3--}}
-        <div>
+        {{-- <div>
             {!! Form::label('foto3', 'Imagen Secundaria 3', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('foto3', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
         
@@ -110,10 +110,10 @@
             @enderror
 
            
-        </div>
+        </div> --}}
 
         {{-- Imagen Secundaria 4--}}
-        <div>
+        {{-- <div>
             {!! Form::label('foto4', 'Imagen Secundaria 4', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('foto4', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
         
@@ -122,7 +122,7 @@
             @enderror
 
            
-        </div>
+        </div> --}}
         
     </div> 
 </div>

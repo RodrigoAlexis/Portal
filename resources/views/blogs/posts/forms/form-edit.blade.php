@@ -31,8 +31,11 @@
 {{-- Ruta del plugin para creacion de slug --}}
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
-{{-- CDN CKeditor 4 --}}
-<script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+{{-- CDN SunEditor --}}
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+       
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+
 
 <script>
     //Creacion de slug
@@ -44,11 +47,34 @@
         });
     });
 
-    //CKeditor 4 
-        CKEDITOR.replace( 'stract' );
+    //SunEditor
+    const description2 = SUNEDITOR.create((document.getElementById('stract')),{
+        buttonList: [
+            ['undo', 'redo'],
+            ['bold', 'underline', 'italic'],
+            ['removeFormat'],
+            ['outdent', 'indent'],
+        ],
+        lang: SUNEDITOR_LANG['en']
+    });
+    $(window).click(function() {
+        document.getElementById('stract').value = description2.getContents();
+    });
 
-        CKEDITOR.replace( 'body' );
-
+    const description = SUNEDITOR.create((document.getElementById('body')),{
+        buttonList: [
+            ['undo', 'redo'],
+            ['bold', 'underline', 'italic'],
+            ['removeFormat'],
+            ['outdent', 'indent'],
+            ['image'],
+            ['codeView']
+        ],
+        lang: SUNEDITOR_LANG['en']
+    });
+    $(window).click(function() {
+        document.getElementById('body').value = description.getContents();
+    });
     //Cambiar imagen al crear un post
     document.getElementById("file").addEventListener('change', cambiarImagenPost);
 

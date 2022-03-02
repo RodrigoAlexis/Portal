@@ -22,7 +22,7 @@
                     {!!$blog->body!!}
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+                {{-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
                     <div>
                         <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto1}}" alt="">
                     </div>
@@ -35,7 +35,7 @@
                     <div>
                         <img class="w-full h-52 object-cover object-center" src="data:image/jpeg;base64,{{$blog->foto4}}" alt="">
                     </div>
-                </div>
+                </div> --}}
 
             </div>
 
