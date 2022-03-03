@@ -1238,6 +1238,9 @@ select {
 .h-80 {
   height: 20rem;
 }
+.h-52 {
+  height: 13rem;
+}
 .h-24 {
   height: 6rem;
 }
@@ -1315,6 +1318,9 @@ select {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-initial {
+  flex: 0 1 auto;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -1912,8 +1918,14 @@ select {
 .font-bold {
   font-weight: 700;
 }
+.font-extrabold {
+  font-weight: 800;
+}
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }
 .leading-5 {
   line-height: 1.25rem;
