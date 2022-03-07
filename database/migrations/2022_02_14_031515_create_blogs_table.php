@@ -20,8 +20,6 @@ class CreateBlogsTable extends Migration
             $table->text('stract')->nullable();
             $table->longText('body')->nullable();
             $table->enum('status', [1, 2])->default(1);
-            $table->binary('foto1')->nullable();
-
             $table->timestamps();
         });
     }

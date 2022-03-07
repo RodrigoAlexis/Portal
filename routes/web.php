@@ -11,17 +11,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Blog
-
+// Blog Front
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
-
-Route::get('/posts/image/{post}',[BlogController::class, 'image'])->name('posts.image');
-
-// Productos
-
-Route::get('/productos', [ProductosController::class, 'index'])->name('productos.index');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -37,4 +30,8 @@ Route::get('auth/google', [LoginController::class, 'redirectG']);
 
 Route::get('auth/google/callback', [LoginController::class, 'signinGoogle']);
 
+//Blog back
 Route::resource('posts', PostController::class)->names('posts');
+
+// Productos
+Route::resource('/products', ProductosController::class)->names('products');

@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class PostsEdit extends Component
+class ProductsIndex extends Component
 {
     public function render()
     {
-        return view('livewire.posts-edit');
+        return view('livewire.products-index');
     }
 }
