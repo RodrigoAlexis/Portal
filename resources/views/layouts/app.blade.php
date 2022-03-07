@@ -24,6 +24,8 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/mi.js') }}" defer></script>
+        <script src="./js/in-view.min.js"></script>
+        <script src="./js/scripts.js"></script>
         {{-- <script src="{{ asset('js/mi.js')}}" defer></script> --}}
     </head>
     <body class="font-sans antialiased bg-gray-100">
