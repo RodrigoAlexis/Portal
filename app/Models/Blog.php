@@ -15,6 +15,10 @@ class Blog extends Model
         return $this->morphOne(Image::class, 'imageable');  
     }
 
+    public function images(){
+        return $this->hasMany(PostImage::class, 'post_id', 'id');  
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

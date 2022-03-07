@@ -10,9 +10,11 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
         
         
 
@@ -31,6 +33,8 @@
             @if(Route::is('dashboard')) 
                 
                 @elseif(Route::is('posts*'))
+
+                
 
                 @else
                     @livewire('navigation')

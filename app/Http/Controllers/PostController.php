@@ -38,7 +38,13 @@ class PostController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $post = Blog::create($request->all());
+        $post = Blog::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'stract' => $request->stract,
+            'body' => $request->body,
+            'status' => $request->status,
+        ]);
         
 
         if ($request->file('file')) {
@@ -48,6 +54,10 @@ class PostController extends Controller
                 'url' => $url
             ]);
         }
+
+        // for ($i=0; $i<count($request->images) ; $i++) { 
+        //     if(isset($request->))
+        // }
 
         return redirect()->route('posts.index', $post)->with('success', 'El post se creo satisfactoriamente');
     }

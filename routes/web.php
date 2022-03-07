@@ -5,8 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductosController;
-
-
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,6 +16,8 @@ Route::get('/', function () {
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+
+Route::get('/posts/image/{post}',[BlogController::class, 'image'])->name('posts.image');
 
 // Productos
 

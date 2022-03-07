@@ -6,7 +6,7 @@
             {!!$blog->stract!!}
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
 
             {{-- Contenido principal --}}
             <div class="lg:col-span-2">
@@ -42,40 +42,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </aside> 
-
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 grid-rows-2 col-span-2">
-                {{-- Fotos de los post --}}
-    
-                <div class="lg:col-span-2">
-                    <div class="w-full h-40 object-cover object-center">
-                        @php
-                            base64_decode($blog['foto1']);
-                        @endphp
-                    </div>
-                </div>
-                
-                <div class="lg:col-span-2">
-                    <div class="w-full h-40 object-cover object-center">
-                        <img class="w-full h-40 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/26/19/43/snowdrop-6969748_960_720.jpg" alt="">
-                    </div> 
-                </div>
-                
-    
-                <div class="lg:col-span-2">
-                    <div class="w-full h-40 object-cover object-center">
-                        <img class="w-full h-40 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/02/12/21/57/field-7009990_960_720.jpg" alt="">
-                    </div> 
-                </div>
-    
-                <div class="lg:col-span-2">
-                    <div class="w-full h-40 object-cover object-center">
-                        <img class="w-full h-40 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/02/13/11/33/boat-7010962_960_720.jpg" alt="">
-                    </div> 
-                </div>
-            </div>
-
-           
+            </aside>               
 
         </div>
         

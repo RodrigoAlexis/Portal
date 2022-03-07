@@ -19,7 +19,7 @@
             {{-- Botones --}}
             <div class="mb-6 text-center mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
 
-                {!! Form::submit('Crear Post', ['class' => 'w-full px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 active:bg-indigo-900 focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-gray-300']) !!}
+                {!! Form::submit('Crear Post', ['class' => 'w-full px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 active:bg-indigo-900 focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-gray-300 dropzone', 'id' => 'myDropzone']) !!}
 
 
                 <a href="{{route('posts.index')}}" class="w-full px-4 py-2 font-bold  bg-gray-200 rounded-md hover:bg-red-500 hover:text-white active:bg-red-600 focus:outline-none focus:shadow-outline focus:border-red-900 focus:ring-gray-300">                                        
@@ -34,8 +34,16 @@
 {{-- Ruta del plugin para creacion de slug --}}
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
+{{-- Dropzone --}}
+{{-- <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script> --}}
+{{-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> --}}
 
+{{-- Filepond --}}
+<link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
 
+<script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
+{{-- Suneditor --}}
 <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
        
 <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
@@ -101,4 +109,19 @@
 
         reader.readAsDataURL(file);
     }
+
+    // Get a reference to the file input element
+    const inputElement = document.querySelector('input[id="photos"]');
+    // Create a FilePond instance
+    const pond = FilePond.create(inputElement);
+    FilePond.setOptions({
+        server: {
+            url: '/upload',
+            headers: {
+                'X-CSRF-TOKEN': '{{csrf_token()}}'
+            }
+        }
+    });
+
+
 </script>

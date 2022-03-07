@@ -27,22 +27,14 @@ class BlogController extends Controller
                             ->take(4)
                             ->get();
         
-        $photo = Blog::where('id', $blog->id)->value('foto1');
+        return view('blogs.show', compact('blog', 'similares', 'slug'));
+    }
 
-        $decode = base64_decode($photo);
+    public function image(Blog $blog){
 
-        $image = "Foto.jpg";
-        file_put_contents($image,$decode);
-            // header('Content-Description: File Transfer');
-            header('Content-Type: image/jpg');
-            // header('Content-Disposition: attachment; filename="'.basename($image).'"');
-            // header('Expires:0');
-            // header('Cache-Control: must-revalidate');
-            // header('Pragma: public');
-            // header('Content-Length: ' .filesize($image));
-            // readfile($image);
+        $blogs = Blog::where('id', $blog)->get();
 
-        return view('blogs.show', compact('blog', 'similares', 'slug', 'photo'));
+        return view('blogs.image', compact('blogs'));
     }
 
 }
