@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductosController;
-use App\Http\Controllers\UploadController;
+use App\Http\Controllers\GrupoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +35,6 @@ Route::resource('posts', PostController::class)->names('posts');
 
 // Productos
 Route::resource('/products', ProductosController::class)->names('products');
+
+// Grupos
+Route::resource('/groups', GrupoController::class)->names('groups');

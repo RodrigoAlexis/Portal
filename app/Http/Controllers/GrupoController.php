@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProductosController extends Controller
+class GrupoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProductosController extends Controller
     public function index()
     {
         //
-        return view('products.products-front.index');
+        return view('products.groups.index');
     }
 
     /**
