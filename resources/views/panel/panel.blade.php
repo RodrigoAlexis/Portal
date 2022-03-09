@@ -45,7 +45,7 @@
                     
         
                     <li>
-                        <a class=" flex items-center mt-4 py-2 px-6 text-white hover:bg-white hover:bg-opacity-25 hover:text-white {{Route::is('products*') ? 'active': 'bg-white bg-opacity-25 text-white'}}" href="{{route('products.index')}}">
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('products.index')}}">
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -80,8 +80,6 @@
                         </a>
                     </li>
                 </ul>
-                
-
             </nav>
         </div>
 
@@ -163,8 +161,10 @@
                         @include('blogs.posts.forms.form-edit')
                     @elseif (Route::is('posts.image'))
                         @include('blogs.posts.image')
-                    @elseif(Route::is('products.index'))
-                    @livewire('products-index')
+                    @elseif (Route::is('products.index'))
+                        @livewire('products-index')
+                    @elseif (Route::is('groups.index'))
+                        @livewire('groups-index')
                     @endif
                     
                     

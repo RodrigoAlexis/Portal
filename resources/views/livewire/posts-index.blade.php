@@ -136,8 +136,8 @@
 
     <script>
         $('#alert').fadeIn();     
-  setTimeout(function() {
-       $("#alert").fadeOut();           
-  },4000);
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
     </script>
 </div>

@@ -36,6 +36,8 @@
                 @elseif(Route::is('posts*'))
 
                 @elseif(Route::is('products*'))
+                
+                @elseif(Route::is('groups*'))
 
                 @else
                     @livewire('navigation')
@@ -66,6 +68,8 @@
             @elseif(Route::is('posts*'))
 
             @elseif(Route::is('products*'))
+
+            @elseif(Route::is('groups*'))
 
             @else
                 @livewire('footer')
