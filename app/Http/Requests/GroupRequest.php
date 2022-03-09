@@ -27,7 +27,7 @@ class GroupRequest extends FormRequest
 
         $rules = [
             'name' => 'required',
-            'slug' => 'required|unique:groups,slug,' . $group->id,
+            'slug' => 'required|unique:groups',
             'file' => 'image'
         ];
 

@@ -126,7 +126,7 @@
 
     <div class=" content-center text-center justify-center mt-8">
         <strong class="text-lg font-semibold text-gray-600">
-            No se encontró ningún registro con ese nombre 
+            No se encontró ningún registro en la base de datos
         </strong>
         <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
     </div>

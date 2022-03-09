@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\GrupoFrontController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,11 @@ Route::get('/', function () {
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+
+// Grupos front
+Route::get('/grupos', [GrupoFrontController::class, 'index'])->name('grupos.index');
+
+// Route::get('/grupos/{grupo}', [BlogController::class, 'show'])->name('blogs.show');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
