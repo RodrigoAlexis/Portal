@@ -1,4 +1,5 @@
 <div class="flex flex-col">
+    {{-- Alerta --}}
     @if (session('success'))
         <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
             <span class="inline-block align-middle mr-8 text-center ">
@@ -16,7 +17,7 @@
             Listado de Grupos
         </div>
 
-        <a href="" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+        <a href="{{route('groups.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             Agregar Nuevo Grupo
         </a>
 
@@ -30,7 +31,7 @@
         
     </div>
 
-    {{-- search--}}
+    {{-- Buscador --}}
     <div class="flex-1 flex flex-col overflow-hidden w-full rounded-t-lg">
 
         {{-- Input de busqueda --}}
@@ -51,17 +52,11 @@
                     <input wire:model="search" class="form-input w-48  rounded-md pl-10 pr-4 focus:border-indigo-600" type="text"
                         placeholder="Buscar"/>
                 </div>
- 
             </div>
-
-            
-
         </div>
-
-        
     </div>
 
-    {{-- @if($posts->count()) --}}
+    @if($groups->count())
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
@@ -84,20 +79,19 @@
 
                     <tbody class="bg-white">
 
-                        {{-- @foreach ($posts as $post) --}}
+                         @foreach ($groups as $group) 
                             <tr>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    ID
+                                    {{$group->id}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Nombre del grupo
+                                    {{$group->name}}
                                 </td>
 
-                                
-
+                                {{-- Botones --}}
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="" class="text-gray-500 hover:text-yellow-500">
+                                    <a href="{{route('groups.edit', $group)}}" class="text-gray-500 hover:text-yellow-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
@@ -105,7 +99,7 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <form action="" method="POST">
+                                    <form action="{{route('groups.destroy', $group)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
@@ -118,29 +112,28 @@
                                     </form>
                                 </td>
                             </tr>
-                        {{-- @endforeach --}}
+                        @endforeach 
                     </tbody>
                 </table>
             </div>
         </div>
 
         {{-- paginacion --}}
-        {{-- <div class="mt-4">
-            {{$posts->links()}}
-        </div> --}}
+        <div class="mt-4">
+            {{$groups->links()}}
+        </div>
 
-    {{-- @else --}}
+    @else
 
-    {{-- <div class=" content-center text-center justify-center mt-8">
+    <div class=" content-center text-center justify-center mt-8">
         <strong class="text-lg font-semibold text-gray-600">
             No se encontró ningún registro con ese nombre 
         </strong>
         <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
-    </div> --}}
+    </div>
        
-    {{-- @endif
-   --}}
-
+    @endif
+  
     <script>
         $('#alert').fadeIn();     
             setTimeout(function() {

@@ -165,6 +165,10 @@
                         @livewire('products-index')
                     @elseif (Route::is('groups.index'))
                         @livewire('groups-index')
+                    @elseif (Route::is('groups.create'))
+                        @include('products.groups.forms.form-create')
+                    @elseif (Route::is('groups.edit'))
+                        @include('products.groups.forms.form-edit')
                     @endif
                     
                     
