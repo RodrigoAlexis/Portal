@@ -16,6 +16,7 @@
             {{-- Opciones del menu lateral --}}
             <nav class="mt-10">
                 <ul>
+                    {{-- General --}}
                     <li>
                         <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('dashboard') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('dashboard')}}">
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -29,34 +30,17 @@
                             <span class="mx-3">General</span>
                         </a>
                     </li>
-                    
+                    {{-- Blog --}}
                     <li>
                         <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('posts*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('posts.index')}}">
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                              </svg>
             
                             <span class="mx-3">Blog</span>
                         </a>
                     </li>
-                    
-        
-                    <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('products.index')}}">
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                                </path>
-                            </svg>
-            
-                            <span class="mx-3">Productos</span>
-                        </a>
-                    </li>
-                    
+                    {{-- Reportes --}}
                     <li>
                         <a class=" flex items-center mt-4 py-2 px-6 text-white hover:bg-white hover:bg-opacity-25 hover:text-white"
                             href="/forms">
@@ -67,8 +51,7 @@
                             <span class="mx-3">Reportes</span>
                         </a>
                     </li>
-                    
-    
+                    {{-- Usuarios --}}
                     <li>
                         <a class=" flex items-center mt-4 py-2 px-6 text-white hover:bg-white hover:bg-opacity-25 hover:text-white"
                             href="/forms">
@@ -79,11 +62,55 @@
                             <span class="mx-3">Usuarios</span>
                         </a>
                     </li>
+                    {{-- Productos --}}
+                    <li>
+                        {{-- Dropdown --}}
+                        <div href="{{route('posts.index')}}" x-data="{ open: false }">
+                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                                <span class="mx-3"><a href="{{route('products.index')}}">Productos</a></span>
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            
+                            {{-- Opciones del dropdown --}}
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+                                <div class="px-2 py-2 bg-indigo-500 rounded-md shadow dark-mode:bg-gray-800">
+
+                                    {{-- Grupo --}}
+                                    <div class="flex items-center py-2 px-6 ">
+                                        
+                                        <a href="{{route('groups.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('groups*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                            </svg>
+
+                                              <span class="mx-3">Grupos</span>
+                                        </a>
+                                    </div>
+
+                                    {{-- Lineas --}}
+                                    <div class="flex items-center py-2 px-6 text-lg font-semibold w-full">
+                                        <a href="{{route('lines.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('lines*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                                            </svg>
+
+                                              <span class="mx-3">Líneas</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
 
         <div class="flex-1 flex flex-col overflow-hidden">
+            {{-- Alert --}}
             @if(Route::is('dashboard')) 
                 @livewire('alert-login')
                 @elseif(Route::is('posts*'))
@@ -91,6 +118,7 @@
                 @else
                 
             @endif
+
             
             {{-- Navbar (menu responsivo y perfil) --}}
             <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
@@ -153,27 +181,30 @@
                     
                     @if (Route::is('dashboard'))
                         @livewire('general-user')
-                    @elseif (Route::is('posts.index'))
-                        @livewire('posts-index')
-                    @elseif (Route::is('posts.create'))
-                        @include('blogs.posts.forms.form-create')
-                    @elseif (Route::is('posts.edit'))
-                        @include('blogs.posts.forms.form-edit')
-                    @elseif (Route::is('posts.image'))
-                        @include('blogs.posts.image')
-                    @elseif (Route::is('products.index'))
-                        @livewire('products-index')
-                    @elseif (Route::is('groups.index'))
-                        @livewire('groups-index')
-                    @elseif (Route::is('groups.create'))
-                        @include('products.groups.forms.form-create')
-                    @elseif (Route::is('groups.edit'))
-                        @include('products.groups.forms.form-edit')
+                        @elseif (Route::is('posts.index'))
+                            @livewire('posts-index')
+                        @elseif (Route::is('posts.create'))
+                            @include('blogs.posts.forms.form-create')
+                        @elseif (Route::is('posts.edit'))
+                            @include('blogs.posts.forms.form-edit')
+                        @elseif (Route::is('posts.image'))
+                            @include('blogs.posts.image')
+                        @elseif (Route::is('products.index'))
+                            @livewire('products-index')
+                        @elseif (Route::is('groups.index'))
+                            @livewire('groups-index')
+                        @elseif (Route::is('groups.create'))
+                            @include('products.groups.forms.form-create')
+                        @elseif (Route::is('groups.edit'))
+                            @include('products.groups.forms.form-edit')
+                        @elseif (Route::is('lines.index'))
+                            @livewire('lines-index')
+                        @elseif (Route::is('lines.create'))
+                            @include('products.lineas.forms.form-create')
                     @endif
-                    
-                    
+                      
                 </div>
             </main>
-           
+        
     </div>
 </div>

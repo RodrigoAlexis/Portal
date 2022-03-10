@@ -11,15 +11,15 @@
     
     <div class="mb-4">
         <div class="float-left text-gray-500 text-3xl font-semibold">
-            Listado de Grupos
+            Listado de Líneas
         </div>
 
-        <a href="{{route('groups.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
-            Agregar Nuevo Grupo
+        <a href="{{route('lines.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+            Agregar Nueva Línea
         </a>
 
 
-        <a href="{{route('groups.create')}}" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+        <a href="{{route('lines.create')}}" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    @if($groups->count())
+    {{-- @if($groups->count()) --}}
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
@@ -76,19 +76,19 @@
 
                     <tbody class="bg-white">
 
-                         @foreach ($groups as $group) 
+                         {{-- @foreach ($groups as $group)  --}}
                             <tr>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {{$group->id}}
+                                    ID
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {{$group->name}}
+                                    Nombre
                                 </td>
 
                                 {{-- Botones --}}
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="{{route('groups.edit', $group)}}" class="text-gray-500 hover:text-yellow-500">
+                                    <a href="" class="text-gray-500 hover:text-yellow-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
@@ -96,7 +96,7 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <form action="{{route('groups.destroy', $group)}}" method="POST">
+                                    <form action="" method="POST">
                                         @csrf
                                         @method('DELETE')
 
@@ -109,14 +109,14 @@
                                     </form>
                                 </td>
                             </tr>
-                        @endforeach 
+                        {{-- @endforeach  --}}
                     </tbody>
                 </table>
             </div>
         </div>
 
         {{-- paginacion --}}
-        <div class="mt-4">
+        {{-- <div class="mt-4">
             {{$groups->links()}}
         </div>
 
@@ -136,6 +136,6 @@
             setTimeout(function() {
                 $("#alert").fadeOut();           
             },4000);
-    </script>
+    </script> --}}
 </div>
 

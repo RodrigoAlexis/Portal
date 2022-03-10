@@ -7,6 +7,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\GrupoFrontController;
+use App\Http\Controllers\LineController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,3 +46,6 @@ Route::resource('/products', ProductosController::class)->names('products');
 
 // Grupos
 Route::resource('/groups', GrupoController::class)->names('groups');
+
+// Lineas
+Route::resource('/lines', LineController::class)->names('lines');

@@ -7,52 +7,24 @@
         </div>
     @endif
 
-    <div class="mb-4 grid grid-cols-1 md:grid-cols-2">
-        <div class="text-gray-500 text-3xl font-semibold mb-4">
-            Listado de Productos
+
+    <div class="mb-4">
+        <div class="float-left text-gray-500 text-2xl lg:text-3xl font-semibold">
+             Listado de Productos
         </div>
+        <a href="#" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+            Agregar Nuevo Producto
+        </a>
 
-        
-        <div class="sm:float-left">
-            <!-- Dropdown Grupos Y Lineas -->
-            <div x-data="{ open: false }" >
-                        
-                <button x-on:click=" open = true" class=" ml-2 float-right text-white bg-gray-500 hover:bg-gray-600  font-medium rounded-lg text-sm px-2.5   py-2.5 text-center dark:bg-gray-500 dark:hover:bg-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                </button>
-                <!-- Dropdown list -->
-                <div x-show="open" x-on:click.away="open = false" class="absolute right-0 py-2 mt-11 mr-6 bg-gray-500 rounded-md shadow-xl w-28">
-                    <div>
-                        <a href="{{route('groups.index')}}" class="block px-4 py-2 text-sm hover:bg-gray-400 text-white">
-                            Grupos
-                        </a>
-                    </div>
-                    <div class="py-1">
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-400 text-white">
-                            Lineas
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <a href="" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
-                Agregar Nuevo Producto
-            </a>
-
-            <a href="" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-            </a>
-        </div>
-        
-
-        
+        <a href="#" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-700 hover:bg-indigo-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+        </a>
     </div>
+        
+
+        
 
     {{-- search--}}
     <div class="flex-1 flex flex-col overflow-hidden w-full rounded-t-lg">
