@@ -66,6 +66,10 @@
     </body>
     <footer>
         @if(Route::is('dashboard')) 
+
+            @elseif(Route::is('login'))
+
+            @elseif(Route::is('register'))
                 
             @elseif(Route::is('posts*'))
 
@@ -74,6 +78,8 @@
             @elseif(Route::is('groups*'))
 
             @elseif(Route::is('lines*'))
+
+            
 
             @else
                 @livewire('footer')
