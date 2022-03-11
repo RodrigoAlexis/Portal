@@ -13,7 +13,7 @@
                 </a>
         
                 <div class="w-56 -mt-10 overflow-hidden bg-blue-500 rounded-t-lg shadow-lg md:w-64 ">
-                    <h3 class="py-2 font-bold tracking-wide text-center text-white uppercase ">{{$group->name}}</h3>
+                    {{-- <h3 class="py-2 font-bold tracking-wide text-center text-white uppercase ">{{$group->name}}</h3> --}}
                     
                     
                 </div>
