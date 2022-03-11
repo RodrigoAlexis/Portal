@@ -110,6 +110,10 @@ class LineController extends Controller
             }
         }
 
+        if($request->groups){
+            $line->groups()->sync($request->groups);
+        }
+
         return redirect()->route('lines.index', $line)->with('success', 'La línea se actualizó satisfactoriamente');
     }
 
@@ -119,8 +123,15 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Line $line)
     {
-        //
+        $line->delete();
+
+        if ($line->image) {
+            
+            Storage::delete($line->image->url);
+        }   
+
+        return redirect()->route('lines.index')->with('success', 'La línea se eliminó satisfactoriamente');
     }
 }
