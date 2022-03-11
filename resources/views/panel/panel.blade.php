@@ -201,6 +201,8 @@
                             @livewire('lines-index')
                         @elseif (Route::is('lines.create'))
                             @include('products.lineas.forms.form-create')
+                        @elseif (Route::is('lines.edit'))
+                            @include('products.lineas.forms.form-edit')
                     @endif
                       
                 </div>

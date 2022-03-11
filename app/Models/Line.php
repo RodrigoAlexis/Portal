@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Line extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'name',
+        'slug'
+    ];
+
+    public function groups(){
+        return $this->belongsToMany(Group::class);
+    }
+
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');  
+    }
 }

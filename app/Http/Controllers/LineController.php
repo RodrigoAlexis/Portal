@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Group;
+use App\Http\Requests\LineRequest;
+use App\Models\Line;
+use Illuminate\Support\Facades\Storage;
 
 class LineController extends Controller
 {
@@ -13,7 +17,6 @@ class LineController extends Controller
      */
     public function index()
     {
-        //
         return view('products.lineas.index');
     }
 
@@ -24,8 +27,9 @@ class LineController extends Controller
      */
     public function create()
     {
-        //
-        return view('products.lineas.create');
+        $groups = Group::all();
+
+        return view('products.lineas.create', compact('groups'));
     }
 
     /**
@@ -34,9 +38,23 @@ class LineController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LineRequest $request)
     {
-        //
+        $line = Line::create($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put( 'groups',$request->file('file'));
+
+            $line->image()->create([
+                'url' => $url
+            ]);
+        }
+
+        if($request->groups){
+            $line->groups()->attach($request->groups);
+        }
+
+        return redirect()->route('lines.index', $line)->with('success', 'La línea se creo satisfactoriamente');
     }
 
     /**
@@ -56,9 +74,12 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Line $line)
     {
         //
+        $groups = Group::all();
+
+        return view('products.lineas.create', compact('line','groups'));
     }
 
     /**
@@ -68,9 +89,28 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LineRequest $request,Line $line)
     {
         //
+        $line->update($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put('lines', $request->file('file'));
+
+            if($line->image){
+                Storage::delete($line->image->url);
+
+                $line->image->update([
+                    'url' => $url
+                ]);
+            }else{
+                $line->image()->create([
+                    'url' => $url
+                ]);
+            }
+        }
+
+        return redirect()->route('lines.index', $line)->with('success', 'La línea se actualizó satisfactoriamente');
     }
 
     /**

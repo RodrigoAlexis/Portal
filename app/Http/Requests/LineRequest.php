@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GroupRequest extends FormRequest
+class LineRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,16 +23,17 @@ class GroupRequest extends FormRequest
      */
     public function rules()
     {
-        $group = $this->route()->parameter('group');
+        $line = $this->route()->parameter('line');
 
         $rules = [
             'name' => 'required',
-            'slug' => 'required|unique:groups',
-            'file' => 'image'
+            'slug' => 'required|unique:lines',
+            'groups' => 'required'
+
         ];
 
-        if ($group){
-            $rules['slug'] = 'required|unique:blogs,slug,' . $group->id;
+        if ($line){
+            $rules['slug'] = 'required|unique:lines,slug,' . $line->id;
         }
 
         return $rules;

@@ -2,7 +2,7 @@
     <div class="mb-4">
 
         <div class="float-left text-gray-500 text-3xl font-semibold">
-                Crear Nueva Línea
+                Editar Línea
         </div>
         
     </div>
@@ -10,7 +10,7 @@
     {{-- Formulario --}}
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
 
-        {!! Form::open(['route'=> 'lines.store', 'files' => true]) !!}
+        {!! Form::model($line,['route'=> ['lines.update', $line], 'autocomplete' => 'off', 'files' => true, 'method' => 'put']) !!}
 
             @include('products.lineas.partials.form')
 
@@ -21,7 +21,7 @@
                     {{ __('Cancelar') }}
                 </a>
 
-                {!! Form::submit('Crear Línea', ['class' => 'w-full px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 active:bg-indigo-900 focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-gray-300 dropzone']) !!} 
+                {!! Form::submit('Actualizar Línea', ['class' => 'w-full px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 active:bg-indigo-900 focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-gray-300 dropzone']) !!} 
             </div>
             
         {!! Form::close() !!}

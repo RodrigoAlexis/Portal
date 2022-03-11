@@ -14,6 +14,10 @@ class Group extends Model
         'slug'
     ];
 
+    public function lines(){
+        return $this->belongsToMany(Lines::class);
+    }
+
     public function image(){
         return $this->morphOne(Image::class, 'imageable');  
     }

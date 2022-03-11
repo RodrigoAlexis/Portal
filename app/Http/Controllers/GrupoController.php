@@ -40,11 +40,6 @@ class GrupoController extends Controller
      */
     public function store(GroupRequest $request)
     {
-        $rules = [
-            'name' => 'required',
-            'slug' => 'required|unique:groups',
-            'file' => 'image'
-        ];
 
         $Mensaje=[
             "name.required" => 'El campo Nombre no puede quedar vacío',
@@ -52,7 +47,7 @@ class GrupoController extends Controller
             "slug.unique:groups" => 'Ya se cuenta con un registro con este nombre en la base de datos',
             "file.image" => 'Solo se permiten archivos .png | .jpeg | .jpg'
         ];
-        $this->validate($request, $rules, $Mensaje);    
+        $this->validate($request, $Mensaje);    
 
         $group = Group::create($request->all());
 
@@ -98,6 +93,14 @@ class GrupoController extends Controller
      */
     public function update(GroupRequest $request, Group $group)
     {
+
+        $Mensaje=[
+            "name.required" => 'El campo Nombre no puede quedar vacío',
+            "slug.required" => 'El campo Slug no puede quedar vacío',
+            "slug.unique:groups" => 'Ya se cuenta con un registro con este nombre en la base de datos',
+            "file.image" => 'Solo se permiten archivos .png | .jpeg | .jpg'
+        ];
+        $this->validate($request, $Mensaje);   
 
         $group->update($request->all());
 

@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    {{-- @if($groups->count()) --}}
+    @if($lines->count())
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
@@ -76,19 +76,19 @@
 
                     <tbody class="bg-white">
 
-                         {{-- @foreach ($groups as $group)  --}}
+                         @foreach ($lines as $line) 
                             <tr>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    ID
+                                    {{$line->id}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Nombre
+                                    {{$line->name}}
                                 </td>
 
                                 {{-- Botones --}}
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="" class="text-gray-500 hover:text-yellow-500">
+                                    <a href="{{route('lines.edit', $line)}}" class="text-gray-500 hover:text-yellow-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
@@ -96,7 +96,7 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <form action="" method="POST">
+                                    <form action="{{route('lines.destroy', $line)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
@@ -109,15 +109,15 @@
                                     </form>
                                 </td>
                             </tr>
-                        {{-- @endforeach  --}}
+                        @endforeach 
                     </tbody>
                 </table>
             </div>
         </div>
 
         {{-- paginacion --}}
-        {{-- <div class="mt-4">
-            {{$groups->links()}}
+        <div class="mt-4">
+            {{$lines->links()}}
         </div>
 
     @else
@@ -136,6 +136,6 @@
             setTimeout(function() {
                 $("#alert").fadeOut();           
             },4000);
-    </script> --}}
+    </script>
 </div>
 
