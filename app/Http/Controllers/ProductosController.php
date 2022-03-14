@@ -7,6 +7,8 @@ use App\Models\Group;
 use App\Models\Line;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductosController extends Controller
 {
@@ -44,15 +46,15 @@ class ProductosController extends Controller
     {
         $product = Product::create($request->all());
 
-        // // if($request->group){
-        // //     $product->groups()->attach($request->group);
-        // // }
+        if ($request->file('file')) {
+            $url = Storage::put( 'products',$request->file('file'));
 
-        // // if($request->line){
-        // //     $product->lines()->attach($request->line);
-        // // } 
+            $product->image()->create([
+                'url' => $url
+            ]);
+        }
 
-        return redirect()->route('products.index', $product);
+        return redirect()->route('products.index', $product)->with('success', 'El producto se creo satisfactoriamente');
 
     }
 
@@ -73,9 +75,12 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $groups = Group::pluck('name', 'id');
+        $lines = Line::pluck('name', 'id');
+
+        return view('products.edit', compact('product', 'groups', 'lines'));
     }
 
     /**
@@ -85,9 +90,27 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        if ($request->file('file')) {
+            $url = Storage::put('groups', $request->file('file'));
+
+            if($product->image){
+                Storage::delete($product->image->url);
+
+                $product->image->update([
+                    'url' => $url
+                ]);
+            }else{
+                $product->image()->create([
+                    'url' => $url
+                ]);
+            }
+        }
+
+        return redirect()->route('products.index', $product)->with('success', 'El producto se actualizó satisfactoriamente');
     }
 
     /**
@@ -96,8 +119,15 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        if ($product->image) {
+            
+            Storage::delete($product->image->url);
+        }
+
+        return redirect()->route('products.index')->with('success', 'El producto se eliminó satisfactoriamente');
     }
 }

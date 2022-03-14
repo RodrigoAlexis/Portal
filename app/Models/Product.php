@@ -23,4 +23,8 @@ class Product extends Model
     public function lines(){
         return $this->belongsTo(Line::class);
     }
+
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');  
+    }
 }

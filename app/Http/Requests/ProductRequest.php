@@ -23,7 +23,7 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
-        // $product = $this->route()->parameter('products');
+        $product = $this->route()->parameter('product');
 
         $rules = [
             'name' => 'required',
@@ -33,9 +33,9 @@ class ProductRequest extends FormRequest
 
         ];
 
-        // if ($product){
-        //     $rules['slug'] = 'required|unique:lines,slug,' . $product->id;
-        // }
+        if ($product){
+             $rules['slug'] = 'required|unique:products,slug,' . $product->id;
+        }
 
         return $rules;
     }

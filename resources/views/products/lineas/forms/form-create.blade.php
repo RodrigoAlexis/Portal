@@ -10,7 +10,7 @@
     {{-- Formulario --}}
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
 
-        {!! Form::open(['route'=> 'lines.store', 'files' => true]) !!}
+        {!! Form::open(['route'=> 'lines.store', 'autocomplete' => 'off', 'files' => true]) !!}
 
             @include('products.lineas.partials.form')
 

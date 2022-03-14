@@ -22,8 +22,12 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 // Grupos front
 Route::get('/grupos', [GrupoFrontController::class, 'index'])->name('grupos.index');
 
-// Lineas front
+// Grupos-Lineas front
 Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupos.show');
+
+
+// Lineas-products front
+// Route::get('/linea/{linea}', [LineFrontController::class, 'show'])->name('lineas.show');
  
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

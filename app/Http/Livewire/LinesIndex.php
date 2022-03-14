@@ -21,7 +21,7 @@ class LinesIndex extends Component
     public function render()
     {
 
-        $lines = Line::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(6);;
+        $lines = Line::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(6);
 
         return view('livewire.lines-index', compact('lines'));
     }

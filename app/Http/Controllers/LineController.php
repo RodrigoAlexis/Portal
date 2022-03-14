@@ -63,9 +63,11 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Line $line)
     {
-        //
+        $products = $line->products()->latest('id')->get();
+
+        return view('products.front.index', compact('products', 'line'));
     }
 
     /**

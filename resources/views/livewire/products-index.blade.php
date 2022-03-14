@@ -31,9 +31,7 @@
 
         {{-- Input de busqueda --}}
         <div class="flex justify-between items-center py-4 px-2 sm:px-2 md:px-4 lg:px-6 bg-white border-b-2 border-gray-600">
-            
             <div class="flex items-center">
-
                 <div class="relative mx-4 lg:mx-0">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
                         <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
@@ -44,20 +42,15 @@
                         </svg>
                     </span>
 
-                    <input wire:model="search" class="form-input w-48  rounded-md pl-10 pr-4 focus:border-indigo-600" type="text"
+                    <input wire:model="search" wire:model="filters.group_id" wire:model="filters.line_id" class="form-input w-48  rounded-md pl-10 pr-4 focus:border-indigo-600" type="text"
                         placeholder="Buscar"/>
                 </div>
  
             </div>
-
-            
-
-        </div>
-
-        
+        </div>        
     </div>
 
-    {{-- @if($posts->count()) --}}
+    @if($products->count())
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
@@ -72,28 +65,38 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Grupo ID</th>
                             
+                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Linea ID</th>
+                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                         </tr>
                     </thead>
 
                     <tbody class="bg-white">
 
-                        {{-- @foreach ($posts as $post) --}}
+                        @foreach ($products as $product)
                             <tr>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    ID
+                                    {{$product->id}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Nombre del producto
+                                    {{$product->name}}
                                 </td>
 
+                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                    {{$product->group_id}}
+                                </td>
+                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                    {{$product->line_id}}
+                                </td>
                                 
 
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="" class="text-gray-500 hover:text-yellow-500">
+                                    <a href="{{ route('products.edit', $product) }}" class="text-gray-500 hover:text-yellow-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
@@ -101,7 +104,7 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <form action="" method="POST">
+                                    <form action="{{ route('products.destroy', $product) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
@@ -114,28 +117,27 @@
                                     </form>
                                 </td>
                             </tr>
-                        {{-- @endforeach --}}
+                        @endforeach 
                     </tbody>
                 </table>
             </div>
         </div>
 
         {{-- paginacion --}}
-        {{-- <div class="mt-4">
-            {{$posts->links()}}
-        </div> --}}
+        <div class="mt-4">
+            {{$products->links()}}
+        </div> 
 
-    {{-- @else --}}
+    @else
 
-    {{-- <div class=" content-center text-center justify-center mt-8">
-        <strong class="text-lg font-semibold text-gray-600">
-            No se encontró ningún registro con ese nombre 
-        </strong>
-        <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
-    </div> --}}
+        <div class=" content-center text-center justify-center mt-8">
+            <strong class="text-lg font-semibold text-gray-600">
+                No se encontró ningún registro con ese nombre 
+            </strong>
+            <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
+        </div>
        
-    {{-- @endif
-   --}}
+    @endif
 
     <script>
         $('#alert').fadeIn();     

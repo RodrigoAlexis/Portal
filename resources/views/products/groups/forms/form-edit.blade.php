@@ -10,7 +10,7 @@
     {{-- Formulario --}}
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
 
-        {!! Form::model($group,['route'=> ['groups.update', $group], 'files' => true, 'method' => 'put']) !!}
+        {!! Form::model($group,['route'=> ['groups.update', $group], 'autocomplete' => 'off', 'files' => true, 'method' => 'put']) !!}
 
             @include('products.groups.partials.form')   
 

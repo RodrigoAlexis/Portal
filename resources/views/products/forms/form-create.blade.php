@@ -10,7 +10,7 @@
     {{-- Formulario --}}
     <div class="bg-white w-full shadow rounded-lg p-4 sm:p-12 overflow-auto static ">
 
-        {!! Form::open(['route'=> 'products.store', 'files' => true]) !!}
+        {!! Form::open(['route'=> 'products.store', 'autocomplete' => 'off', 'files' => true]) !!}
 
             @include('products.partials.form')
 
@@ -42,16 +42,16 @@
     });
 
     //Cambiar imagen al crear un grupo
-    // document.getElementById("file").addEventListener('change', cambiarImagenGroup);
+    document.getElementById("file").addEventListener('change', cambiarImagenGroup);
 
-    // function cambiarImagenGroup(event){
-    //     var file = event.target.files[0];
+    function cambiarImagenGroup(event){
+         var file = event.target.files[0];
 
-    //     var reader = new FileReader();
-    //     reader.onload = (event) => {
-    //         document.getElementById("picture").setAttribute('src', event.target.result);
-    //     };
+         var reader = new FileReader();
+         reader.onload = (event) => {
+             document.getElementById("picture").setAttribute('src', event.target.result);
+         };
 
-    //     reader.readAsDataURL(file);
-    // }
+         reader.readAsDataURL(file);
+    }
 </script>

@@ -41,16 +41,16 @@
         </div>
          
         {{-- previsualizacion de la imagen --}}
-        {{-- <div>  
-            @isset ($group->image)
-                <img id="picture" src="{{Storage::url($group->image->url)}}" alt="Imagen por defecto" >
+        <div>  
+            @isset ($product->image)
+                <img id="picture" src="{{Storage::url($product->image->url)}}" alt="Imagen por defecto" >
             @else
                 <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="Imagen por defecto" >
             @endisset 
-        </div> --}}
+        </div>
 
         {{-- Imagen Principal--}}
-        {{-- <div>
+        <div>
             {!! Form::label('file', 'Imagen', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::file('file', ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'accept' => 'image/*']) !!}    
         
@@ -60,7 +60,7 @@
 
             <p class="mt-6">1.- Acepta formatos JPG / JPEG / PNG.</p>
             <p class="mt-6">2.- Se recomienda que la imagen tenga una medida de *** x *** para su correcta visualización.</p>
-        </div> --}}
+        </div>
 
     </div> 
 </div>
