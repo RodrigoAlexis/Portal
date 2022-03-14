@@ -12,11 +12,11 @@
         <div class="float-left text-gray-500 text-2xl lg:text-3xl font-semibold">
              Listado de Productos
         </div>
-        <a href="#" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+        <a href="{{route('products.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             Agregar Nuevo Producto
         </a>
 
-        <a href="#" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-700 hover:bg-indigo-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700">
+        <a href="{{route('products.create')}}" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-700 hover:bg-indigo-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>

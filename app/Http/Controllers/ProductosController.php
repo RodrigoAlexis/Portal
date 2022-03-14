@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Group;
+use App\Models\Line;
+use App\Http\Requests\ProductRequest;
+use App\Models\Product;
 
 class ProductosController extends Controller
 {
@@ -14,7 +18,7 @@ class ProductosController extends Controller
     public function index()
     {
         //
-        return view('products.products-front.index');
+        return view('products.index');
     }
 
     /**
@@ -24,7 +28,10 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        $groups = Group::pluck('name', 'id');
+        $lines = Line::pluck('name', 'id');
+
+        return view('products.create', compact('groups', 'lines'));
     }
 
     /**
@@ -33,9 +40,20 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $product = Product::create($request->all());
+
+        // // if($request->group){
+        // //     $product->groups()->attach($request->group);
+        // // }
+
+        // // if($request->line){
+        // //     $product->lines()->attach($request->line);
+        // // } 
+
+        return redirect()->route('products.index', $product);
+
     }
 
     /**

@@ -14,8 +14,17 @@ class Group extends Model
         'slug'
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function lines(){
-        return $this->belongsToMany(Lines::class);
+        return $this->belongsToMany(Line::class);
+    }
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
     }
 
     public function image(){

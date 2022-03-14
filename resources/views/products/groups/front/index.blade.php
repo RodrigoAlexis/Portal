@@ -5,7 +5,7 @@
             @foreach ($groups as $group)
             <div class="flex flex-col items-center justify-center w-full">
                 
-                <a href="/" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-xl shadow-md" style="background-image: url(@if($group->image) {{Storage::url($group->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
+                <a href="{{route('grupos.show', $group)}}" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-xl shadow-md" style="background-image: url(@if($group->image) {{Storage::url($group->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
                 
                 </a>
         

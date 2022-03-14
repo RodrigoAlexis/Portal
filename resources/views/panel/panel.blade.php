@@ -191,6 +191,8 @@
                             @include('blogs.posts.image')
                         @elseif (Route::is('products.index'))
                             @livewire('products-index')
+                        @elseif (Route::is('products.create'))
+                            @include('products.forms.form-create')
                         @elseif (Route::is('groups.index'))
                             @livewire('groups-index')
                         @elseif (Route::is('groups.create'))
@@ -203,6 +205,7 @@
                             @include('products.lineas.forms.form-create')
                         @elseif (Route::is('lines.edit'))
                             @include('products.lineas.forms.form-edit')
+                        
                     @endif
                       
                 </div>
