@@ -70,6 +70,16 @@ class LineController extends Controller
         return view('products.front.index', compact('products', 'line'));
     }
 
+    public function mostrar(Group $group, Line $line )
+    {
+
+        $lines = $group->lines()->latest('id')->get();
+        $products = $line->products()->latest('id')->get();
+
+
+        return view('products.front.index', compact('products', 'lines', 'group', 'line'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

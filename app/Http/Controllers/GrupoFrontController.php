@@ -15,6 +15,7 @@ class GrupoFrontController extends Controller
 
     public function show(Group $grupo){
         $lines = $grupo->lines()->latest('id')->get();
+        
 
         return view('products.lineas.front.index', compact('lines', 'grupo'));
     }
