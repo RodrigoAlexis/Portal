@@ -7,6 +7,7 @@ use App\Models\Group;
 use App\Http\Requests\LineRequest;
 use App\Models\Line;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class LineController extends Controller
 {
@@ -65,20 +66,14 @@ class LineController extends Controller
      */
     public function show(Line $line)
     {
-        $products = $line->products()->latest('id')->get();
+        // $products = $line->products()->latest('id')->get();
+
+        $products = DB::select('select * from `products` WHERE line_id = ?', [$line->id]);
+
 
         return view('products.front.index', compact('products', 'line'));
     }
 
-    public function mostrar(Group $group, Line $line )
-    {
-
-        $lines = $group->lines()->latest('id')->get();
-        $products = $line->products()->latest('id')->get();
-
-
-        return view('products.front.index', compact('products', 'lines', 'group', 'line'));
-    }
 
     /**
      * Show the form for editing the specified resource.

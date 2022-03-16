@@ -8,7 +8,9 @@ use App\Models\Line;
 class LineFrontController extends Controller
 {
     public function show(Line $line){
-        $products = $line->groups()->latest('id')->get();
+        // $products = $line->groups()->latest('id')->get();
+
+        
 
         return view('products.front.index', compact('products', 'line'));
     }

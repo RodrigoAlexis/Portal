@@ -44,7 +44,15 @@ class ProductosController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $product = Product::create($request->all());
+        // return $request->all();
+
+        $product = Product::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'group_id' => $request->group_id,
+            'line_id' => $request->line_id
+        ]);
+
 
         if ($request->file('file')) {
             $url = Storage::put( 'products',$request->file('file'));
