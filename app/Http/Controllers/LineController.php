@@ -64,14 +64,20 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Line $line)
+    // public function show(Line $line)
+    // {
+    //     // $products = $line->products()->latest('id')->get();
+
+    //     $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id]);
+        
+
+
+    //     return view('products.front.index', ['products' => $products, 'line' => $line]);
+    // }
+
+    public function mostrar(Group $group, Line $line)
     {
-        // $products = $line->products()->latest('id')->get();
-
-        $products = DB::select('select * from `products` WHERE line_id = ?', [$line->id]);
-
-
-        return view('products.front.index', compact('products', 'line'));
+        $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id], '&', 'group_id = ?', [$group->id]);
     }
 
 

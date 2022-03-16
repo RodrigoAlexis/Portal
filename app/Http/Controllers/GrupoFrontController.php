@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Group;
+use Illuminate\Support\Facades\DB;
 
 class GrupoFrontController extends Controller
 {
@@ -15,8 +16,11 @@ class GrupoFrontController extends Controller
 
     public function show(Group $grupo){
         $lines = $grupo->lines()->latest('id')->get();
-        
 
-        return view('products.lineas.front.index', compact('lines', 'grupo'));
+        // $lines = DB::table('_group_line')->where('id_grupo', $grupo->id)->get();
+
+        // dd( $lines);
+
+        return view('products.lineas.front.index', ['lines' => $lines, 'grupo' => $grupo]);
     }
 }
