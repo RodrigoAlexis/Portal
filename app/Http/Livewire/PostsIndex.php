@@ -11,6 +11,7 @@ class PostsIndex extends Component
     use WithPagination;
 
     public $search ;
+    
 
     public function updatingSearch()
     {
@@ -23,4 +24,6 @@ class PostsIndex extends Component
 
         return view('livewire.posts-index', compact('posts'));
     }
+
+    
 }

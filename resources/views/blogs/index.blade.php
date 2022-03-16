@@ -3,13 +3,8 @@
         {{-- grid de los post publicados --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($blogs as $blog)
-                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($blog->image) {{Storage::url($blog->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
+                <article class="w-full h-80 bg-cover bg-center  @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($blog->image) {{Storage::url($blog->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
                     <div class="w-full h-full px-8 flex flex-col justify-center">
-
-                        {{-- Etiqueta de la categoria --}}
-                        {{-- <div>
-                           <a href="{{ route('blogs.category', $blog->bcategory)}}" class=" mb-4 inline-block px-3 h-6 bg-{{$blog->bcategory->color}}-600 text-white rounded-full">{{$blog->bcategory->name}}</a> 
-                        </div> --}}
 
                         {{-- Titulo --}}
                         <h1 class="text-4xl text-white leading-8 font-bold">

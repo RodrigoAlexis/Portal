@@ -1,5 +1,5 @@
 <x-app-layout>
     
-    @livewire('panel')
+    @include('panel.panel')
 
 </x-app-layout> 

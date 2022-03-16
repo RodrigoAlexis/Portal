@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreBlogRequest extends FormRequest
+class BlogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,19 @@ class StoreBlogRequest extends FormRequest
      */
     public function rules()
     {
+        $post = $this->route()->parameter('post');
+
         $rules = [
             'name' => 'required',
             'slug' => 'required|unique:blogs',
             'status' => 'required|in:1,2',
             'file' => 'image'
         ];
+
+        if ($post){
+            $rules['slug'] = 'required|unique:blogs,slug,' . $post->id;
+        }
+
 
         if($this->status == 2){
             $rules = array_merge($rules, [

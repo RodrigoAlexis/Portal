@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-black via-gray-800 to-gray-600 menu sticky top-0 " x-data="{ open: false }">
+<nav class="bg-gradient-to-r from-black via-gray-800 to-gray-600 menu sticky top-0  " x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
 

@@ -10,16 +10,22 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+        
+        
 
         @livewireStyles
 
-        <!-- Scripts -->       
-        <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script> 
+        <!-- Scripts -->   
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/mi.js') }}" defer></script>
-        {{-- <script src="{{ asset('js/mi.js')}}" defer></script> --}}
+
+       
     </head>
     <body class="font-sans antialiased bg-gray-100">
         <x-jet-banner />
@@ -28,6 +34,12 @@
             @if(Route::is('dashboard')) 
                 
                 @elseif(Route::is('posts*'))
+
+                @elseif(Route::is('products*'))
+                
+                @elseif(Route::is('groups*'))
+
+                @elseif(Route::is('lines*'))
 
                 @else
                     @livewire('navigation')
@@ -54,8 +66,20 @@
     </body>
     <footer>
         @if(Route::is('dashboard')) 
+
+            @elseif(Route::is('login'))
+
+            @elseif(Route::is('register'))
                 
             @elseif(Route::is('posts*'))
+
+            @elseif(Route::is('products*'))
+
+            @elseif(Route::is('groups*'))
+
+            @elseif(Route::is('lines*'))
+
+            
 
             @else
                 @livewire('footer')

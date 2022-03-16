@@ -6,7 +6,7 @@
             {!!$blog->stract!!}
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
 
             {{-- Contenido principal --}}
             <div class="lg:col-span-2">
@@ -18,10 +18,9 @@
                     @endif
                 </figure>
 
-                <div class="text-base text-gray-500 mt-4">
+                <div class="text-gray-500 mt-4">
                     {!!$blog->body!!}
                 </div>
-
             </div>
 
             {{-- Contenido relacionado --}}
@@ -33,9 +32,9 @@
                         <li class="mb-4">
                             <a class="flex" href="{{ route('blogs.show', $similar)}}">
                                 @if ($similar->image)
-                                    <img class="w-34 h-24 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                    <img class="w-36 h-24 flex-initial object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
                                 @else
-                                    <img class="w-32 h-22 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
+                                    <img class="w-36 h-24 flex-initial  object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
                                 @endif
                                 {{-- <img class="object-cover object-center w-36 h-20 " src="{{Storage::url($similar->image->url)}}" alt=""> --}}
                                 <span class="ml-2 text-gray-600">{{$similar->name}}</span>
@@ -43,8 +42,9 @@
                         </li>
                     @endforeach
                 </ul>
-            </aside>
+            </aside>               
 
         </div>
+        
     </div>
 </x-app-layout>

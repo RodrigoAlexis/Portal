@@ -21,8 +21,8 @@ class Navigation extends Component
             ],
             [
                 'name' => 'Productos',
-                'route' => route('productos.index'),
-                'active' => request()->routeIs('productos.index')
+                'route' => route('grupos.index'),
+                'active' => request()->routeIs('grupos.index')
             ],
             
             [

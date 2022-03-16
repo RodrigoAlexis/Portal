@@ -55,54 +55,27 @@ let Password = {
       }
 
 
-    //Crear el slug
-    function crearURL(str) {
-        
-        str = str.replace(/^\s+|\s+$/g, ""); // trim
-        str = str.toLowerCase();
-
-        // remove accents, swap ñ for n, etc
-        var from = "åàáãäâèéëêìíïîòóöôùúüûñç·/_,:;";
-        var to = "aaaaaaeeeeiiiioooouuuunc------";
-
-        for (var i = 0, l = from.length; i < l; i++) {
-            str = str.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
+      const tableConfig = {
+        tableCellProperties: {
+            borderColors: [
+                {
+                    color: 'hsl(0, 0%, 90%)',
+                    label: 'Light grey'
+                },
+                // ...
+            ],
+            backgroundColors: [
+                {
+                    color: 'hsl(120, 75%, 60%)',
+                    label: 'Green'
+                },
+                // ...
+            ]
         }
+    };
 
-        str = str
-            .replace(/[^a-z0-9 -]/g, "") // remove invalid chars
-            .replace(/\s+/g, "-") // collapse whitespace and replace by -
-            .replace(/-+/g, "-") // collapse dashes
-            .replace(/^-+/, "") // trim - from start of text
-            .replace(/-+$/, ""); // trim - from end of text
 
-        var input = document.getElementById('slug');
-            input.value = str;  
-      }
+    
 
-    // CKeditor5 textareas para crear un post
-    ClassicEditor
-        .create( document.querySelector( '#stract' ) )
-        .catch( error => {
-            console.error( error );
-    } );
 
-    ClassicEditor
-        .create( document.querySelector( '#body' ) )
-        .catch( error => {
-            console.error( error );
-    } );
-
-    //Cambiar imagen al crear un post
-    document.getElementById("file").addEventListener('change', cambiarImagenPost);
-
-    function cambiarImagenPost(event){
-        var file = event.target.files[0];
-
-        var reader = new FileReader();
-        reader.onload = (event) => {
-            document.getElementById("picture").setAttribute('src', event.target.result);
-        };
-
-        reader.readAsDataURL(file);
-    }
+    

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBlogRequest;
+use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -35,9 +36,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBlogRequest $request)
+    public function store(BlogRequest $request)
     {
-        $post = Blog::create($request->all());
+        $post = Blog::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'stract' => $request->stract,
+            'body' => $request->body,
+            'status' => $request->status,
+        ]);
+        
 
         if ($request->file('file')) {
             $url = Storage::put( 'blogs',$request->file('file'));
@@ -47,7 +55,11 @@ class PostController extends Controller
             ]);
         }
 
-        return redirect()->route('posts.index', $post);
+        // for ($i=0; $i<count($request->images) ; $i++) { 
+        //     if(isset($request->))
+        // }
+
+        return redirect()->route('posts.index', $post)->with('success', 'El post se creo satisfactoriamente');
     }
 
     /**
@@ -56,9 +68,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Blog $post)
     {
-        return view('blogs.posts.show', compact('blog'));
+        return view('blogs.posts.show', compact('post'));
     }
 
     /**
@@ -67,9 +79,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Blog $post)
     {
-        return view('blogs.posts.edit', compact('blog'));
+        return view('blogs.posts.edit', compact('post'));
     }
 
     /**
@@ -79,9 +91,33 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(BlogRequest $request, Blog $post)
     {
-        //
+        $post->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'stract' => $request->stract,
+            'body' => $request->body,
+            'status' => $request->status
+        ]);
+
+        if ($request->file('file')) {
+            $url = Storage::put('blogs', $request->file('file'));
+
+            if($post->image){
+                Storage::delete($post->image->url);
+
+                $post->image->update([
+                    'url' => $url
+                ]);
+            }else{
+                $post->image()->create([
+                    'url' => $url
+                ]);
+            }
+        }
+
+        return redirect()->route('posts.index', $post)->with('success', 'El post se actualizó satisfactoriamente');
     }
 
     /**
@@ -90,8 +126,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Blog $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('posts.index')->with('success', 'El post se eliminó satisfactoriamente');
     }
 }

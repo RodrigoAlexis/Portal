@@ -1,14 +1,22 @@
 <div class="flex flex-col">
+    @if (session('success'))
+    {{-- <p> {{session('success')}}</p>  --}}
+    <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
+        <span class="inline-block align-middle mr-8 text-center ">
+            <p> {{session('success')}}</p>        
+        </span>
+    </div>
+    @endif
 
     <div class="mb-4">
-        <div class="float-left text-gray-400 text-3xl font-semibold">
+        <div class="float-left text-gray-500 text-2xl lg:text-3xl font-semibold">
             Listado de Posts
         </div>
-        <a href="{{route('posts.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-green-700 hover:bg-green-800  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">
+        <a href="{{route('posts.create')}}" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             Agregar Nuevo Post
         </a>
 
-        <a href="{{route('posts.create')}}" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-green-700 hover:bg-green-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">
+        <a href="{{route('posts.create')}}" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-700 hover:bg-indigo-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
@@ -49,7 +57,7 @@
     @if($posts->count())
 
         {{-- Tabla --}}
-        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
+        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
 
             <div class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg  border-b border-gray-200">
                 <table class="min-w-full ">
@@ -78,6 +86,8 @@
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     {{$post->name}}
                                 </td>
+
+                                
 
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                                     <a href="{{route('posts.edit', $post)}}" class="text-gray-500 hover:text-yellow-500">
@@ -114,12 +124,20 @@
 
     @else
 
-    <div class="content-center text-center justify-center mt-8">
+    <div class=" content-center text-center justify-center mt-8">
         <strong class="text-lg font-semibold text-gray-600">
-            No se encontró ningún registro con ese nombre 
+            No se encontró ningún registro en la base de datos
         </strong>
         <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
     </div>
        
     @endif
+  
+
+    <script>
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+    </script>
 </div>
