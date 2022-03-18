@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Group;
 use App\Http\Requests\LineRequest;
 use App\Models\Line;
+use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 
 class LineController extends Controller
 {
@@ -75,9 +74,16 @@ class LineController extends Controller
     //     return view('products.front.index', ['products' => $products, 'line' => $line]);
     // }
 
-    public function mostrar(Group $group, Line $line)
+    public function mostrar(Line $line)
     {
-        $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id], '&', 'group_id = ?', [$group->id]);
+        // $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id], '&', 'group_id = ?', [$group->id]);
+        $grupo = Group::all();
+        $linea = Line::all();
+
+        $products = Product::where('group_id', $grupo->id)
+                            ->where('line_id', $linea->id)
+                            ->latest('id')
+                            ->get();
     }
 
 
