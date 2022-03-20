@@ -14,12 +14,17 @@ class Line extends Model
         'slug'
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function groups(){
         return $this->belongsToMany(Group::class);
     }
 
     public function products(){
-        return $this->belongsToMany(Product::class);
+        return $this->hasOne(Product::class);
     }
 
     public function image(){

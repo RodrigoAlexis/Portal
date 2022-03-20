@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Group;
 use App\Http\Requests\LineRequest;
 use App\Models\Line;
+use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -64,20 +65,22 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show(Line $line)
-    // {
-    //     // $products = $line->products()->latest('id')->get();
-
-    //     $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id]);
-        
-
-
-    //     return view('products.front.index', ['products' => $products, 'line' => $line]);
-    // }
-
-    public function mostrar(Group $group, Line $line)
+    public function show(Line $line)
     {
-        $products = DB::select('select * from `_group_line_product` WHERE line_id = ?', [$line->id], '&', 'group_id = ?', [$group->id]);
+        
+    }
+
+    public function mostrarProductos(Group $group, Line $line)
+    {
+
+        $lines = $group->lines()->latest('id')->get();
+
+        $products = Product::where('group_id', '=', $group->id)
+                        ->where('line_id','=', $line->id)
+                        ->latest('id')
+                        ->get();
+
+        return view('products.front.index',['lines' => $lines, 'products' => $products ]);
     }
 
 

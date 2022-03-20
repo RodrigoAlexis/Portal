@@ -15,9 +15,11 @@ class GrupoFrontController extends Controller
     }
 
     public function show(Group $grupo){
+
+
         $lines = $grupo->lines()->latest('id')->get();
 
-        // $lines = DB::table('_group_line')->where('id_grupo', $grupo->id)->get();
+        //$lines = DB::table('_group_line')->where('id_grupo', $grupo->id)->get();
 
         // dd( $lines);
 

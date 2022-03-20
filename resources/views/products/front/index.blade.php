@@ -5,7 +5,7 @@
             @foreach ($products as $product)
             <div class="flex flex-col items-center justify-center w-full">
                 
-                <a href="{{route('products.show', $product->id)}}" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url()">
+                <a href="" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
                 
                 </a>
         
