@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Group;
 use App\Http\Requests\LineRequest;
 use App\Models\Line;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 
 class LineController extends Controller
 {
