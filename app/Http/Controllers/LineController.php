@@ -78,6 +78,8 @@ class LineController extends Controller
                         ->latest('id')
                         ->get();
 
+                        dd($products);
+
         return view('products.front.index',['lines' => $lines, 'products' => $products ]);
     }
 

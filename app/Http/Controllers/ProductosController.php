@@ -72,9 +72,21 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
         //
+    }
+
+    public function mostrar(Group $group, Line $line, Product $product)
+    {
+        $productos = Product::where('group_id', '=', $group->id)
+                        ->where('line_id','=', $line->id)
+                        ->latest('id')
+                        ->get();
+
+                        dd($product);
+
+        return view('products.front.modalProduct', compact('group', 'line', 'product'));
     }
 
     /**

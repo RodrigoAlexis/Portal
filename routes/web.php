@@ -25,10 +25,10 @@ Route::get('/grupos', [GrupoFrontController::class, 'index'])->name('grupos.inde
 // Lineas que pertenecen a un grupo
 Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupos.show');
 
-
-// Route::get('/linea/{line}', [LineController::class, 'show'])->name('lineas.show');
-
+//Mostrar productos por grupo y linea
 Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrarProductos'])->name('lineas.mostrar');
+
+Route::get('grupo/{group}/linea/{line}/producto/{product}', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
  
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
