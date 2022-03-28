@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\GrupoFrontController;
 use App\Http\Controllers\LineController;
+use App\Http\Controllers\BuzonController;
 
 
 Route::get('/', function () {
@@ -55,3 +56,6 @@ Route::resource('/groups', GrupoController::class)->names('groups');
 
 // Lineas
 Route::resource('/lines', LineController::class)->names('lines');
+
+// Buzon
+Route::resource('buzon', BuzonController::class)->names('buzon');

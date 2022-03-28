@@ -32,7 +32,7 @@
                                 <div class="text-gray-600 font-bold text-xl mb-2 ">{{$product->name}}</div>
 
                                 <div class="grid grid-cols-2">
-                                    <div>
+                                    <div class="border-b border-gray-200">
                                         <table class="min-w-full ">
                                             <thead>
                                                 <tr>
@@ -44,7 +44,7 @@
                         
                                             <tbody class="bg-white">
                                                     <tr>
-                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm">
+                                                        <td class="px-6 py-4  border-r border-gray-200 text-sm">
                                                             {!!$product->etiqueta!!}
                                                         </td>
                                                     </tr>
@@ -52,7 +52,7 @@
                                         </table>
                                     </div>
 
-                                    <div>
+                                    <div class="border-b border-gray-200">
                                         <table class="min-w-full ">
                                             <thead>
                                                 <tr>
@@ -64,7 +64,7 @@
                         
                                             <tbody class="bg-white">
                                                     <tr>
-                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm">
+                                                        <td class="px-6 py-4  border-l border-gray-200 text-sm">
                                                             {!!$product->color!!}
                                                         </td>
                                                     </tr>
@@ -74,6 +74,8 @@
                                 </div>
                             </div>
 
+                            {{-- <hr class="mb-2 border-t"/> --}}
+
                             {{-- Piezas por caja --}}
                             <div class="flex items-center justify-between">
                                 <div class="text-sm">
@@ -82,11 +84,9 @@
                                         <span class="text-sm font-medium ml-1 text-indigo-500">{{$product->piezas}}</span>
                                     </div>
                                 </div>
-                                <div>
-                                    
-                                </div>
-                                <button  @click="open = !open"  type="button" class=" hidden sm:hidden md:inline lg:inline 2xl:inline h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Más información</button>  
-                                <button  @click="open = !open"  type="button" class=" inlilne sm:inline md:hidden lg:hidden 2xl:hidden h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+                                
+                                <button  @click="open = !open"  type="button" class="hidden sm:hidden md:inline lg:inline 2xl:inline h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Más información</button>  
+                                <button  @click="open = !open"  type="button" class="inlilne sm:inline md:hidden lg:hidden 2xl:hidden h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>

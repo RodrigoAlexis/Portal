@@ -31,12 +31,13 @@ class Navigation extends Component
                 'active' => request()->routeIs('blogs.index')
             ],
             [
-                'name' => 'Contacto',
-                'route' => route('home'),
-                'active' => request()->routeIs('#')
+                
+                'name' => 'Buzón',
+                'route' => route('buzon.index'),
+                'active' => request()->routeIs('buzon.index')
             ],
             [
-                'name' => 'Buzón',
+                'name' => 'Contacto',
                 'route' => route('home'),
                 'active' => request()->routeIs('#')
             ],
