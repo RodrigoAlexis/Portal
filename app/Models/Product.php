@@ -12,15 +12,18 @@ class Product extends Model
     protected $fillable=[
         'name',
         'slug',
+        'piezas',
+        'etiqueta',
+        'color',
         'group_id',
         'line_id'
     ];
 
-    public function groups(){
+    public function group(){
         return $this->belongsTo(Group::class);
     }
 
-    public function lines(){
+    public function line(){
         return $this->belongsTo(Line::class);
     }   
 

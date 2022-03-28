@@ -49,6 +49,9 @@ class ProductosController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'slug' => $request->slug,
+            'piezas' => $request->piezas,
+            'etiqueta' => $request->etiqueta,
+            'color' => $request->color,
             'group_id' => $request->group_id,
             'line_id' => $request->line_id
         ]);
@@ -74,20 +77,22 @@ class ProductosController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        // $productos = Product::where('id', '=', $product->id)->get();
+
+        // return view('products.front.modalProduct', compact('productos'));
     }
 
-    public function mostrar(Group $group, Line $line, Product $product)
-    {
-        $productos = Product::where('group_id', '=', $group->id)
-                        ->where('line_id','=', $line->id)
-                        ->latest('id')
-                        ->get();
+    // public function mostrar(Group $group, Line $line, Product $product)
+    // {
+    //     $productos = Product::where('group_id', '=', $group->id)
+    //                     ->where('line_id','=', $line->id)
+    //                     ->where('id', '=', $product->id)
+    //                     ->get();
 
-                        dd($product);
+    //                     // dd($productos);
 
-        return view('products.front.modalProduct', compact('group', 'line', 'product'));
-    }
+    //     // return view('products.front.modalProduct', ['group' => $group, 'line' => $line, 'product' => $product, 'productos' => $productos]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

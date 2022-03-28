@@ -68,7 +68,7 @@ class LineController extends Controller
         
     }
 
-    public function mostrarProductos(Group $group, Line $line)
+    public function mostrarProductos(Group $group, Line $line, Product $pro)
     {
 
         $lines = $group->lines()->latest('id')->get();
@@ -76,9 +76,25 @@ class LineController extends Controller
         $products = Product::where('group_id', '=', $group->id)
                         ->where('line_id','=', $line->id)
                         ->latest('id')
-                        ->get();
+                        ->paginate(8);
 
-                        dd($products);
+        // $todo = [$lines, $products];
+
+        // return $todo;
+
+        // $grupo = Product::all();
+
+        // $grupo = Product::find(6)->group->name;
+        // $linea = Product::find(6)->line->name;
+        // $producto = Product::find(6);
+
+        // $todo = [$grupo, $linea, $producto];
+
+        // dd($todo);
+
+        // return $todo;
+
+
 
         return view('products.front.index',['lines' => $lines, 'products' => $products ]);
     }

@@ -25,6 +25,25 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/mi.js') }}" defer></script>
 
+        
+        <style>
+            [x-cloak] {
+                display: none;
+            }
+            .zoom{
+                transition: 1.5s ease;
+                -moz-transition: 1.5s ease; /* Firefox */
+                -webkit-transition: 2s ease; /* Chrome - Safari */
+                -o-transition: 1.5s ease; /* Opera */
+            }
+            .zoom:hover{
+                transform : scale(2);
+                -moz-transform : scale(2); /* Firefox */
+                -webkit-transform : scale(2); /* Chrome - Safari */
+                -o-transform : scale(2); /* Opera */
+                -ms-transform : scale(2); /* IE9 */
+            }
+        </style>
        
     </head>
     <body class="font-sans antialiased bg-gray-100">

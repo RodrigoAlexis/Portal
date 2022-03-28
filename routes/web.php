@@ -28,7 +28,7 @@ Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupo
 //Mostrar productos por grupo y linea
 Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrarProductos'])->name('lineas.mostrar');
 
-Route::get('grupo/{group}/linea/{line}/producto/{product}', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
+// Route::get('grupo/{group}/linea/{line}/producto/{product}', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
  
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

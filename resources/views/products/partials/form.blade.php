@@ -39,6 +39,33 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
         </div>
+
+        <div>
+            {!! Form::label('piezas', 'Piezas por Caja', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::number('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
+
+            @error('slug')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        <div  class="col-span-1 sm:col-span-2 md:col-span-2">
+            {!! Form::label('etiqueta', 'Etiqueta', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::textarea('etiqueta', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm']) !!}       
+           
+            @error('stract')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        <div  class="col-span-1 sm:col-span-2 md:col-span-2">
+            {!! Form::label('color', 'Color', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::textarea('color', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm']) !!}       
+           
+            @error('stract')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
          
         {{-- previsualizacion de la imagen --}}
         <div>  
