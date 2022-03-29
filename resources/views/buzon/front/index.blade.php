@@ -143,7 +143,7 @@
                         {{-- texto de los hechos --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4">
                             <x-jet-label for="hechos" value="{{ __('Texto de los Hechos') }}" />
-                            <textarea id="hechos" class="block mt-1 w-full" type="text" name="hechos" :value="old('hechos')"  autofocus autocomplete="hechos" rows="3"></textarea>
+                            <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="hechos" :value="old('hechos')"  autofocus autocomplete="hechos" rows="3"></textarea>
                         </div>
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
