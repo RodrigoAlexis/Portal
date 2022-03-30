@@ -23,7 +23,7 @@
                     <div class="w-full lg:max-w-full lg:flex shadow-md">
 
                         {{-- Imagen  Agregar la palabra zoom a la propiedad class para hacer zoom a la imagen--}}
-                        <div class="h-48 lg:h-72 lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden " style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)" title="Product"></div>
+                        <div class="h-48 lg:h-72 lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden object-cover " style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)" title="Product"></div>
 
                         <div class="w-full bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                             

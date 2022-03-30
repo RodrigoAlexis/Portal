@@ -1,6 +1,6 @@
 <x-app-layout>
     {{-- Imagen --}}
-    <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32" 
+    <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32 object-fill" 
             style="background-image: url('https://cdn.pixabay.com/photo/2021/05/29/17/35/car-6293917__340.jpg');">   
     </div>
     
@@ -26,8 +26,10 @@
         </div>      
     </div>
 
+    {{-- Contenido --}}
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
-        <div class="mb-8">
+        {{-- Descripcion del canal --}}
+        <div class="mb-8 text-gray-600">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa porro perspiciatis quaerat nisi reiciendis molestiae, inventore quos minus nobis odio, laboriosam nostrum vero modi placeat repudiandae, reprehenderit dolorum facilis obcaecati.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem voluptates harum ad, cumque quis facilis unde debitis laboriosam adipisci obcaecati facere soluta sed laborum? Quibusdam quidem obcaecati repellendus veniam.
@@ -35,20 +37,20 @@
             </p>
         </div>
             
-        <div class="flex">
-            {{-- formulario --}}
+        <div class="flex" x-data="{ open: false }">
+            {{-- Formulario --}}
             <div class="w-3/4 flex-auto mr-4">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="grid grid-cols-4 gap-4">
                         {{-- Canal --}}
-                        <div>
+                        <div >
                             <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
                             <div >
-                                <select name="canal" class="form-select w-full
+                                <select id="opciones" name="canal" class="form-select w-full opciones
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Confidencial">Confidencial</option>
-                                    <option value="Anónimo">Anónimo</option>
+                                    <option value="Anonimo" @click="open = !open">Anónimo</option>
                                 </select>
                               </div>
                         </div>
@@ -75,7 +77,7 @@
                               </div>
                         </div>
                         {{-- Tipo --}}
-                        <div>
+                        <div >
                             <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
                             <div >
                                 <select name="tipo" class="form-select w-full
@@ -87,69 +89,98 @@
                                 </select>
                               </div>
                         </div>
-                        {{-- nombre --}}
-                        {{-- <div class="col-span-2">
-                            <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
-                        </div> --}}
-                         {{-- apellido paterno --}}
-                         {{-- <div>
-                            <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
-                            <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
-                        </div> --}}
-                        {{-- apellido materno --}}
-                        {{-- <div >
-                            <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
-                            <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
-                        </div> --}}
-                        {{-- numero --}}
-                        {{-- <div >
-                            <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
-                            <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
-                        </div> --}}
-                        {{-- correo electronico --}}
-                        {{-- <div class="col-span-1 sm:col-span-2 md:col-span-2">
-                            <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
-                            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
-                        </div> --}}
+
+                        {{-- Informacion Personal --}}
+                        <div class="col-span-4 personal hidden" id="personal" x-show="open" >
+                            <div class="col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
+                                <label for="info">Información Personal</label>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4">
+                                {{-- nombre --}}
+                                <div>
+                                    <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
+                                    <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
+                                </div>
+                                {{-- apellido paterno --}}
+                                <div>
+                                    <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
+                                    <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
+                                </div>
+                                {{-- apellido materno --}}
+                                <div >
+                                    <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
+                                    <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
+                                </div>
+                                {{-- numero --}}
+                                <div >
+                                    <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
+                                    <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
+                                </div>
+                                {{-- correo electronico --}}
+                                <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                    <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
+                                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
+                                </div>
+                            </div> 
+                        </div>
+                        
+
+                         
+                        
+                        
+                        <div class="col-span-4 mt-4 text-lg block text-gray-600 font-bold">
+                            <label for="info">Información de Cliente</label>
+                        </div>
                         
                         {{-- IsClient? --}}
-                        {{-- <div>
+                        <div class="col-span-2">
                             <x-jet-label for="isClient" value="{{ __('¿Es Cliente? *') }}" />
                             <div >
                                 <select name="isClient" class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                    <option value>Seleccione una opción</option>
                                     <option value="Soy cliente">Si, soy cliente</option>
                                     <option value="No soy cliente">No soy cliente</option>
                                 </select>
                               </div>
-                        </div> --}}
-                        {{-- Clave cliente --}}
-                        {{-- <div>
-                            <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente') }}" />
-                            <x-jet-input id="clave_cliente" class="block mt-1 w-full" type="text" name="clave_cliente" :value="old('clave_cliente')"  autofocus autocomplete="clave_cliente" />
-                        </div> --}}
-                        {{-- rfc--}}
-                        {{-- <div>
-                            <x-jet-label for="rfc" value="{{ __('RFC') }}" />
-                            <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')"  autofocus autocomplete="rfc" />
-                        </div> --}}
-                        {{-- razon_social --}}
-                        {{-- <div class="col-span-1 sm:col-span-2 md:col-span-2">
-                            <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />
-                            <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')"  autofocus autocomplete="razon_social" />
-                        </div> --}}
+                        </div>
+
+                        {{-- Informacion de cliente --}}
+                        <div class="col-span-4">
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                {{-- Clave cliente --}}
+                                <div>
+                                    <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente') }}" />
+                                    <x-jet-input id="clave_cliente" class="block mt-1 w-full" type="text" name="clave_cliente" :value="old('clave_cliente')"  autofocus autocomplete="clave_cliente" />
+                                </div>
+                                {{-- rfc--}}
+                                <div>
+                                    <x-jet-label for="rfc" value="{{ __('RFC') }}" />
+                                    <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')"  autofocus autocomplete="rfc" />
+                                </div>
+                                {{-- razon_social --}}
+                                <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                    <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />
+                                    <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')"  autofocus autocomplete="razon_social" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
                         
                         {{-- texto de los hechos --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4">
-                            <x-jet-label for="hechos" value="{{ __('Texto de los Hechos') }}" />
+                            <x-jet-label for="hechos" value="{{ __('Texto de los Hechos *') }}" />
                             <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="hechos" :value="old('hechos')"  autofocus autocomplete="hechos" rows="3"></textarea>
                         </div>
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
                             <x-jet-label for="adjunto" value="{{ __('Adjunto') }}" />
                             <x-jet-input id="adjunto" class="block mt-1 w-full" type="file" name="adjunto" :value="old('adjunto')"  autofocus autocomplete="adjunto" />
-                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> en caso de necesitar adjuntar mas de un archivo, por favor, adjunte un ZIP con todos ellos</p>
+                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> en caso de necesitar adjuntar mas de un archivo, por favor, adjunte un ZIP con todos ellos.</p>
                         </div>
 
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
@@ -159,7 +190,7 @@
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                            <button class="float-center w-full text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+                            <button class="float-center w-full text-md text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-md px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
                                 Envíar
                             </button>
                         </div>
@@ -172,8 +203,20 @@
             <div class="w-1/4 bg-slate-900 flex-auto">
                 02
             </div>
-        </div>
-
-        
+        </div>   
     </div>
+    <script>
+        let opciones  = document.getElementsByClassName("opciones")
+        let formP = document.getElementsByClassName("personal")
+        
+        opciones.addEventListener("change", () => {
+          let eleccion = opciones.options[opciones.selectedIndex].text
+          
+          if(eleccion === "Anonimo") {
+            formP.style.display = "hidden"
+          } else {
+            formP.style.display = "inline"
+          }
+        })
+      </script>
 </x-app-layout>
