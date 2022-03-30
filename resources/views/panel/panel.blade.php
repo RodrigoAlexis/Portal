@@ -16,18 +16,14 @@
             {{-- Opciones del menu lateral --}}
             <nav class="mt-10">
                 <ul>
-                    {{-- General --}}
+                    {{-- Inicio --}}
                     <li>
                         <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('dashboard') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('dashboard')}}">
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
             
-                            <span class="mx-3">General</span>
+                            <span class="mx-3">Inicio</span>
                         </a>
                     </li>
                     {{-- Blog --}}
@@ -40,15 +36,15 @@
                             <span class="mx-3">Blog</span>
                         </a>
                     </li>
-                    {{-- Reportes --}}
+                    {{-- Denuncias --}}
                     <li>
                         <a class=" flex items-center mt-4 py-2 px-6 text-white hover:bg-white hover:bg-opacity-25 hover:text-white"
                             href="/forms">
-                            <svg     xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                             </svg>
             
-                            <span class="mx-3">Reportes</span>
+                            <span class="mx-3">Denuncias</span>
                         </a>
                     </li>
                     {{-- Usuarios --}}
@@ -65,12 +61,12 @@
                     {{-- Productos --}}
                     <li>
                         {{-- Dropdown --}}
-                        <div href="{{route('posts.index')}}" x-data="{ open: false }">
-                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                        <div x-data="{ open: false }">
+                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
-                                <span class="mx-3"><a href="{{route('products.index')}}">Productos</a></span>
+                                <span class="mx-3">Productos</span>
                                 <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
                             
@@ -78,15 +74,15 @@
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
                                 <div class="px-2 py-2 bg-indigo-500 rounded-md shadow dark-mode:bg-gray-800">
 
-                                    {{-- Grupo --}}
+                                    {{-- Articulos --}}
                                     <div class="flex items-center py-2 px-6 ">
                                         
-                                        <a href="{{route('groups.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('groups*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                        <a href="{{route('products.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                                             </svg>
 
-                                              <span class="mx-3">Grupos</span>
+                                            <span class="mx-3">Artículos</span>
                                         </a>
                                     </div>
 
@@ -98,6 +94,18 @@
                                             </svg>
 
                                               <span class="mx-3">Líneas</span>
+                                        </a>
+                                    </div>
+
+                                    {{-- Grupo --}}
+                                    <div class="flex items-center py-2 px-6 ">
+                                        
+                                        <a href="{{route('groups.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('groups*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                            </svg>
+
+                                              <span class="mx-3">Grupos</span>
                                         </a>
                                     </div>
 

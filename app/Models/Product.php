@@ -13,8 +13,12 @@ class Product extends Model
         'name',
         'slug',
         'piezas',
-        'etiqueta',
-        'color',
+        'etiqueta1',
+        'etiqueta2',
+        'color1',
+        'color2',
+        'color3',
+        'color4',
         'group_id',
         'line_id'
     ];

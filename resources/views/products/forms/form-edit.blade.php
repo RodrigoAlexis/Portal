@@ -34,10 +34,6 @@
 {{-- Ruta del plugin para creacion de slug --}}
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
-       
-<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
-
 <script>
     //Creacion de slug
     $(document).ready( function() {
@@ -46,30 +42,6 @@
             getPut: '#slug',
             space: '-'
         });
-    });
-
-    //SunEditor
-    const description2 = SUNEDITOR.create((document.getElementById('etiqueta')),{
-        buttonList: [
-            ['undo', 'redo'],
-            ['underline', 'italic', 'strike'],
-        ],
-        lang: SUNEDITOR_LANG['en']
-    });
-    $(window).click(function() {
-        document.getElementById('etiqueta').value = description2.getContents();
-    });
-
-    const description = SUNEDITOR.create((document.getElementById('color')),{
-        buttonList: [
-            ['undo', 'redo'],
-            ['underline', 'italic', 'strike'],
-            ['fontColor', 'hiliteColor'],
-        ],
-        lang: SUNEDITOR_LANG['en']
-    });
-    $(window).click(function() {
-        document.getElementById('color').value = description.getContents();
     });
 
     //Cambiar imagen al crear un grupo

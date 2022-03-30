@@ -40,33 +40,84 @@
             @enderror
         </div>
 
+        {{-- Etiqueta 1 --}}
+        <div>
+            {!! Form::label('etiqueta1', 'Etiqueta #1', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('etiqueta1', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Obligatorio']) !!}       
+           
+            @error('etiqueta1')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Etiqueta 2 --}}
+        <div>
+            {!! Form::label('etiqueta2', 'Etiqueta #2', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('etiqueta2', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Opcional']) !!}       
+           
+            @error('etiqueta2')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Color 1 --}}
+        <div>
+            {!! Form::label('color1', 'Color #1', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('color1', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Obligatorio']) !!}       
+           
+            @error('color1')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Color 2 --}}
+        <div>
+            {!! Form::label('color2', 'Color #2', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('color2', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Opcional']) !!}       
+           
+            @error('color2')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Color 3 --}}
+        <div>
+            {!! Form::label('color3', 'Color #3', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('color3', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Opcional']) !!}       
+           
+            @error('color3')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Color 4 --}}
+        <div>
+            {!! Form::label('color4', 'Color #4', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('color4', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm', 'placeholder' => 'Opcional']) !!}       
+           
+            @error('color4')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror
+        </div>
+
+        {{-- Piezas --}}
         <div>
             {!! Form::label('piezas', 'Piezas por Caja', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
             {!! Form::number('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
 
-            @error('slug')
-                <small class="text-red-600">{{$message}}</small>
-            @enderror
-        </div>
-
-        <div  class="col-span-1 sm:col-span-2 md:col-span-2">
-            {!! Form::label('etiqueta', 'Etiqueta', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::textarea('etiqueta', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm']) !!}       
-           
-            @error('stract')
-                <small class="text-red-600">{{$message}}</small>
-            @enderror
-        </div>
-
-        <div  class="col-span-1 sm:col-span-2 md:col-span-2">
-            {!! Form::label('color', 'Color', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::textarea('color', null, ['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200  rounded-md shadow-sm']) !!}       
-           
-            @error('stract')
+            @error('piezas')
                 <small class="text-red-600">{{$message}}</small>
             @enderror
         </div>
          
+        <div>
+            {{-- {!! Form::label('piezas', 'Piezas por Caja', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::number('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
+
+            @error('piezas')
+                <small class="text-red-600">{{$message}}</small>
+            @enderror --}}
+        </div>
         {{-- previsualizacion de la imagen --}}
         <div>  
             @isset ($product->image)

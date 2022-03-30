@@ -58,11 +58,8 @@
                                             Etiqueta
                                         </th>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
+                                            <p class="text-sm leading-5 text-gray-900">Etiqueta 1</p>
+                                            <p class="text-sm leading-5 text-gray-900">Etiqueta 2</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -71,10 +68,10 @@
                                             Color
                                         </th>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                            <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
+                                            <p class="text-sm leading-5 text-gray-900">Color 1</p>
+                                            <p class="text-sm leading-5 text-gray-900">Color 2</p>
+                                            <p class="text-sm leading-5 text-gray-900">Color 3</p>
+                                            <p class="text-sm leading-5 text-gray-900">Color 4</p>
                                         </td>
                                     </tr>
                                         

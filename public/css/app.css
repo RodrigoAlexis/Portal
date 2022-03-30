@@ -1014,14 +1014,14 @@ select {
 .z-50 {
   z-index: 50;
 }
-.z-10 {
-  z-index: 10;
-}
 .z-20 {
   z-index: 20;
 }
 .z-30 {
   z-index: 30;
+}
+.z-10 {
+  z-index: 10;
 }
 .col-span-6 {
   grid-column: span 6 / span 6;
@@ -1052,10 +1052,6 @@ select {
 .-my-2 {
   margin-top: -0.5rem;
   margin-bottom: -0.5rem;
-}
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 .my-4 {
   margin-top: 1rem;
@@ -1096,6 +1092,10 @@ select {
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1250,14 +1250,14 @@ select {
 .h-20 {
   height: 5rem;
 }
-.h-auto {
-  height: auto;
-}
 .h-full {
   height: 100%;
 }
 .h-64 {
   height: 16rem;
+}
+.h-auto {
+  height: auto;
 }
 .h-screen {
   height: 100vh;
@@ -2091,9 +2091,6 @@ select {
 .leading-4 {
   line-height: 1rem;
 }
-.leading-6 {
-  line-height: 1.5rem;
-}
 .leading-none {
   line-height: 1;
 }
@@ -2102,6 +2099,9 @@ select {
 }
 .leading-8 {
   line-height: 2rem;
+}
+.leading-6 {
+  line-height: 1.5rem;
 }
 .tracking-widest {
   letter-spacing: 0.1em;
@@ -2377,13 +2377,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
-.hover\:bg-red-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-red-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .hover\:bg-opacity-25:hover {
   --tw-bg-opacity: 0.25;
@@ -2798,12 +2798,12 @@ select {
     height: 2.5rem;
   }
 
-  .sm\:h-screen {
-    height: 100vh;
-  }
-
   .sm\:h-20 {
     height: 5rem;
+  }
+
+  .sm\:h-screen {
+    height: 100vh;
   }
 
   .sm\:w-10 {
@@ -2814,12 +2814,12 @@ select {
     width: 100%;
   }
 
-  .sm\:w-auto {
-    width: auto;
-  }
-
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-auto {
+    width: auto;
   }
 
   .sm\:max-w-md {
@@ -3191,16 +3191,16 @@ select {
     width: 91.666667%;
   }
 
-  .lg\:w-1\/2 {
-    width: 50%;
-  }
-
   .lg\:w-5\/12 {
     width: 41.666667%;
   }
 
   .lg\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 
   .lg\:w-52 {

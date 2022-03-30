@@ -46,15 +46,22 @@ class ProductosController extends Controller
     {
         // return $request->all();
 
-        $product = Product::create([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'piezas' => $request->piezas,
-            'etiqueta' => $request->etiqueta,
-            'color' => $request->color,
-            'group_id' => $request->group_id,
-            'line_id' => $request->line_id
-        ]);
+        $product = Product::create($request->all());
+        // $product->create($request->all());
+
+        // $product = Product::create([
+        //     'name' => $request->name,
+        //     'slug' => $request->slug,
+        //     'piezas' => $request->piezas,
+        //     'etiqueta1' => $request->etiqueta1,
+        //     'etiqueta2' => $request->etiqueta2,
+        //     'color1' => $request->color1,
+        //     'color2' => $request->color2,
+        //     'color3' => $request->color3,
+        //     'color4' => $request->color4,
+        //     'group_id' => $request->group_id,
+        //     'line_id' => $request->line_id
+        // ]);
 
 
         if ($request->file('file')) {
