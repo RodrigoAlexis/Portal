@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <div x-data="{ open: false }"  class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
         {{-- grid de los post publicados --}}
         <div  class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
@@ -102,7 +103,8 @@
             
         </div>
 
-        @include('products.front.modalProduct')
+        {{-- @include('products.front.modalProduct') --}}
+        @livewire('front-product')
     </div>
 
     
