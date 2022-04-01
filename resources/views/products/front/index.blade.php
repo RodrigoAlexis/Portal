@@ -88,25 +88,37 @@
                                     </div>
                                 </div>
                                 
-                                <button  @click="open = !open"  type="button" class="hidden sm:hidden md:inline lg:inline 2xl:inline h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Más información</button>
+                                <a href="{{url('producto/'. $product->id)}}" onclick="toggleModal('modal-id')" type="button" class="hidden sm:hidden md:inline lg:inline 2xl:inline h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Más información</a>
                                   
-                                <button  @click="open = !open"  type="button" class="inlilne sm:inline md:hidden lg:hidden 2xl:hidden h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+                                <a href="{{url('producto/'. $product->id)}}" onclick="toggleModal('modal-id')" type="button" class="inlilne sm:inline md:hidden lg:hidden 2xl:hidden h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                </button>  
+                                </a>  
                             </div>
 
                         </div>
                     </div>
+                    @include('products.front.modalProduct')
             @endforeach
             
         </div>
 
-        {{-- @include('products.front.modalProduct') --}}
-        @livewire('front-product')
+        
+        {{-- @livewire('front-product') --}}
     </div>
-
+    {{-- <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" >
+        Open regular modal
+      </button> --}}
+      
+      <script type="text/javascript">
+        function toggleModal(modalID){
+          document.getElementById(modalID).classList.toggle("hidden");
+          document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+          document.getElementById(modalID).classList.toggle("flex");
+          document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+        }
+      </script>
     
 </x-app-layout>
 

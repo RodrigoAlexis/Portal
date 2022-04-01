@@ -68,6 +68,13 @@ class LineController extends Controller
         
     }
 
+    public function producto(Product $product){
+
+        $prod = Product::where('id', '=', $product->id);
+
+        return view('products.front.modalProduct', compact('prod'));
+    }
+
     public function mostrarProductos(Group $group, Line $line, Product $pro)
     {
 
