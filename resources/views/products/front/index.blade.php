@@ -1,13 +1,12 @@
 <x-app-layout>
 
-    <div x-data="{ open: false }"  class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
         {{-- grid de los post publicados --}}
-        <div  class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($products as $product)
 
-                    {{-- <div>
-                        
-                        <a type="button"  @click="open = true" href="" class="block h-64 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)"></a>
+                    <div>
+                        <a href="#{{$product->name}}" onclick="toggleModal('{{$product->name}}')" class="block h-64 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)"></a>
                         <div class="flex items-center justify-between mt-3">
                             <div>
                                 <div  class="font-bold uppercase text-gray-600 text-md">{{$product->name}}</div>
@@ -16,107 +15,25 @@
                                     <span class="text-xs font-medium ml-1 text-indigo-500">Veladoras Aramo</span>
                                 </div>
                             </div>
-                            <button {{$product->id}}  @click="open = !open"  type="button" class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Ver más</button>  
-                        </div>
-                    </div> --}}
-
-
-                    <div class="w-full lg:max-w-full lg:flex shadow-md">
-
-                        {{-- Imagen  Agregar la palabra zoom a la propiedad class para hacer zoom a la imagen--}}
-                        <div class="h-48 lg:h-72 lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden object-cover " style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)" title="Product"></div>
-
-                        <div class="w-full bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                            
-                            <div class="mb-8">
-                           
-                                <div class="text-gray-600 font-bold text-xl mb-2 ">{{$product->name}}</div>
-
-                                <div class="grid grid-cols-2">
-                                    <div class="border-b border-gray-200">
-                                        <table class="min-w-full ">
-                                            <thead>
-                                                <tr>
-                                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Etiqueta
-                                                    </th>                                                
-                                                </tr>
-                                            </thead>
-                        
-                                            <tbody class="bg-white">
-                                                    <tr>
-                                                        <td class="px-6 py-4  border-r border-gray-200 text-sm">
-                                                            <p>{{$product->etiqueta1}}</p>
-                                                            <p>{{$product->etiqueta2}}</p>
-                                                        </td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div class="border-b border-gray-200">
-                                        <table class="min-w-full ">
-                                            <thead>
-                                                <tr>
-                                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Color
-                                                    </th>                                                
-                                                </tr>
-                                            </thead>
-                        
-                                            <tbody class="bg-white">
-                                                    <tr>
-                                                        <td class="px-6 py-4  border-l border-gray-200 text-sm">
-                                                            <p>{{$product->color1}}</p>
-                                                            <p>{{$product->color2}}</p>
-                                                            <p>{{$product->color3}}</p>
-                                                            <p>{{$product->color4}}</p>
-                                                        </td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- Piezas por caja --}}
-                            <div class="flex items-center justify-between">
-                                <div class="text-sm">
-                                    <div class="flex items-center">
-                                        <span class="text-sm font-medium text-gray-600">Piezas por Caja:</span>
-                                        <span class="text-sm font-medium ml-1 text-indigo-500">{{$product->piezas}}</span>
-                                    </div>
-                                </div>
-                                
-                                <a href="{{url('producto/'. $product->id)}}" onclick="toggleModal('modal-id')" type="button" class="hidden sm:hidden md:inline lg:inline 2xl:inline h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Más información</a>
-                                  
-                                <a href="{{url('producto/'. $product->id)}}" onclick="toggleModal('modal-id')" type="button" class="inlilne sm:inline md:hidden lg:hidden 2xl:hidden h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </a>  
-                            </div>
-
+                            <a href="#{{$product->slug}}" onclick="toggleModal('{{$product->slug}}')" class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">Ver más</a>  
                         </div>
                     </div>
+
                     @include('products.front.modalProduct')
+                    
             @endforeach
             
         </div>
-
-        
-        {{-- @livewire('front-product') --}}
     </div>
-    {{-- <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" >
-        Open regular modal
-      </button> --}}
       
       <script type="text/javascript">
+
         function toggleModal(modalID){
+
           document.getElementById(modalID).classList.toggle("hidden");
           document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
           document.getElementById(modalID).classList.toggle("flex");
-          document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+          document.getElementById(modalID + "-backdrop").classList.toggle("flex"); 
         }
       </script>
     
