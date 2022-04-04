@@ -37,94 +37,94 @@
             </p>
         </div>
             
-        <div class="flex" x-data="{ open: false }">
+        <div class="flex">
             {{-- Formulario --}}
             <div class="w-3/4 flex-auto mr-4">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="grid grid-cols-4 gap-4">
+                    <div class="grid grid-cols-4 gap-4" x-data="{personal: false}">
                         {{-- Canal --}}
-                        <div >
-                            <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
+                        
                             <div >
-                                <select id="opciones" name="canal" class="form-select w-full opciones
-                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="Confidencial">Confidencial</option>
-                                    <option value="Anonimo" @click="open = !open">Anónimo</option>
-                                </select>
-                              </div>
-                        </div>
-                        {{-- Categoria --}}
-                        <div class="col-span-2">
-                            <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
+                                <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
+                                <div >
+                                    <select @change="personal = $event.target.value" name="canal" class="form-select w-full opciones
+                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                        <option value="">Seleccione una opción</option>
+                                        <option x-bind:value="Confidencial">Confidencial</option>
+                                        <option x-bind:value="Anonimo">Anónimo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- Categoria --}}
+                            <div class="col-span-2">
+                                <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
+                                <div >
+                                    <select name="catgoria" class="form-select w-full
+                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                        <option value="">Seleccione una opción</option>
+                                        <option value="Condiciones Laborales">Condiciones Laborales</option>
+                                        <option value="Salud y Seguridad">Salud y Seguridad</option>
+                                        <option value="Normas de Conducta">Normas de Conducta</option>
+                                        <option value="Violencia Laboral">Violencia Laboral</option>
+                                        <option value="Hostigamiento Laboral">Hostigamiento Laboral</option>
+                                        <option value="Discriminación">Discriminación</option>
+                                        <option value="Medio Ambiente">Medio Ambiente</option>
+                                        <option value="Acoso Laboral">Acoso Laboral</option>
+                                        <option value="Abuso de Derechos Humanos">Abuso de Derechos Humanos</option>
+                                        <option value="Confidencialidad y Privacidad de Datos Personales">Confidencialidad y Privacidad de Datos Personales</option>
+                                        <option value="Soborno/Corrupción">Soborno / Corrupción</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- Tipo --}}
                             <div >
-                                <select name="catgoria" class="form-select w-full
-                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="Condiciones Laborales">Condiciones Laborales</option>
-                                    <option value="Salud y Seguridad">Salud y Seguridad</option>
-                                    <option value="Normas de Conducta">Normas de Conducta</option>
-                                    <option value="Violencia Laboral">Violencia Laboral</option>
-                                    <option value="Hostigamiento Laboral">Hostigamiento Laboral</option>
-                                    <option value="Discriminación">Discriminación</option>
-                                    <option value="Medio Ambiente">Medio Ambiente</option>
-                                    <option value="Acoso Laboral">Acoso Laboral</option>
-                                    <option value="Abuso de Derechos Humanos">Abuso de Derechos Humanos</option>
-                                    <option value="Confidencialidad y Privacidad de Datos Personales">Confidencialidad y Privacidad de Datos Personales</option>
-                                    <option value="Soborno/Corrupción">Soborno / Corrupción</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                              </div>
-                        </div>
-                        {{-- Tipo --}}
-                        <div >
-                            <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
-                            <div >
-                                <select name="tipo" class="form-select w-full
-                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="Denuncia">Denuncia</option>
-                                    <option value="Queja">Queja</option>
-                                    <option value="Sugerencia">Sugerencia</option>
-                                </select>
-                              </div>
-                        </div>
-
-                        {{-- Informacion Personal --}}
-                        <div class="col-span-4 personal hidden" id="personal" x-show="open" >
-                            <div class="col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
-                                <label for="info">Información Personal</label>
+                                <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
+                                <div >
+                                    <select name="tipo" class="form-select w-full
+                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                        <option value="">Seleccione una opción</option>
+                                        <option value="Denuncia">Denuncia</option>
+                                        <option value="Queja">Queja</option>
+                                        <option value="Sugerencia">Sugerencia</option>
+                                    </select>
+                                </div>
                             </div>
 
-                            <div class="grid grid-cols-3 gap-4">
-                                {{-- nombre --}}
-                                <div>
-                                    <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
-                                    <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
+                            {{-- Informacion Personal --}}
+                            <div x-cloak x-show="personal" class="col-span-4 personal" >
+                                <div class="col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
+                                    <label for="info">Información Personal</label>
                                 </div>
-                                {{-- apellido paterno --}}
-                                <div>
-                                    <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
-                                    <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
-                                </div>
-                                {{-- apellido materno --}}
-                                <div >
-                                    <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
-                                    <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
-                                </div>
-                                {{-- numero --}}
-                                <div >
-                                    <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
-                                    <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
-                                </div>
-                                {{-- correo electronico --}}
-                                <div class="col-span-1 sm:col-span-2 md:col-span-2">
-                                    <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
-                                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
-                                </div>
-                            </div> 
-                        </div>
-                        
+
+                                <div class="grid grid-cols-3 gap-4">
+                                    {{-- nombre --}}
+                                    <div>
+                                        <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
+                                        <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
+                                    </div>
+                                    {{-- apellido paterno --}}
+                                    <div>
+                                        <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
+                                        <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
+                                    </div>
+                                    {{-- apellido materno --}}
+                                    <div >
+                                        <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
+                                        <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
+                                    </div>
+                                    {{-- numero --}}
+                                    <div >
+                                        <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
+                                        <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
+                                    </div>
+                                    {{-- correo electronico --}}
+                                    <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                        <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
+                                        <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
+                                    </div>
+                                </div> 
+                            </div>
 
                          
                         
@@ -174,7 +174,7 @@
                         {{-- texto de los hechos --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4">
                             <x-jet-label for="hechos" value="{{ __('Texto de los Hechos *') }}" />
-                            <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="hechos" :value="old('hechos')"  autofocus autocomplete="hechos" rows="3"></textarea>
+                            <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="hechos"  autofocus autocomplete="hechos" rows="3"></textarea>
                         </div>
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
@@ -206,17 +206,20 @@
         </div>   
     </div>
     <script>
-        let opciones  = document.getElementsByClassName("opciones")
-        let formP = document.getElementsByClassName("personal")
-        
-        opciones.addEventListener("change", () => {
-          let eleccion = opciones.options[opciones.selectedIndex].text
-          
-          if(eleccion === "Anonimo") {
-            formP.style.display = "hidden"
-          } else {
-            formP.style.display = "inline"
-          }
-        })
+        function togglePersonal(personalID){
+
+            document.getElementById(personalID).classList.toggle("hidden");
+            document.getElementById(personalID + "-backdrop").classList.toggle("hidden");
+            // document.getElementById(personalID).classList.toggle("flex");
+            // document.getElementById(personalID + "-backdrop").classList.toggle("flex"); 
+            }
       </script>
+
+{{-- function toggleModal(modalID){
+
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex"); 
+  } --}}
 </x-app-layout>
