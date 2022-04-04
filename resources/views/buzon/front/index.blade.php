@@ -39,105 +39,110 @@
             
         <div class="flex">
             {{-- Formulario --}}
-            <div class="w-3/4 flex-auto mr-4">
+            <div class="w-3/4 bg-slate-100 flex-auto">
+            
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="grid grid-cols-4 gap-4" x-data="{personal: false}">
+                   
+                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" x-data="{personal: false, cliente:false}">
+                        <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
+                            <label for="info">Información de la Denuncia</label>
+                        </div>
+
                         {{-- Canal --}}
-                        
+                        <div >
+                            <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
                             <div >
-                                <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
-                                <div >
-                                    <select @change="personal = $event.target.value" name="canal" class="form-select w-full opciones
-                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                        <option value="">Seleccione una opción</option>
-                                        <option x-bind:value="Confidencial">Confidencial</option>
-                                        <option x-bind:value="Anonimo">Anónimo</option>
-                                    </select>
-                                </div>
+                                <select @change="personal = $event.target.value" name="canal" class="form-select w-full opciones
+                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Confidencial">Confidencial</option>
+                                    <option value="Anonimo">Anónimo</option>
+                                </select>
                             </div>
-                            {{-- Categoria --}}
-                            <div class="col-span-2">
-                                <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
-                                <div >
-                                    <select name="catgoria" class="form-select w-full
-                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                        <option value="">Seleccione una opción</option>
-                                        <option value="Condiciones Laborales">Condiciones Laborales</option>
-                                        <option value="Salud y Seguridad">Salud y Seguridad</option>
-                                        <option value="Normas de Conducta">Normas de Conducta</option>
-                                        <option value="Violencia Laboral">Violencia Laboral</option>
-                                        <option value="Hostigamiento Laboral">Hostigamiento Laboral</option>
-                                        <option value="Discriminación">Discriminación</option>
-                                        <option value="Medio Ambiente">Medio Ambiente</option>
-                                        <option value="Acoso Laboral">Acoso Laboral</option>
-                                        <option value="Abuso de Derechos Humanos">Abuso de Derechos Humanos</option>
-                                        <option value="Confidencialidad y Privacidad de Datos Personales">Confidencialidad y Privacidad de Datos Personales</option>
-                                        <option value="Soborno/Corrupción">Soborno / Corrupción</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            {{-- Tipo --}}
+                        </div>
+
+                        {{-- Categoria --}}
+                        <div class="col-span-1 md:col-span-1 lg:col-span-2">
+                            <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
                             <div >
-                                <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
+                                <select name="catgoria" class="form-select w-full
+                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Condiciones Laborales">Condiciones Laborales</option>
+                                    <option value="Salud y Seguridad">Salud y Seguridad</option>
+                                    <option value="Normas de Conducta">Normas de Conducta</option>
+                                    <option value="Violencia Laboral">Violencia Laboral</option>
+                                    <option value="Hostigamiento Laboral">Hostigamiento Laboral</option>
+                                    <option value="Discriminación">Discriminación</option>
+                                    <option value="Medio Ambiente">Medio Ambiente</option>
+                                    <option value="Acoso Laboral">Acoso Laboral</option>
+                                    <option value="Abuso de Derechos Humanos">Abuso de Derechos Humanos</option>
+                                    <option value="Confidencialidad y Privacidad de Datos Personales">Confidencialidad y Privacidad de Datos Personales</option>
+                                    <option value="Soborno/Corrupción">Soborno / Corrupción</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        {{-- Tipo --}}
+                        <div >
+                            <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
+                            <div >
+                                <select name="tipo" class="form-select w-full
+                                border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Denuncia">Denuncia</option>
+                                    <option value="Queja">Queja</option>
+                                    <option value="Sugerencia">Sugerencia</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        {{-- Informacion Personal --}}
+                        <div x-cloak x-show="personal == 'Confidencial'" class="sm:col-span-1 md:col-span-3 lg:col-span-4" >
+                            <div class="md:col-span-4 lg:col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
+                                <label for="info">Información Personal</label>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                                {{-- nombre --}}
                                 <div >
-                                    <select name="tipo" class="form-select w-full
-                                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                        <option value="">Seleccione una opción</option>
-                                        <option value="Denuncia">Denuncia</option>
-                                        <option value="Queja">Queja</option>
-                                        <option value="Sugerencia">Sugerencia</option>
-                                    </select>
+                                    <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
+                                    <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
                                 </div>
-                            </div>
-
-                            {{-- Informacion Personal --}}
-                            <div x-cloak x-show="personal" class="col-span-4 personal" >
-                                <div class="col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
-                                    <label for="info">Información Personal</label>
+                                {{-- apellido paterno --}}
+                                <div>
+                                    <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
+                                    <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
                                 </div>
+                                {{-- apellido materno --}}
+                                <div >
+                                    <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
+                                    <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
+                                </div>
+                                {{-- numero --}}
+                                <div >
+                                    <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
+                                    <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
+                                </div>
+                                {{-- correo electronico --}}
+                                <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                    <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
+                                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
+                                </div>
+                            </div> 
+                        </div>
 
-                                <div class="grid grid-cols-3 gap-4">
-                                    {{-- nombre --}}
-                                    <div>
-                                        <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
-                                        <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
-                                    </div>
-                                    {{-- apellido paterno --}}
-                                    <div>
-                                        <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
-                                        <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
-                                    </div>
-                                    {{-- apellido materno --}}
-                                    <div >
-                                        <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
-                                        <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
-                                    </div>
-                                    {{-- numero --}}
-                                    <div >
-                                        <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
-                                        <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
-                                    </div>
-                                    {{-- correo electronico --}}
-                                    <div class="col-span-1 sm:col-span-2 md:col-span-2">
-                                        <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
-                                        <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
-                                    </div>
-                                </div> 
-                            </div>
-
-                         
-                        
-                        
-                        <div class="col-span-4 mt-4 text-lg block text-gray-600 font-bold">
+                            
+                        <div class="md:col-span-4 lg:col-span-4 mt-4 text-lg block text-gray-600 font-bold">
                             <label for="info">Información de Cliente</label>
                         </div>
                         
                         {{-- IsClient? --}}
-                        <div class="col-span-2">
+                        <div class="col-span-1 md:col-span-2 lg:col-span-2">
                             <x-jet-label for="isClient" value="{{ __('¿Es Cliente? *') }}" />
                             <div >
-                                <select name="isClient" class="form-select w-full
+                                <select @change="cliente = $event.target.value" name="isClient" class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value>Seleccione una opción</option>
                                     <option value="Soy cliente">Si, soy cliente</option>
@@ -147,9 +152,9 @@
                         </div>
 
                         {{-- Informacion de cliente --}}
-                        <div class="col-span-4">
+                        <div x-cloak x-show="cliente == 'Soy cliente'"  class="sm:col-span-1 md:col-span-3 lg:col-span-4">
                             
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {{-- Clave cliente --}}
                                 <div>
                                     <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente') }}" />
@@ -161,7 +166,7 @@
                                     <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')"  autofocus autocomplete="rfc" />
                                 </div>
                                 {{-- razon_social --}}
-                                <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                                <div class="col-span-1 md:col-span-2 lg:col-span-1">
                                     <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />
                                     <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')"  autofocus autocomplete="razon_social" />
                                 </div>
@@ -190,36 +195,97 @@
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                            <button class="float-center w-full text-md text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-md px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+                            <button class="float-center w-full text-md text-white bg-blue-500 hover:bg-blue-600  font-medium rounded-md px-6   py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600">
                                 Envíar
                             </button>
                         </div>
                     </div>
+                   
+                
+                </form>
+            </div>
+
+            <div class="w-1/4 flex-auto ml-8">
+                <div class="flex flex-col">
+                    {{-- Politica de uso de buzon --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">Política de Uso de Buzón</p>
+
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </div>
+                    </a>
                     
-            </form>
-            </div>
+                    {{-- Caracteristicas de seguridad --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">Características de Seguridad</p>
 
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                    </a>
 
-            <div class="w-1/4 bg-slate-900 flex-auto">
-                02
+                    {{-- Politica de privaciadad --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">Política de Privacidad</p>
+
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    {{-- Confidencialidad --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">Confidencialidad</p>
+
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    {{-- Acerca del canal --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">Acerca del Canal</p>
+
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    {{-- FAQ --}}
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-500 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                        {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
+                        <p class=" font-bold mb-2">FAQ</p>
+
+                        <div class="  rounded-full mb-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>   
+        </div>
     </div>
-    <script>
-        function togglePersonal(personalID){
+            
 
-            document.getElementById(personalID).classList.toggle("hidden");
-            document.getElementById(personalID + "-backdrop").classList.toggle("hidden");
-            // document.getElementById(personalID).classList.toggle("flex");
-            // document.getElementById(personalID + "-backdrop").classList.toggle("flex"); 
-            }
-      </script>
 
-{{-- function toggleModal(modalID){
+     
+    
 
-    document.getElementById(modalID).classList.toggle("hidden");
-    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-    document.getElementById(modalID).classList.toggle("flex");
-    document.getElementById(modalID + "-backdrop").classList.toggle("flex"); 
-  } --}}
 </x-app-layout>
