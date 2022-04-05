@@ -27,21 +27,24 @@
     </div>
 
     {{-- Contenido --}}
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {{-- Descripcion del canal --}}
-        <div class="mb-8 text-gray-600">
+        <div class="mb-16 text-gray-600  border-gray-200 border-1 border-b">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa porro perspiciatis quaerat nisi reiciendis molestiae, inventore quos minus nobis odio, laboriosam nostrum vero modi placeat repudiandae, reprehenderit dolorum facilis obcaecati.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem voluptates harum ad, cumque quis facilis unde debitis laboriosam adipisci obcaecati facere soluta sed laborum? Quibusdam quidem obcaecati repellendus veniam.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit perferendis, odio quo velit temporibus illum quae voluptates eius facilis? Architecto blanditiis perferendis velit magnam molestias quo maxime. Voluptatibus, consequuntur perferendis.
+                El objetivo de este canal es que cualquier persona u organización pueda denunciar y/o  comunicar cualquier posible conducta irregular, poco ética o inapropiada de cualquier persona que esté empleada, represente o participe de alguna forma con nuestra organización, por lo que animamos a empleados/as, clientes, usuarios, proveedores o cualquier persona que tenga contacto con nuestros servicios a comunicarse con nosotros y hacernos llegar sus sugerencias, denuncias, quejas o cualquier indicio que pueda sernos de utilidad.
+            </p>
+            <p class="mt-4">
+                Le agradecemos que nos indique cualquier tipo de detalle de que disponga (fechas, nombre, lugares, etc) que pueda ayudarnos en un posible proceso de investigación interno a fin de tener las máximas evidencias posibles.
             </p>
         </div>
+
             
-        <div class="flex sm:flex-col md:flex-row lg:flex-row">
+        <div class="flex flex-col sm:flex-col md:flex-col lg:flex-row">
             {{-- Formulario --}}
-            <div class="w-3/4 bg-slate-100 flex-auto">
+            <div class="w-full sm:w-full md:w-full lg:w-3/4 bg-slate-100 flex-auto">
             
                 <form action="" method="post" enctype="multipart/form-data">
+                    @csrf
                    
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" x-data="{personal: false, cliente:false}">
                         <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
@@ -55,7 +58,7 @@
                                 <select @change="personal = $event.target.value" name="canal" class="form-select w-full opciones
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
-                                    <option value="Confidencial">Confidencial</option>
+                                    <option value="Seguimiento">Con Seguimiento</option>
                                     <option value="Anonimo">Anónimo</option>
                                 </select>
                             </div>
@@ -99,7 +102,7 @@
                         </div>
 
                         {{-- Informacion Personal --}}
-                        <div x-cloak x-show="personal == 'Confidencial'" class="sm:col-span-1 md:col-span-3 lg:col-span-4" >
+                        <div x-cloak x-show="personal == 'Seguimiento'" class="sm:col-span-1 md:col-span-3 lg:col-span-4" >
                             <div class="md:col-span-4 lg:col-span-4 mt-4 mb-3 text-lg block text-gray-600 font-bold">
                                 <label for="info">Información Personal</label>
                             </div>
@@ -182,8 +185,8 @@
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
                             <x-jet-label for="adjunto" value="{{ __('Adjunto') }}" />
-                            <x-jet-input id="adjunto" class="block mt-1 w-full" type="file" name="adjunto" :value="old('adjunto')"  autofocus autocomplete="adjunto" />
-                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> en caso de necesitar adjuntar mas de un archivo, por favor, adjunte un ZIP con todos ellos.</p>
+                            <x-jet-input multiple id="adjunto" class="block mt-1 w-full" type="file" name="adjunto" :value="old('adjunto')"  autofocus autocomplete="adjunto" />
+                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> solo se permite un máximo de 3 archivos / imagenes</p>
                         </div>
 
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
@@ -193,7 +196,7 @@
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                            <button class="float-center w-full text-md text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-md px-6   py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800">
+                            <button class="float-center w-full text-md text-white hover:bg-gradient-to-bl hover:from-blue-400 hover:to-blue-700 bg-gradient-to-bl from-blue-400 to-blue-900  font-medium rounded-md px-6   py-2.5 text-center">
                                 Envíar
                             </button>
                         </div>
@@ -201,10 +204,10 @@
                 </form>
             </div>
 
-            <div class="w-1/4 flex-auto ml-8">
+            <div class="w-auto sm:w-auto md:w-full lg:w-1/4 flex-auto lg:ml-8">
                 <div class="flex flex-col">
                     {{-- Politica de uso de buzon --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <a download="Política de Uso de Buzón.pdf" href="{{ asset('docs/politicaBuzon.pdf') }}" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Política de Uso de Buzón</p>
 
@@ -214,7 +217,7 @@
                     </a>
                     
                     {{-- Caracteristicas de seguridad --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center text-center  mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Características de Seguridad</p>
 
@@ -226,7 +229,7 @@
                     </a>
 
                     {{-- Politica de privaciadad --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <a href="{{route('policy.show')}}" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Política de Privacidad</p>
 
@@ -238,7 +241,7 @@
                     </a>
 
                     {{-- Confidencialidad --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <button type="button" onclick="toggleModalConfi('modal-confi')" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Confidencialidad</p>
 
@@ -247,10 +250,10 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
                               </svg>
                         </div>
-                    </a>
+                    </button>
 
                     {{-- Acerca del canal --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <button type="button" onclick="toggleModalAcerca('modal-acerca')" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Acerca del Canal</p>
 
@@ -259,10 +262,10 @@
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                    </a>
+                    </button>
 
                     {{-- FAQ --}}
-                    <a href="javascript:void(0)" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 max-w-[24rem]">
+                    <button type="button" onclick="toggleModalFaq('modal-faq')" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">FAQ</p>
 
@@ -271,12 +274,43 @@
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
+
         </div>
     </div>
-            
+
+    @include('buzon.front.modales.modalconfidencialidad')
+    @include('buzon.front.modales.acercaCanal')
+    @include('buzon.front.modales.faq')
+
+    <script type="text/javascript">
+
+        function toggleModalConfi(modalIDCon){
+
+            document.getElementById(modalIDCon).classList.toggle("hidden");
+            document.getElementById(modalIDCon + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalIDCon).classList.toggle("flex");
+            document.getElementById(modalIDCon + "-backdrop").classList.toggle("flex"); 
+        }
+
+        function toggleModalAcerca(modalIDAce){
+
+            document.getElementById(modalIDAce).classList.toggle("hidden");
+            document.getElementById(modalIDAce + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalIDAce).classList.toggle("flex");
+            document.getElementById(modalIDAce + "-backdrop").classList.toggle("flex"); 
+        }
+
+        function toggleModalFaq(modalIDFaq){
+
+            document.getElementById(modalIDFaq).classList.toggle("hidden");
+            document.getElementById(modalIDFaq + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalIDFaq).classList.toggle("flex");
+            document.getElementById(modalIDFaq + "-backdrop").classList.toggle("flex"); 
+        }
+      </script>   
 
 
      

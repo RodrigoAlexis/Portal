@@ -62,6 +62,8 @@
 
                 @elseif(Route::is('lines*'))
 
+                @elseif(Route::is('denuncia*'))
+
                 @else
                     @livewire('navigation')
             @endif
@@ -100,7 +102,7 @@
 
             @elseif(Route::is('lines*'))
 
-            
+            @elseif(Route::is('denuncia*'))
 
             @else
                 @livewire('footer')

@@ -20,7 +20,7 @@
                     <li>
                         <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('dashboard') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('dashboard')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                             </svg>
             
                             <span class="mx-3">Inicio</span>
@@ -38,8 +38,7 @@
                     </li>
                     {{-- Denuncias --}}
                     <li>
-                        <a class=" flex items-center mt-4 py-2 px-6 text-white hover:bg-white hover:bg-opacity-25 hover:text-white"
-                            href="/forms">
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('denuncia*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('denuncia.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                             </svg>
@@ -62,7 +61,7 @@
                     <li>
                         {{-- Dropdown --}}
                         <div x-data="{ open: false }">
-                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md">
+                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}} ">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
@@ -215,7 +214,8 @@
                             @include('products.lineas.forms.form-create')
                         @elseif (Route::is('lines.edit'))
                             @include('products.lineas.forms.form-edit')
-                        
+                        @elseif (Route::is('denuncia.index'))
+                            @livewire('buzon-index')
                     @endif
                       
                 </div>
