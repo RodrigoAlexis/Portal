@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Buzon;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -68,5 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function buzons(){
+        return $this->hasMany(Buzon::class);
+    }
 
 }

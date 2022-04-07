@@ -15,6 +15,29 @@ class CreateBuzonsTable extends Migration
     {
         Schema::create('buzons', function (Blueprint $table) {
             $table->id();
+            $table->enum('canal', ['Seguimiento', 'Anonimo']);
+            $table->enum('categoria', ['Condiciones Laborales', 
+                                        'Salud y Seguridad', 
+                                        'Normas de Conducta', 
+                                        'Violencia Laboral', 
+                                        'Hostigamiento Laboral', 
+                                        'Discriminación',
+                                        'Medio Ambiente',
+                                        'Acoso Laboral',
+                                        'Abuso de Derechos Humanos',
+                                        'Confidencialidad y Privacidad de Datos Personales',
+                                        'Soborno/Corrupción',
+                                        'Otro',]);
+            $table->enum('tipo', ['Denuncia', 'Queja', 'Sugerencia']);
+
+            $table->enum('isClient', ['Soy cliente', 'No soy cliente'])->default('No soy cliente');
+            $table->text('hechos');
+            $table->string('file') ->nullable();
+            $table->string('image_path')->nullable();
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
