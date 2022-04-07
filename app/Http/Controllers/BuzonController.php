@@ -38,7 +38,7 @@ class BuzonController extends Controller
     public function store(DenunciaRequest $request)
     {
         //
-        Buzon::create($request->all());
+        $denuncia = Buzon::create($request->all());
 
         return 'las validaciones pasaron con exito';
     }

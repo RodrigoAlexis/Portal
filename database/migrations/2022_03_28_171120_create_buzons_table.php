@@ -32,8 +32,6 @@ class CreateBuzonsTable extends Migration
 
             $table->enum('isClient', ['Soy cliente', 'No soy cliente'])->default('No soy cliente');
             $table->text('hechos');
-            $table->string('file') ->nullable();
-            $table->string('image_path')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
