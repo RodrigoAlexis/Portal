@@ -34,7 +34,7 @@ class CreateBuzonsTable extends Migration
             $table->text('hechos');
             $table->string('file') ->nullable();
             $table->string('image_path')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

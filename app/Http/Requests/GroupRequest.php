@@ -37,4 +37,14 @@ class GroupRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo nombre es requerido',
+            'slug.required' => 'El campo URL amigable es requerido',
+            'slug.unique' => 'Este nombre ya existe, ingrese otro nombre',
+            'file.image' => 'Solo se aceptan imagenes'
+        ];
+    }
 }

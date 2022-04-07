@@ -46,4 +46,15 @@ class BlogRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo Nombre es requerido',
+            'slug.required' => 'El campo URL Amigable es requerido',
+            'slug.unique' => 'Este nombre ya existe, ingrese uno diferente',
+            'status.required' => 'El campo Estatus es requerido',
+            'file.image' => 'Solo se aceptan imagenes'
+        ];
+    }
 }

@@ -68,13 +68,6 @@ class LineController extends Controller
         
     }
 
-    // public function producto(Product $product){
-
-    //     $prod = Product::where('id', '=', $product->id);
-
-    //     return view('products.front.modalProduct', compact('prod'));
-    // }
-
     public function mostrarProductos(Group $group, Line $line, Product $product)
     {
 
@@ -86,24 +79,6 @@ class LineController extends Controller
                         ->paginate(8);
 
          $prod = Product::where('id', '=', $product->id);
-
-        // $todo = [$lines, $products];
-
-        // return $todo;
-
-        // $grupo = Product::all();
-
-        // $grupo = Product::find(6)->group->name;
-        // $linea = Product::find(6)->line->name;
-        // $producto = Product::find(6);
-
-        // $todo = [$grupo, $linea, $producto];
-
-        // dd($todo);
-
-        // return $todo;
-
-
 
         return view('products.front.index',['lines' => $lines, 'products' => $products, 'prod' => $prod ]);
     }

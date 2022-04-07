@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+ use App\Http\Requests\DenunciaRequest;
+use App\Models\Buzon;
 
 class BuzonController extends Controller
 {
@@ -33,9 +35,12 @@ class BuzonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DenunciaRequest $request)
     {
         //
+        Buzon::create($request->all());
+
+        return 'las validaciones pasaron con exito';
     }
 
     /**

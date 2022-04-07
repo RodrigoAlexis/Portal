@@ -43,7 +43,7 @@
             {{-- Formulario --}}
             <div class="w-full sm:w-full md:w-full lg:w-3/4 bg-slate-100 flex-auto">
             
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{route('buzon.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                    
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" x-data="{personal: false, cliente:false}">
@@ -55,20 +55,23 @@
                         <div >
                             <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
                             <div >
-                                <select @change="personal = $event.target.value" name="canal" class="form-select w-full opciones
+                                <select @change="personal = $event.target.value" name="canal" :value="old('canal')" class="form-select w-full opciones
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Seguimiento">Con Seguimiento</option>
                                     <option value="Anonimo">Anónimo</option>
                                 </select>
                             </div>
+                            @error('canal')
+                                <small class="text-red-600">{{$message}}</small>
+                            @enderror
                         </div>
 
                         {{-- Categoria --}}
                         <div class="col-span-1 md:col-span-1 lg:col-span-2">
                             <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
                             <div >
-                                <select name="catgoria" class="form-select w-full
+                                <select name="categoria" :value="old('categoria')" class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Condiciones Laborales">Condiciones Laborales</option>
@@ -85,13 +88,16 @@
                                     <option value="Otro">Otro</option>
                                 </select>
                             </div>
+                            @error('categoria')
+                                <small class="text-red-600">{{$message}}</small>
+                            @enderror
                         </div>
 
                         {{-- Tipo --}}
                         <div >
                             <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
                             <div >
-                                <select name="tipo" class="form-select w-full
+                                <select name="tipo" :value="old('tipo')" class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Denuncia">Denuncia</option>
@@ -99,6 +105,9 @@
                                     <option value="Sugerencia">Sugerencia</option>
                                 </select>
                             </div>
+                            @error('tipo')
+                                <small class="text-red-600">{{$message}}</small>
+                            @enderror
                         </div>
 
                         {{-- Informacion Personal --}}
@@ -111,27 +120,42 @@
                                 {{-- nombre --}}
                                 <div >
                                     <x-jet-label for="name" value="{{ __('Nombre(s) *') }}" />
-                                    <x-jet-input id="name" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autofocus />
+                                    <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus />
+                                    @error('name')
+                                        <small class="text-red-600">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 {{-- apellido paterno --}}
                                 <div>
                                     <x-jet-label for="paterno" value="{{ __('Apellido Paterno *') }}" />
                                     <x-jet-input id="paterno" class="block mt-1 w-full" type="text" name="paterno" :value="old('paterno')"  autofocus autocomplete="paterno" />
+                                    @error('paterno')
+                                        <small class="text-red-600">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 {{-- apellido materno --}}
                                 <div >
                                     <x-jet-label for="materno" value="{{ __('Apellido Materno *') }}" />
                                     <x-jet-input id="materno" class="block mt-1 w-full" type="text" name="materno" :value="old('materno')"  autofocus autocomplete="materno" />
+                                    @error('materno')
+                                        <small class="text-red-600">{{$message}}</small>
+                                    @enderror
                                 </div>
-                                {{-- numero --}}
+                                {{-- telefono --}}
                                 <div >
-                                    <x-jet-label for="numero" value="{{ __('Número de Contacto *') }}" />
-                                    <x-jet-input id="numero" class="block mt-1 w-full" type="number" name="numero" :value="old('numero')"  min="1"/>
+                                    <x-jet-label for="telefono" value="{{ __('Número de Contacto *') }}" />
+                                    <x-jet-input id="telefono" class="block mt-1 w-full" type="number" name="telefono" :value="old('telefono')"  min="1"/>
+                                    @error('telefono')
+                                        <small class="text-red-600">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 {{-- correo electronico --}}
                                 <div class="col-span-1 sm:col-span-2 md:col-span-2">
                                     <x-jet-label for="email" value="{{ __('Correo Electrónico *') }}" />
                                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
+                                    @error('email')
+                                        <small class="text-red-600">{{$message}}</small>
+                                    @enderror
                                 </div>
                             </div> 
                         </div>
@@ -152,6 +176,9 @@
                                     <option value="No soy cliente">No soy cliente</option>
                                 </select>
                               </div>
+                                @error('isClient')
+                                    <small class="text-red-600">{{$message}}</small>
+                                @enderror
                         </div>
 
                         {{-- Informacion de cliente --}}
@@ -181,6 +208,9 @@
                         <div class="col-span-1 sm:col-span-2 md:col-span-4">
                             <x-jet-label for="hechos" value="{{ __('Texto de los Hechos *') }}" />
                             <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="hechos"  autofocus autocomplete="hechos" rows="3"></textarea>
+                            @error('hechos')
+                                <small class="text-red-600">{{$message}}</small>
+                            @enderror
                         </div>
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
@@ -190,9 +220,7 @@
                         </div>
 
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                            reCaptcha
-                        
-                            
+                               
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
