@@ -1,4 +1,13 @@
 <x-app-layout>
+    <script>
+        $(window).on('beforeunload', function() {
+
+window.setTimeout(function() {
+ $(window).scrollTop(0); 
+}, 0);
+
+});
+    </script>
     {{-- Imagen --}}
     <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32 object-fill" 
             style="background-image: url('https://cdn.pixabay.com/photo/2021/05/29/17/35/car-6293917__340.jpg');">   
@@ -17,7 +26,7 @@
         </div>      
     </div>
 
-    {{-- Segundo header --}}
+    {{-- Segundo header --}}   
     <div class="bg-gradient-to-r from-gray-300  to-gray-200">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-4">
             <div class="text-xl text-white">
@@ -28,7 +37,7 @@
 
 
     @if (session('success'))
-        <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
+        <div id="alert" class="text-white font-bold mb-4 border-0 static  bg-green-500 float-righ text-sm px-6 py-2.5 text-center">
             <span class="inline-block align-middle mr-8 text-center ">
                 <p> {{session('success')}}</p>        
             </span>
@@ -356,6 +365,14 @@
             document.getElementById(modalIDFaq + "-backdrop").classList.toggle("hidden");
             document.getElementById(modalIDFaq).classList.toggle("flex");
             document.getElementById(modalIDFaq + "-backdrop").classList.toggle("flex"); 
+        }
+
+        window.onload=function(){
+                var pos=window.name || 0;
+                window.scrollTo(0,pos);
+            }
+        window.onunload=function(){
+            window.name=self.pageYOffset || (document.documentElement.scrollTop+document.body.scrollTop);
         }
       </script>   
 

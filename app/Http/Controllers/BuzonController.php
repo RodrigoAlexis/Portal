@@ -46,9 +46,11 @@ class BuzonController extends Controller
         if(!Auth::user()){
             if($request->canal == 'Seguimiento'){
 
-                return redirect()->route('login')->with('success', 'Si desea que su denuncia tenga seguimiento, debe iniciar sesión');
+                return redirect()->route('login')->with('success', 'Si desea que se le de seguimiento a su denuncia, por favor, inicie sesión.');
 
             }else{
+
+                dd($request);
                 
                 Buzon::create($request->all());
 
@@ -85,6 +87,7 @@ class BuzonController extends Controller
                 
             }else{
 
+                dd($request);
                 Buzon::create([
                     'canal' => $request->canal,
                     'categoria' => $request->categoria,
@@ -109,7 +112,9 @@ class BuzonController extends Controller
             } 
         }
 
-        return redirect()->route('buzon.index')->with('success', 'Denuncia enviada con éxito, gracias por ayudarnos a mejorar');
+        // dd($request);
+
+        return redirect()->route('buzon.index')->with('success', 'Denuncia enviada con éxito. ¡Gracias por ayudarnos a mejorar!');
 
         
     }
