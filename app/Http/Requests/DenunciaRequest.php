@@ -30,6 +30,7 @@ class DenunciaRequest extends FormRequest
             'tipo' => 'required',
             'isClient' => 'required',
             'hechos' => 'required',
+            'adjunto' => 'array'
         ];
 
         if($this->canal == 'Seguimiento'){
@@ -52,12 +53,14 @@ class DenunciaRequest extends FormRequest
             'categoria.required' => 'El campo Categoría es requerido',
             'tipo.required' => 'El campo Tipo es requerido',
             'isClient.required' => 'El campo ¿Es Cliente? es requerido',
-            'hechos.required' => 'El campo Hechos es requerido',
+            'hechos.required' => 'El campo Texto de los Hechos es requerido',
             'name.required' => 'El campo Nombre es requerido',
             'paterno.required' => 'El campo Apellido Paterno es requerido',
             'materno.required' => 'El campo Apellido Materno es requerido',
             'telefono.required' => 'El campo Número de Contacto es requerido',
             'email.required' => 'El campo Correo Electrónico es requerido',
+            
+            
         ];
     }
 }

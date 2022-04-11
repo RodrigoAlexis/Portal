@@ -26,6 +26,15 @@
         </div>      
     </div>
 
+
+    @if (session('success'))
+        <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
+            <span class="inline-block align-middle mr-8 text-center ">
+                <p> {{session('success')}}</p>        
+            </span>
+        </div>
+    @endif
+
     {{-- Contenido --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {{-- Descripcion del canal --}}
@@ -37,8 +46,8 @@
                 Le agradecemos que nos indique cualquier tipo de detalle de que disponga (fechas, nombre, lugares, etc) que pueda ayudarnos en un posible proceso de investigación interno a fin de tener las máximas evidencias posibles.
             </p>
         </div>
-
-            
+        
+        
         <div class="flex flex-col sm:flex-col md:flex-col lg:flex-row">
             {{-- Formulario --}}
             <div class="w-full sm:w-full md:w-full lg:w-3/4 bg-slate-100 flex-auto">
@@ -55,7 +64,7 @@
                         <div >
                             <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
                             <div >
-                                <select @change="personal = $event.target.value" name="canal" :value="old('canal')" class="form-select w-full opciones
+                                <select @change="personal = $event.target.value" name="canal"  class="form-select w-full opciones
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Seguimiento">Con Seguimiento</option>
@@ -71,7 +80,7 @@
                         <div class="col-span-1 md:col-span-1 lg:col-span-2">
                             <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
                             <div >
-                                <select name="categoria" :value="old('categoria')" class="form-select w-full
+                                <select name="categoria"  class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Condiciones Laborales">Condiciones Laborales</option>
@@ -97,7 +106,7 @@
                         <div >
                             <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
                             <div >
-                                <select name="tipo" :value="old('tipo')" class="form-select w-full
+                                <select name="tipo"  class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Denuncia">Denuncia</option>
@@ -215,8 +224,11 @@
                         {{-- File --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
                             <x-jet-label for="adjunto" value="{{ __('Adjunto') }}" />
-                            <x-jet-input multiple id="adjunto" class="block mt-1 w-full" type="file" name="adjunto" :value="old('adjunto')"  autofocus autocomplete="adjunto" />
+                            <x-jet-input multiple accept=".jpg, .jpeg, .png, .doc, .docx, .pdf" id="adjunto" class="block mt-1 w-full" type="file" name="adjunto[]" :value="old('adjunto')"  autofocus autocomplete="adjunto" />
                             <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> solo se permite un máximo de 3 archivos / imagenes</p>
+                            @error('adjunto')   
+                                <small class="text-red-600">{{$message}}</small>
+                            @enderror
                         </div>
 
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
@@ -308,6 +320,13 @@
 
         </div>
     </div>
+
+    {{-- <script>
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+    </script> --}}
 
     @include('buzon.front.modales.modalconfidencialidad')
     @include('buzon.front.modales.acercaCanal')

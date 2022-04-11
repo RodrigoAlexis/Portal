@@ -10,10 +10,21 @@ class Buzon extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $fillable=[
+        'canal',
+        'categoria',
+        'tipo',
+        'isClient',
+        'hechos',
+        'user_id'
+    ];
 
 
     public function user(){
         return $this->belongsTo(User::class);
-    }   
+    } 
+    
+    public function fileDenuncia(){
+        return $this->hasMany(FileDenuncia::class);
+    }
 }

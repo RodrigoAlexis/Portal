@@ -1,4 +1,11 @@
 <x-app-layout>
+    @if (session('success'))
+        <div id="alert" class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
+            <span class="inline-block align-middle mr-8 text-center ">
+                <p> {{session('success')}}</p>        
+            </span>
+        </div>
+    @endif
     <x-guest-layout>
         <!-- Container -->
         <div class="container">
@@ -85,4 +92,10 @@
             </div>
         </div>
     </x-guest-layout>
+    <script>
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+    </script>
 </x-app-layout>

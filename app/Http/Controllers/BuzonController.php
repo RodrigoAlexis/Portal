@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
  use App\Http\Requests\DenunciaRequest;
 use App\Models\Buzon;
+use Illuminate\Support\Facades\Auth;
+use App\Models\FileDenuncia;
+use Illuminate\Support\Facades\Storage;
 
 class BuzonController extends Controller
 {
@@ -37,10 +40,78 @@ class BuzonController extends Controller
      */
     public function store(DenunciaRequest $request)
     {
-        //
-        $denuncia = Buzon::create($request->all());
 
-        return 'las validaciones pasaron con exito';
+        $files = $request->file('adjunto');
+
+        if(!Auth::user()){
+            if($request->canal == 'Seguimiento'){
+
+                return redirect()->route('login')->with('success', 'Si desea que su denuncia tenga seguimiento, debe iniciar sesión');
+
+            }else{
+                
+                Buzon::create($request->all());
+
+                if($files){
+                    foreach($files as $file ){
+                        if(Storage::putFileAs('/denuncias/', $file, $file->getClientOriginalName())){
+                            FileDenuncia::create([
+                                'file' => time() . '-' . $file->getClientOriginalName(),
+                                'image_path' => 'denuncias/' . time() . '-' . $file->getClientOriginalName(),
+                                'denuncia_id' =>  Buzon::latest('id')->pluck('id')->first()
+                            ]);
+                        }                            
+                        
+                    }
+                }
+            }
+        }else{
+            if($request->canal == 'Anonimo'){
+
+                Buzon::create($request->all());
+
+                if($files){
+                    foreach($files as $file ){
+                        if(Storage::putFileAs('/denuncias/', $file, $file->getClientOriginalName())){
+                            FileDenuncia::create([
+                                'file' => time() . '-' . $file->getClientOriginalName(),
+                                'image_path' => 'denuncias/' . time() . '-' . $file->getClientOriginalName(),
+                                'denuncia_id' =>  Buzon::latest('id')->pluck('id')->first()
+                            ]);
+                        }                            
+                        
+                    }
+                }
+                
+            }else{
+
+                Buzon::create([
+                    'canal' => $request->canal,
+                    'categoria' => $request->categoria,
+                    'tipo' => $request->tipo,
+                    'isClient' => $request->isClient,
+                    'hechos' => $request->hechos,
+                    'user_id' => Auth::user()->id
+                ]);
+
+                if($files){
+                    foreach($files as $file ){
+                        if(Storage::putFileAs('/denuncias/', $file, $file->getClientOriginalName())){
+                            FileDenuncia::create([
+                                'file' => time() . '-' . $file->getClientOriginalName(),
+                                'image_path' => 'denuncias/' . time() . '-' . $file->getClientOriginalName(),
+                                'denuncia_id' =>  Buzon::latest('id')->pluck('id')->first()
+                            ]);
+                        }                            
+                        
+                    }
+                }
+            } 
+        }
+
+        return redirect()->route('buzon.index')->with('success', 'Denuncia enviada con éxito, gracias por ayudarnos a mejorar');
+
+        
     }
 
     /**
