@@ -8,6 +8,8 @@ use App\Models\Buzon;
 use Illuminate\Support\Facades\Auth;
 use App\Models\FileDenuncia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Denuncia;
 
 class BuzonController extends Controller
 {
@@ -41,6 +43,7 @@ class BuzonController extends Controller
     public function store(DenunciaRequest $request)
     {
 
+        $correo='roalexlop13@outlook.com';
         $files = $request->file('adjunto');
 
         if(!Auth::user()){
@@ -49,8 +52,6 @@ class BuzonController extends Controller
                 return redirect()->route('login')->with('success', 'Si desea que se le de seguimiento a su denuncia, por favor, inicie sesión.');
 
             }else{
-
-                dd($request);
                 
                 Buzon::create($request->all());
 
@@ -66,6 +67,18 @@ class BuzonController extends Controller
                         
                     }
                 }
+
+                $message = [
+                    'canal' => $request->canal,
+                    'email' => 'roalexlop13@outlook.com',
+                    'categoria' => $request->categoria,
+                    'tipo' => $request->tipo,
+                    'isClient' => $request->isClient,
+                    'hechos' => $request->hechos,
+                    'adjunto' => $request->file('adjunto')
+                ];
+        
+                Mail::to($message['email'])->send(new Denuncia($message));
             }
         }else{
             if($request->canal == 'Anonimo'){
@@ -87,7 +100,6 @@ class BuzonController extends Controller
                 
             }else{
 
-                dd($request);
                 Buzon::create([
                     'canal' => $request->canal,
                     'categoria' => $request->categoria,
