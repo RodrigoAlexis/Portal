@@ -31,9 +31,15 @@ class Denuncia extends Mailable
      */
     public function build()
     {
-        return $this->view('buzon.emails.denuncia-anonima');
-                // ->attach($this->msg['adjunto']->getRealPath(),[
-                //     'as' => $this->msg['adjunto']->getClientOriginalName()
-                // ]);
+        $correo =  $this->view('buzon.emails.denuncia-anonima');
+
+        for ($i = 0; $i< count($this->msg['adjunto']); $i++){
+            $correo->attach($this->msg['adjunto'] [$i]->getRealPath(),[
+                'as' => $this->msg['adjunto'] [$i]->getClientOriginalName()
+            ]);
+        }
+
+        return $correo;
+                 
     }
 }
