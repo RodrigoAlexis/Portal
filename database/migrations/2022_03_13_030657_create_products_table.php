@@ -18,12 +18,14 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->integer('piezas');
-            $table->text('etiqueta1');
-            $table->text('etiqueta2')->nullable();
-            $table->text('color1');
-            $table->text('color2')->nullable();
-            $table->text('color3')->nullable();
-            $table->text('color4')->nullable();
+            $table->string('etiqueta1');
+            $table->string('etiqueta2')->nullable();
+            $table->string('color1');
+            $table->string('color2')->nullable();
+            $table->string('color3')->nullable();
+            $table->string('color4')->nullable();
+            $table->text('mercado')->mullable();
+            $table->text('amazon')->nullable();
             
 
 

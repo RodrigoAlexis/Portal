@@ -20,7 +20,9 @@ class Product extends Model
         'color3',
         'color4',
         'group_id',
-        'line_id'
+        'line_id',
+        'mercado',
+        'amazon'
     ];
 
     public function group(){

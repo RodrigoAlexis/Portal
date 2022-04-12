@@ -1,13 +1,5 @@
 <x-app-layout>
-    <script>
-        $(window).on('beforeunload', function() {
-
-window.setTimeout(function() {
- $(window).scrollTop(0); 
-}, 0);
-
-});
-    </script>
+    
     {{-- Imagen --}}
     <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32 object-fill" 
             style="background-image: url('https://cdn.pixabay.com/photo/2021/05/29/17/35/car-6293917__340.jpg');">   
@@ -330,12 +322,7 @@ window.setTimeout(function() {
         </div>
     </div>
 
-    {{-- <script>
-        $('#alert').fadeIn();     
-            setTimeout(function() {
-                $("#alert").fadeOut();           
-            },4000);
-    </script> --}}
+    
 
     @include('buzon.front.modales.modalconfidencialidad')
     @include('buzon.front.modales.acercaCanal')
@@ -374,6 +361,13 @@ window.setTimeout(function() {
         window.onunload=function(){
             window.name=self.pageYOffset || (document.documentElement.scrollTop+document.body.scrollTop);
         }
+
+        
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+     
       </script>   
 
 

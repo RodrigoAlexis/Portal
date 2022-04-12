@@ -31,7 +31,7 @@ class Denuncia extends Mailable
      */
     public function build()
     {
-        $correo =  $this->view('buzon.emails.denuncia-anonima');
+        $correo =  $this->view('buzon.emails.denuncia-anonima')->subject('Canal de Denuncias Veladoras Aramo');
 
         for ($i = 0; $i< count($this->msg['adjunto']); $i++){
             $correo->attach($this->msg['adjunto'] [$i]->getRealPath(),[

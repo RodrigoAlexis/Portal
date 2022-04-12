@@ -103,20 +103,29 @@
         {{-- Piezas --}}
         <div>
             {!! Form::label('piezas', 'Piezas por Caja', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::number('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
+            {!! Form::text('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
 
             @error('piezas')
                 <small class="text-red-600">{{$message}}</small>
             @enderror
         </div>
          
+        {{-- Mercado Libre --}}
         <div>
-            {{-- {!! Form::label('piezas', 'Piezas por Caja', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::number('piezas', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
+            {!! Form::label('mercado', 'Enlace de Mercado Libre', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('mercado', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
 
-            @error('piezas')
-                <small class="text-red-600">{{$message}}</small>
-            @enderror --}}
+        </div>
+
+        {{-- Amazon --}}
+        <div>
+            {!! Form::label('amazon', 'Enlace de Amazon', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
+            {!! Form::text('amazon', null, ['class' => 'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black', 'min' => 1]) !!}
+
+        </div>
+
+        <div>
+
         </div>
         {{-- previsualizacion de la imagen --}}
         <div>  
