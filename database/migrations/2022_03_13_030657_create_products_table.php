@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('color2')->nullable();
             $table->string('color3')->nullable();
             $table->string('color4')->nullable();
-            $table->text('mercado')->mullable();
+            $table->text('mercado')->nullable();
             $table->text('amazon')->nullable();
             
 
