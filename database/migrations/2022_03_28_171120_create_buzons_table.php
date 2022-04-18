@@ -15,7 +15,7 @@ class CreateBuzonsTable extends Migration
     {
         Schema::create('buzons', function (Blueprint $table) {
             $table->id();
-            $table->enum('canal', ['Seguimiento', 'Anonimo']);
+            $table->enum('canal', ['Seguimiento', 'Anónimo']);
             $table->enum('categoria', ['Condiciones Laborales', 
                                         'Salud y Seguridad', 
                                         'Normas de Conducta', 

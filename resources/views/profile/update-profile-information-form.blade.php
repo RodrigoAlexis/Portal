@@ -93,18 +93,6 @@
                     </select>
                   </div>
             </div>
-            <!-- Clave Cliente -->
-            <div>
-                <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente') }}" />
-                <x-jet-input id="clave_cliente" name="clave_cliente" type="text" class="mt-1 block w-full" wire:model.defer="state.clave_cliente" autocomplete="clave_cliente" />
-                <x-jet-input-error for="Clave de Cliente" class="mt-2" />
-            </div>
-            <!-- RFC -->
-            <div >
-                <x-jet-label for="telefono" value="{{ __('RFC') }}" />
-                <x-jet-input id="rfc" type="text" name="rfc" class="mt-1 block w-full" wire:model.defer="state.rfc" autocomplete="rfc" />
-                <x-jet-input-error for="RFC" class="mt-2" />
-            </div>
             <!-- Razon Social -->
             <div class="col-span-1 sm:col-span-2 md:col-span-2  lg:col-span-2">
                 <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />

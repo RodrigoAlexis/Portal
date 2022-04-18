@@ -23,8 +23,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->bigInteger('telefono')->nullable();
-            $table->string('clave_cliente')->unique()->nullable();
-            $table->string('rfc')->nullable();
             $table->string('razon_social')->nullable();
             $table->string('id_socialite')->nullable();
             $table->string('type_socialite')->nullable()->default('N/A');

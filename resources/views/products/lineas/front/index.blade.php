@@ -17,7 +17,7 @@
 
 
             <div class="flex flex-col items-center justify-center w-full">
-                <a href="{{ url('/grupo/'. $line->pivot->pivotParent->slug .'/linea/'.$line->slug)}}" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md object-cover" style="background-image: url(@if($line->image) {{Storage::url($line->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
+                <a href="{{ url('/grupo/'. $line->pivot->pivotParent->slug .'/linea/'.$line->slug)}}" class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md object-cover" style="background-size: 400px 300px; background-image: url(@if($line->image) {{Storage::url($line->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)">
                 </a>
         
                 <div class="w-56 -mt-10 overflow-hidden bg-blue-500 rounded-t-lg shadow-lg md:w-64 ">

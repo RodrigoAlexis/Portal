@@ -69,7 +69,7 @@
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Seguimiento">Con Seguimiento</option>
-                                    <option value="Anonimo">Anónimo</option>
+                                    <option value="Anónimo">Anónimo</option>
                                 </select>
                             </div>
                             @error('canal')
@@ -177,13 +177,13 @@
                         
                         {{-- IsClient? --}}
                         <div class="col-span-1 md:col-span-2 lg:col-span-2">
-                            <x-jet-label for="isClient" value="{{ __('¿Es Cliente? *') }}" />
+                            <x-jet-label for="isClient" value="{{ __('¿Es Cliente o Proveedor? *') }}" />
                             <div >
                                 <select @change="cliente = $event.target.value" name="isClient" class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
                                     <option value>Seleccione una opción</option>
-                                    <option value="Soy cliente">Si, soy cliente</option>
-                                    <option value="No soy cliente">No soy cliente</option>
+                                    <option value="Soy cliente">Si, soy cliente o proveedor</option>
+                                    <option value="No soy cliente">No soy cliente o proveedor</option>
                                 </select>
                               </div>
                                 @error('isClient')
@@ -195,18 +195,9 @@
                         <div x-cloak x-show="cliente == 'Soy cliente'"  class="sm:col-span-1 md:col-span-3 lg:col-span-4">
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {{-- Clave cliente --}}
-                                <div>
-                                    <x-jet-label for="clave_cliente" value="{{ __('Clave de Cliente') }}" />
-                                    <x-jet-input id="clave_cliente" class="block mt-1 w-full" type="text" name="clave_cliente" :value="old('clave_cliente')"  autofocus autocomplete="clave_cliente" />
-                                </div>
-                                {{-- rfc--}}
-                                <div>
-                                    <x-jet-label for="rfc" value="{{ __('RFC') }}" />
-                                    <x-jet-input id="rfc" class="block mt-1 w-full" type="text" name="rfc" :value="old('rfc')"  autofocus autocomplete="rfc" />
-                                </div>
+                                
                                 {{-- razon_social --}}
-                                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                                <div class="col-span-1 md:col-span-2 lg:col-span-3">
                                     <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />
                                     <x-jet-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('razon_social')"  autofocus autocomplete="razon_social" />
                                 </div>
@@ -248,7 +239,7 @@
             <div class="w-auto sm:w-auto md:w-full lg:w-1/4 flex-auto lg:ml-8">
                 <div class="flex flex-col">
                     {{-- Politica de uso de buzon --}}
-                    <a download="Política de Uso de Buzón.pdf" href="{{ asset('docs/politicaBuzon.pdf') }}" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                    <a target="_blank" href="{{ asset('docs/politicaBuzon.pdf') }}" class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Política de Uso de Buzón</p>
 
@@ -369,10 +360,6 @@
                 $("#alert").fadeOut();           
             },4000);
      
-      </script>   
-
-
-     
-    
+    </script>   
 
 </x-app-layout>

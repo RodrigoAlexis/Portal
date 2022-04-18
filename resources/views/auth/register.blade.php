@@ -35,12 +35,12 @@
                                         </div>
                                         {{-- IsClient? --}}
                                         <div>
-                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente de Aram-Luz? *') }}" />
+                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente o proveedor? *') }}" />
                                             <div >
                                                 <select name="isClient" class="form-select w-full
                                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                                    <option value="Soy cliente">Si, soy cliente</option>
-                                                    <option value="No soy cliente">No soy cliente</option>
+                                                    <option value="Soy cliente">Si, soy cliente o proveedor</option>
+                                                    <option value="No soy cliente">No soy cliente o proveedor</option>
                                                 </select>
                                               </div>
                                         </div>
