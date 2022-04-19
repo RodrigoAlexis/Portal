@@ -224,7 +224,14 @@
                         </div>
 
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                               
+                            <div >
+                                {!! RecaptchaV3::field('buzon') !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span >
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">

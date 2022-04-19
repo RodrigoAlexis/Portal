@@ -43,7 +43,6 @@ class BuzonController extends Controller
     public function store(DenunciaRequest $request)
     {
 
-        $correo='roalexlop13@outlook.com';
         $files = $request->file('adjunto');
 
         if(!Auth::user()){
@@ -70,12 +69,12 @@ class BuzonController extends Controller
 
                 $message = [
                     'canal' => $request->canal,
-                    'email' => 'roalexlop13@outlook.com',
                     'categoria' => $request->categoria,
                     'tipo' => $request->tipo,
                     'isClient' => $request->isClient,
                     'hechos' => $request->hechos,
-                    'adjunto' => $request->file('adjunto')
+                    'adjunto' => $request->file('adjunto'),
+                    'email' => 'roalexlop13@outlook.com'
                 ];
         
                 Mail::to($message['email'])->send(new Denuncia($message));

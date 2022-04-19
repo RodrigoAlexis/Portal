@@ -30,7 +30,8 @@ class DenunciaRequest extends FormRequest
             'tipo' => 'required',
             'isClient' => 'required',
             'hechos' => 'required',
-            'adjunto' => 'array|max:2000'
+            'adjunto' => 'array|max:2000',
+            // 'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
         ];
 
         if($this->canal == 'Seguimiento'){
