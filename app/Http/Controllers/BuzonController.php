@@ -71,13 +71,18 @@ class BuzonController extends Controller
                     'canal' => $request->canal,
                     'categoria' => $request->categoria,
                     'tipo' => $request->tipo,
+                    'name' => $request->name,
+                    'paterno' => $request->paterno,
+                    'materno' => $request->materno,
+                    'telefono' => $request->telefono,
+                    'email'=> $request->email,
                     'isClient' => $request->isClient,
+                    'razon_social' => $request->razon_social,
                     'hechos' => $request->hechos,
-                    'adjunto' => $request->file('adjunto'),
-                    'email' => 'roalexlop13@outlook.com'
+                    'adjunto' => $request->file('adjunto')
                 ];
         
-                Mail::to($message['email'])->send(new Denuncia($message));
+                Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
             }
         }else{
             if($request->canal == 'Anonimo'){
@@ -96,6 +101,23 @@ class BuzonController extends Controller
                         
                     }
                 }
+
+                $message = [
+                    'canal' => $request->canal,
+                    'categoria' => $request->categoria,
+                    'tipo' => $request->tipo,
+                    'name' => $request->name,
+                    'paterno' => $request->paterno,
+                    'materno' => $request->materno,
+                    'telefono' => $request->telefono,
+                    'email'=> $request->email,
+                    'isClient' => $request->isClient,
+                    'razon_social' => $request->razon_social,
+                    'hechos' => $request->hechos,
+                    'adjunto' => $request->file('adjunto')
+                ];
+        
+                Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
                 
             }else{
 
@@ -120,6 +142,23 @@ class BuzonController extends Controller
                         
                     }
                 }
+
+                $message = [
+                    'canal' => $request->canal,
+                    'categoria' => $request->categoria,
+                    'tipo' => $request->tipo,
+                    'name' => $request->name,
+                    'paterno' => $request->paterno,
+                    'materno' => $request->materno,
+                    'telefono' => $request->telefono,
+                    'email'=> $request->email,
+                    'isClient' => $request->isClient,
+                    'razon_social' => $request->razon_social,
+                    'hechos' => $request->hechos,
+                    'adjunto' => $request->file('adjunto')
+                ];
+        
+                Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
             } 
         }
 

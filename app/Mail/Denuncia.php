@@ -33,11 +33,16 @@ class Denuncia extends Mailable
     {
         $correo =  $this->view('buzon.emails.denuncia-anonima')->subject('Buzón de Denuncias');
 
-        for ($i = 0; $i< count($this->msg['adjunto']); $i++){
-            $correo->attach($this->msg['adjunto'] [$i]->getRealPath(),[
-                'as' => $this->msg['adjunto'] [$i]->getClientOriginalName()
-            ]);
+        if(!is_null($this->msg['adjunto'])){
+            for ($i = 0; $i< count(($this->msg['adjunto'])); $i++){
+                $correo->attach($this->msg['adjunto'] [$i]->getRealPath(),[
+                    'as' => $this->msg['adjunto'] [$i]->getClientOriginalName()
+                ]);
+            }
+        }else{
+            
         }
+        
 
         return $correo;
                  
