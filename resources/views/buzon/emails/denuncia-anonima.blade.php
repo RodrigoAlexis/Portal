@@ -8,6 +8,7 @@
 <body>
 
     <p><strong>Recibiste una nueva:</strong> {{$msg['tipo']}}</p>
+    <p><strong>Folio No.</strong> {{$msg['folio']}}</p>
     <p><strong>Modo de Canal:</strong> {{$msg['canal']}}</p>
     <p><strong>Categoria:</strong> {{$msg['categoria']}}</p>
 

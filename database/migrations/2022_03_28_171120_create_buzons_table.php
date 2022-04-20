@@ -15,6 +15,7 @@ class CreateBuzonsTable extends Migration
     {
         Schema::create('buzons', function (Blueprint $table) {
             $table->id();
+            $table->string('folio')->unique();
             $table->enum('canal', ['Seguimiento', 'Anónimo']);
             $table->enum('categoria', ['Condiciones Laborales', 
                                         'Salud y Seguridad', 
@@ -30,7 +31,7 @@ class CreateBuzonsTable extends Migration
                                         'Otro',]);
             $table->enum('tipo', ['Denuncia', 'Queja', 'Sugerencia']);
 
-            $table->enum('isClient', ['Soy cliente', 'No soy cliente'])->default('No soy cliente');
+            $table->enum('isClient', ['Soy cliente o proveedor', 'No soy cliente o proveedor'])->default('No soy cliente o proveedor');
             $table->text('hechos');
             $table->unsignedBigInteger('user_id')->nullable();
 

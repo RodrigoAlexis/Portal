@@ -67,6 +67,8 @@ class BuzonController extends Controller
                     }
                 }
 
+                                
+
                 $message = [
                     'canal' => $request->canal,
                     'categoria' => $request->categoria,

@@ -88,8 +88,8 @@
                 <x-jet-label for="isClient" value="{{ __('¿Es cliente o proveedor?') }}" />
                 <div >
                     <select id="isClient" name="isClient" wire:model.defer="state.isClient" class="form-select w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                        <option value="Soy cliente">Si, soy cliente o proveedor</option>
-                        <option value="No soy cliente">No soy cliente o proveedor</option>
+                        <option value="Soy cliente o proveedor">Si, soy cliente o proveedor</option>
+                        <option value="No soy cliente o proveedor">No soy cliente o proveedor</option>
                     </select>
                   </div>
             </div>
