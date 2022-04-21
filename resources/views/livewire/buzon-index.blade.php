@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    {{-- @if($lines->count()) --}}
+    @if($buzon->count())
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
@@ -64,7 +64,7 @@
                         <tr>
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                ID</th>
+                                Folio</th>
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Modo de Canal</th>
@@ -82,22 +82,22 @@
 
                     <tbody class="bg-white">
 
-                         {{-- @foreach ($lines as $line)  --}}
+                         @foreach ($buzon as $bu) 
                             <tr>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                   1
+                                   {{$bu->folio}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Anónimo
+                                    {{$bu->canal}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Discriminación
+                                    {{$bu->categoria}}
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    Denuncia
+                                    {{$bu->tipo}}
                                 </td>
                                 {{-- Botones --}}
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -109,15 +109,15 @@
                                     </a>
                                 </td>
                             </tr>
-                        {{-- @endforeach  --}}
+                        @endforeach 
                     </tbody>
                 </table>
             </div>
         </div>
 
         {{-- paginacion --}}
-        {{-- <div class="mt-4">
-            {{$lines->links()}}
+        <div class="mt-4">
+            {{$buzon->links()}}
         </div>
 
     @else
@@ -129,7 +129,7 @@
         <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
     </div>
        
-    @endif --}}
+    @endif
   
     <script>
         $('#alert').fadeIn();     

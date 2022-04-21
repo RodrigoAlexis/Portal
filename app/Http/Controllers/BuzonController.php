@@ -124,6 +124,7 @@ class BuzonController extends Controller
             }else{
 
                 Buzon::create([
+                    'folio' => '9087',
                     'canal' => $request->canal,
                     'categoria' => $request->categoria,
                     'tipo' => $request->tipo,

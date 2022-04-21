@@ -8,7 +8,7 @@
 <body>
 
     <p><strong>Recibiste una nueva:</strong> {{$msg['tipo']}}</p>
-    <p><strong>Folio No.</strong> {{$msg['folio']}}</p>
+    <p><strong>Folio No.</strong> adsadsdaas</p>
     <p><strong>Modo de Canal:</strong> {{$msg['canal']}}</p>
     <p><strong>Categoria:</strong> {{$msg['categoria']}}</p>
 
@@ -31,7 +31,7 @@
     @endif
 
     @if($msg['email'])
-    <p><strong>Apellido Materno</strong>  {{$msg['email']}}</p>
+    <p><strong>Correo Electrónico</strong>  {{$msg['email']}}</p>
     @endif
 
     <h3>Información de Cliente</h3>

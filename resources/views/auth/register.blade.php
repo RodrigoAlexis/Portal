@@ -6,7 +6,7 @@
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex ">
 					<!-- Col -->
-					<div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+					<div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-size:385px 550px; background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
 					<!-- Col -->
 					<div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<h3 class="pt-4 text-2xl text-center">Crea una Cuenta</h3>

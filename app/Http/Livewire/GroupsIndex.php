@@ -19,7 +19,7 @@ class GroupsIndex extends Component
 
     public function render()
     {
-        $groups = Group::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(5);;
+        $groups = Group::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(5);
 
         return view('livewire.groups-index', compact('groups'));
     }

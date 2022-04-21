@@ -16,7 +16,8 @@ class Buzon extends Model
         'tipo',
         'isClient',
         'hechos',
-        'user_id'
+        'user_id',
+        'folio'
     ];
 
 

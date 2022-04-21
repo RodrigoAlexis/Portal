@@ -5,7 +5,7 @@
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
 					<!-- Col -->
-					<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800')"></div>
+					<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-size:462px 550px; background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800')"></div>
 					<!-- Col -->
 					<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<div class="px-8 mb-4 text-center">
