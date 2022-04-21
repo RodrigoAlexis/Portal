@@ -101,7 +101,7 @@
                                 </td>
                                 {{-- Botones --}}
                                 <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                    <a href="javascript:void(0)" class="text-gray-500 hover:text-blue-500">
+                                    <a onclick="toggleModalInfo('{{$bu->id}}')" href="#{{$bu->id}}" class="text-gray-500 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -109,6 +109,7 @@
                                     </a>
                                 </td>
                             </tr>
+                            @include('buzon.front.modales.infoDenunciaAdmin')
                         @endforeach 
                     </tbody>
                 </table>
@@ -132,6 +133,14 @@
     @endif
   
     <script>
+        function toggleModalInfo(modalIDInfo) {
+
+        document.getElementById(modalIDInfo).classList.toggle("hidden");
+        document.getElementById(modalIDInfo + "-backdrop").classList.toggle("hidden");
+        document.getElementById(modalIDInfo).classList.toggle("flex");
+        document.getElementById(modalIDInfo + "-backdrop").classList.toggle("flex");
+        }
+
         $('#alert').fadeIn();     
             setTimeout(function() {
                 $("#alert").fadeOut();           

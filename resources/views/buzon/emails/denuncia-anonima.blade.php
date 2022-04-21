@@ -23,23 +23,23 @@
     @endif
     
     @if($msg['materno'])
-    <p><strong>Apellido Materno</strong>  {{$msg['materno']}}</p>
+    <p><strong>Apellido Materno:</strong>  {{$msg['materno']}}</p>
     @endif
 
     @if($msg['telefono'])
-    <p><strong>Telefono</strong>  {{$msg['telefono']}}</p>
+    <p><strong>Telefono:</strong>  {{$msg['telefono']}}</p>
     @endif
 
     @if($msg['email'])
-    <p><strong>Correo Electrónico</strong>  {{$msg['email']}}</p>
+    <p><strong>Correo Electrónico:</strong>  {{$msg['email']}}</p>
     @endif
 
     <h3>Información de Cliente</h3>
 
-    <p><strong>¿Es cliente o proveedor?:</strong> {{$msg['isClient']}}</p>
+    <p><strong>¿Es cliente o proveedor?</strong> {{$msg['isClient']}}</p>
 
     @if($msg['razon_social'])
-    <p><strong>Razón Social</strong>  {{$msg['razon_social']}}</p>
+    <p><strong>Razón Social:</strong>  {{$msg['razon_social']}}</p>
     @endif
 
     <p><strong>Texto de los Hechos:</strong></p>
