@@ -413,34 +413,6 @@
             document.getElementById(modalIDFaq + "-backdrop").classList.toggle("flex");
         }
 
-        // function folio() {
-
-        //     var palabras = document.getElementsByClassName('canal').value;
-        //     resultado = palabras.concat(' ').replace(/([a-zA-Z]{0,} )/g, function(match) {
-        //         return (match.trim()[0]);
-        //     });
-
-        //     Console.log(resultado);
-        // }
-
-        function ShowSelected() {
-            var palabras = document.getElementsByClassName('canal').value;
-                array = palabras.split(" "),
-                total = array.length,
-                resultado = "";
-
-            for (var i = 0; i < total; resultado += array[i][0], i++);
-            console.log(resultado)
-        }
-
-        window.onload = function() {
-            var pos = window.name || 0;
-            window.scrollTo(0, pos);
-        }
-        window.onunload = function() {
-            window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
-        }
-
 
         $('#alert').fadeIn();
         setTimeout(function() {

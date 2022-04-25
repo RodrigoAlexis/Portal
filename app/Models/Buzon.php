@@ -17,7 +17,9 @@ class Buzon extends Model
         'isClient',
         'hechos',
         'user_id',
-        'folio'
+        'folio',
+        'telefono',
+        'razon_social'
     ];
 
 
@@ -26,6 +28,6 @@ class Buzon extends Model
     } 
     
     public function fileDenuncia(){
-        return $this->hasMany(FileDenuncia::class);
+        return $this->hasMany(FileDenuncia::class, 'denuncia_id');
     }
 }

@@ -33,6 +33,8 @@ class CreateBuzonsTable extends Migration
 
             $table->enum('isClient', ['Soy cliente o proveedor', 'No soy cliente o proveedor'])->default('No soy cliente o proveedor');
             $table->text('hechos');
+            $table->bigInteger('telefono')->nullable();
+            $table->string('razon_social')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

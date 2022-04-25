@@ -6,8 +6,8 @@
             class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <!--header-->
             <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                <h3 class="text-2xl text-gray-600 font-semibold modal-title">
-                    Información de la Denuncia
+                <h3 class="text-2xl text-indigo-500 font-semibold modal-title">
+                    Folio: {{ $bu->folio }}
                 </h3>
                 <button
                     class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -18,123 +18,137 @@
                 </button>
             </div>
             <!--body-->
-            <div class="overflow-y-auto h-64">
+            <div class="overflow-y-auto h-80">
                 <div class="relative p-6 flex-auto">
-                    {{-- <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                        <div
-                            class="border-b col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2 text-lg font-bold text-indigo-500">
-                            Folio: {{ $bu->folio }}
-                        </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                        {{-- Modo de canal --}}
                         <div>
                             <x-jet-label value="{{ __('Modo de Canal') }}" />
-                            <x-jet-input class="block mt-1 w-full" type="text" value="{{ $bu->canal }}" readonly />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->canal }}"
+                                readonly />
                         </div>
 
-                        <div>
+                        {{-- Categoria --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
                             <x-jet-label value="{{ __('Categoría') }}" />
-                            <x-jet-input class="block mt-1 w-full" type="text" value="{{ $bu->categoria }}" readonly />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->categoria }}"
+                                readonly />
                         </div>
 
+                        {{-- Tipo --}}
                         <div>
                             <x-jet-label value="{{ __('Tipo') }}" />
-                            <x-jet-input class="block mt-1 w-full" type="text" value="{{ $bu->tipo }}" readonly />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->tipo }}"
+                                readonly />
                         </div>
 
-                        <div>
-                            
-                        </div>
+                        {{-- Borde --}}
+                        <hr class="border-t col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4" />
 
-                        <div
-                            class=" col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2 text-lg font-bold text-gray-600">
-                            <x-jet-label value="{{ __('Información del Usuario') }}" />
-                            >
-                        </div>
-
-                        <div>
-                            <x-jet-label value="{{ __('Tipo') }}" />
-                            <x-jet-input class="block mt-1 w-full" type="text" value="{{ $bu->tipo }}" readonly />
-                        </div>
-
-
-
-
-                    </div> --}}
-                    <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                        <div class="flex flex-wrap" id="tabs-id">
-                            <div class="w-full">
-                                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                                    <div class="px-4 py-5 flex-auto">
-                                        <div class="tab-content tab-space">
-                                            <div class="block" id="tab-profile">
-                                                <p>
-                                                    Collaboratively administrate empowered markets via
-                                                    plug-and-play networks. Dynamically procrastinate B2C users
-                                                    after installed base benefits.
-                                                    <br />
-                                                    <br />
-                                                    Dramatically visualize customer directed convergence
-                                                    without revolutionary ROI.
-                                                </p>
-                                            </div>
-                                            <div class="hidden" id="tab-settings">
-                                                <p>
-                                                    Completely synergize resource taxing relationships via
-                                                    premier niche markets. Professionally cultivate one-to-one
-                                                    customer service with robust ideas.
-                                                    <br />
-                                                    <br />
-                                                    Dynamically innovate resource-leveling customer service for
-                                                    state of the art customer service.
-                                                </p>
-                                            </div>
-                                            <div class="hidden" id="tab-options">
-                                                <p>
-                                                    Efficiently unleash cross-media information without
-                                                    cross-media value. Quickly maximize timely deliverables for
-                                                    real-time schemas.
-                                                    <br />
-                                                    <br />
-                                                    Dramatically maintain clicks-and-mortar solutions
-                                                    without functional solutions.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        @if ($bu->user)
+                            {{-- Informacion del Usuario --}}
+                            <div
+                                class=" col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4 text-lg font-bold text-gray-600">
+                                <x-jet-label value="{{ __('Información de Usuario') }}" />
                             </div>
+
+                            {{-- Nombre Completo --}}
+                            <div class="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2">
+                                <x-jet-label value="{{ __('Nombre') }}" />
+                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                    value="{{ $bu->user->name }} {{ $bu->user->paterno }} {{ $bu->user->materno }}"
+                                    readonly />
+                            </div>
+
+                            {{-- Telefono --}}
+                            <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
+                                <x-jet-label value="{{ __('Número de Contacto') }}" />
+                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                    value="{{ $bu->telefono }}" readonly />
+                            </div>
+
+                            {{-- Correo Electronico --}}
+                            <div class="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-2">
+                                <x-jet-label value="{{ __('Correo Electrónico') }}" />
+                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                    value="{{ $bu->user->email }}" readonly />
+                            </div>
+                            {{-- @else --}}
+                        @endif
+
+                        {{-- Informacion del cliente --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
+                            <x-jet-label value="{{ __('Información de Cliente') }}" />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->isClient }}"
+                                readonly />
                         </div>
+
+                        @if ($bu->isClient == 'Soy cliente o proveedor' && $bu->canal == 'Anónimo')
+                            {{-- RFC --}}
+                            <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
+                                <x-jet-label value="{{ __('Razón Social') }}" />
+                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                    value="{{ $bu->razon_social }}" readonly />
+                            </div>
+                        @elseif($bu->isClient == 'Soy cliente o proveedor')
+                            {{-- Razon social --}}
+                            <div class="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4">
+                                <x-jet-label value="{{ __('Razón Social') }}" />
+                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                    value="{{ $bu->razon_social }}" readonly />
+                            </div>
+                        @endif
+
+                        {{-- Borde --}}
+                        <hr class="border-t col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4" />
+
+                        {{-- Texto de los hechos --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4">
+                            <x-jet-label for="hechos" value="{{ __('Texto de los Hechos') }}" />
+                            <textarea class="block mt-1 w-full text-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                                type="text" rows="5" readonly>{{ $bu->hechos }}</textarea>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <!--footer-->
-            <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600"
-                            onclick="changeAtiveTab(event,'tab-profile')">
-                            <i class="fas fa-space-shuttle text-base mr-1"></i> Profile
-                        </a>
-                    </li>
-                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white"
-                            onclick="changeAtiveTab(event,'tab-settings')">
-                            <i class="fas fa-cog text-base mr-1"></i> Settings
-                        </a>
-                    </li>
-                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white"
-                            onclick="changeAtiveTab(event,'tab-options')">
-                            <i class="fas fa-briefcase text-base mr-1"></i> Options
-                        </a>
-                    </li>
-                </ul>
+            <div class=" items-center p-6 border-t border-solid border-slate-200 rounded-b">
+                @if ($bu->fileDenuncia)
+                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+
+                        <div class="text-center ml-32">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="text-center ml-32">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="text-center ml-32">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
 </div>
 <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="{{ $bu->id }}-backdrop">
 
-    
+
 </div>
 
 <script type="text/javascript">

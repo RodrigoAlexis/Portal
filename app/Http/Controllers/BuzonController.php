@@ -67,7 +67,16 @@ class BuzonController extends Controller
 
             }else{
                 
-                Buzon::create($request->all());
+                Buzon::create([
+                    'folio' => '875668',
+                    'canal' => $request->canal,
+                    'categoria' => $request->categoria,
+                    'tipo' => $request->tipo,
+                    'isClient' => $request->isClient,
+                    'hechos' => $request->hechos,
+                    'telefono' => $request->telefono,
+                    'razon_social' => $request->razon_social,
+                ]);
 
                 if($files){
                     foreach($files as $file ){
@@ -93,7 +102,9 @@ class BuzonController extends Controller
                     'categoria' => $request->categoria,
                     'tipo' => $request->tipo,
                     'isClient' => $request->isClient,
-                    'hechos' => $request->hechos
+                    'hechos' => $request->hechos,
+                    'telefono' => $request->telefono,
+                    'razon_social' => $request->razon_social,
                 ]);
 
                 if($files){
@@ -120,6 +131,8 @@ class BuzonController extends Controller
                     'tipo' => $request->tipo,
                     'isClient' => $request->isClient,
                     'hechos' => $request->hechos,
+                    'telefono' => $request->telefono,
+                    'razon_social' => $request->razon_social,
                     'user_id' => Auth::user()->id
                 ]);
 

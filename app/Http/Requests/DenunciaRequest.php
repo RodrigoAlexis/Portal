@@ -39,7 +39,7 @@ class DenunciaRequest extends FormRequest
                 'name' => 'required',
                 'paterno' => 'required',
                 'materno' => 'required',
-                'telefono' => 'required',
+                'telefono' => 'required|max:10',
                 'email' => 'required',
             ]); 
         }
