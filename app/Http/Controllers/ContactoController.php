@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactoRequest;
 
 class ContactoController extends Controller
 {
@@ -14,6 +15,7 @@ class ContactoController extends Controller
     public function index()
     {
         //
+        return view('contacto.index');
     }
 
     /**
@@ -32,9 +34,9 @@ class ContactoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactoRequest $request)
     {
-        //
+        return 'las validaciones pasaron con exito';
     }
 
     /**

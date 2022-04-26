@@ -38,8 +38,8 @@ class Navigation extends Component
             ],
             [
                 'name' => 'Contacto',
-                'route' => route('home'),
-                'active' => request()->routeIs('#')
+                'route' => route('contacto.index'),
+                'active' => request()->routeIs('contacto.index')
             ],
         ];
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\GrupoFrontController;
 use App\Http\Controllers\LineController;
 use App\Http\Controllers\BuzonController;
 use App\Http\Controllers\DenunciaController;
+use App\Http\Controllers\ContactoController;
 
 
 Route::get('/', function () {
@@ -63,3 +64,5 @@ Route::resource('/lines', LineController::class)->names('lines');
 Route::resource('buzon', BuzonController::class)->names('buzon');
 
 Route::resource('denuncias', DenunciaController::class)->names('denuncia');
+
+Route::resource('contacto', ContactoController::class)->names('contacto');

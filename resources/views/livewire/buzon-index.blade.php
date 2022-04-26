@@ -14,9 +14,9 @@
             Listado de Denuncias
         </div>
 
-        <a href="javascript:void(0)" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
+        {{-- <a href="javascript:void(0)" class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
             Generar Reporte
-        </a>
+        </a> --}}
 
 
         <a href="javascript:void(0)" class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">

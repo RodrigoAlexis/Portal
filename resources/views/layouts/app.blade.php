@@ -13,6 +13,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/myStyles.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
         <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
         
@@ -32,19 +33,7 @@
             [x-cloak] {
                 display: none;
             }
-            .zoom{
-                transition: 1.5s ease;
-                -moz-transition: 1.5s ease; /* Firefox */
-                -webkit-transition: 2s ease; /* Chrome - Safari */
-                -o-transition: 1.5s ease; /* Opera */
-            }
-            .zoom:hover{
-                transform : scale(2);
-                -moz-transform : scale(2); /* Firefox */
-                -webkit-transform : scale(2); /* Chrome - Safari */
-                -o-transform : scale(2); /* Opera */
-                -ms-transform : scale(2); /* IE9 */
-            }
+            
         </style>
        
     </head>
