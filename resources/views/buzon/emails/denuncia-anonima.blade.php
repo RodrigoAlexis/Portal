@@ -15,16 +15,9 @@
     @if($msg['name'])
     <h3>Información Personal</h3>
 
-    <p><strong>Nombre:</strong>  {{$msg['name']}}</p>
+    <p><strong>Nombre:</strong>  {{$msg['name']}} {{$msg['paterno']}} {{$msg['materno']}}</p>
     @endif
 
-    @if($msg['paterno'])
-    <p><strong>Apellido Paterno:</strong>  {{$msg['paterno']}}</p>
-    @endif
-    
-    @if($msg['materno'])
-    <p><strong>Apellido Materno:</strong>  {{$msg['materno']}}</p>
-    @endif
 
     @if($msg['telefono'])
     <p><strong>Telefono:</strong>  {{$msg['telefono']}}</p>
