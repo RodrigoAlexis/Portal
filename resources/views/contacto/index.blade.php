@@ -5,6 +5,13 @@
             width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    @if (session('success'))
+        <div id="alert" class="text-white mb-4 border-0 static  bg-green-500 float-righ text-sm px-6 py-2.5 text-center">
+            <span class="inline-block align-middle mr-8 text-center ">
+                <p> {{session('success')}}</p>        
+            </span>
+        </div>
+    @endif
 
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -121,7 +128,7 @@
 
                         {{-- texto --}}
                         <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
-                            <x-jet-label for="texto" value="{{ __('Texto') }}" />
+                            <x-jet-label for="texto" value="{{ __('Mensaje') }}" />
                             <textarea id="texto" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                 type="text" name="texto" autofocus autocomplete="texto" rows="4"></textarea>
                             @error('texto')
@@ -144,4 +151,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+    </script>
 </x-app-layout>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactoRequest;
+use App\Models\Contacto;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactoForm;
 
 class ContactoController extends Controller
 {
@@ -36,7 +39,25 @@ class ContactoController extends Controller
      */
     public function store(ContactoRequest $request)
     {
-        return 'las validaciones pasaron con exito';
+        $message = [
+            'name' => $request->name,
+            'telefono' => $request->telefono,
+            'email' => $request->email,
+            'asunto' => $request->asunto,
+            'texto' => $request->texto
+        ];
+
+        Contacto::create([
+            'nombre' => $request->name,
+            'telefono' => $request->telefono,
+            'email' => $request->email,
+            'asunto' => $request->asunto,
+            'mensaje' => $request->texto
+        ]);
+
+        Mail::to('roalexlop13@outlook.com')->send(new ContactoForm($message));
+
+        return redirect()->route('contacto.index')->with('success', 'Mensaje envíado satisfactoriamente');
     }
 
     /**

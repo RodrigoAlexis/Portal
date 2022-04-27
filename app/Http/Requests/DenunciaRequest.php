@@ -30,8 +30,7 @@ class DenunciaRequest extends FormRequest
             'tipo' => 'required',
             'isClient' => 'required',
             'hechos' => 'required',
-            'adjunto' => 'max:2000',
-            // 'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
+            'adjunto' => 'max:2000'
         ];
 
         if($this->canal == 'Seguimiento'){
@@ -61,7 +60,6 @@ class DenunciaRequest extends FormRequest
             'telefono.required' => 'El campo Número de Contacto es requerido',
             'email.required' => 'El campo Correo Electrónico es requerido',
             'adjunto.max' => 'El peso máximo permitido es de 2 MB'
-            // 'adjunto.mimes' => 'Solo se permiten archivos con extensión (.jpeg, .jpg, .png, .pdf, .doc, .docx)'
             
             
         ];

@@ -72,6 +72,9 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
                         x-data="{ personal: false, cliente: false }">
+
+                        <x-jet-input id="folio" class="block mt-1 w-full" type="text" name="folio" value="asd"/>
+
                         <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
                             <label for="info">Información de la Denuncia</label>
                         </div>
