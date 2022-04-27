@@ -73,7 +73,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
                         x-data="{ personal: false, cliente: false }">
 
-                        <x-jet-input id="folio" class="block mt-1 w-full" type="text" name="folio" value="asd"/>
+                        <x-jet-input id="folio" class="block mt-1 w-full" type="text" name="folio" value="" />
 
                         <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
                             <label for="info">Información de la Denuncia</label>
@@ -87,7 +87,7 @@
                                     name="canal"
                                     class="form-select w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
+                                    <option value="" disabled selected>Seleccione una opción</option>
                                     <option value="Seguimiento">Con Seguimiento</option>
                                     <option value="Anónimo">Anónimo</option>
                                 </select>
@@ -101,24 +101,19 @@
                         <div class="col-span-1 md:col-span-1 lg:col-span-2">
                             <x-jet-label for="categoria" value="{{ __('Categoría *') }}" />
                             <div>
-                                <select name="categoria"
+                                <select name="categoria" id="categoria"
                                     class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="Condiciones Laborales">Condiciones Laborales</option>
-                                    <option value="Salud y Seguridad">Salud y Seguridad</option>
+                                    <option value="" disabled selected>Seleccione una opción</option>
                                     <option value="Normas de Conducta">Normas de Conducta</option>
-                                    <option value="Violencia Laboral">Violencia Laboral</option>
-                                    <option value="Hostigamiento Laboral">Hostigamiento Laboral</option>
-                                    <option value="Discriminación">Discriminación</option>
-                                    <option value="Medio Ambiente">Medio Ambiente</option>
-                                    <option value="Acoso Laboral">Acoso Laboral</option>
-                                    <option value="Abuso de Derechos Humanos">Abuso de Derechos Humanos</option>
-                                    <option value="Confidencialidad y Privacidad de Datos Personales">Confidencialidad y
-                                        Privacidad de Datos Personales</option>
-                                    <option value="Soborno/Corrupción">Soborno / Corrupción</option>
-                                    <option value="Otro">Otro</option>
+                                    <option value="Condiciones Laborales">Condiciones Laborales</option>
+                                    <option value="Discriminación / Acoso">Discriminación / Acoso</option>
+                                    <option value="Prácticas Monopólicas">Prácticas Monopólicas</option>
+                                    <option value="Leyes Ambientales">Leyes Ambientales</option>
+                                    <option value="Sobornos">Sobornos</option>
+                                    <option value="Derechos de la Tierra">Derechos de la Tierra</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                             </div>
                             @error('categoria')
@@ -134,7 +129,7 @@
                                     class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
+                                    <option value="" disabled selected>Seleccione una opción</option>
                                     <option value="Denuncia">Denuncia</option>
                                     <option value="Queja">Queja</option>
                                     <option value="Sugerencia">Sugerencia</option>
@@ -214,7 +209,7 @@
                                     class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
-                                    <option value>Seleccione una opción</option>
+                                    <option value="" disabled selected>Seleccione una opción</option>
                                     <option value="Soy cliente o proveedor">Si, soy cliente o proveedor</option>
                                     <option value="No soy cliente o proveedor">No soy cliente o proveedor</option>
                                 </select>
@@ -262,15 +257,29 @@
                             @enderror
                         </div>
 
-                        <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
-                            <div>
-                                {!! RecaptchaV3::field('buzon') !!}
-                                @if ($errors->has('g-recaptcha-response'))
-                                    <span>
-                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        {{-- Recaptcha --}}
+                        <div>
+                            {!! htmlFormSnippet() !!}
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                        <div>
+
                         </div>
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
@@ -414,6 +423,21 @@
             document.getElementById(modalIDFaq + "-backdrop").classList.toggle("hidden");
             document.getElementById(modalIDFaq).classList.toggle("flex");
             document.getElementById(modalIDFaq + "-backdrop").classList.toggle("flex");
+        }
+
+        //Funcion para obtener el valor del select
+        var select = document.getElementById('categoria');
+        select.addEventListener('change',
+            function() {
+                var selectedOption = this.options[select.selectedIndex];
+                console.log(select.value + ':' + selectedOption.text);
+            });
+
+        document.getElementById("categoria").addEventListener('keyup', autoCompleteNew);
+
+        function autoCompleteNew(e) {
+            var value = $(this).val();
+            $("#").val(value.replace(/\s/g, '').toLowerCase());
         }
 
 

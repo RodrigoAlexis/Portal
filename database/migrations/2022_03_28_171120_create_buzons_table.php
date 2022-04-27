@@ -17,18 +17,14 @@ class CreateBuzonsTable extends Migration
             $table->id();
             $table->string('folio')->unique();
             $table->enum('canal', ['Seguimiento', 'Anónimo']);
-            $table->enum('categoria', ['Condiciones Laborales', 
-                                        'Salud y Seguridad', 
-                                        'Normas de Conducta', 
-                                        'Violencia Laboral', 
-                                        'Hostigamiento Laboral', 
-                                        'Discriminación',
-                                        'Medio Ambiente',
-                                        'Acoso Laboral',
-                                        'Abuso de Derechos Humanos',
-                                        'Confidencialidad y Privacidad de Datos Personales',
-                                        'Soborno/Corrupción',
-                                        'Otro',]);
+            $table->enum('categoria', ['Normas de Conducta', 
+                                        'Condiciones Laborales', 
+                                        'Discriminación / Acoso', 
+                                        'Prácticas Monopólicas', 
+                                        'Leyes Ambientales', 
+                                        'Sobornos',
+                                        'Derechos de la Tierra',
+                                        'Otros']);
             $table->enum('tipo', ['Denuncia', 'Queja', 'Sugerencia']);
 
             $table->enum('isClient', ['Soy cliente o proveedor', 'No soy cliente o proveedor'])->default('No soy cliente o proveedor');
@@ -36,7 +32,7 @@ class CreateBuzonsTable extends Migration
             $table->bigInteger('telefono')->nullable();
             $table->string('razon_social')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-
+ 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();

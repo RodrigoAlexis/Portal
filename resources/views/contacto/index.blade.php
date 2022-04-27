@@ -8,7 +8,7 @@
     @if (session('success'))
         <div id="alert" class="text-white mb-4 border-0 static  bg-green-500 float-righ text-sm px-6 py-2.5 text-center">
             <span class="inline-block align-middle mr-8 text-center ">
-                <p> {{session('success')}}</p>        
+                <p> {{ session('success') }}</p>
             </span>
         </div>
     @endif
@@ -135,7 +135,13 @@
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror
                         </div>
+                        {{-- Recaptcha --}}
+                        <div>
+                            {!! htmlFormSnippet() !!}
+                        </div>
+                        <div>
 
+                        </div>
                         <div>
 
                         </div>
@@ -152,9 +158,9 @@
         </div>
     </div>
     <script>
-        $('#alert').fadeIn();     
-            setTimeout(function() {
-                $("#alert").fadeOut();           
-            },4000);
+        $('#alert').fadeIn();
+        setTimeout(function() {
+            $("#alert").fadeOut();
+        }, 4000);
     </script>
 </x-app-layout>
