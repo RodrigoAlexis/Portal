@@ -73,7 +73,9 @@
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
                         x-data="{ personal: false, cliente: false }">
 
-                        <x-jet-input id="folio" class="block mt-1 w-full" type="text" name="folio" value="" />
+                        <x-jet-input id="folioCanal" class="block mt-1 w-full hidden" type="text" name="folioCanal" value="" />
+                        <x-jet-input id="folioCategoria" class="block mt-1 w-full hidden" type="text" name="folioCategoria" value="" />
+                        <x-jet-input id="folioTipo" class="block mt-1 w-full hidden" type="text" name="folioTipo" value="" />
 
                         <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
                             <label for="info">Información de la Denuncia</label>
@@ -83,8 +85,7 @@
                         <div>
                             <x-jet-label for="canal" value="{{ __('Modo de Canal *') }}" />
                             <div>
-                                <select id="canal" onchange="ShowSelected();" @change="personal = $event.target.value"
-                                    name="canal"
+                                <select id="canal" @change="personal = $event.target.value" name="canal"
                                     class="form-select w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
                                     <option value="" disabled selected>Seleccione una opción</option>
@@ -125,7 +126,7 @@
                         <div>
                             <x-jet-label for="tipo" value="{{ __('Tipo *') }}" />
                             <div>
-                                <select name="tipo"
+                                <select name="tipo" id="tipo" 
                                     class="form-select w-full
                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
@@ -430,16 +431,61 @@
         select.addEventListener('change',
             function() {
                 var selectedOption = this.options[select.selectedIndex];
-                console.log(select.value + ':' + selectedOption.text);
+
+                var str = selectedOption.text,
+                    regex = /[a-záéíóúüñ]*[A-ZÁÉÍÓÚÜÑ][a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]*/g,
+                    palabrasMay = str.match(regex);
+
+                var res = palabrasMay
+                    .filter(function(v, i, a) {
+                        return a.indexOf(v) === i
+                    })
+                    .join(' ');
+                var palabras = res,
+                    array = palabras.split(" "),
+                    total = array.length,
+                    resultado = "";
+
+                for (var i = 0; i < total; resultado += array[i][0], i++);
+
+                document.getElementById('folioCategoria').value = resultado;
+            }
+        );
+
+        // var mostrarValor = function(resultado) {
+            
+            var select2 = document.getElementById('tipo');
+            select2.addEventListener('change',
+             function(resultado) {
+                    var selectedOption2 = this.options[select2.selectedIndex];
+
+                    var palabras = selectedOption2.text,
+                        array = palabras.split(" "),
+                        total = array.length,
+                        resultado = "";
+
+                    for (var i = 0; i < total; resultado += array[i][0], i++);
+
+                    document.getElementById('folioTipo').value = resultado;
+
+                });
+        // }
+
+        var select3 = document.getElementById('canal');
+        select3.addEventListener('change',
+            function() {
+                var selectedOption3 = this.options[select3.selectedIndex];
+
+                var palabras = selectedOption3.text,
+                    array = palabras.split(" "),
+                    total = array.length,
+                    resultado = "";
+
+                for (var i = 0; i < total; resultado += array[i][0], i++);
+
+                document.getElementById('folioCanal').value = resultado;
+
             });
-
-        document.getElementById("categoria").addEventListener('keyup', autoCompleteNew);
-
-        function autoCompleteNew(e) {
-            var value = $(this).val();
-            $("#").val(value.replace(/\s/g, '').toLowerCase());
-        }
-
 
         $('#alert').fadeIn();
         setTimeout(function() {
