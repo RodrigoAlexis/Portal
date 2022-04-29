@@ -88,10 +88,10 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {!!$product->etiqueta!!}
+                                    {!!$product->etiqueta1!!}
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {!!$product->color!!}
+                                    {!!$product->color1!!}
                                 </td>
                                 
 

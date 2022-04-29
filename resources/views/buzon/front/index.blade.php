@@ -73,9 +73,9 @@
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
                         x-data="{ personal: false, cliente: false }">
 
-                        <x-jet-input id="folioCanal" class="block mt-1 w-full hidden" type="text" name="folioCanal" value="" />
-                        <x-jet-input id="folioCategoria" class="block mt-1 w-full hidden" type="text" name="folioCategoria" value="" />
-                        <x-jet-input id="folioTipo" class="block mt-1 w-full hidden" type="text" name="folioTipo" value="" />
+                        <x-jet-input id="folioCanal" class=" mt-1 w-full hidden" type="text" name="folioCanal" value="" />
+                        <x-jet-input id="folioCategoria" class=" mt-1 w-full hidden" type="text" name="folioCategoria" value="" />
+                        <x-jet-input id="folioTipo" class=" mt-1 w-full hidden" type="text" name="folioTipo" value="" />
 
                         <div class="md:col-span-4 lg:col-span-4 text-lg block text-gray-600 font-bold">
                             <label for="info">Información de la Denuncia</label>

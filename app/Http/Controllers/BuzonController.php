@@ -88,28 +88,27 @@ class BuzonController extends Controller
                         }
                     }
                 }
-                Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
 
-                // if ($request->categoria == 'Normas de Conducta' || 'Discriminación / Acoso') {
-                //     //Correo de Ruth Vega
-                //     Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                if ($request->categoria == 'Normas de Conducta' || 'Discriminación / Acoso') {
+                    //Correo de Ruth Vega
+                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
 
-                //     //Correo de Gabriel Zurita
-                //     Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
-                // }
+                    //Correo de Gabriel Zurita
+                    Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
+                }
 
-                // if ($request->categoria == 'Condiciones Laborales') {
-                //     //Correo de Ruth Vega
-                //     Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                if ($request->categoria == 'Condiciones Laborales') {
+                    //Correo de Ruth Vega
+                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
 
-                //     //Correo de Gibran Garduño
-                //     Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
-                // }
+                    //Correo de Gibran Garduño
+                    Mail::to('roalexis1234567890@gmail.com')->send(new Denuncia($message));
+                }
 
-                // if ($request->categoria == 'Prácticas Monopólicas' || 'Leyes Ambientales' || 'Sobornos' || 'Derechos de la Tierra' || 'Otros') {
-                //     //Correo de Ruth Vega
-                //     Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
-                // }
+                if ($request->categoria == 'Prácticas Monopólicas' || 'Leyes Ambientales' || 'Sobornos' || 'Derechos de la Tierra' || 'Otros') {
+                    //Correo de Ruth Vega
+                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                }
             }
         } else {
             if ($request->canal == 'Anónimo') {
@@ -150,7 +149,7 @@ class BuzonController extends Controller
                     Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
 
                     //Correo de Gibran Garduño
-                    Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
+                    Mail::to('roalexis1234567890@gmail.com')->send(new Denuncia($message));
                 }
 
                 if ($request->categoria == 'Prácticas Monopólicas' || 'Leyes Ambientales' || 'Sobornos' || 'Derechos de la Tierra' || 'Otros') {
