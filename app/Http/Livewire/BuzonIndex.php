@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Buzon;
+use App\Models\FileDenuncia;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -26,6 +27,10 @@ class BuzonIndex extends Component
                         ->orWhere('tipo', 'LIKE', '%' . $this->search . '%')
                         ->latest('id')->paginate(10);
 
-        return view('livewire.buzon-index', compact('buzon'));
+        $filedenuncia = Buzon::find(3)->fileDenuncia;
+
+        dd($filedenuncia);
+
+        return view('livewire.buzon-index', compact('buzon', 'filedenuncia'));
     }
 }

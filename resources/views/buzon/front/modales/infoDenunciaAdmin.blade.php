@@ -115,20 +115,26 @@
             </div>
             <!--footer-->
             {{-- <div class=" items-center justify-end p-3 border-t border-solid border-slate-200 rounded-b"> --}}
-                @if ($bu->fileDenuncia)
-                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 rounded-b items-center justify-end mb-4 mr-4 border-t border-solid border-slate-200">
-                        <div>
-
-                        </div>
-                        <a href="javascript:void(0)" class=" justify-center flex  mt-4 py-2 px-6 text-white font-bold text-md bg-indigo-500 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                            </svg>
-            
-                            <span class="mx-3">Evidencias</span>
-                        </a>
+            @if ($filedenuncia)
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 rounded-b items-center justify-end mb-4 mr-4 border-t border-solid border-slate-200">
+                    <div>
+                        
                     </div>
-                @endif
+                    <a href="javascript:void(0)"
+                        class=" justify-center flex  mt-4 py-2 px-6 text-white font-bold text-md bg-indigo-500 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                        </svg>
+
+                        <span class="mx-3">Evidencias</span>
+                    </a>
+                </div>
+            @else
+                
+            @endif
 
             {{-- </div> --}}
         </div>
