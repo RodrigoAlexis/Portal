@@ -114,8 +114,8 @@
                 </div>
             </div>
             <!--footer-->
-            {{-- <div class=" items-center justify-end p-3 border-t border-solid border-slate-200 rounded-b"> --}}
-            @if ($filedenuncia)
+            <div class=" items-center justify-end p-3 border-t border-solid border-slate-200 rounded-b">
+            
                 <div
                     class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 rounded-b items-center justify-end mb-4 mr-4 border-t border-solid border-slate-200">
                     <div>
@@ -132,11 +132,9 @@
                         <span class="mx-3">Evidencias</span>
                     </a>
                 </div>
-            @else
-                
-            @endif
+            
 
-            {{-- </div> --}}
+            </div>
         </div>
     </div>
 </div>

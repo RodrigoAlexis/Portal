@@ -50,19 +50,6 @@
                     </ul>
                 </div>
 
-                {{-- Informacion Legal --}}
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="{{ route('policy.show') }}" class="hover:underline">Política de Privacidad</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('terms.show') }}" class="hover:underline">Términos de Servicio</a>
-                        </li>
-                    </ul>
-                </div>
-
                 {{-- Contacto --}}
                 <div>
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white hover:underline"><a
@@ -84,12 +71,27 @@
                             </p>
 
                         </li>
-                        <li>
+                        <li class="sm:text-sm">
                             <a href="mailto:ventas@veladoras-aramo.com"
-                                class="hover:underline">ventas@veladoras-aramo.com</a>
+                                class="hover:underline"><p>ventas@veladoras-aramo.com</p></a>
                         </li>
                     </ul>
                 </div>
+
+                {{-- Informacion Legal --}}
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="{{ route('policy.show') }}" class="hover:underline">Política de Privacidad</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('terms.show') }}" class="hover:underline">Términos de Servicio</a>
+                        </li>
+                    </ul>
+                </div>
+
+                
 
             </div>
         </div>

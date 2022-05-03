@@ -27,10 +27,10 @@ class BuzonIndex extends Component
                         ->orWhere('tipo', 'LIKE', '%' . $this->search . '%')
                         ->latest('id')->paginate(10);
 
-        $filedenuncia = Buzon::find(3)->fileDenuncia;
+        // $filedenuncia = Buzon::find(3)->fileDenuncia;
 
-        dd($filedenuncia);
+        // dd($filedenuncia);
 
-        return view('livewire.buzon-index', compact('buzon', 'filedenuncia'));
+        return view('livewire.buzon-index', compact('buzon'));
     }
 }

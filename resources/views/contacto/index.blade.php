@@ -136,7 +136,7 @@
                             @enderror
                         </div>
                         {{-- Recaptcha --}}
-                        <div>
+                        <div id="rc-imageselect">
                             {!! htmlFormSnippet() !!}
                         </div>
                         <div>
