@@ -16,7 +16,7 @@
                 <ul>
                     {{-- Inicio --}}
                     <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('dashboard') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('dashboard')}}">
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('dashboard') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}" href="{{route('dashboard')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
                             </svg>
@@ -26,7 +26,7 @@
                     </li>
                     {{-- Blog --}}
                     <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('posts*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('posts.index')}}">
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('posts*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}" href="{{route('posts.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                               </svg>
@@ -36,7 +36,7 @@
                     </li>
                     {{-- Denuncias --}}
                     <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('denuncia*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}" href="{{route('denuncia.index')}}">
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('denuncia*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}" href="{{route('denuncia.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                             </svg>
@@ -59,7 +59,7 @@
                     <li>
                         {{-- Dropdown --}}
                         <div x-data="{ open: false }">
-                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}} ">
+                            <button @click="open = !open" class=" w-full flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}} ">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
@@ -74,7 +74,7 @@
                                     {{-- Articulos --}}
                                     <div class="flex items-center py-2 px-6 ">
                                         
-                                        <a href="{{route('products.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                        <a href="{{route('products.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('products*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                                             </svg>
@@ -85,7 +85,7 @@
 
                                     {{-- Lineas --}}
                                     <div class="flex items-center py-2 px-6 text-lg font-semibold w-full">
-                                        <a href="{{route('lines.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('lines*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                        <a href="{{route('lines.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('lines*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                                             </svg>
@@ -97,7 +97,7 @@
                                     {{-- Grupo --}}
                                     <div class="flex items-center py-2 px-6 ">
                                         
-                                        <a href="{{route('groups.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('groups*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-green-300'}}">
+                                        <a href="{{route('groups.index')}}" class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{Route::is('groups*') ? 'active': 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400'}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                                             </svg>
@@ -126,7 +126,7 @@
 
             
             {{-- Navbar (menu responsivo y perfil) --}}
-            <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
+            <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-500">
                 {{-- Input de busqueda --}}
                 <div class="flex items-center">
                     <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">

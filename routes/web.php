@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
+
 // Blog Front
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 

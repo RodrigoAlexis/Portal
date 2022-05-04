@@ -16,8 +16,8 @@ class Navigation extends Component
             ],
             [
                 'name' => 'Nosotros',
-                'route' => route('home'),
-                'active' => request()->routeIs('login')
+                'route' => route('nosotros'),
+                'active' => request()->routeIs('nosotros')
             ],
             [
                 'name' => 'Productos',

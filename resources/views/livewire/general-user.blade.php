@@ -76,7 +76,7 @@
 
                     {{-- Input de busqueda --}}
                     <div
-                        class="flex justify-between items-center py-4 px-2 sm:px-2 md:px-4 lg:px-6 bg-white border-b-2 border-gray-600">
+                        class="flex justify-between items-center py-4 px-2 sm:px-2 md:px-4 lg:px-6 bg-white border-b-2 border-indigo-500">
 
                         <div class="flex items-center">
 
@@ -105,7 +105,7 @@
                 <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
 
                     <div
-                        class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg  border-b border-gray-200">
+                        class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg">
                         <table class="min-w-full ">
                             <thead>
                                 <tr>
