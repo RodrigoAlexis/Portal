@@ -83,7 +83,7 @@
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
 
-
+                            {{-- Perfil --}}
                             <div class="flex  px-3 hover:bg-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-2 text-gray-700" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -95,6 +95,7 @@
                                         role="menuitem" tabindex="-1" id="user-menu-item-0">Perfil</a></span>
                             </div>
 
+                            {{-- Dashboard --}}
                             <div class="flex  px-3 hover:bg-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-2 text-gray-700" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -106,6 +107,7 @@
                                         role="menuitem" tabindex="-1" id="user-menu-item-1">Panel</a></span>
                             </div>
 
+                            {{-- Logout --}}
                             <div class="flex  px-3 hover:bg-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-2 text-gray-700" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -119,7 +121,7 @@
                                         <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-2"
                                             onclick="event.preventDefault();
-                                                                                                      this.closest('form').submit();">
+                                                                                                          this.closest('form').submit();">
                                             Cerrar Sesión
                                         </a>
                                     </form>
