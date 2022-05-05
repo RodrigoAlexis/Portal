@@ -68,7 +68,7 @@
         </div>
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div
-                class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                class="align-middle inline-block min-w-full  overflow-hidden sm:rounded-lg border-b border-gray-200">
 
 
                 {{-- Buscador --}}
@@ -99,89 +99,87 @@
                     </div>
                 </div>
 
-                {{-- @if ($buzon->count()) --}}
+                @if ($buzon->count())
 
-                {{-- Tabla --}}
-                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
+                    {{-- Tabla --}}
+                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
 
-                    <div
-                        class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg">
-                        <table class="min-w-full ">
-                            <thead>
-                                <tr>
-                                    <th
-                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                        Folio</th>
-                                    <th
-                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                        Modo de Canal</th>
-                                    <th
-                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                        Categoría</th>
+                        <div class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg">
+                            <table class="min-w-full ">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            Folio</th>
+                                        <th
+                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            Modo de Canal</th>
+                                        <th
+                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            Categoría</th>
 
-                                    <th
-                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                        Tipo</th>
+                                        <th
+                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            Tipo</th>
 
-                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                                </tr>
-                            </thead>
+                                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                    </tr>
+                                </thead>
 
-                            <tbody class="bg-white">
+                                <tbody class="bg-white">
 
-                                {{-- @foreach ($buzon as $bu) --}}
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        ADTQ213213213
-                                    </td>
+                                    @foreach ($buzon as $bu)
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                {{$bu->folio}}
+                                            </td>
 
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        Anonimo
-                                    </td>
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                {{$bu->canal}}
+                                            </td>
 
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        Derechos de la Tierra
-                                    </td>
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                {{$bu->categoria}}
+                                            </td>
 
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        Queja
-                                    </td>
-                                    {{-- Botones --}}
-                                    <td
-                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <a class="text-gray-500 hover:text-blue-500">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                            </svg>
-                                        </a>
-                                    </td>
-                                </tr>
-                                {{-- @include('buzon.front.modales.infoDenunciaAdmin') --}}
-                                {{-- @endforeach --}}
-                            </tbody>
-                        </table>
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                {{$bu->tipo}}
+                                            </td>
+                                            {{-- Botones --}}
+                                            <td
+                                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                                <a class="text-gray-500 hover:text-blue-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {{-- @include('buzon.front.modales.infoDenunciaAdmin') --}}
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                {{-- paginacion --}}
-                {{-- <div class="mt-4">
-            {{$buzon->links()}}
-        </div> --}}
+                    {{-- paginacion --}}
+                    <div class="mt-4">
+                        {{ $buzon->links() }}
+                    </div>
+                @else
+                    <div class=" content-center text-center justify-center mt-8">
+                        <strong class="text-lg font-semibold text-gray-600">
+                            No se encontró ningún registro en la base de datos
+                        </strong>
+                        <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
+                    </div>
 
-                {{-- @else
-
-    <div class=" content-center text-center justify-center mt-8">
-        <strong class="text-lg font-semibold text-gray-600">
-            No se encontró ningún registro en la base de datos
-        </strong>
-        <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
-    </div>
-       
-    @endif --}}
+                @endif
             </div>
         </div>
     </div>

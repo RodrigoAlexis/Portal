@@ -2,8 +2,8 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'bg-gray-500 opacity-50 text-white px-3 py-3 rounded-md text-sm font-semibold'
-            : 'text-gray-600 hover:bg-blue-500 hover:text-white px-3 py-3 rounded-md text-sm font-semibold';
+            ? 'border-b-2 border-blue-500  text-gray-600 px-3 py-5 text-sm font-semibold'
+            : 'text-gray-600 hover:border-b-2 hover:border-blue-500 px-3 py-5 text-sm font-semibold';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
