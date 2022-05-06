@@ -148,7 +148,7 @@
                                             {{-- Botones --}}
                                             <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                <a class="text-gray-500 hover:text-blue-500">
+                                                <a onclick="toggleModalInfoU('{{$bu->id}}')" href="#{{$bu->id}}" class="text-gray-500 hover:text-blue-500">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                         stroke-width="2">
@@ -160,7 +160,7 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        {{-- @include('buzon.front.modales.infoDenunciaAdmin') --}}
+                                        @include('buzon.front.modales.infoDenunciaUser')
                                     @endforeach
                                 </tbody>
                             </table>
@@ -183,4 +183,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleModalInfoU(modalIDInfoU) {
+
+        document.getElementById(modalIDInfoU).classList.toggle("hidden");
+        document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("hidden");
+        document.getElementById(modalIDInfoU).classList.toggle("flex");
+        document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("flex");
+        }
+    </script>
 </div>

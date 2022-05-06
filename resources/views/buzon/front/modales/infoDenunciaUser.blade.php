@@ -11,7 +11,7 @@
                 </h3>
                 <button
                     class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onclick="toggleModalInfo('{{ $bu->id }}')">
+                    onclick="toggleModalInfoU('{{ $bu->id }}')">
                     <span class="bg-transparent text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
                         ×
                     </span>
@@ -46,36 +46,35 @@
                         {{-- Borde --}}
                         <hr class="border-t col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4" />
 
-                        @if ($bu->user)
-                            {{-- Informacion del Usuario --}}
-                            <div
-                                class=" col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4 text-lg font-bold text-gray-600">
-                                <x-jet-label value="{{ __('Información de Usuario') }}" />
-                            </div>
 
-                            {{-- Nombre Completo --}}
-                            <div class="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2">
-                                <x-jet-label value="{{ __('Nombre') }}" />
-                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
-                                    value="{{ $bu->user->name }} {{ $bu->user->paterno }} {{ $bu->user->materno }}"
-                                    readonly />
-                            </div>
+                        {{-- Informacion del Usuario --}}
+                        <div
+                            class=" col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-4 text-lg font-bold text-gray-600">
+                            <x-jet-label value="{{ __('Información de Usuario') }}" />
+                        </div>
 
-                            {{-- Telefono --}}
-                            <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
-                                <x-jet-label value="{{ __('Número de Contacto') }}" />
-                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
-                                    value="{{ $bu->telefono }}" readonly />
-                            </div>
+                        {{-- Nombre Completo --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2">
+                            <x-jet-label value="{{ __('Nombre') }}" />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text"
+                                value="{{ $bu->user->name }} {{ $bu->user->paterno }} {{ $bu->user->materno }}"
+                                readonly />
+                        </div>
 
-                            {{-- Correo Electronico --}}
-                            <div class="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-2">
-                                <x-jet-label value="{{ __('Correo Electrónico') }}" />
-                                <x-jet-input class="block mt-1 w-full text-sm" type="text"
-                                    value="{{ $bu->user->email }}" readonly />
-                            </div>
-                            {{-- @else --}}
-                        @endif
+                        {{-- Telefono --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
+                            <x-jet-label value="{{ __('Número de Contacto') }}" />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->telefono }}"
+                                readonly />
+                        </div>
+
+                        {{-- Correo Electronico --}}
+                        <div class="col-span-1 sm:col-span-1 md:col-span-3 lg:col-span-2">
+                            <x-jet-label value="{{ __('Correo Electrónico') }}" />
+                            <x-jet-input class="block mt-1 w-full text-sm" type="text" value="{{ $bu->user->email }}"
+                                readonly />
+                        </div>
+
 
                         {{-- Informacion del cliente --}}
                         <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
