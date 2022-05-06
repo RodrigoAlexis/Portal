@@ -1,9 +1,10 @@
 <x-app-layout>
-    <div class="map-responsive">
+    <div class="map-responsive" >
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.433163097965!2d-98.2755633855558!3d19.132507355166723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc5afccb9f2a5%3A0x3602252f59ea7089!2sVeladoras%20Aramo!5e0!3m2!1ses!2smx!4v1650986431509!5m2!1ses!2smx"
             width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade"
+            style="z-index: 2;"></iframe>
     </div>
     @if (session('success'))
         <div id="alert" class="text-white mb-4 border-0 static  bg-green-500 float-righ text-sm px-6 py-2.5 text-center">

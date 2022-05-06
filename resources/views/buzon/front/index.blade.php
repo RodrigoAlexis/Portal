@@ -65,7 +65,7 @@
 
         <div class="flex flex-col sm:flex-col md:flex-col lg:flex-row">
             {{-- Formulario --}}
-            <div class="w-full sm:w-full md:w-full lg:w-3/4 bg-slate-100 flex-auto">
+            <div class="w-full sm:w-full md:w-full lg:w-3/4  flex-auto">
 
                 <form action="{{ route('buzon.store') }}" method="post" enctype="multipart/form-data">
                     @csrf

@@ -1,5 +1,5 @@
-<nav class="bg-white menu sticky top-0" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+<nav class="bg-white menu sticky top-0 " x-data="{ open: false }" style="z-index: 2;">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
         <div class="relative flex items-center justify-between h-16">
 
             <!-- Mobile menu button-->
