@@ -8,25 +8,20 @@
                 <div class="relative text-6xl font-serif underline boder-2 border-white">¿Quienes Somos?</div>
             </div>
         </div>
-
     </div>
 
-    {{-- Historia --}}
-    <div class="w-full ">
-        <div class=" mx-auto rounded-t bg-bottom ">
-
-            <div class="text-center text-gray-800 p-6" id="Nuestra_Historia">
-                <div class="text-3xl font-serif">Nuestra Historia</div>
-            </div>
-        </div>
-
+    {{-- Titulo Historia --}}
+    <div class="w-full text-center text-gray-800 p-6" id="nuestra-historia">
+        <p class="text-3xl font-serif">Nuestra Historia</p>
     </div>
+
+
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{-- texto y svg --}}
+        {{-- texto y svg de historia --}}
         <div class=" w-full py-4  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
 
-            <div class=" font-serif text-sm sm:text-sm md:text-sm text-gray-600">
+            <div class=" font-serif text-sm text-gray-600">
                 <p class="mb-3">
                     Como todas las grandes historias, la nuestra empieza con un sueño y un gran propósito. <span
                         class="font-bold text-gray-800">Trascender</span>.
@@ -663,26 +658,156 @@
 
         </div>
 
-        <div class="flex justify-center mb-4">
-            <button onclick="inicio()"
-                class=" p-1 text-sm border-2 border-blue-500 rounded-full">
+        {{-- Anclaje al inicio --}}
+        {{-- <div class="flex justify-center mb-4">
+            <button onclick="inicio()" class=" p-1 text-sm border-2 border-blue-500 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+                </svg>
+            </button>
+        </div> --}}
+
+        {{-- Mision, Vision y politica de calidad --}}
+        <div class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full">
+
+            {{-- Mision --}}
+            <div class="p-6 bg-white">
+
+                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                    Misión
+                </h2>
+
+                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                    Fabricar veladoras para iluminar caminos de esperanza.
+                </p>
+            </div>
+
+            {{-- Vision --}}
+            <div class="p-6 bg-white ">
+
+                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                    Visión
+                </h2>
+
+                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                    Ser reconocidos por la confiabilidad, el servicio y la inovación de nuestra marca con crecimiento
+                    rentable.
+                </p>
+            </div>
+
+            {{-- Politica de calidad --}}
+            <div class="p-6 bg-white ">
+
+                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                    Política de calidad
+                </h2>
+
+                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                    Alcanzamos y mantenemos la satisfacción de nuestros clientes, aplicando como filosofía y práctica la
+                    mejora continua en cumplimiento de los requisitos, las normas aplicables las expectativas de cada
+                    una de las partes interesadas en nuestros de veladoras y articulos de limpieza.
+                </p>
+            </div>
+
+        </div>
+
+        {{-- titulo valores --}}
+        <div class="w-full text-center text-gray-800 p-6">
+            <p class="text-2xl font-serif">Nuestros Valores</p>
+        </div>
+
+        {{-- Valores --}}
+        <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
+            <div class="grid gap-5 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+                {{-- Empoderar --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Empoderamos a nuestros colaboradores.
+                    </div>
+                </div>
+
+                {{-- Integridad --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Actuamos con integridad.
+                    </div>
+                </div>
+
+                {{-- Trabajo en equipo --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Trabajamos en equipo.
+                    </div>
+                </div>
+
+                {{-- Perseverancia --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Perseveramos en nuestros objetivos.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {{-- Anclaje a historia --}}
+        <div class="flex justify-center pb-4">
+            <button onclick="inicio()" class=" p-1 text-sm border-2 border-blue-500 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
                 </svg>
             </button>
         </div>
-
-        <div class="bg-green-400">
-          asdaldkad
-        </div>
     </div>
 
-    
+
 
     <script>
         function inicio() {
             document.location.href = "#inicio";
+        }
+
+        function history() {
+            document.location.href = "#nuestra-historia";
         }
     </script>
 </x-app-layout>

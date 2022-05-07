@@ -15,7 +15,7 @@ class Navigation extends Component
                 'active' => request()->routeIs('home')
             ],
             [
-                'name' => 'Nosotros',
+                'name' => 'Sobre Veladoras Aramo',
                 'route' => route('nosotros'),
                 'active' => request()->routeIs('nosotros')
             ],
