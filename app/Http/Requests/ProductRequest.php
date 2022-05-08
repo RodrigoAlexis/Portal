@@ -28,6 +28,9 @@ class ProductRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'slug' => 'required|unique:products',
+            'etiqueta1' => 'required',
+            'color1' => 'required',
+            'piezas' => 'required',
             'group_id' => 'required',
             'line_id' => 'required'
 
@@ -46,6 +49,9 @@ class ProductRequest extends FormRequest
             'name.required' => 'El campo nombre es requerido',
             'slug.required' => 'El campo URL amigable es requerido',
             'slug.unique' => 'Este nombre ya existe, ingrese otro nombre',
+            'etiqueta1.required' => 'El campo Etiqueta #1 es requerido',
+            'color1.required' => 'El campo Color #1 es requerido',
+            'piezas.required' => 'El campo Piezas es requerido',
             'group_id.required' => 'El campo grupo es requerido',
             'line_id.required' => 'El campo linea es requerido',
         ];

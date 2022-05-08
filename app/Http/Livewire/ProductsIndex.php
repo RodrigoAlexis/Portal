@@ -24,7 +24,10 @@ class ProductsIndex extends Component
     public function render()
     {
 
-        $products = Product::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(10);
+        $products = Product::orWhere('name', 'LIKE', '%' . $this->search . '%')
+                            ->orWhere('etiqueta1', 'LIKE', '%' . $this->search . '%')
+                            ->orWhere('color1', 'LIKE', '%' . $this->search . '%')
+                            ->latest('id')->paginate(10);
 
         return view('livewire.products-index', compact('products'));
     }

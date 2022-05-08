@@ -12,17 +12,26 @@ class Product extends Model
     protected $fillable=[
         'name',
         'slug',
+        'piezas',
+        'etiqueta1',
+        'etiqueta2',
+        'color1',
+        'color2',
+        'color3',
+        'color4',
         'group_id',
-        'line_id'
+        'line_id',
+        'mercado',
+        'amazon'
     ];
 
-    public function groups(){
+    public function group(){
         return $this->belongsTo(Group::class);
     }
 
-    public function lines(){
+    public function line(){
         return $this->belongsTo(Line::class);
-    }
+    }   
 
     public function image(){
         return $this->morphOne(Image::class, 'imageable');  

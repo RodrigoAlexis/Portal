@@ -16,8 +16,8 @@ class Navigation extends Component
             ],
             [
                 'name' => 'Nosotros',
-                'route' => route('home'),
-                'active' => request()->routeIs('login')
+                'route' => route('nosotros'),
+                'active' => request()->routeIs('nosotros')
             ],
             [
                 'name' => 'Productos',
@@ -31,14 +31,15 @@ class Navigation extends Component
                 'active' => request()->routeIs('blogs.index')
             ],
             [
-                'name' => 'Contacto',
-                'route' => route('home'),
-                'active' => request()->routeIs('#')
+                
+                'name' => 'Buzón',
+                'route' => route('buzon.index'),
+                'active' => request()->routeIs('buzon.index')
             ],
             [
-                'name' => 'Buzón',
-                'route' => route('home'),
-                'active' => request()->routeIs('#')
+                'name' => 'Contacto',
+                'route' => route('contacto.index'),
+                'active' => request()->routeIs('contacto.index')
             ],
         ];
 

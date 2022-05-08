@@ -28,7 +28,8 @@ class LineRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'slug' => 'required|unique:lines',
-            'groups' => 'required'
+            'groups' => 'required',
+            'file' => 'image'
 
         ];
 
@@ -37,5 +38,17 @@ class LineRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo nombre es requerido',
+            'slug.required' => 'El campo URL amigable es requerido',
+            'slug.unique' => 'Este nombre ya existe, ingrese otro nombre',
+            'file.image' => 'Solo se aceptan imagenes',
+            'groups' => 'Seleccione al menos un grupo'
+            
+        ];
     }
 }

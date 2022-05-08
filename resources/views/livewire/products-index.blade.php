@@ -30,7 +30,7 @@
     <div class="flex-1 flex flex-col overflow-hidden w-full rounded-t-lg">
 
         {{-- Input de busqueda --}}
-        <div class="flex justify-between items-center py-4 px-2 sm:px-2 md:px-4 lg:px-6 bg-white border-b-2 border-gray-600">
+        <div class="flex justify-between items-center py-4 px-2 sm:px-2 md:px-4 lg:px-6 bg-white border-b-2 border-indigo-500">
             <div class="flex items-center">
                 <div class="relative mx-4 lg:mx-0">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
@@ -55,7 +55,7 @@
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">
 
-            <div class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg  border-b border-gray-200">
+            <div class="align-middle inline-block min-w-full shadow overflow-hidden rounded-b-lg ">
                 <table class="min-w-full ">
                     <thead>
                         <tr>
@@ -66,10 +66,10 @@
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre</th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Grupo ID</th>
+                                Etiqueta</th>
                             
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Linea ID</th>
+                                Color</th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                         </tr>
@@ -88,10 +88,10 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {{$product->group_id}}
+                                    {!!$product->etiqueta1!!}
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    {{$product->line_id}}
+                                    {!!$product->color1!!}
                                 </td>
                                 
 

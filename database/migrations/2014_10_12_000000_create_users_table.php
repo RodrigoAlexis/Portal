@@ -18,13 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('paterno')->nullable();
             $table->string('materno')->nullable();
-            $table->enum('isClient', ['Soy cliente', 'No soy cliente'])->default('No soy cliente');
+            $table->enum('isClient', ['Soy cliente o proveedor', 'No soy cliente o proveedor'])->default('No soy cliente o proveedor');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->bigInteger('telefono')->nullable();
-            $table->string('clave_cliente')->unique()->nullable();
-            $table->string('rfc')->nullable();
             $table->string('razon_social')->nullable();
             $table->string('id_socialite')->nullable();
             $table->string('type_socialite')->nullable()->default('N/A');

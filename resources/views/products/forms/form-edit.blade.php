@@ -31,6 +31,9 @@
 {{-- Ruta del plugin para creacion de slug --}}
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
+{{-- Ruta del plugin para creacion de slug --}}
+<script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
+
 <script>
     //Creacion de slug
     $(document).ready( function() {

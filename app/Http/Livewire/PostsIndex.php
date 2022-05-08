@@ -20,7 +20,9 @@ class PostsIndex extends Component
 
     public function render()
     {
-        $posts = Blog::orWhere('name', 'LIKE', '%' . $this->search . '%')->latest('id')->paginate(10);
+        $posts = Blog::orWhere('name', 'LIKE', '%' . $this->search . '%')
+                        ->orWhere('id', 'LIKE', '%' . $this->search . '%')
+                        ->latest('id')->paginate(10);
 
         return view('livewire.posts-index', compact('posts'));
     }

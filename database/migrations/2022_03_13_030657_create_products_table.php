@@ -17,6 +17,17 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->integer('piezas');
+            $table->string('etiqueta1');
+            $table->string('etiqueta2')->nullable();
+            $table->string('color1');
+            $table->string('color2')->nullable();
+            $table->string('color3')->nullable();
+            $table->string('color4')->nullable();
+            $table->text('mercado')->nullable();
+            $table->text('amazon')->nullable();
+            
+
 
             $table->unsignedBigInteger('group_id');
             $table->unsignedBigInteger('line_id');

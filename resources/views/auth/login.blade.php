@@ -1,4 +1,11 @@
 <x-app-layout>
+    @if (session('success'))
+        <div id="alert" class="text-white mb-4 border-0 static  bg-blue-500 float-righ text-sm px-6 py-2.5 text-center">
+            <span class="inline-block align-middle mr-8 text-center ">
+                <p> {{session('success')}}</p>        
+            </span>
+        </div>
+    @endif
     <x-guest-layout>
         <!-- Container -->
         <div class="container">
@@ -6,7 +13,7 @@
                 <!-- Row -->
                 <div class="w-full xl:w-3/4 lg:w-11/12 flex">
                     <!-- Col -->
-                    <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/K4mSJ7kc0As/600x800')"></div>
+                    <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-size:460px 640px; background-image: url('https://source.unsplash.com/K4mSJ7kc0As/600x800')"></div>
                     <!-- Col -->
                     <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
                         <h3 class="pt-4 text-xl text-center text-gray-300 ">¡Bienvenido!</h3>
@@ -85,4 +92,10 @@
             </div>
         </div>
     </x-guest-layout>
+    <script>
+        $('#alert').fadeIn();     
+            setTimeout(function() {
+                $("#alert").fadeOut();           
+            },4000);
+    </script>
 </x-app-layout>

@@ -46,12 +46,22 @@ class ProductosController extends Controller
     {
         // return $request->all();
 
-        $product = Product::create([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'group_id' => $request->group_id,
-            'line_id' => $request->line_id
-        ]);
+        $product = Product::create($request->all());
+        // $product->create($request->all());
+
+        // $product = Product::create([
+        //     'name' => $request->name,
+        //     'slug' => $request->slug,
+        //     'piezas' => $request->piezas,
+        //     'etiqueta1' => $request->etiqueta1,
+        //     'etiqueta2' => $request->etiqueta2,
+        //     'color1' => $request->color1,
+        //     'color2' => $request->color2,
+        //     'color3' => $request->color3,
+        //     'color4' => $request->color4,
+        //     'group_id' => $request->group_id,
+        //     'line_id' => $request->line_id
+        // ]);
 
 
         if ($request->file('file')) {
@@ -72,10 +82,24 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        // $productos = Product::where('id', '=', $product->id)->get();
+
+        // return view('products.front.modalProduct', compact('productos'));
     }
+
+    // public function mostrar(Group $group, Line $line, Product $product)
+    // {
+    //     $productos = Product::where('group_id', '=', $group->id)
+    //                     ->where('line_id','=', $line->id)
+    //                     ->where('id', '=', $product->id)
+    //                     ->get();
+
+    //                     // dd($productos);
+
+    //     // return view('products.front.modalProduct', ['group' => $group, 'line' => $line, 'product' => $product, 'productos' => $productos]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

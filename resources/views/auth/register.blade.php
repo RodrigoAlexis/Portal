@@ -6,7 +6,7 @@
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex ">
 					<!-- Col -->
-					<div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+					<div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-size:385px 550px; background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
 					<!-- Col -->
 					<div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<h3 class="pt-4 text-2xl text-center">Crea una Cuenta</h3>
@@ -35,12 +35,12 @@
                                         </div>
                                         {{-- IsClient? --}}
                                         <div>
-                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente de Aram-Luz? *') }}" />
+                                            <x-jet-label for="isClient" value="{{ __('¿Es cliente o proveedor? *') }}" />
                                             <div >
                                                 <select name="isClient" class="form-select w-full
                                                 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" placeholder="Seleccione una opción">
-                                                    <option value="Soy cliente">Si, soy cliente</option>
-                                                    <option value="No soy cliente">No soy cliente</option>
+                                                    <option value="Soy cliente o proveedor">Si, soy cliente o proveedor</option>
+                                                    <option value="No soy cliente o proveedor">No soy cliente o proveedor</option>
                                                 </select>
                                               </div>
                                         </div>

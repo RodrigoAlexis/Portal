@@ -1,0 +1,41 @@
+/* Start: Google Maps Responsive */
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 400px;
+	/*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
+	position: relative;
+	height: 0;
+}
+
+.map-responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+
+}
+
+/* End: Google Maps Responsive */
+
+#historia {
+	background-image: url('../img/instalaciones.png');
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	
+}
+
+#historia:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+
+	
+}

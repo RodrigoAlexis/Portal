@@ -8,11 +8,18 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\GrupoFrontController;
 use App\Http\Controllers\LineController;
+use App\Http\Controllers\BuzonController;
+use App\Http\Controllers\DenunciaController;
+use App\Http\Controllers\ContactoController;
 
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
 
 // Blog Front
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
@@ -22,12 +29,14 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 // Grupos front
 Route::get('/grupos', [GrupoFrontController::class, 'index'])->name('grupos.index');
 
-// Grupos-Lineas front
+// Lineas que pertenecen a un grupo
 Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupos.show');
 
+//Mostrar productos por grupo y linea
+Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrarProductos'])->name('lineas.mostrar');
 
-// Lineas-products front
-Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrar'])->name('lineas.mostrar');
+Route::get('producto/{product}', [LineController::class, 'producto'])->name('producto');
+// Route::get('grupo/{group}/linea/{line}/producto/{product}', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
  
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -54,3 +63,10 @@ Route::resource('/groups', GrupoController::class)->names('groups');
 
 // Lineas
 Route::resource('/lines', LineController::class)->names('lines');
+
+// Buzon
+Route::resource('buzon', BuzonController::class)->names('buzon');
+
+Route::resource('denuncias', DenunciaController::class)->names('denuncia');
+
+Route::resource('contacto', ContactoController::class)->names('contacto');

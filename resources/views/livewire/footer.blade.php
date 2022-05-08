@@ -1,173 +1,204 @@
-<div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 border-t">
-    <div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-5">
-
-        {{-- Logo --}}
-        <div class="md:max-w-md ">
-            <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
-                <svg class="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
-                    <rect x="3" y="1" width="7" height="12"></rect>
-                    <rect x="3" y="17" width="7" height="6"></rect>
-                    <rect x="14" y="1" width="7" height="6"></rect>
-                    <rect x="14" y="11" width="7" height="12"></rect>
-                </svg>
-                <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Veladoras Aramo</span>
-            </a>
-        </div>
-
-        {{-- Opciones de menu --}}
-        <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
-
-            {{-- General --}}
-            <div>
-                <p class="font-semibold tracking-wide text-gray-800">General</p>
-                <ul class="mt-2 space-y-2">
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">News</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">World</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Games</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">References</a>
-                    </li>
-                </ul>
-            </div>
-
-            {{-- Productos --}}
-            <div>
-                <p class="font-semibold tracking-wide text-gray-800">Productos</p>
-                <ul class="mt-2 space-y-2">
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Web</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">eCommerce</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Business</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Entertainment</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Portfolio</a>
-                    </li>
-                </ul>
-            </div>
-
-            {{-- Blog --}}
-            <div>
-                <p class="font-semibold tracking-wide text-gray-800">Blog</p>
-                <ul class="mt-2 space-y-2">
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Media</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Brochure</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Nonprofit</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Educational</a>
-                    </li>
-                    <li>
-                    <a href="/" class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Projects</a>
-                    </li>
-                </ul>
-            </div>
-
-            {{-- Contacto --}}
-            <div>
-                <a href="/" class="font-semibold tracking-wide text-gray-800">Contacto</a>
-                <ul class="mt-2 space-y-2">
-                    <li>
-                        <div  class="text-gray-600 text-sm">veladoras-aramo@gpoalze.com</div>
-                    </li>
-                    <li>
-                        <div  class="text-gray-600 text-sm">01-222-885-5361 | 01-222-216-8201</div>
-                        <div  class="text-gray-600 text-sm"></div>
-                    </li>
-                    <li>
-                        <div  class="text-gray-600 text-sm">
-                            Calle Industria #30, San Francisco Ocotlán, Coronango Puebla. 
-                        </div>
-                        <div  class="text-gray-600 text-sm">
-                            C.P. 72680
-                        </div>
-                        
-                    </li>
-                </ul>
-            </div>
-
-        </div>
+<div class="border border-gray-100">
+    <footer class="p-4 bg-white sm:p-6">
+        <div class="md:flex md:justify-between">
 
 
-    </div>
-    
-    {{-- Barra final de footer --}}
-    <div class="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row">
-
-        {{-- Copyright --}}
-        <p class="text-sm text-gray-600">
-            © Copyright 2022 | Veladoras Aramo. Todos los derechos reservados.
-        </p>
-
-      {{-- LInks de redes sociales --}}
-        <div class="flex items-center mt-4 space-x-4 sm:mt-0">
-
-            {{-- Twitter --}}
-            <a href="/" class="text-gray-500 hover:text-blue-400 transition-colors duration-300 ">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
-                    <path
-                    d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
-                    ></path>
-                </svg>
-            </a>
-
-            {{-- instagram --}}
-            <a href="/" class="text-gray-500 hover:text-red-300  duration-300">
-                <svg viewBox="0 0 30 30" fill="none" class="h-6 fill-current">
-                    <circle cx="15" cy="15" r="4"></circle>
-                    <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
-                </svg>
-            </a>
-
-            {{-- Facebook --}}
-            <a href="/" class="text-gray-500 hover:text-blue-600 transition-colors duration-300 ">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
-                    <path
-                    d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
-                    ></path>
-                </svg> 
-            </a>
-        
-            {{-- Pinterest --}}
-            <a href="/" class="text-gray-500 hover:text-pink-700 transition-colors duration-300 ">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
-                </svg> 
-            </a>
-
-            {{-- Linkedin --}}
-            <a href="/" class="text-gray-500 hover:text-blue-500 transition-colors duration-300 ">
-                <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                </svg> 
-            </a>
-
-            {{-- Youtube --}}
-            {{-- <a href="/" class="text-gray-500 hover:text-red-500 transition-colors duration-300 ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="-35.20005 -41.33325 305.0671 247.9995" fill="currentcolor">
-                    <circle cx="15" cy="15" r="4"></circle>
-                    <path d="M220.763 25.817c-2.699-10.162-10.65-18.165-20.748-20.881C190.716 0 117.333 0 117.333 0S43.951 0 25.651 4.936C15.553 7.652 7.6 15.655 4.903 25.817 0 44.236 0 82.667 0 82.667s0 38.429 4.903 56.85C7.6 149.68 15.553 157.681 25.65 160.4c18.3 4.934 91.682 4.934 91.682 4.934s73.383 0 91.682-4.934c10.098-2.718 18.049-10.72 20.748-20.882 4.904-18.421 4.904-56.85 4.904-56.85s0-38.431-4.904-56.85" fill="red"/>
+            <div class="mb-4 md:mb-0">
+                <a href="{{route('home')}}" class="flex items-center">
+                    <img class="block h-16 w-auto mr-32" src="http://veladorasaramo.com.mx/img/aramo.png"
+                    alt="Veladoras Aramo">
                     
-                </svg> 
-            </a> --}}
+                </a>
+
+                
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4">
+
+                {{-- Recursos --}}
+                <div class="">
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase ">Recursos</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="{{route('home')}}" class="hover:underline text-gray-500">Inicio</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="{{route('nosotros')}}" class="hover:underline text-gray-500">Nosotros</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="{{ route('blogs.index') }}" class="hover:underline text-gray-500">Blog</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('buzon.index') }}" class="hover:underline text-gray-500">Buzón</a>
+                        </li>
+                    </ul>
+                </div>
+
+                {{-- Productos --}}
+                <div class="">
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase  hover:underline"> <a
+                            href="{{ route('grupos.index') }}">Productos</a> </h2>
+                    <ul >
+                        <li class="mb-4">
+                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Refacciones</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Vidrio</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Velas y Cirios</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Eco Velas</a>
+                        </li>
+                    </ul>
+                </div>
+
+                {{-- Contacto --}}
+                <div class="">
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase hover:underline"><a
+                            href="{{ route('contacto.index') }}">Contacto</a></h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+
+                        
+                        <li class="mb-4 text-gray-500 text-md">
+                            <p>
+                                Dirección: Calle industria 
+                            </p>
+                            <p>
+                                #236 B. Loc. San Francisco
+                            </p>
+                            <p>
+                                 Ocotlán. Coronango, Puebla.
+                            </p>
+                        
+                            <p>
+                                C.P. 72680
+                            </p>
+
+                        </li>
+                        <li class="mb-4 text-gray-500 text-md">
+                            <span>Teléfono: </span><a href="tel:+522222168201" class="hover:underline">(222) 216 8201</a>
+                        </li>
+                        <li class="text-md text-gray-500">
+                            <span>Correo: </span><a href="mailto:ventas@veladoras-aramo.com"
+                                class="hover:underline">ventas@veladoras-aramo.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                {{-- Informacion Legal --}}
+                <div class="">
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="{{ route('policy.show') }}" class="hover:underline text-gray-500">Política de Privacidad</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('terms.show') }}" class="hover:underline text-gray-500">Términos de Servicio</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
 
-    </div>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8">
+
+        <div class="sm:flex sm:items-center sm:justify-between">
+
+            <span class="text-sm text-gray-500 sm:text-center ">
+                © 2022 Veladoras Aramo. Todos los Derechos Reservados.
+            </span>
+
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+
+                {{-- Facebook --}}
+                <a target="_blank" href="https://www.facebook.com/Veladoras-Aramo-439684746829699/"
+                    class="text-gray-500 hover:text-gray-900 ">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                {{-- Instagram --}}
+                <a target="_blank" href="https://www.instagram.com/veladorasaramo/?hl=es-la"
+                    class="text-gray-500 hover:text-gray-900 ">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                {{-- Twitter --}}
+                <a href="javascript:void(0)" class="text-gray-500 hover:text-gray-900 ">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                        </path>
+                    </svg>
+                </a>
+
+                {{-- Linkedin --}}
+                <a target="_blank" href="https://mx.linkedin.com/company/veladoras-aramo" class="text-gray-500 hover:text-gray-900 ">
+                    <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path
+                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                        </path>
+                    </svg>
+                </a>
+
+                {{-- <a target="_blank" href="https://www.youtube.com/channel/UC_uv5Kgt6gReFr_DTQboBEQ" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet" focusable="false" class="w-16 h-5">
+                        <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
+                            <g>
+                              <path fill="#FF0000" d="M63,14.87c-0.72-2.7-2.85-4.83-5.56-5.56C52.54,8,32.88,8,32.88,8S13.23,8,8.32,9.31
+                                c-2.7,0.72-4.83,2.85-5.56,5.56C1.45,19.77,1.45,30,1.45,30s0,10.23,1.31,15.13c0.72,2.7,2.85,4.83,5.56,5.56
+                                C13.23,52,32.88,52,32.88,52s19.66,0,24.56-1.31c2.7-0.72,4.83-2.85,5.56-5.56C64.31,40.23,64.31,30,64.31,30
+                                S64.31,19.77,63,14.87z"></path>
+                              <polygon fill="#FFFFFF" points="26.6,39.43 42.93,30 26.6,20.57"></polygon>
+                            </g>
+                            <g>
+                              <g>
+                                <path fill="#282828" d="M92.69,48.03c-1.24-0.84-2.13-2.14-2.65-3.91c-0.52-1.77-0.79-4.12-0.79-7.06v-4
+                                  c0-2.97,0.3-5.35,0.9-7.15c0.6-1.8,1.54-3.11,2.81-3.93c1.27-0.82,2.94-1.24,5.01-1.24c2.04,0,3.67,0.42,4.9,1.26
+                                  c1.23,0.84,2.13,2.15,2.7,3.93c0.57,1.78,0.85,4.16,0.85,7.12v4c0,2.94-0.28,5.3-0.83,7.08c-0.55,1.78-1.45,3.09-2.7,3.91
+                                  c-1.24,0.82-2.93,1.24-5.06,1.24C95.65,49.29,93.93,48.87,92.69,48.03z M99.66,43.71c0.34-0.9,0.52-2.37,0.52-4.4v-8.59
+                                  c0-1.98-0.17-3.42-0.52-4.34c-0.34-0.91-0.95-1.37-1.82-1.37c-0.84,0-1.43,0.46-1.78,1.37c-0.34,0.91-0.52,2.36-0.52,4.34v8.59
+                                  c0,2.04,0.16,3.51,0.49,4.4c0.33,0.9,0.93,1.35,1.8,1.35C98.71,45.06,99.31,44.61,99.66,43.71z"></path>
+                                <path fill="#282828" d="M188.16,37.13v1.39c0,1.77,0.05,3.09,0.16,3.98c0.1,0.88,0.32,1.53,0.65,1.93
+                                  c0.33,0.4,0.84,0.61,1.53,0.61c0.93,0,1.57-0.36,1.91-1.08c0.34-0.72,0.53-1.92,0.56-3.6l5.35,0.31
+                                  c0.03,0.24,0.04,0.57,0.04,0.99c0,2.55-0.7,4.45-2.09,5.71c-1.39,1.26-3.36,1.89-5.91,1.89c-3.06,0-5.2-0.96-6.43-2.88
+                                  c-1.23-1.92-1.84-4.88-1.84-8.9v-4.81c0-4.14,0.64-7.15,1.91-9.06c1.27-1.9,3.45-2.85,6.54-2.85c2.13,0,3.76,0.39,4.9,1.17
+                                  c1.14,0.78,1.94,1.99,2.41,3.64c0.46,1.65,0.7,3.93,0.7,6.83v4.72H188.16z M188.95,25.53c-0.31,0.39-0.52,1.03-0.63,1.91
+                                  c-0.11,0.88-0.16,2.23-0.16,4.02v1.98h4.54v-1.98c0-1.77-0.06-3.11-0.18-4.02c-0.12-0.91-0.34-1.56-0.65-1.93
+                                  c-0.31-0.37-0.8-0.56-1.46-0.56C189.75,24.94,189.26,25.14,188.95,25.53z"></path>
+                                <path fill="#282828" d="M77.59,36.61l-7.06-25.49h6.16l2.47,11.55c0.63,2.85,1.09,5.27,1.39,7.28h0.18
+                                  c0.21-1.44,0.67-3.85,1.39-7.24l2.56-11.6h6.16L83.7,36.61v12.23h-6.11V36.61z"></path>
+                                <path fill="#282828" d="M126.45,21.28v27.55h-4.85l-0.54-3.37h-0.13c-1.32,2.55-3.3,3.82-5.93,3.82c-1.83,0-3.18-0.6-4.05-1.8
+                                  c-0.87-1.2-1.3-3.07-1.3-5.62V21.28h6.2v20.23c0,1.23,0.13,2.11,0.4,2.63c0.27,0.52,0.72,0.79,1.35,0.79
+                                  c0.54,0,1.06-0.16,1.55-0.49c0.49-0.33,0.86-0.75,1.1-1.26V21.28H126.45z"></path>
+                                <path fill="#282828" d="M158.27,21.28v27.55h-4.85l-0.54-3.37h-0.13c-1.32,2.55-3.3,3.82-5.93,3.82c-1.83,0-3.18-0.6-4.05-1.8
+                                  c-0.87-1.2-1.3-3.07-1.3-5.62V21.28h6.2v20.23c0,1.23,0.13,2.11,0.4,2.63c0.27,0.52,0.72,0.79,1.35,0.79
+                                  c0.54,0,1.06-0.16,1.55-0.49c0.49-0.33,0.86-0.75,1.1-1.26V21.28H158.27z"></path>
+                                <path fill="#282828" d="M143.31,16.11h-6.16v32.72h-6.07V16.11h-6.16v-4.99h18.38V16.11z"></path>
+                                <path fill="#282828" d="M178.8,25.69c-0.38-1.74-0.98-3-1.82-3.78c-0.84-0.78-1.99-1.17-3.46-1.17c-1.14,0-2.2,0.32-3.19,0.97
+                                  c-0.99,0.64-1.75,1.49-2.29,2.54h-0.05l0-14.52h-5.98v39.11h5.12l0.63-2.61h0.13c0.48,0.93,1.2,1.66,2.16,2.2
+                                  c0.96,0.54,2.02,0.81,3.19,0.81c2.1,0,3.64-0.97,4.63-2.9c0.99-1.93,1.48-4.95,1.48-9.06v-4.36
+                                  C179.36,29.84,179.17,27.43,178.8,25.69z M173.11,36.93c0,2.01-0.08,3.58-0.25,4.72c-0.16,1.14-0.44,1.95-0.83,2.43
+                                  c-0.39,0.48-0.91,0.72-1.57,0.72c-0.51,0-0.98-0.12-1.42-0.36c-0.43-0.24-0.79-0.6-1.06-1.08V27.71
+                                  c0.21-0.75,0.57-1.36,1.08-1.84c0.51-0.48,1.06-0.72,1.66-0.72c0.63,0,1.12,0.25,1.46,0.74c0.34,0.49,0.58,1.33,0.72,2.49
+                                  c0.13,1.17,0.2,2.83,0.2,4.99V36.93z"></path>
+                              </g>
+                            </g>
+                          </g></svg> 
+                </a> --}}
+            </div>
+        </div>
+    </footer>
+
 </div>
