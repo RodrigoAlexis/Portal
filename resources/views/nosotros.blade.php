@@ -1,8 +1,9 @@
 <x-app-layout>
     {{-- Banner --}}
-    <div class="bg-purple w-full " style="z-index: 3;" id="inicio">
-        <div class="opacity-75 mx-auto rounded-t shadow bg-cover bg-bottom" id="historia">
+    <div class="bg-purple w-full " style="z-index: 3;">
 
+        {{-- div que carga imagen de fondo en el css --}}
+        <div class="opacity-75 mx-auto rounded-t shadow bg-cover bg-bottom" id="historia">
 
             <div class="text-center text-white py-36 ">
                 <div class="relative text-6xl font-serif underline boder-2 border-white">¿Quienes Somos?</div>
@@ -10,16 +11,16 @@
         </div>
     </div>
 
-    {{-- Titulo Historia --}}
-    <div class="w-full text-center text-gray-800 p-6" id="nuestra-historia">
-        <p class="text-3xl font-serif">Nuestra Historia</p>
-    </div>
-
-
-
+    {{-- Container --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{-- texto y svg de historia --}}
-        <div class=" w-full py-4  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+
+        {{-- Titulo Historia --}}
+        <div class="w-full text-center text-gray-800 p-6">
+            <p class="text-3xl font-serif">Nuestra Historia</p>
+        </div>
+
+        {{-- Texto y SVG de Historia --}}
+        <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
 
             <div class=" font-serif text-sm text-gray-600">
                 <p class="mb-3">
@@ -658,18 +659,9 @@
 
         </div>
 
-        {{-- Anclaje al inicio --}}
-        {{-- <div class="flex justify-center mb-4">
-            <button onclick="inicio()" class=" p-1 text-sm border-2 border-blue-500 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
-                </svg>
-            </button>
-        </div> --}}
-
         {{-- Mision, Vision y politica de calidad --}}
-        <div class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full">
+        <div
+            class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full">
 
             {{-- Mision --}}
             <div class="p-6 bg-white">
@@ -712,30 +704,19 @@
 
         </div>
 
-        {{-- titulo valores --}}
-        <div class="w-full text-center text-gray-800 p-6">
+        {{-- Titulo Valores --}}
+        <div class="w-full text-center text-gray-800 p-6 mt-3">
             <p class="text-2xl font-serif">Nuestros Valores</p>
+        </div>
+        <div class="w-full text-center text-gray-800 mb-2 px-4 sm:px-5 md:px-20 lg:px-20">
+            <p class="text-sm font-serif">En Centro de Distribución Aram-Luz valoramos a las personas y a los
+                empleados, buscamos los mejores
+                beneficios asegurando los valores de:</p>
         </div>
 
         {{-- Valores --}}
-        <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
-            <div class="grid gap-5 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
-                {{-- Empoderar --}}
-                <div class="px-12 text-center sm:px-0">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
-                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
-                            viewBox="0 0 52 52">
-                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                        </svg>
-                    </div>
-
-                    <div class="mb-2 text-gray-800 font-serif text-md">
-                        Empoderamos a nuestros colaboradores.
-                    </div>
-                </div>
+        <div class="px-2 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
+            <div class="grid gap-5 row-gap-5 grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 mb-4">
 
                 {{-- Integridad --}}
                 <div class="px-12 text-center sm:px-0">
@@ -749,12 +730,60 @@
                     </div>
 
                     <div class="mb-2 text-gray-800 font-serif text-md">
-                        Actuamos con integridad.
+                        Integridad
+                    </div>
+                </div>
+
+                {{-- Respeto --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Respeto
+                    </div>
+                </div>
+
+                {{-- Sencillez --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Sencillez
+                    </div>
+                </div>
+
+                {{-- Entusiasmo --}}
+                <div class="px-12 text-center sm:px-0">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Entusiasmo
                     </div>
                 </div>
 
                 {{-- Trabajo en equipo --}}
-                <div class="px-12 text-center sm:px-0">
+                <div class="px-12 text-center sm:px-0 mt-4">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -765,12 +794,12 @@
                     </div>
 
                     <div class="mb-2 text-gray-800 font-serif text-md">
-                        Trabajamos en equipo.
+                        Trabajo en equipo
                     </div>
                 </div>
 
-                {{-- Perseverancia --}}
-                <div class="px-12 text-center sm:px-0">
+                {{-- Liderazgo --}}
+                <div class="px-12 text-center sm:px-0 mt-4">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -781,33 +810,183 @@
                     </div>
 
                     <div class="mb-2 text-gray-800 font-serif text-md">
-                        Perseveramos en nuestros objetivos.
+                        Liderazgo
+                    </div>
+                </div>
+
+                {{-- Pasion --}}
+                <div class="px-12 text-center sm:px-0 mt-4">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Pasión por el servicio
+                    </div>
+                </div>
+
+                {{-- Pasion --}}
+                <div class="px-12 text-center sm:px-0 mt-4">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                        <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </div>
+
+                    <div class="mb-2 text-gray-800 font-serif text-md">
+                        Empoderamiento
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Titulo Responsabilidad Social --}}
+        <div class="w-full text-center text-gray-800 p-6">
+            <p class="text-2xl font-serif">Responsabilidad Social</p>
+        </div>
+
+        <div class="w-full text-center text-gray-700 px-4 sm:px-5 md:px-20 lg:px-20">
+            <p class="text-sm font-serif">En Veladoras Aramo buscamos siempre contribuir activamente en el mejoramiento
+                social, económico y
+                ambiental de nuestro entorno, ciudad y país.
+            </p>
+
+            <p class="text-sm font-serif mt-3">
+                Contribuir al Desarrollo Humano es primordial para nosotros. Buscamos de forma sostenida comprometernos
+                con nuestro capital humano para encontrar juntos el mejor futuro para ellos y sus familias, para
+                nuestros vecinos y todas los puntos de contacto que tenemos hacia nuestro entorno.
+            </p>
+
+            <p class="text-sm font-serif mt-3">
+                Sabemos que con una sociedad segura y encaminada hacia el bienestar social, tendremos una mejor calidad
+                de vida en nuestra comunidad.
+            </p>
+        </div>
+
+        <div class="w-full text-center text-gray-700 mt-3 px-4 sm:px-5 md:px-20 lg:px-20">
+            <p class="text-sm font-serif">
+                La Responsabilidad Social Empresarial (RSE): Es la contribución al desarrollo
+                humano sostenible, a través del compromiso y la confianza de la empresa hacia sus empleados y las
+                familias de éstos, hacia la sociedad en general y hacia la comunidad local, en pos de mejorar el capital
+                social y la calidad de vida de toda la comunidad.
+            </p>
+
+            <p class="text-sm font-serif mt-3">
+                Si tu tienes algún proyecto en donde creas que Veladoras Aramo puede contribuir socialmente, no dudes en
+                contactarnos.
+            </p>
+
+            <p class="text-sm font-serif mt-3">
+                Nos dará mucho gusto participar.
+            </p>
+        </div>
+
+        <!-- cards -->
+        <div class="flex items-center justify-center py-12">
+
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-8 lg:grid-cols-12 max-w-5xl gap-4">
+
+                <!-- Card 1 -->
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                    <div
+                        class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
+
+                        {{-- Titulo --}}
+                        <p class="text-2xl text-gray-500 group-hover:text-gray-800 font-serif">
+                            Apoyo ante la Desgracia
+                        </p>
+
+                        <!-- Descripcion -->
+                        <p class="text-sm font-serif text-gray-600 group-hover:text-gray-700 mt-2 leading-6">
+                            Contribuimos con muchas comunidades del estado de Puebla donando velas y veladoras durante
+                            los pasados terremotos del 2017 y 2018. Sabiendo que en muchos lugares existen cortes de
+                            energía eléctrica, nuestras veladoras ayudan a traer luz a muchos hogares que lo necesitan.
+                        </p>
+
+                        <!-- Color -->
+                        <div class="bg-blue-400 group-hover:bg-blue-600 h-full w-4 absolute top-0 left-0"> </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                    <div
+                        class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
+
+                        <!-- Titulo -->
+                        <p class="text-2xl font-serif text-gray-500 group-hover:text-gray-800">
+                            "Hechar una Mano"
+                        </p>
+
+                        <!-- Descripcion -->
+                        <p class="text-sm font-serif text-gray-600 group-hover:text-gray-700 mt-2 leading-6">
+                            Hemos hecho colectas, comprado despensas y víveres para comunidades enteras de donde
+                            provienen compañeros de trabajo en momentos de desgracia.
+                        </p>
+
+                        <!-- Color -->
+                        <div class="bg-blue-400 group-hover:bg-blue-600 h-full w-4 absolute top-0 left-0"> </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                    <div
+                        class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
+
+                        <!-- Titulo -->
+                        <p class="text-2xl font-serif text-gray-500 group-hover:text-gray-800">
+                            En el Plano Laboral
+                        </p>
+
+                        <!-- Descripcion -->
+                        <p class="text-sm font-serif text-gray-600 group-hover:text-gray-700 mt-2 leading-6">
+                            Nos enorgullecemos de ser una de las principales fuentes de trabajo en San Francisco
+                            Ocotlán, comunidad que aporta mano de obra comprometida y de calidad.
+                        </p>
+
+                        <!-- Color -->
+                        <div class="bg-blue-400 group-hover:bg-blue-600 h-full w-4 absolute top-0 left-0"> </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                    <div
+                        class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
+
+                        <!-- Titulo -->
+                        <p class="text-2xl font-serif text-gray-500 group-hover:text-gray-800">
+                            Cuidado del Medio Ambiente</p>
+
+                        <!-- Descripcion -->
+                        <p class="text-sm font-serif text-gray-600 group-hover:text-gray-700 mt-2 leading-6">
+                            Los pabilos que utilizamos son ecológicos y no contienen plomo. Además, utilizamos sistemas
+                            de recuperación de aguas pluviales lo que nos permite aprovechar el agua de lluvia. Y todo
+                            nuestro desperdicio se reutiliza por nosotros mismos o por terceros para reciclaje.
+                        </p>
+
+                        <!-- Color -->
+                        <div class="bg-blue-400 group-hover:bg-blue-600 h-full w-4 absolute top-0 left-0"> </div>
+
                     </div>
                 </div>
 
             </div>
+
         </div>
 
-        {{-- Anclaje a historia --}}
-        <div class="flex justify-center pb-4">
-            <button onclick="inicio()" class=" p-1 text-sm border-2 border-blue-500 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
-                </svg>
-            </button>
-        </div>
     </div>
 
-
-
-    <script>
-        function inicio() {
-            document.location.href = "#inicio";
-        }
-
-        function history() {
-            document.location.href = "#nuestra-historia";
-        }
-    </script>
 </x-app-layout>

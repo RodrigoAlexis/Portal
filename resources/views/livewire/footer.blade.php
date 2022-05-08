@@ -1,26 +1,28 @@
 <div class="border border-gray-100">
     <footer class="p-4 bg-white sm:p-6">
         <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
+
+
+            <div class="mb-4 md:mb-0">
                 <a href="{{route('home')}}" class="flex items-center">
-                    <img class="block h-16 w-auto px-6" src="http://veladorasaramo.com.mx/img/aramo.png"
+                    <img class="block h-16 w-auto mr-32" src="http://veladorasaramo.com.mx/img/aramo.png"
                     alt="Veladoras Aramo">
                     
                 </a>
 
                 
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
+            <div class="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4">
 
                 {{-- Recursos --}}
-                <div>
+                <div class="">
                     <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase ">Recursos</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Inicio</a>
+                            <a href="{{route('home')}}" class="hover:underline text-gray-500">Inicio</a>
                         </li>
                         <li class="mb-4">
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Nosotros</a>
+                            <a href="{{route('nosotros')}}" class="hover:underline text-gray-500">Nosotros</a>
                         </li>
                         <li class="mb-4">
                             <a href="{{ route('blogs.index') }}" class="hover:underline text-gray-500">Blog</a>
@@ -32,7 +34,7 @@
                 </div>
 
                 {{-- Productos --}}
-                <div>
+                <div class="">
                     <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase  hover:underline"> <a
                             href="{{ route('grupos.index') }}">Productos</a> </h2>
                     <ul >
@@ -52,35 +54,40 @@
                 </div>
 
                 {{-- Contacto --}}
-                <div>
+                <div class="">
                     <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase hover:underline"><a
                             href="{{ route('contacto.index') }}">Contacto</a></h2>
                     <ul class="text-gray-600 dark:text-gray-400">
 
-                        <li class="mb-4 text-gray-500">
-                            <a href="tel:+522222168201" class="hover:underline">(222) 216 8201</a>
-                        </li>
-                        <li class="mb-4 text-gray-500">
+                        
+                        <li class="mb-4 text-gray-500 text-md">
                             <p>
-                                Calle industria #236 B
+                                Dirección: Calle industria 
                             </p>
                             <p>
-                                Loc. San Francisco Ocotlán
+                                #236 B. Loc. San Francisco
                             </p>
                             <p>
-                                Coronango, Puebla. C.P. 72680
+                                 Ocotlán. Coronango, Puebla.
+                            </p>
+                        
+                            <p>
+                                C.P. 72680
                             </p>
 
                         </li>
-                        <li class="text-sm sm:text-sm md:text-md lg:text-lg text-gray-500">
-                            <a href="mailto:ventas@veladoras-aramo.com"
-                                class="hover:underline"><p>ventas@veladoras-aramo.com</p></a>
+                        <li class="mb-4 text-gray-500 text-md">
+                            <span>Teléfono: </span><a href="tel:+522222168201" class="hover:underline">(222) 216 8201</a>
+                        </li>
+                        <li class="text-md text-gray-500">
+                            <span>Correo: </span><a href="mailto:ventas@veladoras-aramo.com"
+                                class="hover:underline">ventas@veladoras-aramo.com</a>
                         </li>
                     </ul>
                 </div>
 
                 {{-- Informacion Legal --}}
-                <div>
+                <div class="">
                     <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase">Legal</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
@@ -91,8 +98,6 @@
                         </li>
                     </ul>
                 </div>
-
-                
 
             </div>
         </div>
