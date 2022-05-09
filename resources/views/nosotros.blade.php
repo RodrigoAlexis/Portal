@@ -9,20 +9,18 @@
                 <div class="relative text-6xl font-serif underline boder-2 border-white">¿Quienes Somos?</div>
             </div>
         </div>
+
     </div>
 
     {{-- Container --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {{-- Titulo Historia --}}
-        <div class="w-full text-center text-gray-800 p-6">
-            <p class="text-3xl font-serif">Nuestra Historia</p>
-        </div>
 
         {{-- Texto y SVG de Historia --}}
-        <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+        <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4 gap-6">
 
-            <div class=" font-serif text-sm text-gray-600">
+            <div class="font-serif text-sm text-gray-600">
+                <h3 class="text-2xl mb-4 text-gray-800">Nuestra Historia</h3>
                 <p class="mb-3">
                     Como todas las grandes historias, la nuestra empieza con un sueño y un gran propósito. <span
                         class="font-bold text-gray-800">Trascender</span>.
@@ -60,7 +58,7 @@
                 </p>
             </div>
 
-            <div class="">
+            <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
                     <defs>
                         <style>
@@ -654,8 +652,9 @@
                             d="M182.7,279c-2.51-.55-5.76.64-6.13,2.21s-.79,14.65,2.13,14.69,7.79-5.91,10.33-1.22c3.15,5.81,4.14-1.85,8.19,2.08,1.43,1.39,3.15,4.2,4.92,2s3.09-10,2.54-11.28-1.91-2.85-3.63-2.53c-1.16.21-3,8.2-9.21,8.53-1.28.07-9.92-9-10.44-10.85S182.7,279,182.7,279Z" />
                     </g>
                 </svg>
-
             </div>
+
+            
 
         </div>
 
@@ -692,7 +691,7 @@
             <div class="p-6 bg-white ">
 
                 <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
-                    Política de calidad
+                    Política de Calidad
                 </h2>
 
                 <p class="mt-2 text-gray-800 text-center font-serif text-sm">
