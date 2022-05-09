@@ -1,22 +1,25 @@
-<div class="border border-gray-100">
-    <footer class="p-4 bg-white sm:p-6">
+<div class="border border-gray-100 b">
+    
+    
+    <footer class="p-4 sm:p-6 bg-white">
+
+        
         <div class="md:flex md:justify-between">
 
+            
 
             <div class="mb-4 md:mb-0">
                 <a href="{{route('home')}}" class="flex items-center">
                     <img class="block h-16 w-auto mr-32" src="http://veladorasaramo.com.mx/img/aramo.png"
-                    alt="Veladoras Aramo">
-                    
+                    alt="Veladoras Aramo"> 
                 </a>
-
-                
             </div>
+
             <div class="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4">
 
                 {{-- Recursos --}}
-                <div class="">
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase ">Recursos</h2>
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase ">Recursos</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="{{route('home')}}" class="hover:underline text-gray-500">Inicio</a>
@@ -34,8 +37,8 @@
                 </div>
 
                 {{-- Productos --}}
-                <div class="">
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase  hover:underline"> <a
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase  hover:underline"> <a
                             href="{{ route('grupos.index') }}">Productos</a> </h2>
                     <ul >
                         <li class="mb-4">
@@ -54,8 +57,8 @@
                 </div>
 
                 {{-- Contacto --}}
-                <div class="">
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase hover:underline"><a
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase hover:underline"><a
                             href="{{ route('contacto.index') }}">Contacto</a></h2>
                     <ul class="text-gray-600 dark:text-gray-400">
 
@@ -87,8 +90,8 @@
                 </div>
 
                 {{-- Informacion Legal --}}
-                <div class="">
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase">Legal</h2>
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase">Legal</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="{{ route('policy.show') }}" class="hover:underline text-gray-500">Política de Privacidad</a>
@@ -105,7 +108,7 @@
 
         <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8">
 
-        <div class="sm:flex sm:items-center sm:justify-between">
+        <div class="sm:flex sm:items-center sm:justify-between ">
 
             <span class="text-sm text-gray-500 sm:text-center ">
                 © 2022 Veladoras Aramo. Todos los Derechos Reservados.
