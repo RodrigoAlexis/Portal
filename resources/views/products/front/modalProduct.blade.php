@@ -5,7 +5,7 @@
       <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-          <h3 class="text-3xl text-gray-600 font-semibold modal-title">
+          <h3 class="text-2xl text-gray-600 font-semibold modal-title">
             {{$product->name}}
           </h3>
           <button class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('{{$product->slug}}')">
@@ -15,12 +15,12 @@
           </button>
         </div>
         <!--body-->
-        <div class="relative p-6 flex-auto">
+        <div class="relative p-6 flex-auto h-96">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               {{-- imagen --}}
               <div>
                   <div>
-                      <div class="block h-64 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)"></div>
+                      <div class="block h-80 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)"></div>
                   </div>
               </div> 
               {{-- Tabla de datos --}}
