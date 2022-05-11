@@ -29,15 +29,14 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 // Grupos front
 Route::get('/grupos', [GrupoFrontController::class, 'index'])->name('grupos.index');
 
-// Lineas que pertenecen a un grupo
+// Lineas que pertenecen a un grupo front
 Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupos.show');
 
-//Mostrar productos por grupo y linea
+//Mostrar productos por grupo y linea front
 Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrarProductos'])->name('lineas.mostrar');
 
-Route::get('producto/{product}', [LineController::class, 'producto'])->name('producto');
-// Route::get('grupo/{group}/linea/{line}/producto/{product}', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
- 
+//Productos front
+Route::get('producto/{product}', [LineController::class, 'producto'])->name('producto'); 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -55,13 +54,13 @@ Route::get('auth/google/callback', [LoginController::class, 'signinGoogle']);
 //Blog back
 Route::resource('posts', PostController::class)->names('posts');
 
-// Productos
+// Productos back
 Route::resource('/products', ProductosController::class)->names('products');
 
-// Grupos
+// Grupos bqck
 Route::resource('/groups', GrupoController::class)->names('groups');
 
-// Lineas
+// Lineas back
 Route::resource('/lines', LineController::class)->names('lines');
 
 // Buzon

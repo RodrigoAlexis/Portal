@@ -111,7 +111,8 @@
                         class="text-4xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
                         Toda la variedad que buscabas
                     </h1>
-                    <p class="mt-4 text-md text-gray-600">Veladoras Aramo está comprometida a conseguir la satisfacción
+                    <p class="mt-4 text-md text-md text-gray-500 font-serif">Veladoras Aramo está comprometida a
+                        conseguir la satisfacción
                         total de sus clientes, manteniendo altos estándares de fabricación y producción para la
                         comercialización de velas y veladoras de la más alta calidad.</p>
                 </div>
@@ -243,32 +244,33 @@
 
     {{-- Buzon --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
+        {{-- <div class="grid grid-cols-1 lg:grid-cols-2"> --}}
 
-            <div class="bg-sky-400">
-                asdasda
-            </div>
+            {{-- <div class="bg-sky-400">
+                
+            </div> --}}
 
             {{-- texto --}}
             <div class="hidden sm:hidden md:hidden lg:inline">
                 <div class="flex flex-wrap justify-center -mx-4 py-4">
                     <div class="w-full px-4">
                         <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
-                            
+
                             <h1
-                                class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-violet-700 sm:text-6xl">
+                                class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-red-700 sm:text-6xl">
                                 Buzón
                             </h1>
-                            <p class="text-base text-body-color">
-                                Sabemos que no somos perfectos, es por esto por lo que ponemos a tu disposición un apartado para que puedas
+                            <p class="text-base text-body-color text-md text-gray-500 font-serif">
+                                Sabemos que no somos perfectos, es por esto por lo que ponemos a tu disposición un
+                                apartado para que puedas
                                 reportar una denuncia, queja o si lo deseas brindarnos sugerencias.
                             </p>
 
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
                                 <div class="rounded-md shadow flex">
-                                    <a href="{{ route('blogs.index') }}"
-                                        class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-violet-500 hover:bg-violet-600 md:py-4 md:text-lg md:px-10">
-                                        Ver más Artículos
+                                    <a href="{{ route('buzon.index') }}"
+                                        class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-500 hover:bg-rose-600 md:py-4 md:text-lg md:px-10">
+                                        Ir al Buzón
                                     </a>
 
                                 </div>
@@ -277,20 +279,17 @@
                     </div>
                 </div>
             </div>
-
-
-
-        </div>
+        {{-- </div> --}}
     </div>
 
 
 
     {{-- Seccion Video y texto --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
 
-            {{-- Pantallas lg y xl --}}
+            
             <div class="hidden sm:hidden md:hidden lg:inline mt-4 md:h-60 lg:h-auto px-2 md:px-24 lg:px-10">
                 <iframe class="h-full w-full" src="https://www.youtube.com/embed/ro2tm3rW6lc"
                     title="YouTube video player" frameborder="0"
@@ -298,9 +297,9 @@
                     allowfullscreen></iframe>
             </div>
 
-            {{-- Nosotros --}}
+            
             <div class="hidden sm:hidden md:hidden lg:inline font-serif text-lg text-gray-600 mt-4">
-                {{-- <h3 class="text-2xl mb-2 text-gray-800">Nosotros</h3> --}}
+                
 
                 <p class="mb-3">
                     Productos Aramo, con el pasar de los años logró ser una marca lider en el ramo de las veladoras,
@@ -322,8 +321,7 @@
                 </p>
             </div>
 
-            {{-- Pantallas md y sm --}}
-            {{-- Nosotros --}}
+            
             <div class="inline sm:inline md:inline lg:hidden text-lg  font-serif text-md text-gray-600 mt-4">
 
                 <p class="mb-3">
@@ -356,7 +354,7 @@
 
         </div>
 
-    </div>
+    </div> --}}
 
 
 

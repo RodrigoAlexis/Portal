@@ -84,14 +84,14 @@
             <div class="flex flex-wrap justify-center -mx-4 py-4">
                 <div class="w-full px-4">
                     <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
-                        <span class="font-semibold text-lg text-primary mb-2 block text-gray-800 ">
+                        <span class="font-semibold font-serif text-lg text-primary mb-2 block text-gray-500 ">
                             Nuestras Noticias más Recientes
                         </span>
                         <h1
                             class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-violet-700 sm:text-6xl">
                             Responsabilidad Social
                         </h1>
-                        <p class="text-base text-body-color">
+                        <p class="text-base text-body-color text-md text-gray-500 font-serif">
                             En Veladoras Aramo buscamos siempre contribuir activamente en el mejoramiento social,
                             económico y ambiental de nuestro entorno, ciudad y país.
                         </p>
@@ -115,14 +115,14 @@
             <div class="flex flex-wrap justify-center -mx-4 py-4">
                 <div class="w-full px-4">
                     <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
-                        <span class="font-semibold text-lg text-primary mb-2 block text-gray-800 ">
+                        <span class="font-semibold font-serif text-lg text-primary mb-2 block text-gray-500 ">
                             Nuestras Noticias más Recientes
                         </span>
                         <h1
                             class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-violet-700 sm:text-6xl">
                             Responsabilidad Social
                         </h1>
-                        <p class="text-base text-body-color">
+                        <p class="text-base text-body-color text-md text-gray-500 font-serif">
                             En Veladoras Aramo buscamos siempre contribuir activamente en el mejoramiento social,
                             económico y ambiental de nuestro entorno, ciudad y país.
                         </p>

@@ -1,4 +1,6 @@
 <div>
+
+    {{-- Start: Vista de usuarios generales --}}
     <div class="mt-4">
         <div class="flex flex-wrap -mx-6">
             {{-- card Buzon --}}
@@ -67,8 +69,7 @@
             Historico del Buzón
         </div>
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            <div
-                class="align-middle inline-block min-w-full  overflow-hidden sm:rounded-lg border-b border-gray-200">
+            <div class="align-middle inline-block min-w-full  overflow-hidden sm:rounded-lg border-b border-gray-200">
 
 
                 {{-- Buscador --}}
@@ -131,24 +132,26 @@
                                     @foreach ($buzon as $bu)
                                         <tr>
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                {{$bu->folio}}
+                                                {{ $bu->folio }}
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                {{$bu->canal}}
+                                                {{ $bu->canal }}
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                {{$bu->categoria}}
+                                                {{ $bu->categoria }}
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                {{$bu->tipo}}
+                                                {{ $bu->tipo }}
                                             </td>
                                             {{-- Botones --}}
                                             <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                <a onclick="toggleModalInfoU('{{$bu->id}}')" href="#{{$bu->id}}" class="text-gray-500 hover:text-blue-500">
+                                                <a onclick="toggleModalInfoU('{{ $bu->id }}')"
+                                                    href="#{{ $bu->id }}"
+                                                    class="text-gray-500 hover:text-blue-500">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                         stroke-width="2">
@@ -160,7 +163,9 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        @include('buzon.front.modales.infoDenunciaUser')
+                                        @include(
+                                            'buzon.front.modales.infoDenunciaUser'
+                                        )
                                     @endforeach
                                 </tbody>
                             </table>
@@ -183,14 +188,81 @@
             </div>
         </div>
     </div>
+    {{-- End: Vista de usuarios generales --}}
+
+    {{-- Start: Vista de usuarios administradores --}}
+    <div class="mt-4">
+        <div class="flex flex-wrap -mx-6">
+            {{-- card Buzon --}}
+            <a href="{{ route('buzon.index') }}" class="w-full px-6 sm:w-1/2 xl:w-1/3">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
+                    <div class="p-3 rounded-full bg-indigo-600   bg-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+
+                    <div class="mx-5">
+                        <h4 class="text-xl font-semibold text-gray-700">Usuarios Totales</h4>
+                        <div class="text-gray-500">Autenticación: {{ $user }}</div>
+                        <div class="text-gray-500">Google: {{$google ?? '0'}}</div>
+                        <div class="text-gray-500">Facebook: {{$facebook ?? '0'}}</div>
+                    </div>
+
+                </div>
+            </a>
+
+            {{-- card Mercado Libre --}}
+            <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
+                    <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+
+                    <div class="mx-5">
+                        <h4 class="text-2xl font-semibold text-gray-700">Mercado Libre</h4>
+                        <div class="text-gray-500">Visita nuestra tienda en línea y conoce más </div>
+                    </div>
+                </div>
+            </a>
+
+            {{-- card Amazon --}}
+            <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0 ">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200 ">
+                    <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+                        <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z" fill="currentColor"
+                                stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                            <path
+                                d="M9.79999 8.4C9.79999 6.08041 11.6804 4.2 14 4.2C16.3196 4.2 18.2 6.08041 18.2 8.4V12.6C18.2 14.9197 16.3196 16.8 14 16.8C11.6804 16.8 9.79999 14.9197 9.79999 12.6V8.4Z"
+                                stroke="currentColor" stroke-width="2"></path>
+                        </svg>
+                    </div>
+
+                    <div class="mx-5">
+                        <h4 class="text-2xl font-semibold text-gray-700 ">Amazon</h4>
+                        <div class="text-gray-500">Productos con la mejor calidad</div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
 
     <script>
         function toggleModalInfoU(modalIDInfoU) {
 
-        document.getElementById(modalIDInfoU).classList.toggle("hidden");
-        document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("hidden");
-        document.getElementById(modalIDInfoU).classList.toggle("flex");
-        document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("flex");
+            document.getElementById(modalIDInfoU).classList.toggle("hidden");
+            document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("hidden");
+            document.getElementById(modalIDInfoU).classList.toggle("flex");
+            document.getElementById(modalIDInfoU + "-backdrop").classList.toggle("flex");
         }
     </script>
 </div>
