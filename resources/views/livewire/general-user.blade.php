@@ -193,62 +193,133 @@
     {{-- Start: Vista de usuarios administradores --}}
     <div class="mt-4">
         <div class="flex flex-wrap -mx-6">
-            {{-- card Buzon --}}
-            <a href="{{ route('buzon.index') }}" class="w-full px-6 sm:w-1/2 xl:w-1/3">
+            {{-- Usuarios --}}
+            <a href="javascript:void(0)" class="w-full px-6 sm:w-1/2 xl:w-1/3">
                 <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
                     <div class="p-3 rounded-full bg-indigo-600   bg-opacity-75">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                     </div>
 
-                    <div class="mx-5">
-                        <h4 class="text-xl font-semibold text-gray-700">Usuarios Totales</h4>
-                        <div class="text-gray-500">Autenticación: {{ $user }}</div>
-                        <div class="text-gray-500">Google: {{$google ?? '0'}}</div>
-                        <div class="text-gray-500">Facebook: {{$facebook ?? '0'}}</div>
+                    <div class="mx-3">
+                        <h4 class="text-xl font-semibold text-gray-700">Usuarios: {{ $user }}</h4>
+                        {{-- <div class="text-gray-500">Totales: {{ $user }}</div> --}}
+                        <div class="text-gray-500">Cliente / Proveedor: {{ $client ?? '0' }}</div>
+                        <div class="text-gray-500">No Cliente / Proveedor: {{ $NoClient ?? '0' }}</div>
                     </div>
 
                 </div>
             </a>
 
-            {{-- card Mercado Libre --}}
+            {{-- Redes Sociales --}}
             <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
                 <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
                     <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd"></path>
                         </svg>
                     </div>
 
                     <div class="mx-5">
-                        <h4 class="text-2xl font-semibold text-gray-700">Mercado Libre</h4>
-                        <div class="text-gray-500">Visita nuestra tienda en línea y conoce más </div>
+                        <h4 class="text-xl font-semibold text-gray-700">Redes Sociales</h4>
+                        <div class="text-gray-500">Google: {{ $google ?? '0' }}</div>
+                        <div class="text-gray-500">Facebook: {{ $facebook ?? '0' }}</div>
                     </div>
                 </div>
             </a>
 
-            {{-- card Amazon --}}
-            <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0 ">
+            {{-- Blogs --}}
+            <a href="{{ route('posts.index') }}" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0 ">
                 <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200 ">
                     <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
-                        <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z" fill="currentColor"
-                                stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-                            <path
-                                d="M9.79999 8.4C9.79999 6.08041 11.6804 4.2 14 4.2C16.3196 4.2 18.2 6.08041 18.2 8.4V12.6C18.2 14.9197 16.3196 16.8 14 16.8C11.6804 16.8 9.79999 14.9197 9.79999 12.6V8.4Z"
-                                stroke="currentColor" stroke-width="2"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                    </div>
+
+                    <div class="mx-3">
+                        <h4 class="text-2xl font-semibold text-gray-700 ">Blogs: {{ $blog ?? '0' }}</h4>
+
+                        <div class="text-gray-500">Último Creado:</div>
+                        @foreach($ultimoBlog as $uBlog)
+                        <div class="text-gray-500">{{$uBlog->name}}</div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <div class="flex flex-wrap -mx-6">
+            {{-- Productos --}}
+            <a href="{{ route('groups.index') }}" class="w-full px-6 sm:w-1/2 xl:w-1/3">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
+                    <div class="p-3 rounded-full bg-indigo-600   bg-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                          </svg>
+                    </div>
+
+                    <div class="mx-3">
+                        <h4 class="text-xl font-semibold text-gray-700">Grupos: {{ $grupo ?? '0' }}</h4>
+                        {{-- <div class="text-gray-500">Totales: {{ $user }}</div> --}}
+                        <div class="text-gray-500">Último Grupo:</div>
+                        @foreach($ultimoGrupo as $uGrupo)
+                        <div class="text-gray-500">{{$uGrupo->name}}</div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </a>
+
+            {{-- Redes Sociales --}}
+            <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200">
+                    <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd"></path>
                         </svg>
                     </div>
 
                     <div class="mx-5">
-                        <h4 class="text-2xl font-semibold text-gray-700 ">Amazon</h4>
-                        <div class="text-gray-500">Productos con la mejor calidad</div>
+                        <h4 class="text-xl font-semibold text-gray-700">Redes Sociales</h4>
+                        <div class="text-gray-500">Google: {{ $google ?? '0' }}</div>
+                        <div class="text-gray-500">Facebook: {{ $facebook ?? '0' }}</div>
+                    </div>
+                </div>
+            </a>
+
+            {{-- Blogs --}}
+            <a href="javascript:void(0)" class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0 ">
+                <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white hover:bg-indigo-200 ">
+                    <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                    </div>
+
+                    <div class="mx-3">
+                        <h4 class="text-2xl font-semibold text-gray-700 ">Blogs: {{ $blog ?? '0' }}</h4>
+
+                        <div class="text-gray-500">Último Creado:</div>
+                        @foreach($ultimoBlog as $uBlog)
+                        <div class="text-gray-500">{{$uBlog->name}}</div>
+                        @endforeach
+
                     </div>
                 </div>
             </a>
