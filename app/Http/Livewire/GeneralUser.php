@@ -8,6 +8,8 @@ use App\Models\Buzon;
 use App\Models\User;
 use App\Models\Blog;
 use App\Models\Group;
+use App\Models\Line;
+use App\Models\Product;
 
 
 class GeneralUser extends Component
@@ -23,8 +25,10 @@ class GeneralUser extends Component
 
     public function render()
     {
+        // Historico de buzon
         $buzon = Buzon::where('user_id', auth()->user()->id)->paginate('3');
 
+        // Informativo
         $user = User::count();
 
         $client = User::where('isClient', 'Soy cliente o proveedor')->count();
@@ -43,6 +47,26 @@ class GeneralUser extends Component
 
         $ultimoGrupo = Group::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
 
-        return view('livewire.general-user', compact('buzon', 'user', 'client', 'NoClient', 'blog', 'ultimoBlog', 'grupo', 'ultimoGrupo'));
+        $linea = Line::count();
+
+        $ultimaLinea = Line::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+
+        $articulo = Product::count();
+
+        $ultimoArticulo = Product::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+
+        $articulo = Product::count();
+
+        $ultimoArticulo = Product::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+
+        $buzon1 = Buzon::count();
+
+        $ultimoBuzon = Product::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+
+        return view('livewire.general-user', compact('buzon', 'user', 'client', 
+                                                    'NoClient', 'blog', 'ultimoBlog', 
+                                                    'grupo', 'ultimoGrupo', 'linea',
+                                                    'ultimaLinea', 'articulo', 'ultimoArticulo',
+                                                    'buzon1', 'ultimoBuzon'));
     }
 }

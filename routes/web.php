@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
@@ -36,7 +37,7 @@ Route::get('/grupo/{grupo}', [GrupoFrontController::class, 'show'])->name('grupo
 Route::get('grupo/{group}/linea/{line}', [LineController::class, 'mostrarProductos'])->name('lineas.mostrar');
 
 //Productos front
-Route::get('producto/{product}', [LineController::class, 'producto'])->name('producto'); 
+Route::get('producto/{product}', [LineController::class, 'producto'])->name('producto');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -69,3 +70,8 @@ Route::resource('buzon', BuzonController::class)->names('buzon');
 Route::resource('denuncias', DenunciaController::class)->names('denuncia');
 
 Route::resource('contacto', ContactoController::class)->names('contacto');
+
+//Enlace Simbolico
+Route::get('/turuta', function () {
+    Artisan::call('storage:link');
+});
