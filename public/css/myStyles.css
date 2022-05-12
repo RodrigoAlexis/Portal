@@ -1,130 +1,193 @@
 /* Start: Google Maps Responsive */
 .map-responsive {
-	overflow: hidden;
-	padding-bottom: 400px;
-	/*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
-	position: relative;
-	height: 0;
+    overflow: hidden;
+    padding-bottom: 400px;
+    /*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
+    position: relative;
+    height: 0;
 }
 
 .map-responsive iframe {
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 /* End: Google Maps Responsive */
 
 /* Start: Nosotros banner image */
 #historia {
-	background-image: url('../img/instalaciones.png');
-	text-align: center;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;	
+    background-image: url("../img/instalaciones.png");
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 #historia:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(0, 0, 0, 0.6);	
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 /* End: Nosotros banner image*/
 
-/* Start: carousel */
+/* Start: Slider*/
 
-.carousel-open:checked + .carousel-item {
-	position: static;
-	opacity: 100;
-}
-.carousel-item {
-	-webkit-transition: opacity 0.6s ease-out;
-	transition: opacity 0.6s ease-out;
-}
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-	display: block;
-}
-.carousel-indicators {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	bottom: 2%;
-	left: 0;
-	right: 0;
-	text-align: center;
-	z-index: 10;
-}
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-	color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
-}
-
-/* End: Carousel*/
-
-.contenedor{
+.contenedor {
     width: 100%;
     overflow: hidden;
 }
 
-.slider-contenedor{
+.slider-contenedor {
     width: 100%;
     display: flex;
 }
 
-.contenido-slider{
+.contenido-slider {
     width: 100%;
     height: 600px;
     display: flex;
     flex-shrink: 0;
-	background-image: url(https://p4.wallpaperbetter.com/wallpaper/904/137/317/new-year-christmas-holiday-table-candles-tableware-tree-four-pillar-candles-wallpaper-preview.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/904/137/317/new-year-christmas-holiday-table-candles-tableware-tree-four-pillar-candles-wallpaper-preview.jpg);
 }
 
-.contenido-slider:nth-child(2){
-	background: #000;
+.contenido-slider:nth-child(2) {
+    background: #000;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
     background-image: url(https://fondosmil.com/fondo/75618.jpg);
 }
 
-.contenido-slider:nth-child(3){
-	background: #fff;
+.contenido-slider:nth-child(3) {
+    background: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
     background-image: url(https://p4.wallpaperbetter.com/wallpaper/994/911/812/candle-lights-hd-yellow-pillar-candles-wallpaper-preview.jpg);
 }
 
-
-
-@media screen and (max-width:900px){
-    .contenido-slider > img{
+@media screen and (max-width: 900px) {
+    .contenido-slider > section {
         width: 250px;
     }
 
-    .contenido-slider > div{
+    .contenido-slider > div {
         width: 40%;
     }
 
-    .contenido-slider h2{
-        font-size: 23px;
-    }
 }
 
-
-@media screen and (max-width:600px){
-    .contenido-slider{
-       flex-direction: column-reverse;
+/* @media screen and (max-width: 600px) {
+    .contenido-slider {
+        flex-direction: column-reverse;
     }
 
-    .contenido-slider > div{
-        width: 80%;
-    }
+    
+} */
+/* End: Slider*/
 
+/* Start: Efecto de aparecer con el scroll*/
+.fadeTop {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 1s;
 }
+.fadeTop1 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 2s;
+}
+.fadeTop2 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 3s;
+}
+.fadeTop3 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 4s;
+}
+.fadeTop4 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 5s;
+}
+.fadeTop5 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 6s;
+}
+.fadeTop6 {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 7s;
+}
+
+.fadeRight {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 2s;
+}
+
+.fadeRight6 {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 1s;
+}
+
+.fadeRight1 {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 2s;
+}
+
+.fadeLeft3 {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 4s;
+}
+
+.fadeLeft2 {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 3s;
+}
+
+.fadeLeft1 {
+    opacity: 0;
+    transform: translate(10vh, 0vh);
+    transition: all 2s;
+}
+
+.fadeLeft {
+    opacity: 0;
+    transform: translate(-10vh, 0vh);
+    transition: all 1s;
+}
+
+.fadeBottom {
+	opacity: 0; 
+	transform: translate(0, -10vh);
+	transition: all 2s;
+  }
+
+.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* End: Efecto de aparecer con el scroll*/

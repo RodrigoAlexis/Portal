@@ -976,6 +976,9 @@ select {
 .pointer-events-none {
   pointer-events: none;
 }
+.visible {
+  visibility: visible;
+}
 .static {
   position: static;
 }
@@ -1865,6 +1868,14 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
+.bg-rose-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 164 175 / var(--tw-bg-opacity));
+}
+.bg-rose-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 113 133 / var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2083,6 +2094,14 @@ select {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -2139,6 +2158,9 @@ select {
 }
 .pb-20 {
   padding-bottom: 5rem;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .text-left {
   text-align: left;
@@ -2586,6 +2608,10 @@ select {
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+.hover\:bg-orange-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 65 12 / var(--tw-bg-opacity));
 }
 .hover\:bg-opacity-25:hover {
   --tw-bg-opacity: 0.25;
@@ -3319,6 +3345,10 @@ select {
     margin-bottom: 0px;
   }
 
+  .md\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -3464,6 +3494,22 @@ select {
 
   .md\:pr-4 {
     padding-right: 1rem;
+  }
+
+  .md\:pt-8 {
+    padding-top: 2rem;
+  }
+
+  .md\:pt-4 {
+    padding-top: 1rem;
+  }
+
+  .md\:pt-12 {
+    padding-top: 3rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
   }
 
   .md\:text-6xl {
