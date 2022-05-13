@@ -26,11 +26,11 @@
                 </div>
 
                 {{-- Contenido --}}
-                <main class="mt-6 mx-auto max-w-7xl px-4 sm:mt-8 sm:px-6 md:mt-8 lg:mt-16 lg:px-8 xl:mt-20">
-                    <div class="sm:text-center lg:text-left">
+                <main class="mt-6 mx-auto max-w-7xl px-4 sm:mt-8 sm:px-6 md:mt-8 lg:mt-16 lg:px-8 xl:mt-20 ">
+                    <div class="sm:text-center lg:text-left ">
 
                         {{-- Titulo --}}
-                        <h1 class="text-4xl tracking-tight sm:text-5xl md:text-6xl text-center">
+                        <h1 class="text-4xl tracking-tight sm:text-5xl md:text-6xl text-center ">
                             <span
                                 class="block xl:inline font-serif font-bold text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-blue-700">Tu
                                 conexión con lo divino</span>
@@ -47,7 +47,7 @@
                         </p>
 
                         {{-- Boton --}}
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center ">
                             <div class="rounded-md shadow flex">
                                 <a href="{{ route('nosotros') }}"
                                     class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 md:py-4 md:text-lg md:px-10">
@@ -67,28 +67,28 @@
         {{-- Carousel --}}
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             {{-- <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                src="https://fondosmil.com/fondo/75618.jpg" alt=""> --}}
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt=""> --}}
 
             {{-- slider --}}
             <div class="contenedor h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-                <div class="slider-contenedor">
+                <div class="slider-contenedor h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
-                    <section class="contenido-slider  object-cover ">
-
-
-                    </section>
-
-                    <section class="contenido-slider  object-cover ">
+                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
 
                     </section>
 
-                    <section class="contenido-slider  object-cover ">
+                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
 
                     </section>
 
-                    <section class="contenido-slider  object-cover ">
+                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+
+
+                    </section>
+
+                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
 
                     </section>
@@ -98,15 +98,15 @@
     </div>
 
     {{-- Seccion Blogs --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-6">
         @livewire('section-blog')
     </div>
 
     <!-- Seccion Productos -->
     <div class="relative bg-white overflow-hidden">
-        <div class="pt-10 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
-                <div class="sm:max-w-lg text-center">
+        <div class="pt-10 pb-80 sm:pt-24 md:pt-8 sm:pb-40  lg:pt-40 lg:pb-48">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static ">
+                <div class="sm:max-w-lg text-center fadeTop scroll-content">
                     <h1
                         class="text-4xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
                         Toda la variedad que buscabas
@@ -185,12 +185,13 @@
 
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
+                                        <div
+                                            class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100 fadeTop scroll-content py-8">
                                             <img src="{{ asset('img/Cartovel_1.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop1 scroll-content">
                                             <img src="{{ asset('img/Coliseo_1.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
@@ -198,29 +199,29 @@
                                     </div>
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop2 scroll-content">
                                             <img src="{{ asset('img/Cubero.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop3 scroll-content">
                                             <img src="{{ asset('img/REcologico.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop4 scroll-content">
                                             <img src="{{ asset('img/RS.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
 
                                     </div>
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop5 scroll-content">
                                             <img src="{{ asset('img/R18.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
 
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop6 scroll-content">
                                             <img src="{{ asset('img/SanRamon.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
                                         </div>
@@ -233,7 +234,7 @@
                         </div>
 
                         <a href="{{ route('grupos.index') }}"
-                            class="mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 ml-0 sm:ml-0 lg:ml-36 inline-block text-center bg-orange-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-orange-600">
+                            class="fadeTop scroll-content mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 ml-0 sm:ml-0 lg:ml-36 inline-block text-center bg-orange-400 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-orange-600">
                             Ver más Productos
                         </a>
                     </div>
@@ -246,43 +247,43 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- <div class="grid grid-cols-1 lg:grid-cols-2"> --}}
 
-            {{-- <div class="bg-sky-400">
-                
-            </div> --}}
+        {{-- texto --}}
+        <div>
+            <div class="flex flex-wrap justify-center -mx-4 py-4">
+                <div class="w-full px-4">
+                    <div class="text-center mx-auto mb-10 max-w-[510px] py-8 fadeLeft scroll-content">
+                        <span class="font-semibold text-lg text-primary mb-2 block text-gray-800 ">
+                            ¡Tu Opinión es Importante!
+                        </span>
+                        <h1
+                            class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-red-700 sm:text-6xl">
+                            Buzón
+                        </h1>
+                        <p class="text-base text-body-color text-md text-gray-500 font-serif">
+                            Sabemos que no somos perfectos, es por esto por lo que ponemos a tu disposición un
+                            apartado para que puedas
+                            reportar cualquier tipo de incidente mediante una denuncia, queja o si lo deseas, brindarnos
+                            sugerencias.
+                        </p>
 
-            {{-- texto --}}
-            <div class="hidden sm:hidden md:hidden lg:inline">
-                <div class="flex flex-wrap justify-center -mx-4 py-4">
-                    <div class="w-full px-4">
-                        <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+                            <div class="rounded-md shadow flex">
+                                
+                                <a href="{{ route('buzon.index') }}"
+                                    class="fadeTop scroll-content w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 inline-block text-center bg-rose-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-rose-600">
+                                    Ir al Buzón
+                                </a>
 
-                            <h1
-                                class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-red-700 sm:text-6xl">
-                                Buzón
-                            </h1>
-                            <p class="text-base text-body-color text-md text-gray-500 font-serif">
-                                Sabemos que no somos perfectos, es por esto por lo que ponemos a tu disposición un
-                                apartado para que puedas
-                                reportar una denuncia, queja o si lo deseas brindarnos sugerencias.
-                            </p>
-
-                            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
-                                <div class="rounded-md shadow flex">
-                                    <a href="{{ route('buzon.index') }}"
-                                        class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-500 hover:bg-rose-600 md:py-4 md:text-lg md:px-10">
-                                        Ir al Buzón
-                                    </a>
-
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+       
         {{-- </div> --}}
     </div>
-
-
 
     {{-- Seccion Video y texto --}}
     {{-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -356,8 +357,6 @@
 
     </div> --}}
 
-
-
     <script>
         let slider = document.querySelector(".slider-contenedor")
         let sliderIndividual = document.querySelectorAll(".contenido-slider")
@@ -388,5 +387,21 @@
                 }, 1500)
             }
         }
+
+
+        window.addEventListener('scroll', function() {
+            let elements = document.getElementsByClassName('scroll-content');
+            let screenSize = window.innerHeight;
+
+            for (var i = 0; i < elements.length; i++) {
+                let element = elements[i];
+
+                if (element.getBoundingClientRect().top < screenSize) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            }
+        });
     </script>
 </x-app-layout>

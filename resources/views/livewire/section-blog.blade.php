@@ -2,7 +2,7 @@
     
     <div class="grid grid-cols-1 lg:grid-cols-2">
         {{-- Blogs --}}
-        <div class="hidden sm:hidden md:hidden lg:inline">
+        <div class="hidden sm:hidden md:hidden lg:inline fadeRight scroll-content">
             @foreach ($blogs as $blog)
                 <!-- component -->
                 <div class="w-full">
@@ -33,9 +33,9 @@
         </div>
 
         {{-- texto --}}
-        <div class="hidden sm:hidden md:hidden lg:inline">
+        <div class="hidden sm:hidden md:hidden lg:inline fadeRight1 scroll-content">
             <div class="flex flex-wrap justify-center -mx-4 py-4">
-                <div class="w-full px-4">
+                <div class="w-full pl-4">
                     <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
                         <span class="font-semibold text-lg text-primary mb-2 block text-gray-800 ">
                             Nuestras Noticias más Recientes
@@ -64,7 +64,7 @@
         </div>
 
         {{-- texto --}}
-        <div class="inline sm:inline md:inline lg:hidden">
+        <div class="inline sm:inline md:inline lg:hidden fadeRight1 scroll-content">
             <div class="flex flex-wrap justify-center -mx-4 py-4">
                 <div class="w-full px-4">
                     <div class="text-center mx-auto mb-10 max-w-[510px] py-8">
@@ -82,8 +82,10 @@
 
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
                             <div class="rounded-md shadow flex">
+                                 
+
                                 <a href="{{ route('blogs.index') }}"
-                                    class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-violet-500 hover:bg-violet-600 md:py-4 md:text-lg md:px-10">
+                                    class="w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 inline-block text-center bg-violet-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-violet-600">
                                     Ver más
                                 </a>
 
@@ -95,7 +97,7 @@
         </div>
 
         {{-- Blogs --}}
-        <div class="inline sm:inline md:inline lg:hidden">
+        <div class="inline sm:inline md:inline lg:hidden fadeRight scroll-content">
             @foreach ($blogs as $blog)
                 <!-- component -->
                 <div class="w-full">

@@ -654,13 +654,13 @@
                 </svg>
             </div>
 
-            
+
 
         </div>
 
         {{-- Mision, Vision y politica de calidad --}}
         <div
-            class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full">
+            class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full fadeTop scroll-content">
 
             {{-- Mision --}}
             <div class="p-6 bg-white">
@@ -718,7 +718,7 @@
             <div class="grid gap-5 row-gap-5 grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 mb-4">
 
                 {{-- Integridad --}}
-                <div class="px-12 text-center sm:px-0">
+                <div class="px-12 text-center sm:px-0  fadeRight scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -734,7 +734,7 @@
                 </div>
 
                 {{-- Respeto --}}
-                <div class="px-12 text-center sm:px-0">
+                <div class="px-12 text-center sm:px-0  fadeLeft1 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -750,7 +750,7 @@
                 </div>
 
                 {{-- Sencillez --}}
-                <div class="px-12 text-center sm:px-0">
+                <div class="px-12 text-center sm:px-0 fadeLeft2 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -766,7 +766,7 @@
                 </div>
 
                 {{-- Entusiasmo --}}
-                <div class="px-12 text-center sm:px-0">
+                <div class="px-12 text-center sm:px-0 fadeLeft3 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -782,7 +782,7 @@
                 </div>
 
                 {{-- Trabajo en equipo --}}
-                <div class="px-12 text-center sm:px-0 mt-4">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeRight scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -798,7 +798,7 @@
                 </div>
 
                 {{-- Liderazgo --}}
-                <div class="px-12 text-center sm:px-0 mt-4">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft1 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -814,7 +814,7 @@
                 </div>
 
                 {{-- Pasion --}}
-                <div class="px-12 text-center sm:px-0 mt-4">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft2 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -830,7 +830,7 @@
                 </div>
 
                 {{-- Pasion --}}
-                <div class="px-12 text-center sm:px-0 mt-4">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft3 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <svg class="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor"
@@ -889,12 +889,12 @@
         </div>
 
         <!-- cards -->
-        <div class="flex items-center justify-center py-12">
+        <div class="flex items-center justify-center py-12 ">
 
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-8 lg:grid-cols-12 max-w-5xl gap-4">
 
                 <!-- Card 1 -->
-                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative fadeRight scroll-content">
                     <div
                         class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
 
@@ -917,7 +917,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative fadeLeft1 scroll-content">
                     <div
                         class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
 
@@ -939,7 +939,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative fadeLeft2 scroll-content">
                     <div
                         class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
 
@@ -961,7 +961,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative">
+                <div class="grid col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 relative fadeLeft3 scroll-content">
                     <div
                         class="group shadow-lg hover:shadow-2xl duration-200 delay-75 w-full bg-white rounded-sm py-6 pr-6 pl-9">
 
@@ -988,4 +988,20 @@
 
     </div>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            let elements = document.getElementsByClassName('scroll-content');
+            let screenSize = window.innerHeight;
+
+            for (var i = 0; i < elements.length; i++) {
+                let element = elements[i];
+
+                if (element.getBoundingClientRect().top < screenSize) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            }
+        });
+    </script>
 </x-app-layout>
