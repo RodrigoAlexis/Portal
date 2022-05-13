@@ -270,7 +270,7 @@
                             <div class="rounded-md shadow flex">
                                 
                                 <a href="{{ route('buzon.index') }}"
-                                    class="fadeTop scroll-content w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 inline-block text-center bg-rose-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-rose-600">
+                                    class="fadeTop scroll-content w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10  text-center bg-rose-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-rose-600">
                                     Ir al Buzón
                                 </a>
 

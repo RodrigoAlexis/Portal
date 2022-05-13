@@ -10,7 +10,7 @@
 
             <div class="mb-4 md:mb-0">
                 <a href="{{route('home')}}" class="flex items-center">
-                    <img class="block h-16 w-auto mr-32" src="http://veladorasaramo.com.mx/img/aramo.png"
+                    <img class="block h-16 w-auto mr-32" src="{{ asset('img/logo-veladoras.png') }}"
                     alt="Veladoras Aramo"> 
                 </a>
             </div>
@@ -89,9 +89,9 @@
                     </ul>
                 </div>
 
-                {{-- Informacion Legal --}}
+                {{-- Compañia --}}
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase">Legal</h2>
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase">Compañia</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="{{ route('policy.show') }}" class="hover:underline text-gray-500">Política de Privacidad</a>

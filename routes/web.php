@@ -52,24 +52,32 @@ Route::get('auth/google', [LoginController::class, 'redirectG']);
 
 Route::get('auth/google/callback', [LoginController::class, 'signinGoogle']);
 
-//Blog back
-Route::resource('posts', PostController::class)->names('posts');
-
-// Productos back
-Route::resource('/products', ProductosController::class)->names('products');
-
-// Grupos bqck
-Route::resource('/groups', GrupoController::class)->names('groups');
-
-// Lineas back
-Route::resource('/lines', LineController::class)->names('lines');
-
-// Buzon
+// Buzon front
 Route::resource('buzon', BuzonController::class)->names('buzon');
 
-Route::resource('denuncias', DenunciaController::class)->names('denuncia');
-
+// Contacto front
 Route::resource('contacto', ContactoController::class)->names('contacto');
+
+Route::group(['middleware' => ['auth']], function () {
+    //Blog back
+    Route::resource('posts', PostController::class)->names('posts');
+
+    // Productos back
+    Route::resource('/products', ProductosController::class)->names('products');
+
+    // Grupos bqck
+    Route::resource('/groups', GrupoController::class)->names('groups');
+
+    // Lineas back
+    Route::resource('/lines', LineController::class)->names('lines');
+
+    // Buzon back
+    Route::resource('denuncias', DenunciaController::class)->names('denuncia');
+});
+
+
+
+
 
 //Enlace Simbolico
 Route::get('/turuta', function () {
