@@ -5,9 +5,14 @@
 			<!-- Row -->
 			<div class="w-full xl:w-3/4 lg:w-11/12 flex">
 				<!-- Col -->
-				<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-size: 465px 425px; background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800')"></div>
+                {{-- 465px 425px --}}
+				<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" 
+                    style="background-size:cover; 
+                            background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800');
+                            background-position: center center;
+                            background-repeat: no-repeat"></div>
 				<!-- Col -->
-				<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+				<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none shadow-lg">
 					<div class="px-8 mb-4 text-center">
 						<h3 class="pt-4 mb-2 text-2xl">Verificación de Correo Electrónico</h3>
 						<p class="mb-4 text-sm text-gray-700">
