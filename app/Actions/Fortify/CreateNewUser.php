@@ -31,13 +31,18 @@ class CreateNewUser implements CreatesNewUsers
             
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'paterno' => $input['paterno'],
             'materno' => $input['materno'],
             'isClient' => $input['isClient'],
             'email' => $input['email'],
             'password' => Hash::make(Str::random(8)),
+            'isAdmin' => 'No',
         ]);
+
+        $user->assignRole('Usuario');
+
+        return $user;
     }
 }

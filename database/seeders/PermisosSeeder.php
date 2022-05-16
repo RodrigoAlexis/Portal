@@ -15,6 +15,9 @@ class PermisosSeeder extends Seeder
     public function run()
     {
         $permisos = [
+
+            // Modulo administradores
+            'ver-modulo-admin',
             // Roles
             'ver-roles',
             'crear-roles',
@@ -32,6 +35,9 @@ class PermisosSeeder extends Seeder
             'crear-blogs',
             'editar-blogs',
             'borrar-blogs',
+
+            // Modulo productos
+            'ver-modulo-productos',
 
             // Grupos
             'ver-grupos',
@@ -52,7 +58,11 @@ class PermisosSeeder extends Seeder
             'borrar-productos',
 
             // Denuncias
-            'ver-buzon'
+            'ver-buzon',
+
+            //Historico
+            'ver-historico',
+            
         ];
 
         foreach($permisos as $permiso){

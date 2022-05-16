@@ -41,7 +41,7 @@
 
             <div class="flex items-center">
 
-                <div class="relative mx-4 lg:mx-0">
+                {{-- <div class="relative mx-4 lg:mx-0">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
                         <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                             <path
@@ -54,12 +54,12 @@
 
                     <input wire:model="search" class="form-input w-48  rounded-md pl-10 pr-4 focus:border-indigo-600"
                         type="text" placeholder="Buscar" />
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 
-    @if ($usuarios->count())
+    @if ($usuarios)
 
         {{-- Tabla --}}
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-gray-700">

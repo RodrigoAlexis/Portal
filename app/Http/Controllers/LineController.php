@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Storage;
 
 class LineController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('permission: ver-linea|crear-linea|editar-linea|borrar-linea', ['only' => ['index']]);
-        $this->middleware('permission: crear-linea', ['only' => ['create', 'store']]);
-        $this->middleware('permission: editar-linea', ['only' => ['edit', 'update']]);
-        $this->middleware('permission: borrar-linea', ['only' => ['destroy']]);
-    }
+    // function __construct()
+    // {
+    //     $this->middleware('permission: ver-linea|crear-linea|editar-linea|borrar-linea', ['only' => ['index']]);
+    //     $this->middleware('permission: crear-linea', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission: editar-linea', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission: borrar-linea', ['only' => ['destroy']]);
+    // }
 
     /**
      * Display a listing of the resource.

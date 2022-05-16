@@ -39,7 +39,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'razon_social',
         'id_socialite',
         'type_socialite',
-        'departamento'
+        'departamento',
+        'isAdmin'
     ];
 
     /**

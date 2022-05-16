@@ -21,12 +21,14 @@ class AdminIndex extends Component
     public function render()
     {
 
-        $usuarios = User::orWhere('name', 'LIKE', '%' . $this->search . '%')
-                        ->orWhere('paterno', 'LIKE', '%' . $this->search . '%')
-                        ->orWhere('materno', 'LIKE', '%' . $this->search . '%')
-                        ->orWhere('email', 'LIKE', '%' . $this->search . '%')
-                        // ->orWhere('departamento', 'LIKE', '%' . $this->search . '%')
+        $usuarios = User::where('isAdmin', 'Si')
                         ->latest('id')->paginate(8);
+
+        // $user = User::orWhere('name', 'LIKE', '%' . $this->search . '%')
+        //                 ->orWhere('paterno', 'LIKE', '%' . $this->search . '%')
+        //                 ->orWhere('materno', 'LIKE', '%' . $this->search . '%')
+        //                 ->orWhere('email', 'LIKE', '%' . $this->search . '%')
+        //                 ->orWhere('departamento', 'LIKE', '%' . $this->search . '%');
 
         return view('livewire.admin-index', compact('usuarios'));
     }

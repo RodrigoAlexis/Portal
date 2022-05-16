@@ -45,13 +45,7 @@ class PostController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $post = Blog::create([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'stract' => $request->stract,
-            'body' => $request->body,
-            'status' => $request->status,
-        ]);
+        $post = Blog::create($request->all());
         
 
         if ($request->file('file')) {
@@ -61,10 +55,6 @@ class PostController extends Controller
                 'url' => $url
             ]);
         }
-
-        // for ($i=0; $i<count($request->images) ; $i++) { 
-        //     if(isset($request->))
-        // }
 
         return redirect()->route('posts.index', $post)->with('success', 'El post se creo satisfactoriamente');
     }
@@ -123,6 +113,8 @@ class PostController extends Controller
                 ]);
             }
         }
+
+        // dd($request->file('file'));
 
         return redirect()->route('posts.index', $post)->with('success', 'El post se actualizó satisfactoriamente');
     }

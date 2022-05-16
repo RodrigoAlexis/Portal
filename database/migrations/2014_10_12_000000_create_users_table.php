@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('id_socialite')->nullable();
             $table->string('type_socialite')->nullable()->default('N/A');
             $table->enum('departamento', ['Sistemas', 'Ventas'])->nullable();
+            $table->enum('isAdmin', ['Si', 'No'])->default('No');
 
             $table->rememberToken();
             $table->timestamps();

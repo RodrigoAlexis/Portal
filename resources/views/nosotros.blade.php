@@ -654,8 +654,6 @@
                 </svg>
             </div>
 
-
-
         </div>
 
         {{-- Mision, Vision y politica de calidad --}}

@@ -20,7 +20,7 @@
                                             class="text-lg font-semibold leading-tight text-gray-800">
                                             {{ $blog->name }}</a>
                                         <p class="leading-normal pt-2"><a
-                                                href="{{ route('blogs.show', $blog) }}">{{ $blog->stract }}</a> </p>
+                                                href="{{ route('blogs.show', $blog) }}">{!! $blog->stract !!}</a> </p>
 
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                             class="text-lg font-semibold leading-tight text-gray-800">
                                             {{ $blog->name }}</a>
                                         <p class="leading-normal pt-2"><a
-                                                href="{{ route('blogs.show', $blog) }}">{{ $blog->stract }}</a> </p>
+                                                href="{{ route('blogs.show', $blog) }}">{!! $blog->stract !!}</a> </p>
 
                                     </div>
                                 </div>

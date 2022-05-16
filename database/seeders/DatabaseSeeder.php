@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Storage::deleteDirectory('public/blogs');
-        Storage::makeDirectory('public/blogs');
+        // Storage::deleteDirectory('public/blogs');
+        // Storage::makeDirectory('public/blogs');
         // \App\Models\User::factory(10)->create();
-        $this->call(BlogSeeder::class);
+        // $this->call(BlogSeeder::class);
         $this->call(PermisosSeeder::class);
     }
 }

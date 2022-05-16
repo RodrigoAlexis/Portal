@@ -10,6 +10,7 @@ use App\Models\Blog;
 use App\Models\Group;
 use App\Models\Line;
 use App\Models\Product;
+use Spatie\Permission\Models\Role;
 
 
 class GeneralUser extends Component
@@ -61,12 +62,16 @@ class GeneralUser extends Component
 
         $buzon1 = Buzon::count();
 
-        $ultimoBuzon = Product::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+        $ultimoBuzon = Buzon::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->take(1)->get();
+
+        $rol = Role::count();
+
+        $roles = Role::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->pluck('name');
 
         return view('livewire.general-user', compact('buzon', 'user', 'client', 
                                                     'NoClient', 'blog', 'ultimoBlog', 
                                                     'grupo', 'ultimoGrupo', 'linea',
                                                     'ultimaLinea', 'articulo', 'ultimoArticulo',
-                                                    'buzon1', 'ultimoBuzon'));
+                                                    'buzon1', 'ultimoBuzon', 'roles', 'rol'));
     }
 }
