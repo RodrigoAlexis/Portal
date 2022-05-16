@@ -55,7 +55,7 @@
         {{-- Departamento --}}
         <div>
             {!! Form::label('departamento', 'Departamento', ['class' => 'block mb-2 text-sm font-medium text-gray-700 font-bold']) !!}
-            {!! Form::select('departamento',['Sistemas' => 'Sistemas','Ventas'=>'Ventas'],' ',['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
+            {!! Form::select('departamento',['Sistemas' => 'Sistemas','Ventas'=>'Ventas','Calidad'=>'Calidad'],' ',['class'=>'block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm text-black']) !!}    
         
             @error('departamento')
                 <small class="text-red-600">{{$message}}</small>
