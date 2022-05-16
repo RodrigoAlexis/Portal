@@ -12,6 +12,8 @@ use App\Http\Controllers\LineController;
 use App\Http\Controllers\BuzonController;
 use App\Http\Controllers\DenunciaController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\AdministradorController;
 
 
 Route::get('/', function () {
@@ -73,13 +75,16 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Buzon back
     Route::resource('denuncias', DenunciaController::class)->names('denuncia');
+
+    // Roles back
+    Route::resource('roles', RolController::class)->names('roles');
+
+    // Usuarios admin back
+    Route::resource('administradores', AdministradorController::class)->names('admin');
+
 });
 
-
-
-
-
 //Enlace Simbolico
-Route::get('/turuta', function () {
+Route::get('/enlace-simbolico', function () {
     Artisan::call('storage:link');
 });

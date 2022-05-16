@@ -56,7 +56,9 @@
 
         @elseif(Route::is('denuncia*'))
 
-        {{-- @elseif(Route::is('home')) --}}
+        @elseif (Route::is('roles*'))
+
+        @elseif(Route::is('admin*'))
         @else
             @livewire('navigation')
         @endif
@@ -85,6 +87,10 @@
     @elseif(Route::is('lines*'))
 
     @elseif(Route::is('denuncia*'))
+    
+    @elseif (Route::is('roles*'))
+
+    @elseif (Route::is('admin*'))
     @else
         @livewire('footer')
     @endif

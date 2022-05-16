@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('public/blogs');
         // \App\Models\User::factory(10)->create();
         $this->call(BlogSeeder::class);
+        $this->call(PermisosSeeder::class);
     }
 }

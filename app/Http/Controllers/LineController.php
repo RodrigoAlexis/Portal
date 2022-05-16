@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Storage;
 
 class LineController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission: ver-linea|crear-linea|editar-linea|borrar-linea', ['only' => ['index']]);
+        $this->middleware('permission: crear-linea', ['only' => ['create', 'store']]);
+        $this->middleware('permission: editar-linea', ['only' => ['edit', 'update']]);
+        $this->middleware('permission: borrar-linea', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,14 +51,14 @@ class LineController extends Controller
         $line = Line::create($request->all());
 
         if ($request->file('file')) {
-            $url = Storage::put( 'groups',$request->file('file'));
+            $url = Storage::put('groups', $request->file('file'));
 
             $line->image()->create([
                 'url' => $url
             ]);
         }
 
-        if($request->groups){
+        if ($request->groups) {
             $line->groups()->attach($request->groups);
         }
 
@@ -65,7 +73,6 @@ class LineController extends Controller
      */
     public function show(Line $line)
     {
-        
     }
 
     public function mostrarProductos(Group $group, Line $line, Product $product)
@@ -74,13 +81,13 @@ class LineController extends Controller
         $lines = $group->lines()->latest('id')->get();
 
         $products = Product::where('group_id', '=', $group->id)
-                        ->where('line_id','=', $line->id)
-                        ->latest('id')
-                        ->paginate(8);
+            ->where('line_id', '=', $line->id)
+            ->latest('id')
+            ->paginate(8);
 
-         $prod = Product::where('id', '=', $product->id);
+        $prod = Product::where('id', '=', $product->id);
 
-        return view('products.front.index',['lines' => $lines, 'products' => $products, 'prod' => $prod ]);
+        return view('products.front.index', ['lines' => $lines, 'products' => $products, 'prod' => $prod]);
     }
 
 
@@ -95,7 +102,7 @@ class LineController extends Controller
         //
         $groups = Group::all();
 
-        return view('products.lineas.create', compact('line','groups'));
+        return view('products.lineas.create', compact('line', 'groups'));
     }
 
     /**
@@ -105,7 +112,7 @@ class LineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LineRequest $request,Line $line)
+    public function update(LineRequest $request, Line $line)
     {
         //
         $line->update($request->all());
@@ -113,20 +120,20 @@ class LineController extends Controller
         if ($request->file('file')) {
             $url = Storage::put('lines', $request->file('file'));
 
-            if($line->image){
+            if ($line->image) {
                 Storage::delete($line->image->url);
 
                 $line->image->update([
                     'url' => $url
                 ]);
-            }else{
+            } else {
                 $line->image()->create([
                     'url' => $url
                 ]);
             }
         }
 
-        if($request->groups){
+        if ($request->groups) {
             $line->groups()->sync($request->groups);
         }
 
@@ -144,9 +151,9 @@ class LineController extends Controller
         $line->delete();
 
         if ($line->image) {
-            
+
             Storage::delete($line->image->url);
-        }   
+        }
 
         return redirect()->route('lines.index')->with('success', 'La línea se eliminó satisfactoriamente');
     }

@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('razon_social')->nullable();
             $table->string('id_socialite')->nullable();
             $table->string('type_socialite')->nullable()->default('N/A');
+            $table->enum('departamento', ['Sistemas', 'Ventas'])->nullable();
+
             $table->rememberToken();
-            // $table->foreignId('current_team_id')->nullable();
-            // $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });
     }

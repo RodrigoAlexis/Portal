@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Buzon;
+use Spatie\Permission\Traits\HasPermissions;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -19,6 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasPermissions;
 
     /**
      * The attributes that are mass assignable.
@@ -36,7 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'isClient',
         'razon_social',
         'id_socialite',
-        'type_socialite'
+        'type_socialite',
+        'departamento'
     ];
 
     /**

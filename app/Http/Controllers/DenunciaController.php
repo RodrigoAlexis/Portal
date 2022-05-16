@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class DenunciaController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission: ver-buzon', ['only' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
