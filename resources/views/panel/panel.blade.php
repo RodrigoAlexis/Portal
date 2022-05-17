@@ -18,7 +18,7 @@
             <ul>
                 {{-- Inicio --}}
                 <li>
-                    <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('dashboard') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}"
+                    <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('dashboard') ? 'active' : 'hover:bg-white hover:bg-opacity-25 text-yellow-500' }}"
                         href="{{ route('dashboard') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
@@ -33,7 +33,7 @@
                 {{-- Blog --}}
                 @can('ver-blogs')
                     <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('posts*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}"
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('posts*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}"
                             href="{{ route('posts.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
@@ -49,7 +49,7 @@
                 {{-- Denuncias --}}
                 @can('ver-buzon')
                     <li>
-                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('denuncia*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}"
+                        <a class="flex items-center mt-4 py-2 px-6 text-white font-bold text-md {{ Route::is('denuncia*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}"
                             href="{{ route('denuncia.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
@@ -69,7 +69,7 @@
                         <div x-data="{ isActive: false, open: false }">
                             <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                             <a x-cloak href="javascript:void(0)" @click="$event.preventDefault(); open = !open"
-                                class="flex items-center p-2 text-white transition-colors  mt-4 py-2 px-6 font-bold text-md {{ Route::is('denuncia*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}"
+                                class="flex items-center p-2 text-white transition-colors  mt-4 py-2 px-6 font-bold text-md {{ Route::is('admin*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}"
                                 role="button" aria-haspopup="true" :aria-expanded="(open || isActive) ? 'true' : 'false'">
                                 <span aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -94,9 +94,8 @@
                                 {{-- Usuarios --}}
                                 @can('ver-usuarios')
                                     <div class="flex items-center py-2 px-6 ">
-
                                         <a href="{{ route('admin.index') }}"
-                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}">
+                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('admin*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -112,7 +111,7 @@
                                 @can('ver-roles')
                                     <div class="flex items-center py-2 px-6 ">
                                         <a href="{{ route('roles.index') }}"
-                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}">
+                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('roles*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -134,7 +133,7 @@
                         <div x-data="{ isActive: false, open: false }">
                             <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                             <a href="javascript:void(0)" @click="$event.preventDefault(); open = !open"
-                                class="flex items-center p-2 text-white transition-colors  mt-4 py-2 px-6 font-bold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}"
+                                class="flex items-center p-2 text-white transition-colors  mt-4 py-2 px-6 font-bold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}"
                                 :class="{ 'bg-indigo-100 dark:bg-indigo-600': isActive || open }" role="
                                     button" aria-haspopup="true" :aria-expanded="(open || isActive) ? 'true' : 'false'">
                                 <span aria-hidden="true">
@@ -163,7 +162,7 @@
                                     <div class="flex items-center py-2 px-6 ">
 
                                         <a href="{{ route('products.index') }}"
-                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}">
+                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('products*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -179,7 +178,7 @@
                                 @can('ver-lineas')
                                     <div class="flex items-center py-2 px-6 ">
                                         <a href="{{ route('lines.index') }}"
-                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('lines*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}">
+                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('lines*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -195,7 +194,7 @@
                                 @can('ver-grupos')
                                     <div class="flex items-center py-2 px-6 ">
                                         <a href="{{ route('groups.index') }}"
-                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('groups*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-lime-400' }}">
+                                            class=" w-full flex items-center py-2 px-6 text-white font-semibold text-md {{ Route::is('groups*') ? 'active' : 'hover:bg-white hover:bg-opacity-25 hover:text-white text-yellow-500' }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round"

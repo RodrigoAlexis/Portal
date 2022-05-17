@@ -9,8 +9,6 @@
         </div>
     @endif
 
-
-
     <div class="mb-4">
         <div class="float-left text-gray-500 text-3xl font-semibold">
             Listado de Roles
@@ -19,7 +17,7 @@
         @can('crear-roles')
             <a href="{{ route('roles.create') }}"
                 class="hidden sm:hidden md:inline lg:inline 2xl:inline float-right text-white bg-indigo-500 hover:bg-indigo-600  font-medium rounded-lg text-sm px-6   py-2.5 text-center dark:bg-indigo-500 dark:hover:bg-indigo-600">
-                Agregar Rol
+                Agregar Nuevo Rol
             </a>
 
 
@@ -74,9 +72,13 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Editar</th>
 
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Eliminar</th>
                         </tr>
                     </thead>
 
@@ -94,7 +96,7 @@
                                 {{-- Botones --}}
 
                                 <td
-                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    class="flex justify-center px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
 
                                     @can('editar-roles')
                                         <a href="{{ route('roles.edit', $rol->id) }}"
@@ -110,7 +112,8 @@
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     @can('borrar-roles')
-                                        <form action="{{ route('roles.destroy', $rol->id) }}" method="POST">
+                                        <form action="{{ route('roles.destroy', $rol->id) }}" method="POST"
+                                            class="flex justify-center">
                                             @csrf
                                             @method('DELETE')
 

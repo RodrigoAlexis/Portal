@@ -1,6 +1,6 @@
 <div class="flex flex-col">
+    {{-- Alert --}}
     @if (session('success'))
-        {{-- <p> {{session('success')}}</p> --}}
         <div id="alert"
             class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
             <span class="inline-block align-middle mr-8 text-center ">
@@ -22,9 +22,8 @@
             <a href="{{ route('posts.create') }}"
                 class="inline sm:inline md:hidden lg:hidden 2xl:hidden float-right text-white bg-indigo-700 hover:bg-indigo-800  font-medium rounded-lg text-sm px-4   py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
             </a>
         @endcan
@@ -58,8 +57,6 @@
 
 
         </div>
-
-
     </div>
 
     @if ($posts->count())
@@ -77,9 +74,12 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Editar</th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Eliminar</th>
                         </tr>
                     </thead>
 
@@ -96,9 +96,9 @@
                                 </td>
 
 
-
+                                {{-- Botones --}}
                                 <td
-                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    class="flex justify-center px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                                     @can('editar-blogs')
                                         <a href="{{ route('posts.edit', $post) }}"
                                             class="text-gray-500 hover:text-yellow-500">
@@ -113,7 +113,8 @@
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     @can('borrar-blogs')
-                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                        <form action="{{ route('posts.destroy', $post) }}" method="POST"
+                                            class="flex justify-center">
                                             @csrf
                                             @method('DELETE')
 
@@ -145,9 +146,7 @@
             </strong>
             <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
         </div>
-
     @endif
-
 
     <script>
         $('#alert').fadeIn();

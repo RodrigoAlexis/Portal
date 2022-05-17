@@ -9,7 +9,6 @@
         </div>
     @endif
 
-
     <div class="mb-4">
 
         <div class="float-left text-gray-500 text-3xl font-semibold">
@@ -83,9 +82,13 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Departamento</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Editar</th>
 
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Eliminar</th>
                         </tr>
                     </thead>
 
@@ -116,7 +119,7 @@
 
                                 {{-- Botones --}}
                                 <td
-                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    class="md:flex md:justify-center px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200">
                                     @can('editar-usuarios')
                                         <a href="{{ route('admin.edit', $usuario->id) }}"
                                             class="text-gray-500 hover:text-yellow-500">
@@ -131,7 +134,7 @@
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     @can('borrar-usuarios')
-                                        <form action="{{ route('admin.destroy', $usuario->id) }}" method="POST">
+                                        <form action="{{ route('admin.destroy', $usuario->id) }}" method="POST" class="flex justify-center">
                                             @csrf
                                             @method('DELETE')
 
@@ -164,7 +167,6 @@
             </strong>
             <img class="mt-4 mx-auto" src="{{ asset('img/search.png') }}" />
         </div>
-
     @endif
 
     <script>

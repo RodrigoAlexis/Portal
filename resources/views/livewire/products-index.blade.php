@@ -1,4 +1,5 @@
 <div class="flex flex-col">
+    {{-- Alert --}}
     @if (session('success'))
         <div id="alert"
             class="text-white mb-4 border-0 relative  bg-green-500 rounded-lg float-righ text-sm px-6 py-2.5 text-center">
@@ -7,7 +8,6 @@
             </span>
         </div>
     @endif
-
 
     <div class="mb-4">
         <div class="float-left text-gray-500 text-2xl lg:text-3xl font-semibold">
@@ -28,9 +28,6 @@
             </a>
         @endcan
     </div>
-
-
-
 
     {{-- search --}}
     <div class="flex-1 flex flex-col overflow-hidden w-full rounded-t-lg">
@@ -80,8 +77,12 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Color</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Editar</th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Eliminar</th>
                         </tr>
                     </thead>
 
@@ -104,9 +105,9 @@
                                     {!! $product->color1 !!}
                                 </td>
 
-
+                                {{-- Botones --}}
                                 <td
-                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    class="md:flex md:justify-center px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200">
                                     @can('editar-productos')
                                         <a href="{{ route('products.edit', $product) }}"
                                             class="text-gray-500 hover:text-yellow-500">
@@ -121,7 +122,8 @@
 
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     @can('borrar-productos')
-                                        <form action="{{ route('products.destroy', $product) }}" method="POST">
+                                        <form action="{{ route('products.destroy', $product) }}" method="POST"
+                                            class="flex justify-center">
                                             @csrf
                                             @method('DELETE')
 

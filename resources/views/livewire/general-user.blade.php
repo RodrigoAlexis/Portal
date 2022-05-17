@@ -199,6 +199,10 @@
             </a>
         @endcan
 
+        <div>
+
+        </div>
+
         {{-- card Buzon --}}
         @can('ver-historico')
             <a href="{{ route('buzon.index') }}" class="w-full">
@@ -217,7 +221,6 @@
                     </div>
                 </div>
             </a>
-
 
             {{-- card Mercado Libre --}}
             <a href="javascript:void(0)" class="w-full">
@@ -263,7 +266,7 @@
     {{-- Start: Vista de usuarios generales --}}
     @can('ver-historico')
 
-        {{-- Espaciado entre cards y tabla --}}
+        {{-- Historico buzon --}}
         <div class="flex flex-col mt-8">
             <div class="mb-4 text-gray-500 text-3xl font-semibold">
                 Historico del Buzón
@@ -310,17 +313,21 @@
                                         <tr>
                                             <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                Folio</th>
+                                                Folio
+                                            </th>
                                             <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                Modo de Canal</th>
+                                                Modo de Canal
+                                            </th>
                                             <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                Categoría</th>
+                                                Categoría
+                                            </th>
 
                                             <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                Tipo</th>
+                                                Tipo
+                                            </th>
 
                                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                                         </tr>
@@ -345,7 +352,7 @@
                                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                     {{ $bu->tipo }}
                                                 </td>
-                                                {{-- Botones --}}
+                                                {{-- Boton que abre modal --}}
                                                 <td
                                                     class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                                                     <a onclick="toggleModalInfoU('{{ $bu->id }}')"
@@ -361,6 +368,7 @@
                                                         </svg>
                                                     </a>
                                                 </td>
+
                                             </tr>
                                             @include('buzon.front.modales.infoDenunciaUser')
                                         @endforeach

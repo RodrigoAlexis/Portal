@@ -19,15 +19,19 @@
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
                 {{ __('Cuando la autenticación de dos factores está habilitada, se le solicitará un token seguro y aleatorio durante la autenticación. Puede recuperar este token de la aplicación Google Authenticator de su teléfono.') }}
-                <a  target="_blank" class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=es_MX&gl=US">
+            </p>
+            <div class="mt-1">
+                <a target="_blank" class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                    href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=es_MX&gl=US">
                     <img src="{{ asset('img/play.png') }}" />
                 </a>
-                <a  target="_blank" class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="https://apps.apple.com/es/app/google-authenticator/id388497605">
+                <a target="_blank" class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                    href="https://apps.apple.com/es/app/google-authenticator/id388497605">
                     <img src="{{ asset('img/store.png') }}" />
                 </a>
-                
-            </p>
-            
+            </div>
+
+
         </div>
 
         @if ($this->enabled)
@@ -59,7 +63,7 @@
         @endif
 
         <div class="mt-5">
-            @if (! $this->enabled)
+            @if (!$this->enabled)
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-jet-button type="button" wire:loading.attr="disabled">
                         {{ __('Habilitar') }}

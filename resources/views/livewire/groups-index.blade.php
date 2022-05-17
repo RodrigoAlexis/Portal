@@ -75,9 +75,13 @@
                             <th
                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre</th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Editar</th>
 
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                            <th
+                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                Eliminar</th>
                         </tr>
                     </thead>
 
@@ -95,10 +99,10 @@
 
                                 {{-- Botones --}}
                                 <td
-                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    class=" md:flex md:justify-center px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     @can('editar-grupos')
                                         <a href="{{ route('groups.edit', $group) }}"
-                                            class="text-gray-500 hover:text-yellow-500">
+                                            class="text-gray-500 hover:text-yellow-500 ">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -108,9 +112,9 @@
                                     @endcan
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 ">
                                     @can('borrar-grupos')
-                                        <form action="{{ route('groups.destroy', $group) }}" method="POST">
+                                        <form action="{{ route('groups.destroy', $group) }}" method="POST" class="flex justify-center">
                                             @csrf
                                             @method('DELETE')
 

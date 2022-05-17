@@ -18,7 +18,7 @@
                 </button>
             </div>
             <!--body-->
-            <div class="overflow-y-auto h-64">
+            <div class="overflow-y-auto h-96">
                 <div class="relative p-6 flex-auto">
                     <div class="gap-4">
                         <div>
@@ -47,14 +47,19 @@
                                 acciones.
                             </p>
                             <p class="mb-3 text-gray-600">
-                                Ante cualquier duda envíe un mensaje al correo: <span class="font-bold">sgc@gpoalze.com</span>
+                                Ante cualquier duda envíe un mensaje al correo: <span
+                                    class="font-bold">sgc@gpoalze.com</span>
                             </p>
                         </div>
 
                         <div>
                             <h3 class="font-bold text-lg text-gray-700">6.- ¿Se resguarda mi información?</h3>
-                            <p class="mb-3 text-red-600">
-                                Pendiente
+                            <p class="mb-3 text-gray-600">
+                                En caso de dar tus datos de
+                                Identificación, correo electrónico como parte del seguimiento de la denuncia o
+                                sugerencia.
+
+                                <span class="font-bold">No recabamos datos personales sensibles. </span> 
                             </p>
                         </div>
 
@@ -62,7 +67,7 @@
                             <h3 class="font-bold text-lg text-gray-700">7.- ¿Pueden existir represalias si realizo una
                                 denuncia?</h3>
                             <p class="mb-3 text-gray-600">
-                                Ningún miembro del Grupo podrá tomar represalias, ni se permitirá que alguna persona o
+                                Ningún miembro del grupo podrá tomar represalias, ni se permitirá que alguna persona o
                                 grupo de personas tome o intente tomar represalias directa o indirectamente, contra
                                 quien realice una denuncia. Esto de acuerdo a <span class="font-bold">PO-14-RH
                                     POLÍTICA USO DE BUZÓN.</span>

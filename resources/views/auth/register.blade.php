@@ -75,9 +75,9 @@
                                                 <x-jet-checkbox name="terms" id="terms" />
 
                                                 <div class="ml-2">
-                                                    {!! __('Acepto los :terms_of_service y la :privacy_policy', [
+                                                    {!! __('Acepto los :terms_of_service y el :privacy_policy', [
     'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Términos de servicio') . '</a>',
-    'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Política de privacidad') . '</a>',
+    'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Aviso de privacidad') . '</a>',
 ]) !!}
                                                 </div>
                                             </div>

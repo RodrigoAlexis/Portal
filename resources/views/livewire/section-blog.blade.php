@@ -1,6 +1,8 @@
 <div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2">
+
+        {{-- Pantallas grandes --}}
         {{-- Blogs --}}
         <div class="hidden sm:hidden md:hidden lg:inline fadeRight scroll-content">
             @foreach ($blogs as $blog)
@@ -63,6 +65,7 @@
             </div>
         </div>
 
+        {{-- Pantallas medianas y chicas --}}
         {{-- texto --}}
         <div class="inline sm:inline md:inline lg:hidden fadeRight1 scroll-content">
             <div class="flex flex-wrap justify-center -mx-4 py-4">
@@ -85,7 +88,7 @@
                                  
 
                                 <a href="{{ route('blogs.index') }}"
-                                    class="w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 inline-block text-center bg-violet-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-violet-600">
+                                    class="w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 text-center bg-violet-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-violet-600">
                                     Ver más
                                 </a>
 
