@@ -8,7 +8,7 @@
                 </a>
             </div>
 
-            <div class="w-full max-w-2xl mt-6 p-6 bg-white overflow-hidden sm:rounded-lg shadow-xl">
+            <div class="w-full max-w-2xl mt-6 p-6 bg-white overflow-hidden sm:rounded-lg shadow-lg">
                 <h1 class="uppercase text-gray-700 font-bold text-4xl mb-6">
                     AVISO DE PRIVACIDAD INTEGRAL
                 </h1>
@@ -59,7 +59,7 @@
                         <h2 class="text-gray-600 text-lg font-bold">
                             Como cliente
                         </h2>
-                        <p class="text-gray-500 text-lg font-semibold italic mb-3">
+                        <p class="text-gray-500 text-lg font-bold italic mb-3">
                             Primarias:
                         </p>
 
@@ -84,7 +84,7 @@
                             </ul>
                         </div>
 
-                        <p class="text-gray-500 text-lg font-semibold italic mb-3">
+                        <p class="text-gray-500 text-lg font-bold italic mb-3">
                             **Secundarias:
                         </p>
 
@@ -108,7 +108,7 @@
                         <h2 class="text-gray-600 text-lg font-bold">
                             Como solicitante de empleo
                         </h2>
-                        <p class="text-gray-500 text-lg font-semibold italic mb-3">
+                        <p class="text-gray-500 text-lg font-bold italic mb-3">
                             Primarias:
                         </p>
 
@@ -122,7 +122,7 @@
                             </ul>
                         </div>
 
-                        <p class="text-gray-500 text-lg font-semibold italic mb-3">
+                        <p class="text-gray-500 text-lg font-bold italic mb-3">
                             **Secundarias:
                         </p>
 
@@ -144,7 +144,7 @@
                         <h2 class="text-gray-600 text-lg font-bold">
                             Como proveedores
                         </h2>
-                        <p class="text-gray-500 text-lg font-semibold italic mb-3">
+                        <p class="text-gray-500 text-lg font-bold italic mb-3">
                             Primarias:
                         </p>
 
@@ -175,12 +175,49 @@
                     </div>
                 </div>
 
-                <div class="pl-16 mt-4">
-                    <p>
-                        **Las <span class="font-bold">finalidades secundarias</span> enunciadas anteriormente no son necesarias para proporcionarle
+                <div class="pl-16 mt-4 mb-3">
+                    <p class="mb-4">
+                        **Las <span class="font-bold">finalidades secundarias</span> enunciadas anteriormente no
+                        son necesarias para proporcionarle
                         nuestros productos y servicios, pero nos son de gran utilidad para brindarle un mejor servicio,
                         mejorar la calidad de nuestros productos y servicios, así como para promocionarle los mismos.
                     </p>
+
+                    <p class="mb-2">
+                        <span class="font-bold">Datos personales que recabaremos de usted.</span> Para las
+                        finalidades antes mencionadas, podremos recabar las siguientes categorías de datos personales:
+                    <div class="pl-8 mb-3">
+                        <ul class="list-disc">
+                            <li><span class="italic">Clientes y proveedores:</span> Identificación, contacto,
+                                datos de facturación.</li>
+                            <li><span class="italic">Solicitante de Empleo:</span> Identificación, contacto,
+                                académicos; laborales. Si usted avanza
+                                en
+                                el proceso de selección, sus datos personales se podrán transferir con instituciones
+                                financieras, bancarias y se le podrán pedir datos personales patrimoniales, financieros
+                                o
+                                sensibles, en cuyo caso la empresa a la que se le hayan transferidos sus datos,
+                                requerirá
+                                previamente su consentimiento expreso y por escrito mediante la firma autógrafa de un
+                                nuevo
+                                aviso de privacidad que pondrá a su disposición. </li>
+                            <li><span class="italic">Como usuario para levantar una denuncia o sugerencia:</span> En caso de dar tus datos de
+                                Identificación, correo electrónico como parte del seguimiento de la denuncia o
+                                sugerencia.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="font-bold">No recabamos datos personales sensibles</p>
+                    </p>
+                </div>
+
+                <div>
+                    <p class="font-bold">3.1.-¿No estás de acuerdo con las finalidades secundarias? ¿Cómo puedes negarte?</p>
+                    <ul class="list-[lower-roman]">
+                        <li> fdfasdadas</li>
+                        <li>asdasd</li>
+                    </ul>
                 </div>
 
 
