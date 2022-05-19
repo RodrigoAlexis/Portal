@@ -6,54 +6,38 @@
 
             <div class="mb-4 md:mb-0">
                 <a href="{{ route('home') }}" class="flex items-center">
-                    <img class="block h-16 w-auto mr-32" src="{{ asset('img/logo-veladoras.png') }}"
-                        alt="Veladoras Aramo">
+                    <img class="block h-20 sm:h-12 md:h-16 lg:h-24 w-auto mr-32"
+                        src="{{ asset('img/logo-veladoras.png') }}" alt="Veladoras Aramo">
                 </a>
             </div>
 
-            <div class="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4">
+            <div class="grid grid-cols-1 gap-8 sm:gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
 
+                <div class="hidden sm:hidden md:inline lg:inline">
+
+                </div>
                 {{-- Recursos --}}
-                <div>
-                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase ">Recursos</h2>
+                <div class="text-center">
+                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase hover:underline"><a
+                            href="{{ route('home') }}">Inicio</a></h2>
                     <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="{{ route('home') }}" class="hover:underline text-gray-500">Inicio</a>
-                        </li>
                         <li class="mb-4">
                             <a href="{{ route('nosotros') }}" class="hover:underline text-gray-500">Nosotros</a>
                         </li>
                         <li class="mb-4">
                             <a href="{{ route('blogs.index') }}" class="hover:underline text-gray-500">Blog</a>
                         </li>
-                        <li>
+                        <li class="mb-4">
                             <a href="{{ route('buzon.index') }}" class="hover:underline text-gray-500">Buzón</a>
                         </li>
-                    </ul>
-                </div>
-
-                {{-- Productos --}}
-                <div>
-                    <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase  hover:underline"> <a
-                            href="{{ route('grupos.index') }}">Productos</a> </h2>
-                    <ul>
-                        <li class="mb-4">
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Refacciones</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Vidrio</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Velas y Cirios</a>
-                        </li>
                         <li>
-                            <a href="javascript:void(0)" class="hover:underline text-gray-500">Eco Velas</a>
+                            <a href="{{ route('grupos.index') }}" class="hover:underline text-gray-500">Productos</a>
                         </li>
                     </ul>
                 </div>
 
                 {{-- Contacto --}}
-                <div>
+                <div class="text-center">
                     <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase hover:underline"><a
                             href="{{ route('contacto.index') }}">Contacto</a></h2>
                     <ul class="text-gray-600 dark:text-gray-400">
@@ -87,19 +71,23 @@
                 </div>
 
                 {{-- Compañia --}}
-                <div>
+                <div class="text-center">
                     <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase">Compañia</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="{{ route('policy.show') }}" class="hover:underline text-gray-500">Aviso de
+                            <a href="{{ route('policy.show') }}" target="_blank"
+                                class="hover:underline text-gray-500">Aviso de
                                 Privacidad</a>
                         </li>
                         <li>
-                            <a href="{{ route('terms.show') }}" class="hover:underline text-gray-500">Términos de
+                            <a href="{{ route('terms.show') }}" target="_blank"
+                                class="hover:underline text-gray-500">Términos de
                                 Servicio</a>
                         </li>
                     </ul>
                 </div>
+
+
 
             </div>
         </div>

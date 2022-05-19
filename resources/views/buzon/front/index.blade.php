@@ -240,7 +240,7 @@
                         <div class="col-span-1 sm:col-span-2 md:col-span-4">
                             <x-jet-label for="hechos" value="{{ __('Texto de los Hechos *') }}" />
                             <textarea id="hechos" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                                type="text" name="hechos" autofocus autocomplete="hechos" rows="3"></textarea>
+                                type="text" name="hechos"  autocomplete="hechos" rows="3"></textarea>
                             @error('hechos')
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror
@@ -249,7 +249,7 @@
                         <div class="col-span-1 sm:col-span-2 md:col-span-4  ">
                             <x-jet-label for="adjunto" value="{{ __('Adjunto') }}" />
                             <x-jet-input multiple accept=".jpg, .jpeg, .png, .doc, .docx, .pdf" id="adjunto"
-                                class="block mt-1 w-full" type="file" name="adjunto[]" :value="old('adjunto')" autofocus
+                                class="block mt-1 w-full" type="file" name="adjunto[]" :value="old('adjunto')" 
                                 autocomplete="adjunto" />
                             <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> solo se
                                 permite un máximo de 3 archivos / imagenes</p>

@@ -141,7 +141,7 @@ class BuzonController extends Controller
                     Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
 
                     //Correo de Gabriel Zurita
-                    Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
+                    Mail::to('alexislopez130300@gmail.com')->send(new Denuncia($message));
                 }
 
                 if ($request->categoria == 'Condiciones Laborales') {
@@ -154,7 +154,7 @@ class BuzonController extends Controller
 
                 if ($request->categoria == 'Prácticas Monopólicas' || 'Leyes Ambientales' || 'Sobornos' || 'Derechos de la Tierra' || 'Otros') {
                     //Correo de Ruth Vega
-                    Mail::to('practicante.sistemas@gpoalze.com')->send(new Denuncia($message));
+                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
                 }
                 
             } else {

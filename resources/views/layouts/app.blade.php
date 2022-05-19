@@ -39,6 +39,12 @@
 
     </style>
     {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
+
+
+    {{-- Favicon --}}
+    <link rel="shortcut icon" type="image/png" href="{{ asset('/img/veladoras-aramo-sm.png') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/veladoras-aramo-sm.png') }}">
+    {{-- End Favicon --}}
 </head>
 
 <body class="font-sans antialiased bg-gray-100">
@@ -87,7 +93,7 @@
     @elseif(Route::is('lines*'))
 
     @elseif(Route::is('denuncia*'))
-    
+
     @elseif (Route::is('roles*'))
 
     @elseif (Route::is('admin*'))
