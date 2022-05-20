@@ -197,12 +197,12 @@
                     </div>
                 </div>
             </a>
-        @endcan
+        
 
         <div>
 
         </div>
-
+        @endcan
         {{-- card Buzon --}}
         @can('ver-historico')
             <a href="{{ route('buzon.index') }}" class="w-full">

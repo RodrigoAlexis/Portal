@@ -65,11 +65,11 @@
         </div>
 
         {{-- Mision, Vision y politica de calidad --}}
-        <div
+        <div data-aos="fade-down" data-aos-duration="2000" 
             class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full fadeTop scroll-content">
 
             {{-- Mision --}}
-            <div data-aos="fade-down" data-aos-duration="2000" class="p-6 bg-white">
+            <div class="p-6 bg-white">
 
                 <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
                     Misión
@@ -81,7 +81,7 @@
             </div>
 
             {{-- Vision --}}
-            <div data-aos="fade-up" data-aos-duration="2000" class="p-6 bg-white ">
+            <div  class="p-6 bg-white ">
 
                 <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
                     Visión
@@ -94,7 +94,7 @@
             </div>
 
             {{-- Politica de calidad --}}
-            <div data-aos="fade-down" data-aos-duration="2000" class="p-6 bg-white ">
+            <div  class="p-6 bg-white ">
 
                 <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
                     Política de Calidad

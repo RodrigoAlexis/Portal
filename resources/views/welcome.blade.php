@@ -67,32 +67,51 @@
 
         {{-- Carousel --}}
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            {{-- <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt=""> --}}
 
-            {{-- slider --}}
-            <div class="contenedor h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-                <div class="slider-contenedor h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+            {{-- slider con css pantallas lg y xl --}}
+            <div class="hidden sm:hidden md:hidden lg:inline">
+                <div class="contenedor">
+                    <div class="slider-contenedor h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
-                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-
-
-                    </section>
-
-                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+                        <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
 
-                    </section>
+                        </section>
 
-                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-
-
-                    </section>
-
-                    <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+                        <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
 
 
-                    </section>
+                        </section>
+
+                        <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+
+
+                        </section>
+
+                        <section class="contenido-slider  object-cover h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
+
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            {{-- slider con swiperJS pantallas xs, sm y md--}}
+            <div class="h-full w-auto inline sm:inline md:inline lg:hidden">
+                <!-- Slider main container -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-50">
+                            <img class="" src="{{asset('img/principal1.jpg')}}" alt="Principal">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="" src="{{asset('img/principal2.jpg')}}" alt="Principal">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="" src="{{asset('img/principal3.jpg')}}" alt="Principal">
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -183,7 +202,8 @@
                             </div>
                         </div>
 
-                        <a data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" href="{{ route('grupos.index') }}"
+                        <a data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                            href="{{ route('grupos.index') }}"
                             class="fadeTop scroll-content mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 ml-0 sm:ml-0 lg:ml-36 inline-block text-center bg-orange-400 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-orange-600">
                             Ver más Productos
                         </a>
@@ -194,8 +214,9 @@
     </div>
 
     {{-- Buzon --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-        {{-- <div class="grid grid-cols-1 lg:grid-cols-2"> --}}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-easing="linear"
+        data-aos-duration="1500">
+
 
         {{-- texto --}}
         <div>
@@ -230,10 +251,9 @@
                 </div>
             </div>
         </div>
-
-
-        {{-- </div> --}}
     </div>
+
+   
 
 
     <script>
@@ -284,5 +304,22 @@
         });
 
         AOS.init();
+
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     </script>
 </x-app-layout>
