@@ -27,7 +27,8 @@
 
                 {{-- Contenido --}}
                 <main class="mt-6 mx-auto max-w-7xl px-4 sm:mt-8 sm:px-6 md:mt-8 lg:mt-16 lg:px-8 xl:mt-20 ">
-                    <div class="sm:text-center lg:text-left ">
+                    <div class="sm:text-center lg:text-left" data-aos="fade-up" data-aos-easing="linear"
+                        data-aos-duration="1500">
 
                         {{-- Titulo --}}
                         <h1 class="text-4xl tracking-tight sm:text-5xl md:text-6xl text-center ">
@@ -98,7 +99,8 @@
     </div>
 
     {{-- Seccion Blogs --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-6">
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500"
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-6">
         @livewire('section-blog')
     </div>
 
@@ -106,7 +108,8 @@
     <div class="relative bg-white overflow-hidden">
         <div class="pt-10 pb-80 sm:pt-24 md:pt-8 sm:pb-40  lg:pt-40 lg:pb-48">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static ">
-                <div class="sm:max-w-lg text-center fadeTop scroll-content">
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                    class="sm:max-w-lg text-center fadeTop scroll-content">
                     <h1
                         class="text-4xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
                         Toda la variedad que buscabas
@@ -118,62 +121,6 @@
                 </div>
                 <div>
                     <div class="mt-10 lg:mt-10 ">
-                        <!-- Decorative image grid -->
-                        {{-- <div aria-hidden="true"
-                            class="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
-                            <div
-                                class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-
-                                <div class="flex items-center space-x-6 lg:space-x-8">
-
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                    </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                    </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div> --}}
 
                         {{-- Velas decorativas --}}
                         <div aria-hidden="true"
@@ -183,7 +130,8 @@
 
                                 <div class="flex items-center space-x-6 lg:space-x-8">
 
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                        class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
                                         <div
                                             class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100 fadeTop scroll-content py-8">
@@ -197,7 +145,8 @@
                                         </div>
 
                                     </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                        class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
                                         <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop2 scroll-content">
                                             <img src="{{ asset('img/Cubero.jpg') }}" alt=""
@@ -215,7 +164,8 @@
                                         </div>
 
                                     </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                        class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop5 scroll-content">
                                             <img src="{{ asset('img/R18.jpg') }}" alt=""
                                                 class="w-full h-full object-center object-cover">
@@ -233,7 +183,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('grupos.index') }}"
+                        <a data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" href="{{ route('grupos.index') }}"
                             class="fadeTop scroll-content mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 ml-0 sm:ml-0 lg:ml-36 inline-block text-center bg-orange-400 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-orange-600">
                             Ver más Productos
                         </a>
@@ -244,7 +194,7 @@
     </div>
 
     {{-- Buzon --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
         {{-- <div class="grid grid-cols-1 lg:grid-cols-2"> --}}
 
         {{-- texto --}}
@@ -268,7 +218,7 @@
 
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
                             <div class="rounded-md shadow flex">
-                                
+
                                 <a href="{{ route('buzon.index') }}"
                                     class="fadeTop scroll-content w-full flex items-cente  justify-center text-base mt-4 md:mt-0 md:py-4 md:text-lg md:px-10  text-center bg-rose-500 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-rose-600">
                                     Ir al Buzón
@@ -281,81 +231,10 @@
             </div>
         </div>
 
-       
+
         {{-- </div> --}}
     </div>
 
-    {{-- Seccion Video y texto --}}
-    {{-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
-
-            
-            <div class="hidden sm:hidden md:hidden lg:inline mt-4 md:h-60 lg:h-auto px-2 md:px-24 lg:px-10">
-                <iframe class="h-full w-full" src="https://www.youtube.com/embed/ro2tm3rW6lc"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-
-            
-            <div class="hidden sm:hidden md:hidden lg:inline font-serif text-lg text-gray-600 mt-4">
-                
-
-                <p class="mb-3">
-                    Productos Aramo, con el pasar de los años logró ser una marca lider en el ramo de las veladoras,
-                    con
-                    el
-                    liderazgo y emprendimiento de un equipo consolidado se da paso a una nueva etapa en la vida de
-                    la
-                    marca Aramo, esta etapa es el fruto de un líder que creyó en su equipo de colaboradores, y los
-                    hizo
-                    participes del legado que con mucho esfuerzo había construido en 30 años junto a ellos, así se
-                    da el
-                    nacimiento de Veladoras Aramo, una nueva fabrica con toda la historia, las raíces y experiencia
-                    de
-                    tantos años en el mercado, pero con toda la inovación, tecnología y empuje de una nueva
-                    generación
-                    de
-                    empresarios que a través de la historia vivida buscando romper todos los esquemas y generar una
-                    marca líder.
-                </p>
-            </div>
-
-            
-            <div class="inline sm:inline md:inline lg:hidden text-lg  font-serif text-md text-gray-600 mt-4">
-
-                <p class="mb-3">
-                    Productos Aramo, con el pasar de los años logró ser una marca lider en el ramo de las veladoras,
-                    con
-                    el
-                    liderazgo y emprendimiento de un equipo consolidado se da paso a una nueva etapa en la vida de
-                    la
-                    marca Aramo, esta etapa es el fruto de un líder que creyó en su equipo de colaboradores, y los
-                    hizo
-                    participes del legado que con mucho esfuerzo había construido en 30 años junto a ellos, así se
-                    da el
-                    nacimiento de Veladoras Aramo, una nueva fabrica con toda la historia, las raíces y experiencia
-                    de
-                    tantos años en el mercado, pero con toda la inovación, tecnología y empuje de una nueva
-                    generación
-                    de
-                    empresarios que a través de la historia vivida buscando romper todos los esquemas y generar una
-                    marca líder.
-                </p>
-            </div>
-
-
-            <div class="inline sm:inline md:inline lg:hidden  mt-4 md:h-60 lg:h-auto md:px-24 lg:px-0">
-                <iframe class="h-full w-full" src="https://www.youtube.com/embed/ro2tm3rW6lc"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-
-        </div>
-
-    </div> --}}
 
     <script>
         let slider = document.querySelector(".slider-contenedor")
@@ -403,5 +282,7 @@
                 }
             }
         });
+
+        AOS.init();
     </script>
 </x-app-layout>

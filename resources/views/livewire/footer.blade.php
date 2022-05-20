@@ -37,26 +37,39 @@
                 </div>
 
                 {{-- Contacto --}}
-                <div class="text-center">
+                <div class=" text-center">
                     <h2 class="mb-6 text-sm font-bold text-blue-900 uppercase hover:underline"><a
                             href="{{ route('contacto.index') }}">Contacto</a></h2>
                     <ul class="text-gray-600 dark:text-gray-400">
 
 
-                        <li class="mb-4 text-gray-500 text-md">
-                            <p>
-                                Dirección: Calle industria
-                            </p>
-                            <p>
-                                #236 B. Loc. San Francisco
-                            </p>
-                            <p>
-                                Ocotlán. Coronango, Puebla.
-                            </p>
+                        <li class="mb-4 text-gray-500 text-md ">
+                            Dirección: 
+                            <div class="hover:underline" >
+                                
+                                <p>
+                                    <a target="_blank"
+                                        href="https://www.google.com.mx/maps/place/Veladoras+Aramo/@19.1325074,-98.2755634,17z/data=!3m1!4b1!4m5!3m4!1s0x85cfc5afccb9f2a5:0x3602252f59ea7089!8m2!3d19.1325556!4d-98.2733537">
+                                        Calle industria #236 B.</a>
+                                </p>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://www.google.com.mx/maps/place/Veladoras+Aramo/@19.1325074,-98.2755634,17z/data=!3m1!4b1!4m5!3m4!1s0x85cfc5afccb9f2a5:0x3602252f59ea7089!8m2!3d19.1325556!4d-98.2733537">
+                                         Loc. San Francisco</a>
+                                </p>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://www.google.com.mx/maps/place/Veladoras+Aramo/@19.1325074,-98.2755634,17z/data=!3m1!4b1!4m5!3m4!1s0x85cfc5afccb9f2a5:0x3602252f59ea7089!8m2!3d19.1325556!4d-98.2733537">Ocotlán.
+                                        Coronango, Puebla.</a>
+                                </p>
 
-                            <p>
-                                C.P. 72680
-                            </p>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://www.google.com.mx/maps/place/Veladoras+Aramo/@19.1325074,-98.2755634,17z/data=!3m1!4b1!4m5!3m4!1s0x85cfc5afccb9f2a5:0x3602252f59ea7089!8m2!3d19.1325556!4d-98.2733537">C.P.
+                                        72680</a>
+                                </p>
+                            </div>
+
 
                         </li>
                         <li class="mb-4 text-gray-500 text-md">
