@@ -7,7 +7,7 @@
                 <div class="w-full xl:w-3/4 lg:w-11/12 flex">
                     <!-- Col -->
                     <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-size:cover;
-                                background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800');
+                                background-image: url('/img/verifyemail.jpg');
                                 background-position: center center;
                                 background-repeat: no-repea"></div>
                     <!-- Col -->

@@ -46,7 +46,7 @@
             @isset($line->image)
                 <img id="picture" src="{{ Storage::url($line->image->url) }}" alt="Imagen por defecto">
             @else
-                <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg"
+                <img id="picture" src="{{ asset('/img/defaultLinea1.jpg')}}"
                     alt="Imagen por defecto">
             @endisset
         </div>
@@ -60,8 +60,8 @@
                 <small class="text-red-600">{{ $message }}</small>
             @enderror
 
-            <p class="mt-6">1.- Acepta formatos JPG / JPEG / PNG.</p>
-            <p class="mt-6">2.- Se recomienda que la imagen tenga una medida de *** x *** para su correcta
+            <p class="mt-6 text-sm">1.- Acepta formatos JPG / JPEG / PNG.</p>
+            <p class="mt-6 text-sm">2.- Se recomienda que la imagen tenga una medida de 400 x 300 para su correcta
                 visualización.</p>
         </div>
 

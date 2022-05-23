@@ -9,7 +9,7 @@
                         {{-- 465px 470px --}}
                         <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" 
                             style="background-size:cover; 
-                                    background-image: url('https://source.unsplash.com/oWTW-jNGl9I/600x800');
+                                    background-image: url('/img/2pasos.jpg');
                                     background-position: center center;
                                     background-repeat: no-repeat"></div>
                         <!-- Col -->

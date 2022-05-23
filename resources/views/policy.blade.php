@@ -3,7 +3,7 @@
         <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
             <div class="mt-10">
                 <a href="{{ route('home') }}">
-                    <img class="hidden lg:block h-32 w-auto" src="{{ asset('img/logo-veladoras.png') }}"
+                    <img class="h-32 w-auto" src="{{ asset('img/logo-veladoras.png') }}"
                         alt="Veladoras Aramo">
                 </a>
             </div>

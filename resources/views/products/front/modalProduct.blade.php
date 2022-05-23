@@ -20,7 +20,7 @@
               {{-- imagen --}}
               <div>
                   <div>
-                      <div class="block h-80 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg @endif)"></div>
+                      <div class="block h-80 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(@if($product->image) {{Storage::url($product->image->url)}} @else /img/defaultProducto1.jpg  @endif)"></div>
                   </div>
               </div> 
               {{-- Tabla de datos --}}

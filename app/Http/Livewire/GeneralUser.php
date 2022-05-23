@@ -66,7 +66,7 @@ class GeneralUser extends Component
 
         $rol = Role::count();
 
-        $roles = Role::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->pluck('name');
+        $roles = Role::orWhere('id', 'LIKE', '%' . $this->search . '%')->latest('id')->get();
 
         return view('livewire.general-user', compact('buzon', 'user', 'client', 
                                                     'NoClient', 'blog', 'ultimoBlog', 

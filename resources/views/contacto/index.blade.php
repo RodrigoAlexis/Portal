@@ -80,8 +80,7 @@
                         {{-- nombre --}}
                         <div>
                             <x-jet-label for="name" value="{{ __('Nombre') }}" />
-                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
-                                autofocus />
+                            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"/>
                             @error('name')
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror
@@ -115,7 +114,7 @@
                                     class="form-select w-full
                             border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                                     placeholder="Seleccione una opción">
-                                    <option value="">Seleccione una opción</option>
+                                    <option value="" disabled selected>Seleccione una opción</option>
                                     <option value="Trabaja con nosotros">Trabaja con nosotros</option>
                                     <option value="Comprar">Comprar</option>
                                     <option value="Proveedor">Proveedor</option>
@@ -131,7 +130,7 @@
                         <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
                             <x-jet-label for="texto" value="{{ __('Mensaje') }}" />
                             <textarea id="texto" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                                type="text" name="texto" autofocus autocomplete="texto" rows="4"></textarea>
+                                type="text" name="texto" autocomplete="texto" rows="4"></textarea>
                             @error('texto')
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror

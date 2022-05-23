@@ -95,25 +95,23 @@ class BuzonController extends Controller
 
                 //Correo de Ruth Vega y Gabriel Zurita
                 if ($request->categoria == 'Normas de Conducta') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Discriminación / Acoso') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
-                //Correo de Ruth Vega y Gibran Garduño
+                //Correo de Ruth Vega 
                 elseif ($request->categoria == 'Condiciones Laborales') {
-                    Mail::to('roalexlop13@outlook.com')->cc('roalexis1234567890@gmail.com')->send(new Denuncia($message));
-                }
-                //Correo de Ruth Vega
-                elseif ($request->categoria == 'Prácticas Monopólicas') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
+                } elseif ($request->categoria == 'Prácticas Monopólicas') {
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Leyes Ambientales') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Sobornos') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Derechos de la Tierra') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Otros') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
             }
         } else {
@@ -142,27 +140,25 @@ class BuzonController extends Controller
                     }
                 }
 
-                //Correo de Ruth Vega y Gabriel Zurita
-                if ($request->categoria == 'Normas de Conducta') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                 //Correo de Ruth Vega y Gabriel Zurita
+                 if ($request->categoria == 'Normas de Conducta') {
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Discriminación / Acoso') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
-                //Correo de Ruth Vega y Gibran Garduño
+                //Correo de Ruth Vega 
                 elseif ($request->categoria == 'Condiciones Laborales') {
-                    Mail::to('roalexlop13@outlook.com')->cc('roalexis1234567890@gmail.com')->send(new Denuncia($message));
-                }
-                //Correo de Ruth Vega
-                elseif ($request->categoria == 'Prácticas Monopólicas') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
+                } elseif ($request->categoria == 'Prácticas Monopólicas') {
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Leyes Ambientales') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Sobornos') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Derechos de la Tierra') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Otros') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
             } else {
 
@@ -190,27 +186,25 @@ class BuzonController extends Controller
                     }
                 }
 
-                //Correo de Ruth Vega y Gabriel Zurita
-                if ($request->categoria == 'Normas de Conducta') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                 //Correo de Ruth Vega y Gabriel Zurita
+                 if ($request->categoria == 'Normas de Conducta') {
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Discriminación / Acoso') {
-                    Mail::to('roalexlop13@outlook.com')->cc('alexislopez130300@gmail.com')->send(new Denuncia($message));
+                    Mail::to('gabriel.zurita@gpoalze.com')->cc('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
-                //Correo de Ruth Vega y Gibran Garduño
+                //Correo de Ruth Vega 
                 elseif ($request->categoria == 'Condiciones Laborales') {
-                    Mail::to('roalexlop13@outlook.com')->cc('roalexis1234567890@gmail.com')->send(new Denuncia($message));
-                }
-                //Correo de Ruth Vega
-                elseif ($request->categoria == 'Prácticas Monopólicas') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
+                } elseif ($request->categoria == 'Prácticas Monopólicas') {
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Leyes Ambientales') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Sobornos') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Derechos de la Tierra') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 } elseif ($request->categoria == 'Otros') {
-                    Mail::to('roalexlop13@outlook.com')->send(new Denuncia($message));
+                    Mail::to('ruth.vega@etiroch.com')->send(new Denuncia($message));
                 }
 
                 return redirect()->route('buzon.index')->with('success', 'Denuncia enviada con éxito. ¡Gracias por ayudarnos a mejorar! Puede consultar el folio y la información de su denuncia en el panel.');

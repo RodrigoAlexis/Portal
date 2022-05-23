@@ -61,7 +61,9 @@
                     <div class="mx-5">
                         <h4 class="text-xl font-semibold text-gray-700">Roles: {{ $rol ?? '0' }}</h4>
                         <div class="text-gray-500"><span class="font-bold">Lista de Roles:</span></div>
-                        <div class="text-gray-500">{!! $roles !!}</div>
+                        @foreach ($roles as $rol)
+                            <div class="text-gray-500">{{ $rol->name }}</div>
+                        @endforeach
 
                         {{-- @foreach ($ultimaLinea as $uLinea)
                     <div class="text-gray-500">{{ $uLinea->name }}</div>

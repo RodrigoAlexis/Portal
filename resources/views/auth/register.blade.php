@@ -8,7 +8,7 @@
                     <!-- Col -->
                     {{-- 385px 550px --}}
                     <div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-size:cover;
-                        background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
+                        background-image: url('/img/registro.jpg');
                         background-position: center center;
                         background-repeat: no-repeat"></div>
                     <!-- Col -->
