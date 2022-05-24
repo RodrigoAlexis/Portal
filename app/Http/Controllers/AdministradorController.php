@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AdministradorController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->middleware('permission:ver-usuarios|crear-usuarios|editar-usuarios|borrar-usuarios', ['only' => ['index']]);
-    //     $this->middleware('permission:crear-usuarios', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission:editar-usuarios', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission:borrar-usuarios', ['only' => ['destroy']]);
-    // }
+    function __construct()
+     {
+         $this->middleware('can:ver-usuarios')->only('index');
+         $this->middleware('can:crear-usuarios')->only('create');
+         $this->middleware('can:editar-usuarios')->only('edit');
+         $this->middleware('can:borrar-usuarios')->only('destroy');
+     }
 
     /**
      * Display a listing of the resource.

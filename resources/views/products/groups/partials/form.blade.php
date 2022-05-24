@@ -25,7 +25,7 @@
             @isset ($group->image)
                 <img id="picture" src="{{Storage::url($group->image->url)}}" alt="Imagen por defecto" >
             @else
-                <img id="picture" src=" /img/defaultGrupo1.jpg" alt="Imagen por defecto" >
+                <img id="picture" src=" {{ asset('/img/defaultGrupo1.jpg')}}" alt="Imagen por defecto" >
             @endisset 
         </div>
 

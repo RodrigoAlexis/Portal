@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->middleware('permission: ver-productos|crear-productos|editar-productos|borrar-productos', ['only' => ['index']]);
-    //     $this->middleware('permission: crear-productos', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission: editar-productos', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission: borrar-productos', ['only' => ['destroy']]);
-    // }
+    function __construct()
+     {
+         $this->middleware('can:ver-productos')->only('index');
+         $this->middleware('can:crear-productos')->only('create');
+         $this->middleware('can:editar-productos')->only('edit');
+         $this->middleware('can:borrar-productos')->only('destroy');
+     }
 
     /**
      * Display a listing of the resource.

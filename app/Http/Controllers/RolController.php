@@ -11,13 +11,14 @@ use Illuminate\Support\Facades\DB;
 class RolController extends Controller
 {
 
-    // function __construct()
-    // {
-    //     $this->middleware('permission:ver-rol|crear-rol|editar-rol|borrar-rol', ['only' => ['index']]);
-    //     $this->middleware('permission:crear-rol', ['only' => ['create', 'store']]);
-    //     $this->middleware('permission:editar-rol', ['only' => ['edit', 'update']]);
-    //     $this->middleware('permission:borrar-rol', ['only' => ['destroy']]);
-    // }
+    function __construct()
+     {
+         $this->middleware('can:ver-roles')->only('index');
+         $this->middleware('can:crear-roles')->only('create');
+         $this->middleware('can:editar-roles')->only('edit');
+         $this->middleware('can:borrar-roles')->only('destroy');
+     }
+
     /**
      * Display a listing of the resource.
      *
