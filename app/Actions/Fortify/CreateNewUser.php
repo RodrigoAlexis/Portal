@@ -26,18 +26,26 @@ class CreateNewUser implements CreatesNewUsers
             'paterno' => ['required', 'string', 'max:45'],
             'materno' => ['required', 'string', 'max:45'],
             'materno' => ['required'],
+            'isClient' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
-            
+
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'paterno' => $input['paterno'],
             'materno' => $input['materno'],
             'isClient' => $input['isClient'],
             'email' => $input['email'],
             'password' => Hash::make(Str::random(8)),
+            'isAdmin' => 'No',
         ]);
+
+
+        $user->assignRole('Usuario');
+
+
+        return $user;
     }
 }

@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
+    function __construct()
+     {
+         $this->middleware('can:ver-productos')->only('index');
+         $this->middleware('can:crear-productos')->only('create');
+         $this->middleware('can:editar-productos')->only('edit');
+         $this->middleware('can:borrar-productos')->only('destroy');
+     }
+
     /**
      * Display a listing of the resource.
      *

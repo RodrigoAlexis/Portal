@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,14 +10,17 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Buzon;
+use Spatie\Permission\Traits\HasPermissions;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use HasRoles;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasPermissions;
 
     /**
      * The attributes that are mass assignable.
@@ -35,7 +38,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'isClient',
         'razon_social',
         'id_socialite',
-        'type_socialite'
+        'type_socialite',
+        'departamento',
+        'isAdmin'
     ];
 
     /**

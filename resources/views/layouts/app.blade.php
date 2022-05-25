@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{{ asset('css/myStyles.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> --}}
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     @livewireStyles
 
@@ -30,6 +33,8 @@
         crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/mi.js') }}" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 
     <style>
@@ -39,6 +44,12 @@
 
     </style>
     {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
+
+
+    {{-- Favicon --}}
+    <link rel="shortcut icon" type="image/png" href="{{ asset('/img/veladoras-aramo-sm.png') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/veladoras-aramo-sm.png') }}">
+    {{-- End Favicon --}}
 </head>
 
 <body class="font-sans antialiased bg-gray-100">
@@ -55,20 +66,14 @@
         @elseif(Route::is('lines*'))
 
         @elseif(Route::is('denuncia*'))
+
+        @elseif (Route::is('roles*'))
+
+        @elseif(Route::is('admin*'))
         @else
             @livewire('navigation')
         @endif
 
-        {{-- <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif --}}
-
-        <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
@@ -93,6 +98,10 @@
     @elseif(Route::is('lines*'))
 
     @elseif(Route::is('denuncia*'))
+
+    @elseif (Route::is('roles*'))
+
+    @elseif (Route::is('admin*'))
     @else
         @livewire('footer')
     @endif

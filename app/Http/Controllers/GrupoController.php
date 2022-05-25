@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Storage;
 
 class GrupoController extends Controller
 {
+    function __construct()
+     {
+         $this->middleware('can:ver-grupos')->only('index');
+         $this->middleware('can:crear-grupos')->only('create');
+         $this->middleware('can:editar-grupos')->only('edit');
+         $this->middleware('can:borrar-grupos')->only('destroy');
+     }
+
     /**
      * Display a listing of the resource.
      *

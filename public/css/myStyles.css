@@ -1,41 +1,135 @@
 /* Start: Google Maps Responsive */
 .map-responsive {
-	overflow: hidden;
-	padding-bottom: 400px;
-	/*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
-	position: relative;
-	height: 0;
+    overflow: hidden;
+    padding-bottom: 400px;
+    /*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
+    position: relative;
+    height: 0;
 }
 
 .map-responsive iframe {
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 /* End: Google Maps Responsive */
 
+/* Start: Nosotros banner image */
 #historia {
-	background-image: url('../img/instalaciones.png');
-	text-align: center;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
-	
+    background-image: url("../img/quienesSomos.jpg");
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 #historia:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(0, 0, 0, 0.6);
-
-	
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    
 }
+/* End: Nosotros banner image*/
+
+/* Start: Slider*/
+
+.contenedor {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-contenedor {
+    width: 100%;
+    display: flex;
+}
+
+.contenido-slider {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-shrink: 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-image: url("/img/principal1.jpg");
+}
+
+.contenido-slider:nth-child(2) {
+    background: #000;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-image: url("/img/principal2.jpg");
+}
+
+.contenido-slider:nth-child(3) {
+    background: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-image: url("/img/principal3.jpg");
+}
+
+@media screen and (max-width: 900px) {
+    .contenido-slider > section {
+        width: 250px;
+    }
+
+    .contenido-slider > div {
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .contenido-slider {
+        flex-direction: column-reverse;
+    }
+
+    
+}
+/* End: Slider*/
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; */
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-size: cover; */
+    background-position: center center;
+	background-repeat: no-repeat;
+  }

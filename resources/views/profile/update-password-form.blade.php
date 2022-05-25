@@ -4,7 +4,15 @@
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Si inicio sesión registrandose, ingrese una nueva contraseña. Si inicio sesión con Google o Facebook, puede ingresar una contraseña para hacer uso de todas las funcionalidades. Asegúrese de que su cuenta esté usando una contraseña de 8 caracteres como máximo y con caracteres aleatorios para mantenerse seguro.') }}
+        {{ __('Actualice su contraseña.') }}
+        <p class="mt-2 text-sm text-gray-500">
+            Si inició sesión con Google o Facebook, puede ingresar una contraseña para
+            hacer uso de todas las funcionalidades de seguridad.
+        </p>
+        <p class="mt-2 text-sm text-gray-500">
+            Asegúrese de que su cuenta esté usando una contraseña de 8 caracteres como
+            máximo y con caracteres aleatorios para mantenerse seguro.
+        </p>
     </x-slot>
 
     <x-slot name="form">
@@ -16,13 +24,15 @@
 
         <div class="col-span-6 sm:col-span-4 mt-6">
             <x-jet-label for="password" value="{{ __('Nueva Contraseña') }}" />
-            <x-jet-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="state.password" autocomplete="new-password" />
+            <x-jet-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="state.password"
+                autocomplete="new-password" />
             <x-jet-input-error for="password" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4 mt-6">
             <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
-            <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model.defer="state.password_confirmation" autocomplete="new-password" />
+            <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full"
+                wire:model.defer="state.password_confirmation" autocomplete="new-password" />
             <x-jet-input-error for="password_confirmation" class="mt-2" />
         </div>
     </x-slot>

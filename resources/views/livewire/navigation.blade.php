@@ -29,9 +29,9 @@
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 {{-- logotipo --}}
                 <a href="{{ route('home') }}" class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-12 w-auto" src="http://veladorasaramo.com.mx/img/velaAramo.png"
+                    <img class="block lg:hidden h-12 w-auto" src="{{ asset('img/veladoras-aramo-sm.png') }}"
                         alt="Veladoras Aramo">
-                    <img class="hidden lg:block h-12 w-auto" src="http://veladorasaramo.com.mx/img/aramo.png"
+                    <img class="hidden lg:block h-12 w-auto" src="{{ asset('img/logo-veladoras.png') }}"
                         alt="Veladoras Aramo">
                 </a>
 
@@ -154,7 +154,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu" x-show="open" x-on:click.away=" open = false">
+    <div class="sm:hidden" id="mobile-menu" x-show="open" x-on:click.away=" open = false" x-cloak>
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
