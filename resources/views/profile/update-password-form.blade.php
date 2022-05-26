@@ -10,8 +10,7 @@
             hacer uso de todas las funcionalidades de seguridad.
         </p>
         <p class="mt-2 text-sm text-gray-500">
-            Asegúrese de que su cuenta esté usando una contraseña de 8 caracteres como
-            máximo y con caracteres aleatorios para mantenerse seguro.
+            Asegúrese de que su cuenta esté usando una contraseña con caracteres aleatorios para mantenerse seguro.
         </p>
     </x-slot>
 
