@@ -10,7 +10,7 @@
     
     <p><strong>Nombre del Usuario:</strong> {{$msg['name']}}</p>
     <p><strong>Número de Contacto:</strong> {{$msg['telefono']}}</p>
-    <p><strong>Correo Electrónico</strong> {{$msg['email']}}</p>
+    <p><strong>Correo Electrónico:</strong> {{$msg['email']}}</p>
     <p><strong>Asunto a tratar:</strong> {{$msg['asunto']}}</p>
     <p><strong>Mensaje:</strong></p>
     <p>{{$msg['texto']}}</p>
