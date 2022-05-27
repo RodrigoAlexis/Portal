@@ -48,7 +48,9 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
 
-            <p class="mt-6">1.- Acepta formatos JPG / JPEG / PNG.</p>
+            <p class="mt-6 text-sm">1.- La imagen principal es <span class="text-red-500 uppercase">obligatoria</span>.</p>
+            <p class="mt-6 text-sm">2.- Acepta formatos JPG / JPEG / PNG.</p>
+            <p class="mt-6 text-sm">3.- Se recomienda que la imagen tenga una medida de 800 x 500 como mínimo para su correcta visualización.</p>
         </div>
 
         {{-- Estracto --}}
