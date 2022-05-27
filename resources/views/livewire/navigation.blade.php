@@ -55,7 +55,7 @@
 
                 <!-- Profile dropdown -->
                 @auth
-                    <div class="ml-3 relative" x-data="{ open: false }">
+                    <div class="ml-3 relative" x-data="{ open: false }" x-cloak>
                         <div>
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button x-on:click=" open = true"

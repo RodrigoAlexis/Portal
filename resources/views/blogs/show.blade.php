@@ -14,7 +14,7 @@
                     @if ($blog->image)
                         <img class="w-full h-80 object-cover object-center" src="{{Storage::url($blog->image->url)}}" alt="">
                     @else
-                        <img class="w-full h-80 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
+                        <img class="w-full h-80 object-cover object-center" src="{{asset('/img/defaultGrupo1.jpg')}}" alt="">
                     @endif
                 </figure>
 

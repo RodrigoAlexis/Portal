@@ -35,7 +35,7 @@
             @isset ($post->image)
                 <img id="picture" src="{{Storage::url($post->image->url)}}" alt="Imagen por defecto" >
             @else
-                <img id="picture" src=" https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="Imagen por defecto" >
+                <img id="picture" src=" {{asset('/img/defaultGrupo1.jpg')}}" alt="Imagen por defecto" >
             @endisset 
         </div>
 
@@ -48,8 +48,9 @@
                 <small class="text-red-600">{{$message}}</small>
             @enderror
 
-            <p class="mt-6">1.- Acepta formatos JPG / JPEG / PNG.</p>
-            <p class="mt-6">2.- Se recomienda que la imagen tenga una medida de *** x *** para su correcta visualización.</p>
+            <p class="mt-6 text-sm">1.- La imagen principal es <span class="text-red-500 uppercase">obligatoria</span>.</p>
+            <p class="mt-6 text-sm">2.- Acepta formatos JPG / JPEG / PNG.</p>
+            <p class="mt-6 text-sm">3.- Se recomienda que la imagen tenga una medida de 800 x 500 como mínimo para su correcta visualización.</p>
         </div>
 
         {{-- Estracto --}}
