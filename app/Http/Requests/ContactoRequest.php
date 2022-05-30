@@ -45,7 +45,7 @@ class ContactoRequest extends FormRequest
             'email.email' => 'Debe ingresar Correo Electrónico válido',
             'email.max' => 'El campo Correo Electrónico no puede exceder los 60 caracteres',
             'asunto.required' => 'El campo Asunto es requerido',
-            'texto.required' => 'El campo Texto es requerido',
+            'texto.required' => 'El campo Mensaje es requerido',
             'g-recaptcha-response.recaptcha' => 'Verifique que no es un robot'
             
             // 'adjunto.mimes' => 'Solo se permiten archivos con extensión (.jpeg, .jpg, .png, .pdf, .doc, .docx)'
