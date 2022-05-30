@@ -10,7 +10,7 @@
 
             <div class="w-full max-w-5xl mt-6 p-6 bg-gray-50 overflow-hidden sm:rounded-lg shadow-lg">
                 <h1 class="uppercase text-gray-700 font-bold text-4xl mb-6 text-center">
-                    AVISO DE PRIVACIDAD INTEGRAL
+                    AVISO DE PRIVACIDAD
                 </h1>
 
                 <p class=" text-md text-gray-600 mb-6 ">

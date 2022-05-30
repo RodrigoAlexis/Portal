@@ -117,7 +117,7 @@
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
 
                 {{-- Facebook --}}
-                <a target="_blank" href="https://www.facebook.com/Veladoras-Aramo-439684746829699/"
+                <a target="_blank" href="https://www.facebook.com/VeladorasAramo/?ti=as"
                     class="text-gray-500 hover:text-gray-900 ">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -127,7 +127,7 @@
                 </a>
 
                 {{-- Instagram --}}
-                <a target="_blank" href="https://www.instagram.com/veladorasaramo/?hl=es-la"
+                <a target="_blank" href="https://www.instagram.com/veladorasaramo/"
                     class="text-gray-500 hover:text-gray-900 ">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"

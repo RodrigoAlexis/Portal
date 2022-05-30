@@ -261,6 +261,10 @@
                         {{-- Recaptcha --}}
                         <div>
                             {!! htmlFormSnippet() !!}
+
+                            @error('g-recaptcha-response')
+                                <small class="text-red-600">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div>
