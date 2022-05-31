@@ -34,9 +34,9 @@
                         <div class="mb-4">
                             {{-- Login with Google --}}
                             <a type="button"
-                                class="bg-gray-700 focus:ring-gray-300 focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-100 border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2"
+                                class="bg-white hover:bg-gray-100 focus:ring-gray-300 focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-700 border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2"
                                 href="{{ url('auth/google') }}">
-                                <svg class="mr-8 sm:mr-8 md:mr-8 lg:mr-16 xl:mr-16 sm:ml-24 md:ml-40 lg:-ml-1 xl:-ml-1 w-4 h-4"
+                                <svg class="mr-8 sm:mr-8 md:mr-8 lg:mr-16 xl:mr-24 sm:ml-24 md:ml-40 lg:-ml-1 xl:-ml-1 w-4 h-4"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326667 333333"
                                     shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
                                     image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
@@ -53,20 +53,20 @@
                                         d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z"
                                         fill="#ea4335" />
                                 </svg>
-                                Inicia Sesión con Google
+                                Inicia sesión con Google
                             </a>
                             {{-- Login with Facebook --}}
                             <a type="button"
-                                class=" focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-600  border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2"
+                                class=" bg-white hover:bg-blue-100 focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-700  border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2"
                                 href="{{ url('auth/facebook') }}">
-                                <svg class="mr-8 sm:mr-8 md:mr-8 lg:mr-16 xl:mr-16 sm:ml-24 md:ml-40 lg:-ml-1 xl:-ml-1 w-4 h-4 text-blue-700"
+                                <svg class="mr-8 sm:mr-8 md:mr-8 lg:mr-16 xl:mr-24 sm:ml-24 md:ml-40 lg:-ml-1 xl:-ml-1 w-4 h-4 text-blue-600"
                                     aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                     <path fill="currentColor"
                                         d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z">
                                     </path>
                                 </svg>
-                                Inicia Sesión con Facebook
+                                Inicia sesión con Facebook
                             </a>
 
 
@@ -83,7 +83,7 @@
                             <div class="mb-4">
                                 <x-jet-label for="email" value="{{ __('Correo Electrónico') }}" />
                                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email"
-                                    :value="old('email')" required autofocus />
+                                    :value="old('email')" required />
                             </div>
 
                             <div class="mb-4">
@@ -100,7 +100,7 @@
                             </div>
                             <div class="mb-6 text-center">
                                 <button
-                                    class="w-full px-4 py-2 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
+                                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
                                     {{-- <div class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition"></div> --}}
                                     {{ __('Iniciar Sesión') }}
                                 </button>

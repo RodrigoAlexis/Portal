@@ -33,7 +33,7 @@
 
                             <div class="mb-6 text-center mt-4">
                                 <button
-                                    class="w-full px-4 py-2 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
+                                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:shadow-outline focus:border-gray-900 focus:ring-gray-300">
                                     {{ __('Confirmar') }}
                                 </button>
                             </div>
