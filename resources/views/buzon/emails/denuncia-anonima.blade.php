@@ -27,7 +27,7 @@
     <p><strong>Correo Electrónico:</strong>  {{$msg['email']}}</p>
     @endif
 
-    <h3>Información de Cliente</h3>
+    <h3>Información Adicional</h3>
 
     <p><strong>¿Es cliente o proveedor?</strong> {{$msg['isClient']}}</p>
 

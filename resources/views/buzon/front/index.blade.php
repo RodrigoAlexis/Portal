@@ -199,7 +199,7 @@
 
 
                         <div class="md:col-span-4 lg:col-span-4 mt-4 text-lg block text-gray-600 font-bold">
-                            <label for="info">Información de Cliente</label>
+                            <label for="info">Información Adicional</label>
                         </div>
 
                         {{-- IsClient? --}}
