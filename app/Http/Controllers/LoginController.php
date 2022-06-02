@@ -34,6 +34,8 @@ class LoginController extends Controller
                     'id_socialite' => $user->getId(),
                     'type_socialite' => 'facebook'
                 ]);
+
+                $addUser->assignRole('Usuario');
     
                 Auth::login($addUser);
                 return redirect('/dashboard');
@@ -66,6 +68,8 @@ class LoginController extends Controller
                     'id_socialite' => $user->getId(),
                     'type_socialite' => 'google'
                 ]);
+
+                $addUser->assignRole('Usuario');
     
                 Auth::login($addUser);
                 return redirect('/dashboard');
