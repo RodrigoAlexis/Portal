@@ -14,6 +14,8 @@ use App\Http\Controllers\DenunciaController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\AdministradorController;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Filesystem\Filesystem;
 
 
 Route::get('/', function () {
@@ -81,10 +83,41 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Usuarios admin back
     Route::resource('administradores', AdministradorController::class)->names('admin');
-
 });
 
 //Enlace Simbolico
 Route::get('/enlace-simbolico', function () {
     Artisan::call('storage:link');
+
+    echo "Directorio creado satisfactoriamente";
+});
+
+// Segunda opcion de enlace simbolico
+// Route::get('/linkstorage', function () {
+//     $targetFolder = base_path().'/storage/app/public';
+//     $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage';
+//     symlink($targetFolder, $linkFolder); 
+
+//     echo "directorio creado satisfactoriamente";
+// });
+
+// Segunda opcion de eliminacion de enlace simbolico
+Route::get('/delete-linkstorage', function () {
+    $targetFolder = base_path() . '/storage/app/public';
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    unlink($targetFolder, '/storage');
+
+    echo "directorio eliminado satisfactoriamente";
+});
+
+
+// Eliminar enlace simbolico
+Route::get('/delete-enlace-simbolico', function () {
+
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+
+    File::deleteDirectory(public_path('/storage'));
+    // rmdir($linkFolder);
+
+    echo "Directorio eliminado satisfactoriamente";
 });
