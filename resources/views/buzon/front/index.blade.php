@@ -1,16 +1,6 @@
 <x-app-layout>
-
-    {{-- Imagen --}}
-    {{-- <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32 object-fill hidden sm:hidden md:hidden lg:inline"
-        style="background-size:1343px 300px; background-image: url('https://cdn.pixabay.com/photo/2021/05/29/17/35/car-6293917__340.jpg');">
-    </div>
-
-    <div class="bg-gradient-to-r from-sky-900  to-sky-500 px-6 mx-auto lg:h-120 py-32 object-fill inline sm:inline md:hidden lg:hidden"
-        style="background-size:1343px 300px; background-image: url('https://cdn.pixabay.com/photo/2021/05/29/17/35/car-6293917__340.jpg');">
-    </div> --}}
-
     {{-- Primer header --}}
-    <div class="bg-gradient-to-r from-blue-900  to-blue-500">
+    <div class="bg-blue-500">
 
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
             <div class="font-bold text-3xl text-white">
@@ -26,9 +16,9 @@
     <div class="bg-gradient-to-r from-gray-300  to-gray-200">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-4">
             <div class="text-xl text-white">
-                <p class="text-blue-700 font-semibold">Usted ha entrado en el <span
-                        class="font-extrabold text-blue-800">Denuncias, Quejas y Sugerencias</span> ofrecido por <span
-                        class="font-extrabold text-blue-800">Centro de Distribución Aram-Luz S. A. de C. V.</span></p>
+                <p class="text-blue-500 font-semibold">Usted ha entrado en el <span
+                        class="font-extrabold text-blue-700">Denuncias, Quejas y Sugerencias</span> ofrecido por <span
+                        class="font-extrabold text-blue-700">Centro de Distribución Aram-Luz S. A. de C. V.</span></p>
             </div>
         </div>
     </div>
@@ -251,8 +241,9 @@
                             <x-jet-input multiple accept=".jpg, .jpeg, .png, .doc, .docx, .pdf" id="adjunto"
                                 class="block mt-1 w-full" type="file" name="adjunto[]" :value="old('adjunto')" 
                                 autocomplete="adjunto" />
-                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Nota:</span> solo se
-                                permite un máximo de 3 archivos / imagenes</p>
+                            <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Formatos Admitidos:</span> 
+                                .jpg / .jpeg / .png / .docx / .pdf</p>
+                                <p class="text-sm text-gray-500 mt-1"><span class="font-bold">Máximo:</span>  3 archivos</p>
                             @error('adjunto')
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror
@@ -289,7 +280,7 @@
                         {{-- Button --}}
                         <div class="col-span-1 sm:col-span-2 md:col-span-2 mt-4">
                             <button
-                                class="float-center w-full text-md text-white hover:bg-gradient-to-bl hover:from-blue-400 hover:to-blue-700 bg-gradient-to-bl from-blue-400 to-blue-900  font-medium rounded-md px-6   py-2.5 text-center">
+                                class="float-center w-full text-md text-white bg-blue-500 hover:bg-blue-600  font-medium rounded-md px-6   py-2.5 text-center">
                                 Envíar
                             </button>
                         </div>
@@ -301,7 +292,7 @@
                 <div class="flex flex-col">
                     {{-- Politica de uso de buzon --}}
                     <a target="_blank" href="{{ asset('docs/politicaBuzon.pdf') }}"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 shadow-md hover:bg-blue-600 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-blue-500 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Política de Uso de Buzón</p>
 
@@ -318,7 +309,7 @@
 
                     {{-- Caracteristicas de seguridad --}}
                     <a href="javascript:void(0)"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center text-center  mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 hover:bg-blue-600 shadow-md hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-blue-500 flex flex-col justify-center items-center text-center  mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Características de Seguridad</p>
 
@@ -333,7 +324,7 @@
 
                     {{-- Politica de privaciadad --}}
                     <a href="{{ route('policy.show') }}"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 hover:bg-blue-600 shadow-md hover:shadow-gray-200  shadow-blue-200 p-4 w-auto md:w-full h-auto rounded bg-blue-500 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Política de Privacidad</p>
 
@@ -348,7 +339,7 @@
 
                     {{-- Confidencialidad --}}
                     <button type="button" onclick="toggleModalConfi('modal-confi')"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 hover:bg-blue-600 shadow-md hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-blue-500 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Confidencialidad</p>
 
@@ -363,7 +354,7 @@
 
                     {{-- Acerca del canal --}}
                     <button type="button" onclick="toggleModalAcerca('modal-acerca')"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 hover:bg-blue-600 shadow-md hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-blue-500 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">Acerca del Canal</p>
 
@@ -379,7 +370,7 @@
 
                     {{-- FAQ --}}
                     <button type="button" onclick="toggleModalFaq('modal-faq')"
-                        class="text-gray-100 hover:text-blue-700 shadow-md hover:bg-gradient-to-bl hover:from-gray-200 hover:to-gray-400 hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-gradient-to-bl from-blue-400 to-blue-900 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
+                        class="text-gray-100 hover:bg-blue-600 shadow-md hover:shadow-gray-200 md:w-full  shadow-blue-200 p-4 w-auto h-auto rounded bg-blue-500 flex flex-col justify-center items-center mt-4 lg:max-w-[24rem]">
                         {{-- <img class="w-20 h-20 object-cover rounded-full mb-2" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="logo"> --}}
                         <p class=" font-bold mb-2">FAQ</p>
 

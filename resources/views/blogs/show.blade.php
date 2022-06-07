@@ -12,9 +12,9 @@
             <div class="lg:col-span-2">
                 <figure>
                     @if ($blog->image)
-                        <img class="w-full h-80 object-cover object-center" src="{{Storage::url($blog->image->url)}}" alt="">
+                        <img class="rounded w-full h-80 object-cover object-center" src="{{Storage::url($blog->image->url)}}" alt="">
                     @else
-                        <img class="w-full h-80 object-cover object-center" src="{{asset('/img/defaultGrupo1.jpg')}}" alt="">
+                        <img class="rounded w-full h-80 object-cover object-center" src="{{asset('/img/defaultGrupo1.jpg')}}" alt="">
                     @endif
                 </figure>
 
@@ -32,9 +32,9 @@
                         <li class="mb-4">
                             <a class="flex" href="{{ route('blogs.show', $similar)}}">
                                 @if ($similar->image)
-                                    <img class="w-36 h-24 flex-initial object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                    <img class="rounded w-36 h-24 flex-initial object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
                                 @else
-                                    <img class="w-36 h-24 flex-initial  object-cover object-center" src="https://cdn.pixabay.com/photo/2022/01/29/16/21/fisherman-6977946_960_720.jpg" alt="">
+                                    <img class="rounded w-36 h-24 flex-initial  object-cover object-center" src="{{ asset('img/defaultGrupo1.jpg')}}" alt="">
                                 @endif
                                 {{-- <img class="object-cover object-center w-36 h-20 " src="{{Storage::url($similar->image->url)}}" alt=""> --}}
                                 <span class="ml-2 text-gray-600">{{$similar->name}}</span>

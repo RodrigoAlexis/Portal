@@ -6,7 +6,8 @@
         <div class="opacity-75 mx-auto rounded-t shadow bg-cover bg-bottom" id="historia">
 
             <div class="text-center text-white py-36 ">
-                <div class="relative text-6xl font-serif underline boder-2 border-white">¿Quienes Somos?</div>
+                <div class="relative text-6xl font-serif underline boder-2 border-white font-semibold">Quienes Somos
+                </div>
             </div>
         </div>
 
@@ -19,38 +20,38 @@
         {{-- Texto y SVG de Historia --}}
         <div class=" w-full py-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4 gap-6">
 
-            <div class="font-serif text-sm text-gray-600">
-                <h3 class="text-2xl mb-4 text-gray-800">Nuestra Historia</h3>
-                <p class="mb-3">
+            <div class="font-sans text-sm text-gray-600">
+                <h3 class="text-2xl mb-4 text-gray-800 font-bold">Nuestra Historia</h3>
+                <p class="mb-3 font-semibold">
                     Como todas las grandes historias, la nuestra empieza con un sueño y un gran propósito. <span
                         class="font-bold text-gray-800">Trascender</span>.
                 </p>
 
-                <p class="mb-3">
+                <p class="mb-3 font-semibold">
                     Somos una empresa ligada a las velas y veladoras por más de 3 generaciones. Las hemos creado,
                     fabricado, vendido y entregado en cientos de pueblos de México, de mano en mano, llegando a pequeños
                     y grandes negocios, haciendo entrañables amistades a lo largo de más de 60 años.
                 </p>
 
-                <p class="mb-3">
+                <p class="mb-3 font-semibold">
                     Nuestro trabajo y esfuerzo un día nos puso en el mismo camino del Sr. Juan Carlos, fundador de la
                     empresa Productos Aramo, quien nos da la oportunidad de representarla y comercializarla en todo el
                     centro y sureste del país.
                 </p>
 
-                <p class="mb-3">
+                <p class="mb-3 font-semibold">
                     30 años después, nuevamente damos un salto enorme hacia la consolidación de un sueño: fabricar
                     veladoras de la Marca Aramo, naciendo así este nuevo proyecto al que simple y lógicamente le hemos
                     llamado <span class="font-bold text-gray-800">"VELADORAS ARAMO"</span>.
                 </p>
 
-                <p class="mb-3">
+                <p class="mb-3 font-semibold">
                     Nuestra fábrica se encuentra en la ciudad de Puebla, muy convenientemente ubicada en la autopista
                     México-Puebla y entronque a Periférico Ecológico. En una superficie de más de 5000 m2 donde
                     fabricamos alrededor de 100,000 veladoras todos los días.
                 </p>
 
-                <p>
+                <p class="font-semibold">
                     Todo lo que somos y hemos logrado hasta hoy se lo debemos a nuestro equipo y capital humano. Somos
                     casi 200 personas, hombres y mujeres que todos los días fabrican con dedicación y entrega las velas
                     y veladoras que consumes en casa y que te acompañan en los momentos más íntimos y espirituales de tu
@@ -65,42 +66,42 @@
         </div>
 
         {{-- Mision, Vision y politica de calidad --}}
-        <div data-aos="fade-down" data-aos-duration="2000" 
+        <div data-aos="fade-down" data-aos-duration="2000"
             class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full fadeTop scroll-content">
 
             {{-- Mision --}}
             <div class="p-6 bg-white">
 
-                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                <h2 class="font-sans text-2xl text-center text-gray-800 mt-2 font-bold">
                     Misión
                 </h2>
 
-                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                <p class="mt-2 text-gray-800 text-center font-sans font-semibold text-sm">
                     Fabricar veladoras para iluminar caminos de esperanza.
                 </p>
             </div>
 
             {{-- Vision --}}
-            <div  class="p-6 bg-white ">
+            <div class="p-6 bg-white ">
 
-                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                <h2 class="font-sans text-2xl text-center text-gray-800 mt-2 font-bold">
                     Visión
                 </h2>
 
-                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                <p class="mt-2 text-gray-800 text-center font-sans text-sm font-semibold">
                     Ser reconocidos por la confiabilidad, el servicio y la inovación de nuestra marca con crecimiento
                     rentable.
                 </p>
             </div>
 
             {{-- Politica de calidad --}}
-            <div  class="p-6 bg-white ">
+            <div class="p-6 bg-white ">
 
-                <h2 class="font-serif text-2xl text-center text-gray-800 mt-2">
+                <h2 class="font-sans text-2xl text-center text-gray-800 mt-2 font-bold">
                     Política de Calidad
                 </h2>
 
-                <p class="mt-2 text-gray-800 text-center font-serif text-sm">
+                <p class="mt-2 text-gray-800 text-center font-sans text-sm font-semibold">
                     Alcanzamos y mantenemos la satisfacción de nuestros clientes, aplicando como filosofía y práctica la
                     mejora continua en cumplimiento de los requisitos, las normas aplicables las expectativas de cada
                     una de las partes interesadas en nuestros de veladoras y articulos de limpieza.
@@ -111,10 +112,11 @@
 
         {{-- Titulo Valores --}}
         <div class="w-full text-center text-gray-800 p-6 mt-3">
-            <p class="text-2xl font-serif">Nuestros Valores</p>
+            <p class="text-2xl font-sans font-bold">Nuestros Valores</p>
         </div>
         <div class="w-full text-center text-gray-800 mb-2 px-4 sm:px-5 md:px-20 lg:px-20">
-            <p class="text-sm font-serif">En Centro de Distribución Aram-Luz valoramos a las personas y a los
+            <p class="text-sm font-sans font-semibold">En Centro de Distribución Aram-Luz valoramos a las personas y a
+                los
                 empleados, buscamos los mejores
                 beneficios asegurando los valores de:</p>
         </div>
@@ -231,47 +233,55 @@
             </div>
         </div>
 
-        {{-- Titulo Responsabilidad Social --}}
-        <div class="w-full text-center text-gray-800 p-6">
-            <p class="text-2xl font-serif">Responsabilidad Social</p>
+        <div class="bg-gray-50 py-4">
+            {{-- Titulo Responsabilidad Social --}}
+            <div class="w-full text-center text-gray-800 p-6">
+                <p class="text-2xl font-sans font-bold">Responsabilidad Social</p>
+            </div>
+
+            <div class="w-full text-center text-gray-700 px-4 sm:px-5 md:px-20 lg:px-20">
+                <p class="text-sm font-sans font-semibold">En Veladoras Aramo buscamos siempre contribuir activamente en
+                    el mejoramiento social, económico y ambiental de nuestro entorno, ciudad y país.
+                </p>
+
+                <p class="text-sm font-sans mt-3 font-semibold">
+                    Contribuir al Desarrollo Humano es primordial para nosotros. Buscamos de forma sostenida
+                    comprometernos con nuestro capital humano para
+                </p>
+                <p class="text-sm font-sans font-semibold">encontrar juntos el mejor futuro para ellos y sus familias,
+                    para nuestros vecinos y todas los puntos de contacto que tenemos hacia nuestro entorno.
+                </p>
+
+                <p class="text-sm font-sans font-semibold mt-3">
+                    Sabemos que con una sociedad segura y encaminada hacia el bienestar social, tendremos una mejor
+                    calidad de vida en nuestra comunidad.
+                </p>
+            </div>
+
+            <div class="w-full text-center text-gray-700 mt-3 px-4 sm:px-5 md:px-20 lg:px-20">
+                <p class="text-sm font-sans font-semibold">
+                    La Responsabilidad Social Empresarial (RSE): Es la contribución al desarrollo
+                    humano sostenible, a través del compromiso y la confianza de la
+                </p>
+                <p class="font-sans font-semibold text-sm">
+                    empresa hacia sus empleados y las familias de éstos, hacia la sociedad en general y hacia la
+                    comunidad local, en pos de mejorar el capital social
+                </p>
+                <p class="font-sans font-semibold text-sm">
+                    y la calidad de vida de toda la comunidad.
+                </p>
+
+                <p class="text-sm font-serif mt-3">
+                    Si tu tienes algún proyecto en donde creas que Veladoras Aramo puede contribuir socialmente, no
+                    dudes en contactarnos.
+                </p>
+
+                <p class="text-sm font-serif mt-3">
+                    Nos dará mucho gusto participar.
+                </p>
+            </div>
+
         </div>
-
-        <div class="w-full text-center text-gray-700 px-4 sm:px-5 md:px-20 lg:px-20">
-            <p class="text-sm font-serif">En Veladoras Aramo buscamos siempre contribuir activamente en el mejoramiento
-                social, económico y
-                ambiental de nuestro entorno, ciudad y país.
-            </p>
-
-            <p class="text-sm font-serif mt-3">
-                Contribuir al Desarrollo Humano es primordial para nosotros. Buscamos de forma sostenida comprometernos
-                con nuestro capital humano para encontrar juntos el mejor futuro para ellos y sus familias, para
-                nuestros vecinos y todas los puntos de contacto que tenemos hacia nuestro entorno.
-            </p>
-
-            <p class="text-sm font-serif mt-3">
-                Sabemos que con una sociedad segura y encaminada hacia el bienestar social, tendremos una mejor calidad
-                de vida en nuestra comunidad.
-            </p>
-        </div>
-
-        <div class="w-full text-center text-gray-700 mt-3 px-4 sm:px-5 md:px-20 lg:px-20">
-            <p class="text-sm font-serif">
-                La Responsabilidad Social Empresarial (RSE): Es la contribución al desarrollo
-                humano sostenible, a través del compromiso y la confianza de la empresa hacia sus empleados y las
-                familias de éstos, hacia la sociedad en general y hacia la comunidad local, en pos de mejorar el capital
-                social y la calidad de vida de toda la comunidad.
-            </p>
-
-            <p class="text-sm font-serif mt-3">
-                Si tu tienes algún proyecto en donde creas que Veladoras Aramo puede contribuir socialmente, no dudes en
-                contactarnos.
-            </p>
-
-            <p class="text-sm font-serif mt-3">
-                Nos dará mucho gusto participar.
-            </p>
-        </div>
-
         <!-- cards -->
         <div class="flex items-center justify-center py-12 ">
 

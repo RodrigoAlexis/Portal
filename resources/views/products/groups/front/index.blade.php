@@ -9,7 +9,7 @@
                 
                 </a>
         
-                <div class="w-56 -mt-10 overflow-hidden bg-orange-500 rounded-t-lg shadow-lg md:w-64 ">
+                <div class="w-56 -mt-10 overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t-lg shadow-lg md:w-64 ">
                     <h3 class="py-2 font-bold tracking-wide text-center text-white uppercase ">{{$group->name}}</h3>
                     
                     

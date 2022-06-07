@@ -16,7 +16,7 @@
 
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-            <div>
+            <div class="mb-4">
                 <div class="font-bold text-2xl text-gray-600 mb-4 ml-1">
                     Información de Contacto
                 </div>
@@ -74,6 +74,10 @@
 
 
             <div>
+                <div class="font-bold text-2xl text-gray-600 mb-4">
+                    Formulario de Contacto
+                </div>
+
                 <form action="{{ route('contacto.store') }}" method="post">
                     @csrf
                     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -143,16 +147,10 @@
                                 <small class="text-red-600">{{ $message }}</small>
                             @enderror
                         </div>
-                        <div>
-
-                        </div>
-                        <div>
-
-                        </div>
-
-                        <div class="justify-end">
+                        
+                        <div class="col-sapn-1 lg:col-span-2">
                             <button type="submit"
-                                class="w-full py-2 px-8 text-white font-bold text-md  hover:bg-gradient-to-bl hover:from-blue-400 hover:to-blue-700 bg-gradient-to-bl from-blue-400 to-blue-900 rounded-lg">
+                                class="w-full py-2 px-8 text-white font-bold text-md bg-blue-500 hover:bg-blue-600 rounded-lg">
                                 Envíar
                             </button>
                         </div>

@@ -35,12 +35,11 @@
                             <span
                                 class="block xl:inline font-serif font-bold text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-blue-700">Tu
                                 conexión con lo divino</span>
-                            {{-- <span class="block text-orange-500 xl:inline font-serif font-bold">con lo divino</span> --}}
                         </h1>
 
                         {{-- Texto --}}
                         <p
-                            class="mt-3 text-md text-gray-500 sm:mt-5  sm:max-w-xl sm:mx-auto md:mt-5  lg:mx-0 text-center font-serif">
+                            class="mt-3 text-md text-gray-500 sm:mt-5  sm:max-w-xl sm:mx-auto md:mt-5  lg:mx-0 text-center">
                             Fabricamos velas y veladoras de gran calidad y variedad desde México para el mundo. Somos la
                             marca líder de veladoras en el sureste de México. Nuestras veladoras están presentes en las
                             principales cadenas comerciales, distribuidoras de abarrotes y tiendas de conveniencia del
@@ -130,10 +129,10 @@
                 <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
                     class="sm:max-w-lg text-center fadeTop scroll-content">
                     <h1
-                        class="text-4xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
+                        class="text-4xl font-extrabold font-serif tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
                         Toda la variedad que buscabas
                     </h1>
-                    <p class="mt-4 text-md text-md text-gray-500 font-serif">Veladoras Aramo está comprometida a
+                    <p class="mt-4 text-md text-md text-gray-500">Veladoras Aramo está comprometida a
                         conseguir la satisfacción
                         total de sus clientes, manteniendo altos estándares de fabricación y producción para la
                         comercialización de velas y veladoras de la más alta calidad.</p>
@@ -147,9 +146,9 @@
                             <div
                                 class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
 
-                                <div class="flex items-center space-x-6 lg:space-x-8">
+                                <div class="flex items-center space-x-6 lg:space-x-8" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
 
-                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                    <div 
                                         class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
                                         <div
@@ -164,7 +163,7 @@
                                         </div>
 
                                     </div>
-                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                    <div 
                                         class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 
                                         <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop2 scroll-content">
@@ -183,7 +182,7 @@
                                         </div>
 
                                     </div>
-                                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+                                    <div 
                                         class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="w-44 h-64 rounded-lg overflow-hidden fadeTop5 scroll-content">
                                             <img src="{{ asset('img/R18.jpg') }}" alt=""
@@ -227,10 +226,10 @@
                             ¡Tu Opinión es Importante!
                         </span>
                         <h1
-                            class="text-4xl font-serif font-extrabold tracking-tight  text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-red-700 sm:text-6xl">
+                            class="text-4xl font-extrabold tracking-tight font-serif text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-red-700 sm:text-6xl">
                             Buzón
                         </h1>
-                        <p class="text-base text-body-color text-md text-gray-500 font-serif">
+                        <p class="text-base text-body-color text-md text-gray-500">
                             Sabemos que no somos perfectos, es por esto por lo que ponemos a tu disposición un
                             apartado para que puedas
                             reportar cualquier tipo de incidente mediante una denuncia, queja o si lo deseas, brindarnos
