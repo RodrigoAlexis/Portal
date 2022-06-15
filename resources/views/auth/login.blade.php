@@ -21,7 +21,7 @@
                                 background-repeat: no-repeat;"></div>
                     <!-- Col -->
                     <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none shadow-lg">
-                        <h3 class="pt-4 text-xl text-center text-gray-300 ">¡Bienvenido!</h3>
+                        <h3 class="py-6 text-xl text-center text-gray-300 ">¡Bienvenido!</h3>
 
                         <x-jet-validation-errors class="mb-4" />
 
@@ -31,7 +31,7 @@
                             </div>
                         @endif
 
-                        <div class="mb-4">
+                        <div class="mb-4 hidden">
                             {{-- Login with Google --}}
                             <a type="button"
                                 class="bg-white hover:bg-gray-100 focus:ring-gray-300 focus:ring-opacity-50 shadow-sm w-full mt-3 text-gray-700 border border-gray-200 focus:border-indigo-300 font-bold rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mb-2"
@@ -68,11 +68,9 @@
                                 </svg>
                                 Inicia sesión con Facebook
                             </a>
-
-
                         </div>
 
-                        <hr class="mb-4 border-t" />
+                        {{-- <hr class="mb-4 border-t" /> --}}
 
 
                         {!! Form::open(['route' => 'login', 'autocomplete' => 'off', 'files' => true]) !!}

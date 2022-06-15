@@ -13,6 +13,12 @@
                                 {{$blog->name}}
                             </a>
                         </h1>
+                        {{-- <div class=" mt-2 text-sm text-white ">
+                            <a  href="{{ route('blogs.show', $blog)}}" class="leading-8 text-white">
+                                {!!$blog->stract!!}
+                            </a>
+                        </div> --}}
+                        
                     </div>
                 </article>      
             @endforeach

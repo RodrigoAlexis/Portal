@@ -28,7 +28,7 @@
                 {{-- Contenido --}}
                 <main class="mt-6 mx-auto max-w-7xl px-4 sm:mt-8 sm:px-6 md:mt-8 lg:mt-16 lg:px-8 xl:mt-20 ">
                     <div class="sm:text-center lg:text-left" data-aos="fade-up" data-aos-easing="linear"
-                        data-aos-duration="1500">
+                        data-aos-duration="1000">
 
                         {{-- Titulo --}}
                         <h1 class="text-4xl tracking-tight sm:text-5xl md:text-6xl text-center ">
@@ -117,7 +117,7 @@
     </div>
 
     {{-- Seccion Blogs --}}
-    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500"
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-6">
         @livewire('section-blog')
     </div>
@@ -126,7 +126,7 @@
     <div class="relative bg-white overflow-hidden">
         <div class="pt-10 pb-80 sm:pt-24 md:pt-8 sm:pb-40  lg:pt-40 lg:pb-48">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static ">
-                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000"
                     class="sm:max-w-lg text-center fadeTop scroll-content">
                     <h1
                         class="text-4xl font-extrabold font-serif tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-orange-700 sm:text-6xl">
@@ -137,8 +137,8 @@
                         total de sus clientes, manteniendo altos estándares de fabricación y producción para la
                         comercialización de velas y veladoras de la más alta calidad.</p>
                 </div>
-                <div>
-                    <div class="mt-10 lg:mt-10 ">
+                <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+                    <div class="mt-10 lg:mt-10">
 
                         {{-- Velas decorativas --}}
                         <div aria-hidden="true"
@@ -146,7 +146,7 @@
                             <div
                                 class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
 
-                                <div class="flex items-center space-x-6 lg:space-x-8" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                                <div class="flex items-center space-x-6 lg:space-x-8" >
 
                                     <div 
                                         class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
@@ -201,7 +201,7 @@
                             </div>
                         </div>
 
-                        <a data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                        <a 
                             href="{{ route('grupos.index') }}"
                             class="fadeTop scroll-content mt-4 md:mt-0 md:py-4 md:text-lg md:px-10 ml-0 sm:ml-0 lg:ml-36 inline-block text-center bg-orange-400 border border-transparent rounded-md py-3 px-6 font-medium text-white hover:bg-orange-600">
                             Ver más Productos
@@ -214,7 +214,7 @@
 
     {{-- Buzon --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-easing="linear"
-        data-aos-duration="1500">
+        data-aos-duration="1000">
 
 
         {{-- texto --}}
