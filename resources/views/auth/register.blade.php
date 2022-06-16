@@ -7,16 +7,17 @@
                 <div class="w-full xl:w-3/4 lg:w-11/12 flex ">
                     <!-- Col -->
                     {{-- 385px 550px --}}
-                    <div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" style="background-size:cover;
-                        background-image: url('/img/registro.jpg');
+                    <div class=" h-full w-full bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" 
+                    style="background-size: cover;
+                        background-image: url('/img/register22.jpg');
                         background-position: center center;
                         background-repeat: no-repeat"></div>
                     <!-- Col -->
-                    <div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none shadow-lg">
+                    <div class="w-full lg:w-7/12 bg-white rounded-lg lg:rounded-l-none shadow-lg">
                         <h3 class="pt-4 text-2xl text-center">Crea una Cuenta</h3>
 
                         <x-jet-validation-errors class="mb-4" />
-                        <div class="px-8 pt-6 pb-4 mb-4 bg-white rounded">
+                        <div class="px-4 pt-6 pb-4 mb-4 bg-white rounded">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
 
@@ -76,9 +77,9 @@
 
                                                 <div class="ml-2">
                                                     {!! __('Acepto los :terms_of_service y el :privacy_policy', [
-    'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Términos de servicio') . '</a>',
-    'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Aviso de privacidad') . '</a>',
-]) !!}
+                                                            'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Términos de servicio') . '</a>',
+                                                            'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '" class="underline text-sm text-gray-600 hover:text-gray-900">' . __('Aviso de privacidad') . '</a>',
+                                                        ]) !!}
                                                 </div>
                                             </div>
                                         </x-jet-label>

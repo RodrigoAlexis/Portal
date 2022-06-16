@@ -1,4 +1,7 @@
-<nav class="bg-white  menu sticky top-0 z-20" x-data="{ open: false }" >
+<nav class="bg-white  menu sticky top-0 z-20" x-data="{ open: false }" 
+    style="background-image: url('/img/ab2.jpg');
+            background-repeat: no-repeat;
+            object-fit: cover;">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
         <div class="relative flex items-center justify-between h-16">
 
@@ -121,7 +124,7 @@
                                         <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-2"
                                             onclick="event.preventDefault();
-                                                                                                          this.closest('form').submit();">
+                                                                                                              this.closest('form').submit();">
                                             Cerrar Sesión
                                         </a>
                                     </form>

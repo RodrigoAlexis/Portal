@@ -8,7 +8,7 @@
                 {{-- 465px 425px --}}
 				<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" 
                     style="background-size:cover; 
-                            background-image: url('/img/verifyemail.jpg');
+                            background-image: url('/img/verifyEmail.jpg');
                             background-position: center center;
                             background-repeat: no-repeat"></div>
 				<!-- Col -->

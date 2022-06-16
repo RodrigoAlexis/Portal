@@ -16,7 +16,7 @@
                     {{-- 460px 640px --}}
                     <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" 
                         style="background-size:cover; 
-                                background-image: url('/img/login.jpg');
+                                background-image: url('/img/login2.jpg');
                                 background-position: center center;
                                 background-repeat: no-repeat;"></div>
                     <!-- Col -->
