@@ -66,7 +66,7 @@
         </div>
 
         {{-- Mision, Vision y politica de calidad --}}
-        <div 
+        <div
             class="bg-orange-400 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-1 mt-6 w-full fadeTop scroll-content">
 
             {{-- Mision --}}
@@ -123,12 +123,11 @@
 
         {{-- Valores --}}
         <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
-         class="px-2 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
+            class="px-2 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
             <div class="grid gap-5 row-gap-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 mb-4">
 
                 {{-- Integridad --}}
-                <div 
-                    class="px-12 text-center sm:px-0  fadeRight scroll-content">
+                <div class="px-12 text-center sm:px-0  fadeRight scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/integridad.png') }}" alt="Integridad">
@@ -140,8 +139,7 @@
                 </div>
 
                 {{-- Respeto --}}
-                <div 
-                    class="px-12 text-center sm:px-0  fadeLeft1 scroll-content">
+                <div class="px-12 text-center sm:px-0  fadeLeft1 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/respeto.png') }}" alt="Respeto">
@@ -153,8 +151,7 @@
                 </div>
 
                 {{-- Sencillez --}}
-                <div 
-                    class="px-12 text-center sm:px-0 fadeLeft2 scroll-content">
+                <div class="px-12 text-center sm:px-0 fadeLeft2 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/sencillez.png') }}" alt="Sencillez">
@@ -166,8 +163,7 @@
                 </div>
 
                 {{-- Entusiasmo --}}
-                <div
-                    class="px-12 text-center sm:px-0 fadeLeft3 scroll-content">
+                <div class="px-12 text-center sm:px-0 fadeLeft3 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/entusiasmo.png') }}" alt="Entusiasmo">
@@ -179,12 +175,10 @@
                 </div>
 
                 {{-- Trabajo en equipo --}}
-                <div 
-                    class="px-12 text-center sm:px-0 mt-4 fadeRight scroll-content">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeRight scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
-                        <img class="h-8 w-auto" src="{{ asset('img/trabajoEquipo.png') }}"
-                            alt="Trabajo en equipo">
+                        <img class="h-8 w-auto" src="{{ asset('img/trabajoEquipo.png') }}" alt="Trabajo en equipo">
                     </div>
 
                     <div class="mb-2 text-gray-800 font-serif text-md">
@@ -193,8 +187,7 @@
                 </div>
 
                 {{-- Liderazgo --}}
-                <div 
-                    class="px-12 text-center sm:px-0 mt-4 fadeLeft1 scroll-content">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft1 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/liderazgo.png') }}" alt="Liderazgo">
@@ -206,12 +199,10 @@
                 </div>
 
                 {{-- Pasion --}}
-                <div
-                    class="px-12 text-center sm:px-0 mt-4 fadeLeft2 scroll-content">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft2 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
-                        <img class="h-8 w-auto" src="{{ asset('img/servicio.png') }}"
-                            alt="Pasión por el servicio">
+                        <img class="h-8 w-auto" src="{{ asset('img/servicio.png') }}" alt="Pasión por el servicio">
                     </div>
 
                     <div class="mb-2 text-gray-800 font-serif text-md">
@@ -220,8 +211,7 @@
                 </div>
 
                 {{-- Empoderamiento --}}
-                <div
-                    class="px-12 text-center sm:px-0 mt-4 fadeLeft3 scroll-content">
+                <div class="px-12 text-center sm:px-0 mt-4 fadeLeft3 scroll-content">
                     <div
                         class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
                         <img class="h-8 w-auto" src="{{ asset('img/empoderamiento.png') }}" alt="Empoderamiento">
@@ -234,45 +224,33 @@
             </div>
         </div>
 
-        <div class="bg-gray-50 py-4">
+        <div class="bg-gray-100 py-4 px-5 sm:px-30 md:px-36 lg:px-56 rounded">
             {{-- Titulo Responsabilidad Social --}}
             <div class="w-full text-center text-gray-800 p-6">
                 <p class="text-2xl font-sans font-bold">Responsabilidad Social</p>
             </div>
 
-            <div class="w-full text-center text-gray-700 px-4 sm:px-5 md:px-20 lg:px-20">
+            <div class="w-full text-center text-gray-700 ">
                 <p class="text-sm font-sans font-semibold">En Veladoras Aramo buscamos siempre contribuir activamente en
                     el mejoramiento social, económico y ambiental de nuestro entorno, ciudad y país.
-                </p>
 
-                <p class="text-sm font-sans mt-3 font-semibold">
                     Contribuir al Desarrollo Humano es primordial para nosotros. Buscamos de forma sostenida
                     comprometernos con nuestro capital humano para
-                </p>
-                <p class="text-sm font-sans font-semibold">encontrar juntos el mejor futuro para ellos y sus familias,
+                    encontrar juntos el mejor futuro para ellos y sus familias,
                     para nuestros vecinos y todas los puntos de contacto que tenemos hacia nuestro entorno.
-                </p>
 
-                <p class="text-sm font-sans font-semibold mt-3">
                     Sabemos que con una sociedad segura y encaminada hacia el bienestar social, tendremos una mejor
                     calidad de vida en nuestra comunidad.
                 </p>
             </div>
 
-            <div class="w-full text-center text-gray-700 mt-3 px-4 sm:px-5 md:px-20 lg:px-20">
+            <div class="w-full text-center text-gray-700 mt-3 ">
                 <p class="text-sm font-sans font-semibold">
                     La Responsabilidad Social Empresarial (RSE): Es la contribución al desarrollo
-                    humano sostenible, a través del compromiso y la confianza de la
-                </p>
-                <p class="font-sans font-semibold text-sm">
-                    empresa hacia sus empleados y las familias de éstos, hacia la sociedad en general y hacia la
-                    comunidad local, en pos de mejorar el capital social
-                </p>
-                <p class="font-sans font-semibold text-sm">
-                    y la calidad de vida de toda la comunidad.
-                </p>
+                    humano sostenible, a través del compromiso y la confianza de la empresa hacia sus empleados y las
+                    familias de éstos, hacia la sociedad en general y hacia la
+                    comunidad local, en pos de mejorar el capital social y la calidad de vida de toda la comunidad.
 
-                <p class="text-sm font-serif mt-3">
                     Si tu tienes algún proyecto en donde creas que Veladoras Aramo puede contribuir socialmente, no
                     dudes en contactarnos.
                 </p>
